@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+	<!-- ***** Designate client-side state saving. ***** -->
+
+	<servlet>
+		<servlet-name>Mathexplorer1</servlet-name>
+		<servlet-class>cern.ch.mathexplorer.Mathexplorer1Servlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>input</servlet-name>
+		<servlet-class>cern.ch.mathexplorer.servlets.InputServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>query</servlet-name>
+		<servlet-class>cern.ch.mathexplorer.servlets.QueryServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Mathexplorer1</servlet-name>
+		<url-pattern>/mathexplorer1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>input</servlet-name>
+		<url-pattern>/input</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>query</servlet-name>
+		<url-pattern>/query</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- ***** Specify session timeout of thirty (30) minutes. ***** -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	<welcome-file-list>
+		<welcome-file>index.jsf</welcome-file>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>
