@@ -1,0 +1,78 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+	lang="en" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:panel id="popup" modal="true" resizeable="false"
+		height="510" width="920">
+		<f:facet name="header">
+			<h:outputText value="Math editor" />
+		</f:facet>
+		<f:facet name="controls">
+			<h:outputLink value="#"
+				onclick="#{rich:component('popup')}.hide(); return false;">
+                X
+            </h:outputLink>
+		</f:facet>
+		<p>
+		<div id="Div1" style="width: 900px; height: 500px;">
+			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+				codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0"
+				width="100%" height="100%" id="editML" name="editML" align="middle">
+				<param name="allowScriptAccess" value="always" />
+				<param name="allowFullScreen" value="true" />
+				<param name="loop" value="false" />
+				<param name="quality" value="high" />
+				<param name="movie" value="mathEditor/MathMLEditor.swf" />
+				<embed src="mathEditor/MathMLEditor.swf" loop="false" quality="high"
+					width="100%" height="100%" id="editML" name="editML" align="middle"
+					allowScriptAccess="always" allowFullScreen="true"
+					type="application/x-shockwave-flash"
+					pluginspage="http://www.adobe.com/go/getflashplayer" />
+			</object>
+		</div>
+
+		</p>
+	</p:panel>
+	<h:outputScript>
+		function focusEditor(){
+		var editor = getSWF('editML');
+		editor.focus();
+	}
+
+	function getMathMLFromJavascript(){
+		alert("call javascript method getMathMLFromJavascript\n; The method must return a mathml");
+		focusEditor();
+		return "<mrow> <mtext>new value</mtext></mrow>";
+	}
+
+	function saveMathMLToJavascript(mathML){
+		alert("call javascript method saveMathMLToJavascript with parameter:\n" + mathML);
+		focusEditor();
+	}
+
+	function setFileNameFromServer(name){
+		alert(name);
+	}
+
+	function getElement(id) {
+		return document.getElementById ? document.getElementById(id) : document.all[id];
+	}
+
+	function getSWF(movieName) {
+		if (navigator.appName.indexOf("Microsoft") != -1) {
+		
+			return getElement(movieName);
+		}
+		else {
+		  if(document[movieName].length != undefined){
+			  return document[movieName][1];
+		  }
+			return document[movieName];
+		}
+	}
+
+	focusEditor();
+	</h:outputScript>
+</ui:composition>

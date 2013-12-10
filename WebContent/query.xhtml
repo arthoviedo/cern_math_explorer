@@ -1,0 +1,32 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head id="head">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"/>
+	<title>MathExplorer</title>
+</h:head>
+<h:body id="body">
+	<h:form>
+		<h:outputText value="Your query was: #{mathBean.finalQueryText}" escape="false"/>
+		<br />
+
+		<h:outputLabel value="Status: #{mathBean.message}" escape="false" />
+	<br/>
+		<h:dataTable border="1" value="#{mathBean.queryResult}"
+			var="currResult" rendered="#{!mathBean.queryResult.isEmpty()}">
+			Top scores:
+			<h:column>
+				<h:outputLink value="Link to file: #{currResult.downloadLink}" target="_blank">Link to file</h:outputLink>
+				<br />
+				<h:outputText value="#{currResult.mathmlExpression}" escape="false" />
+			</h:column>
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+<h:head id="head">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script language="JavaScript" src="matheditor/mathml_editor.js"/>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"/>
+	<title>MathExplorer</title>
+</h:head>
+
+<h:body id="body">
+	<f:view contentType="text/html">
+		<p>
+			<h:outputText value="Welcome to Math Explorer" />
+		</p>
+	</f:view>
+	<h:form id="mydivform">
+		<h:outputLabel
+			value="Input the math expression you would like to search for:" />
+		<br />
+		<h:inputTextarea value="#{mathBean.queryText}" rows="12" cols="140"/>
+		<!-- h:inputText value="#{mathBean.queryText}" rows="12" cols="140"/-->
+		<br/>
+		Select preferred input format:
+		<h:selectOneRadio value="#{mathBean.inputFormat}">
+			<f:selectItems value="#{mathBean.inputFormats}"/>
+		</h:selectOneRadio>
+		<a href="resources/matheditorpage.html" target="_blank">Open MathML editor</a> (Requires Adobe Flash Player)
+		<br/>
+		<br/>
+		<h:commandButton action="#{mathBean.search}"
+			value="Go go go!!!" >
+			<f:param name="queryText" value="#{mathBean.queryText}"/>
+		</h:commandButton>
+	</h:form>
+	<br/>
+	Some MathML sample equations you can use:
+	<br />
+	<h:dataTable value="#{mathBean.sampleEquations}" var="currEquation"
+		border="1">
+		<h:column>
+			<h:outputText value="#{currEquation}" escape="false" />
+			<xmp> <h:outputText value="#{currEquation}" escape="false" />
+			</xmp>
+		</h:column>
+	</h:dataTable>
+</h:body>
+</html>
