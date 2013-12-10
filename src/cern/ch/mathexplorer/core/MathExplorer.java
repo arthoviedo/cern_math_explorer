@@ -54,7 +54,7 @@ import org.apache.lucene.util.Version;
 import uk.ac.ed.ph.snuggletex.SnuggleEngine;
 import uk.ac.ed.ph.snuggletex.SnuggleInput;
 import uk.ac.ed.ph.snuggletex.SnuggleSession;
-import cern.ch.mathexplorer.core.Equation.EquationBuilder;
+import cern.ch.mathexplorer.core.EquationResult.EquationBuilder;
 import cern.ch.mathexplorer.lucene.MathMLAnalyzer;
 import cern.ch.mathexplorer.lucene.Utils;
 import cern.ch.mathexplorer.lucene.VecTextField;
@@ -234,8 +234,8 @@ public class MathExplorer {
 		return result;
 	}
 
-	public List<Equation> search(String mathmlQuery) throws Exception {
-		List<Equation> result = new ArrayList<Equation>();
+	public List<EquationResult> search(String mathmlQuery) throws Exception {
+		List<EquationResult> result = new ArrayList<EquationResult>();
 		aLogger.info("Size of index: " + isearcher.getIndexReader().numDocs());
 		try {
 			aLogger.info("Searching");
@@ -266,9 +266,9 @@ public class MathExplorer {
 	public static void main(String[] args) throws Exception {
 		MathExplorer m = new MathExplorer(null, true);
 
-		List<Equation> a = m.search(Constants.SAMPLE_EQUATION_2.replaceAll(
+		List<EquationResult> a = m.search(Constants.SAMPLE_EQUATION_2.replaceAll(
 				"\n", ""));
-		for (Equation b : a) {
+		for (EquationResult b : a) {
 			System.out.println(b.mathmlExpression);
 		}
 

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cern.ch.mathexplorer.core.Constants;
-import cern.ch.mathexplorer.core.Equation;
+import cern.ch.mathexplorer.core.EquationResult;
 import cern.ch.mathexplorer.core.MathExplorer;
 
 /**

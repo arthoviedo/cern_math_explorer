@@ -30,7 +30,13 @@ public interface Constants extends Serializable {
 	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQUATION_1, 
 		SAMPLE_EQUATION_2, SAMPLE_EQUATION_3, SAMPLE_EQUATION_4, SAMPLE_EQUATION_5};
 	
-	public final static String text_data_path = "C:/Users/Artie/git/mathml-git1/MathmlExplorer/data/math/";
 	
+	public final static String MATHML = "MathML";
+	public final static String LATEX = "LaTeX";
+	
+	public static final String XML_EXTENSION = ".xhtml";
+	public static final String INDEX_FILE_EXTENSION = ".eq";
+	public static final String URL_PUBLIC_FOLDER = "https://googledrive.com/host/0B3PGNL_gfdnqWWZ6eUpBTWRqc1k/";
+
 	
 }

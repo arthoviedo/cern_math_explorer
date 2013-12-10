@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cern.ch.mathexplorer.core.Equation;
+import cern.ch.mathexplorer.core.EquationResult;
 import cern.ch.mathexplorer.core.MathExplorer;
 
 /**
@@ -51,8 +51,8 @@ public class QueryServlet extends AbstractServlet {
 		String resultText = "";
 		try {
 			
-			List<Equation> result = MathExplorer.getInstance(getServletContext()).search(query);
-			for (Equation eq : result) {
+			List<EquationResult> result = MathExplorer.getInstance(getServletContext()).search(query);
+			for (EquationResult eq : result) {
 				String fileURL = URL_PUBLIC_FOLDER+eq.getFilename().replace(INDEX_FILE_EXTENSION, XML_EXTENSION); 
 				resultText += "<tr><td><br/> Link to file: <a href=\""+ fileURL+ "\" target=\"_blank\">" 
 						+ eq.getFilename().replace(INDEX_FILE_EXTENSION, XML_EXTENSION)+"</a> "; 
