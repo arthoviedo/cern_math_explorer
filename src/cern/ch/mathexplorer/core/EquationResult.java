@@ -1,6 +1,9 @@
 package cern.ch.mathexplorer.core;
 
-public class EquationResult {
+import java.io.Serializable;
+
+public class EquationResult implements Serializable {
+	
 	
 	String filename;
 	int lineNumber;

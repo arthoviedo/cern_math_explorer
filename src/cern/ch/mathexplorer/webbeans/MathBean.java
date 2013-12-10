@@ -50,7 +50,7 @@ public class MathBean implements Serializable {
 	
 	public String search() {
 		try {
-			finalQueryText = queryText; // URLDecoder.decode(queryText, "UTF-8");
+			finalQueryText = URLDecoder.decode(queryText, "UTF-8");
 			if (inputFormat.equals(Constants.LATEX)) {
 				finalQueryText = mathExplorer.texToMathML(finalQueryText);
 			}

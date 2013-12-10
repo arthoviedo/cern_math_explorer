@@ -65,8 +65,12 @@ public class MathExplorer {
 	private static final String FILENAME = "filename";
 	private static final String EQUATION_ELEMENT = "EQUATION";
 
-	private final static String equationsDataPath = "C:/Users/Artie/Desktop/Estudio/master_thesis_epfl/math_6262";
-	private static final String LOCAL_PATH = "C:/Users/Artie/workspaceLucene/MathExplorerWeb";
+	// private final static String equationsDataPath = "C:/Users/Artie/Desktop/Estudio/master_thesis_epfl/math_6262";
+	// private static final String LOCAL_PATH = "C:/Users/Artie/workspaceLucene/MathExplorerWeb";
+	private final static String equationsDataPath = "/share/math/ok_6226";
+	 private static final String LOCAL_PATH = "./WebContent/data";
+	
+	
 	private final static int RESULTS_NUMBER = 20;
 	
 	private static SnuggleEngine engine = new SnuggleEngine();
