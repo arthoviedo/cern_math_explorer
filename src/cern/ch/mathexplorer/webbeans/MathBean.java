@@ -1,21 +1,19 @@
 package cern.ch.mathexplorer.webbeans;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.net.URLDecoder;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+import javax.faces.application.ViewHandler;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIViewRoot;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.servlet.ServletContext;
-
-import org.primefaces.context.RequestContext;
 
 import cern.ch.mathexplorer.core.Constants;
 import cern.ch.mathexplorer.core.EquationResult;
@@ -35,11 +33,14 @@ public class MathBean implements Serializable {
 	List<SelectItem> inputFormats = new ArrayList<SelectItem>();
 	String inputFormat;
 	
-	public MathBean() {
-		ServletContext servletContext = (ServletContext) FacesContext
-			    .getCurrentInstance().getExternalContext().getContext();
+	public MathBean() throws IOException {
+		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+		ServletContext servletContext = (ServletContext) externalContext.getContext();
+		externalContext.setResponseCharacterEncoding("UTF-8");
+		externalContext.setRequestCharacterEncoding("UTF-8");
+		
 		mathExplorer = MathExplorer.getInstance(servletContext);
-		queryText = "";
+		queryText  = "";
 		sampleEquations = Constants.SAMPLE_EQUATIONS;
 		queryResult = new ArrayList<>();
 		message = "";
@@ -48,9 +49,18 @@ public class MathBean implements Serializable {
 		inputFormats.add(new SelectItem(Constants.LATEX));
 	}
 	
+	public void refreshPage() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		String viewId = context.getViewRoot().getViewId();
+		ViewHandler handler = context.getApplication().getViewHandler();
+		UIViewRoot root = handler.createView(context, viewId);
+		root.setViewId(viewId);
+		context.setViewRoot(root);
+	}
+	
 	public String search() {
 		try {
-			finalQueryText = URLDecoder.decode(queryText, "UTF-8");
+			finalQueryText = queryText;
 			if (inputFormat.equals(Constants.LATEX)) {
 				finalQueryText = mathExplorer.texToMathML(finalQueryText);
 			}

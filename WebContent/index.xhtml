@@ -5,12 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui" xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:rich="http://richfaces.org/rich">
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head id="head">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<script language="JavaScript" src="matheditor/mathml_editor.js"/>
 	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"/>
 	<title>MathExplorer</title>
 </h:head>
@@ -26,7 +23,6 @@
 			value="Input the math expression you would like to search for:" />
 		<br />
 		<h:inputTextarea value="#{mathBean.queryText}" rows="12" cols="140"/>
-		<!-- h:inputText value="#{mathBean.queryText}" rows="12" cols="140"/-->
 		<br/>
 		Select preferred input format:
 		<h:selectOneRadio value="#{mathBean.inputFormat}">
