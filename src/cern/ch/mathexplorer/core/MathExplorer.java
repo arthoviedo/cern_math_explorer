@@ -268,12 +268,15 @@ public class MathExplorer {
 	}
 
 	public static void main(String[] args) throws Exception {
-		MathExplorer m = new MathExplorer(null, true);
-
+		
+		MathExplorer m = new MathExplorer(null, false);
+		
+		m.testAnalyzer(Constants.SAMPLE_EQUATION_1);
+		
 		List<EquationResult> a = m.search(Constants.SAMPLE_EQUATION_2.replaceAll(
 				"\n", ""));
 		for (EquationResult b : a) {
-			System.out.println(b.mathmlExpression);
+		//	System.out.println(b.mathmlExpression);
 		}
 
 		// System.out.println("-------------");
