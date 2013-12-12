@@ -21,7 +21,7 @@
 			var="currResult" rendered="#{!mathBean.queryResult.isEmpty()}">
 			Top scores:
 			<h:column>
-				<h:outputLink value="Link to file: #{currResult.downloadLink}" target="_blank">Link to file</h:outputLink>
+				<h:outputLink value="#{currResult.downloadLink}" target="_blank">Link to file</h:outputLink>
 				<br />
 				<h:outputText value="#{currResult.mathmlExpression}" escape="false" />
 			</h:column>

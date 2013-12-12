@@ -64,11 +64,11 @@ public class MathExplorer {
 	private static final String LINE = "line";
 	private static final String FILENAME = "filename";
 	private static final String EQUATION_ELEMENT = "EQUATION";
+	private static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
 
-	// private final static String equationsDataPath = "C:/Users/Artie/Desktop/Estudio/master_thesis_epfl/math_6262";
-	// private static final String LOCAL_PATH = "C:/Users/Artie/workspaceLucene/MathExplorerWeb";
-	private final static String equationsDataPath = "/share/math/ok_6226";
-	 private static final String LOCAL_PATH = "./WebContent/data";
+	private final static String equationsDataPath = "C:/Users/Artie/Desktop/Estudio/master_thesis_epfl/math_6262";
+	//private final static String equationsDataPath = "/share/math/ok_6226";
+	private static final String LOCAL_PATH = "./WebContent/data";
 	
 	
 	private final static int RESULTS_NUMBER = 20;
@@ -121,6 +121,53 @@ public class MathExplorer {
 		}
 	}
 
+	void indexArticles() throws Exception {
+
+		IndexWriter iwriter = null;
+		try {
+			//indexConfig.setRAMBufferSizeMB(11);
+			iwriter = new IndexWriter(indexDirectory, indexConfig);
+			// Path path = FileSystems.getDefault().getPath(text_data_path);
+
+			aLogger.info("Indexing files in : " + equationsDataPath);
+			File dir = new File(equationsDataPath);
+			int size = dir.list().length;
+			int fileCounter = 0;
+			for (File currentFile : dir.listFiles()) {
+				if (!currentFile.getName().endsWith(EQUATION_EXTENSION)) {
+					continue;
+				}
+				fileCounter++;
+				if (fileCounter % 100 == 0)
+					aLogger.info("Processed file: " + fileCounter + "/" + size);
+				BufferedReader br = new BufferedReader(new InputStreamReader(
+						new FileInputStream(currentFile), "UTF-8"));
+				String text = new String();
+				int lineNumber = 0;
+				StringBuffer textBuffer = new StringBuffer(); 
+				while ((text = br.readLine()) != null) {
+					textBuffer.append(text);
+				}
+				Document article = new Document();
+				Field equationField = new VecTextField(EQUATIONS_TEXT,
+						textBuffer.toString(), Store.YES);
+				article.add(equationField);
+				article.add(new Field(FILENAME, currentFile.getName(),
+						TextField.TYPE_STORED));
+				iwriter.addDocument(article);
+				br.close();
+			}
+			iwriter.close();
+			aLogger.info("Finished indexing");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		}
+		/**
+		 * finally { iwriter.close(); }
+		 */
+	}
+	
 	void index() throws Exception {
 
 		IndexWriter iwriter = null;
@@ -238,6 +285,33 @@ public class MathExplorer {
 		return result;
 	}
 
+	public List<EquationResult> searchArticles(String mathmlQuery) throws Exception {
+		List<EquationResult> result = new ArrayList<EquationResult>();
+		aLogger.info("Size of index: " + isearcher.getIndexReader().numDocs());
+		try {
+			aLogger.info("Searching");
+
+			Query query = createQuery(mathmlQuery);
+			aLogger.info("Created query");
+			ScoreDoc[] hits = isearcher.search(query, null, RESULTS_NUMBER).scoreDocs;
+			aLogger.info("Number of documents: " + hits.length);
+			for (ScoreDoc scoreDoc : hits) {
+				Document hitDoc = isearcher.doc(scoreDoc.doc);
+				EquationBuilder eqBuilder = new EquationBuilder();
+				eqBuilder
+						.setFilename(hitDoc.getValues(FILENAME)[0])
+						.setLineNumber(0)
+						.setMathmlExpression("");
+				result.add(eqBuilder.build());
+			}
+			return result;
+		} catch (Exception e) {
+			aLogger.severe("Error!!!");
+			e.printStackTrace();
+			return result;
+		}
+	}
+	
 	public List<EquationResult> search(String mathmlQuery) throws Exception {
 		List<EquationResult> result = new ArrayList<EquationResult>();
 		aLogger.info("Size of index: " + isearcher.getIndexReader().numDocs());
@@ -269,9 +343,9 @@ public class MathExplorer {
 
 	public static void main(String[] args) throws Exception {
 		
-		MathExplorer m = new MathExplorer(null, false);
+		MathExplorer m = new MathExplorer(null, true);
 		
-		m.testAnalyzer(Constants.SAMPLE_EQUATION_1);
+		m.testAnalyzer(Constants.SAMPLE_EQUATION_4);
 		
 		List<EquationResult> a = m.search(Constants.SAMPLE_EQUATION_2.replaceAll(
 				"\n", ""));
@@ -319,7 +393,9 @@ public class MathExplorer {
 			ts.reset();
 			while (ts.incrementToken()) {
 				// System.out.println("Token: " + ts.reflectAsString(true));
-				System.out.println(ts.getAttribute(CharTermAttribute.class));
+				
+				System.out.println(ts.getAttribute(CharTermAttribute.class)+":" + 
+						ts.getAttribute(OffsetAttribute.class).startOffset()+"-"+ts.getAttribute(OffsetAttribute.class).endOffset());
 			}
 			System.out.println("***********************");
 			ts.end();

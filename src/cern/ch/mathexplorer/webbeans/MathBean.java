@@ -64,7 +64,7 @@ public class MathBean implements Serializable {
 			if (inputFormat.equals(Constants.LATEX)) {
 				finalQueryText = mathExplorer.texToMathML(finalQueryText);
 			}
-			queryResult = mathExplorer.search(finalQueryText);
+			queryResult = mathExplorer.searchArticles(finalQueryText);
 			if (queryResult.isEmpty()) {
 				message = "Your query did not produced any result";
 			} else {
