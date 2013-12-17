@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
+import java.text.Normalizer;
+import java.text.Normalizer.Form;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -343,20 +345,47 @@ public class MathExplorer {
 
 	public static void main(String[] args) throws Exception {
 		
-		MathExplorer m = new MathExplorer(null, true);
+		MathExplorer m = new MathExplorer(null, false);
+		//testUnicodeNormalization();
+		 m.testAnalyzer(Constants.SAMPLE_EQUATION_7);
 		
-		m.testAnalyzer(Constants.SAMPLE_EQUATION_4);
-		
-		List<EquationResult> a = m.search(Constants.SAMPLE_EQUATION_2.replaceAll(
-				"\n", ""));
-		for (EquationResult b : a) {
+		//List<EquationResult> a = m.search(Constants.SAMPLE_EQUATION_2.replaceAll(
+		//		"\n", ""));
+		//for (EquationResult b : a) {
 		//	System.out.println(b.mathmlExpression);
-		}
+		//}
 
 		// System.out.println("-------------");
 		// m.testRegex(Constants.SAMPLE_EQUATION_3);
 		// // System.out.println(search(SAMPLE_EQUATION_3));
 		// // exploreIndex();
+	}
+	
+	static String getTypeName(int type) {
+		Character.getType(type);
+		return "";
+	}
+	
+	static void testUnicodeNormalization() throws Exception{
+		String [] tests ={ "Å", "A", "Ĳ", "ℕ", "Ⅻ", "ℎ", "ℏ", "Ω", "Ω"};
+		for (String a: tests) {
+			String b = Normalizer.normalize(a, Form.NFKD);
+			System.out.println("Original: " + a);
+			for (char c: a.toCharArray()){
+				System.out.print("Char: " + c);
+				System.out.print("\tType:" + Character.getType(c));
+				System.out.print("\tCode:" + (int)c +"\t\tHex:"+ Integer.toHexString((int)c));
+				System.out.println("");
+			}
+			System.out.println("Normalized: " + b);
+			for (char c: b.toCharArray()){
+				System.out.print("Char: " + c);
+				System.out.print("\tType:" + Character.getType(c));
+				System.out.print("\tCode:" + (int)c +"\t\tHex:"+ Integer.toHexString((int)c));
+				System.out.println("");
+			}
+			System.out.println("");
+		}
 	}
 	
 	static void testUnicodeEncodings() throws Exception{

@@ -19,6 +19,8 @@ package cern.ch.mathexplorer.lucene;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.text.Normalizer;
+import java.text.Normalizer.Form;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -88,6 +90,8 @@ public final class MultiplePatternTokenizer extends Tokenizer {
     	matchers.add(m);
     }
   }
+  
+  boolean firstTimeToken = true;
 
   @Override
   public boolean incrementToken() {
@@ -118,11 +122,20 @@ public final class MultiplePatternTokenizer extends Tokenizer {
     	  index = Integer.MAX_VALUE; // mark exhausted
     	  return false;
       }
-      termAtt.setEmpty().append(str, minStartIndex, minEndIndex);
-      offsetAtt.setOffset(correctOffset(minStartIndex), correctOffset(minEndIndex));
-      index = minStartIndex + 1;
-      return true;
-      
+      /**if (firstTimeToken) { 
+    	  termAtt.setEmpty().append(Normalizer.normalize(str, Form.NFKD), minStartIndex, minEndIndex);
+    	  offsetAtt.setOffset(correctOffset(minStartIndex), correctOffset(minEndIndex));
+    	  index = minStartIndex;
+    	  firstTimeToken = false;
+    	  return true;
+      }
+      else {*/
+    	  termAtt.setEmpty().append(str, minStartIndex, minEndIndex);
+    	  offsetAtt.setOffset(correctOffset(minStartIndex), correctOffset(minEndIndex));
+    	  index = minStartIndex + 1;
+    	  firstTimeToken = true;
+    	  return true;
+      //}
     } else {
     	throw new UnsupportedOperationException();
 //      // String.split() functionality

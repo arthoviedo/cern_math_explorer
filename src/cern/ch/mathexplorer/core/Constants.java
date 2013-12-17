@@ -21,11 +21,15 @@ public interface Constants extends Serializable {
 			+ "<mo>+</mo><msub><mi>S</mi><mi>F</mi></msub></mrow></mrow></math>";
 	public final static String SAMPLE_EQUATION_4 = "<math><mrow><mrow><msub><mi>ω</mi><mi>n</mi></msub><mo>/</mo>\n"
 			+ "<msup><mi>α</mi><mo>′</mo></msup></mrow><mo>⁢</mo><msup><mi>p</mi><mo>+</mo></msup></mrow></math>";
-	
 	public final static String SAMPLE_EQUATION_5 = "<math><mrow><mrow><mrow><mi>t</mi><mo>→</mo><mrow><mi>t</mi><mo>+</mo><mi>β</mi>\n"
 			+ "</mrow></mrow><mo>,</mo><mrow><mrow><mi>β</mi><mo>=</mo><mrow><mn>8</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>M</mi>\n"
 			+ "</mrow></mrow><mo>,</mo><mrow><mi>r</mi><mo>≥</mo><mrow><mn>2</mn><mo>⁢</mo><mi>M</mi></mrow></mrow></mrow></mrow>\n"
 			+ "<mo>.</mo></mrow></math>";
+	public final static String SAMPLE_EQUATION_6 = "<math><mi>¼</mi></math>";
+	
+	public final static String SAMPLE_EQUATION_7 = "<math><mi>∄</mi><mi>¼</mi><mi>ℕ</mi><mi>Ⅻ</mi><mi>ℏ</mi><mi>ħ</mi><mi>Å</mi><mi>Ĳ</mi></math>";
+	public final static String SAMPLE_EQUATION_8 = "<math><mi>Å</mi><mi>Ĳ</mi></math>";
+			
 	
 	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQUATION_1, 
 		SAMPLE_EQUATION_2, SAMPLE_EQUATION_3, SAMPLE_EQUATION_4, SAMPLE_EQUATION_5};
