@@ -37,7 +37,7 @@ import org.apache.lucene.analysis.tokenattributes.PositionIncrementAttribute;
  * Given the token <mi>Å</mi> (Latin capital letter a with ring above) outputs additionally
  * the token <mi>A</mi> since its decomposition consists of the LATIN CAPITAL LETTER A and 
  * the \\u30a Combining Ring Above
- * @author Arthur Ovieco (arthoviedo@gmail.com)
+ * @author Arthur Oviedo (arthoviedo@gmail.com)
  *
  */
 public final class UnicodeNormalizingFilter extends TokenFilter {

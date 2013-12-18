@@ -29,7 +29,7 @@ public final class MathMLAnalyzer extends Analyzer {
   @Override
   protected TokenStreamComponents createComponents(final String fieldName,
       final Reader reader) {
-	  Tokenizer source2 = new MultiplePatternTokenizer(reader, Utils.PATTERNS, Utils.GROUP);
+	  Tokenizer source2 = new MultiplePatternTokenizer(reader, Regex.PATTERNS, Regex.GROUP);
 	  //TokenStream stopFilter = new StopFilter(matchVersion, source2, stopWords);
 	  TokenStream unicodeNormalizer = new UnicodeNormalizingFilter(source2);
 	  return new TokenStreamComponents(source2, unicodeNormalizer);

@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 import org.apache.commons.lang3.StringEscapeUtils;
 
 
-public class Utils {
+public class Regex {
 //	public final static Pattern PATTERN = Pattern.compile("<(mi|mo|mn|msup|msub)>(?=(.*?)</\\1>)");
 	public final static Pattern PATTERN1 = Pattern.compile("<mi>.*?</mi>");
 	public final static Pattern PATTERN2 = Pattern.compile("<mo>.*?</mo>");

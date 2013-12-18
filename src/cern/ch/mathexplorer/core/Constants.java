@@ -2,7 +2,9 @@ package cern.ch.mathexplorer.core;
 
 import java.io.Serializable;
 
-public interface Constants extends Serializable {
+import cern.ch.mathexplorer.utils.OSUtils;
+
+public final class Constants implements Serializable {
 
 	public final static String SAMPLE_EQUATION_1 = "<math><mrow><mrow><mrow><mi>d</mi><mo>⁢</mo><msup><mi>s</mi><mn>2</mn></msup></mrow>\n"
 			+ "<mo>=</mo><mrow><mrow><msup><mi>e</mi><mrow><mn>2</mn><mo>⁢</mo><mover accent=\"true\"><mi>A</mi><mo>~</mo>\n"
@@ -27,15 +29,12 @@ public interface Constants extends Serializable {
 			+ "<mo>.</mo></mrow></math>";
 	public final static String SAMPLE_EQUATION_6 = "<math><mi>¼</mi></math>";
 	
-	public final static String SAMPLE_EQUATION_7 = "<math><mi>∄</mi><mi>¼</mi><mi>ℕ</mi><mi>Ⅻ</mi><mi>ℏ</mi><mi>ħ</mi>"
-			+ "<mi>Å</mi><mi>Ĳ</mi><mo>¯</mo><mo>±</mo><mi>∞</mi><mi>ϵ</mi><mi>α</mi>"
-			+ "<mo>′</mo><mi>ℰ</mi><mo>∂</mo><mi>α</mi><mi>𝒦</mi><mi>𝒲</mi></math>";
+	public final static String SAMPLE_EQUATION_7 = "";
 	public final static String SAMPLE_EQUATION_8 = "<math><mi>Å</mi><mi>Ĳ</mi></math>";
 			
 	
 	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQUATION_1, 
 		SAMPLE_EQUATION_2, SAMPLE_EQUATION_3, SAMPLE_EQUATION_4, SAMPLE_EQUATION_5};
-	
 	
 	public final static String MATHML = "MathML";
 	public final static String LATEX = "LaTeX";
@@ -44,5 +43,23 @@ public interface Constants extends Serializable {
 	public static final String INDEX_FILE_EXTENSION = ".eq";
 	public static final String URL_PUBLIC_FOLDER = "https://googledrive.com/host/0B3PGNL_gfdnqWWZ6eUpBTWRqc1k/";
 
+	public static String getDataSetLocation() {
+		if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
+			return "C:/Users/Artie/Desktop/Estudio/master_thesis_epfl/math_6262";
+		}
+		if (OSUtils.getOS().equals(OSUtils.OS.LINUX)) {
+			return "/share/math/ok_6226";
+		}
+		return "";
+	}
 	
+	public static String getMathematicaLocation() {
+		if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
+			return "C:/Program Files/Wolfram Research/Mathematica/9.0/SystemFiles/Links/JLink";
+		}
+		if (OSUtils.getOS().equals(OSUtils.OS.LINUX)) {
+			return "/usr/local/Wolfram/Mathematica/9.0/SystemFiles/Links/JLink";
+		}
+		return "";
+	}
 }

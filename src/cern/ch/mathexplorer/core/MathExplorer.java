@@ -52,7 +52,7 @@ import uk.ac.ed.ph.snuggletex.SnuggleInput;
 import uk.ac.ed.ph.snuggletex.SnuggleSession;
 import cern.ch.mathexplorer.core.EquationResult.EquationBuilder;
 import cern.ch.mathexplorer.lucene.MathMLAnalyzer;
-import cern.ch.mathexplorer.lucene.Utils;
+import cern.ch.mathexplorer.lucene.Regex;
 import cern.ch.mathexplorer.lucene.VecTextField;
 
 public class MathExplorer {
@@ -62,8 +62,8 @@ public class MathExplorer {
 	private static final String EQUATION_ELEMENT = "EQUATION";
 	private static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
 
-	//private final static String equationsDataPath = "C:/Users/Artie/Desktop/Estudio/master_thesis_epfl/math_6262";
-	private final static String equationsDataPath = "/share/math/ok_6226";
+	//private final static String equationsDataPath = "";
+	private final static String equationsDataPath = Constants.getDataSetLocation();
 	private static final String LOCAL_PATH = "./WebContent/data";
 	
 	
@@ -219,7 +219,7 @@ public class MathExplorer {
 
 	Query createQuery(String queryString) {
 		aLogger.info("Query before: " + queryString);
-		queryString = Utils.cleanQuery(queryString);
+		queryString = Regex.cleanQuery(queryString);
 		aLogger.info("Query after: " + queryString);
 
 		// QueryParser parser = new QueryParser(matchVersion, DUMMY_FIELDNAME,
@@ -237,7 +237,7 @@ public class MathExplorer {
 		 */
 
 		BooleanQuery query = new BooleanQuery();
-		Collection<String> termsInQuery = Utils.extractElements(queryString);
+		Collection<String> termsInQuery = Regex.extractElements(queryString);
 
 		for (String s : termsInQuery) {
 			query.add(new BooleanClause(new TermQuery(new Term(
@@ -403,7 +403,7 @@ public class MathExplorer {
 			    (byte)0xe2, (byte)0x88, (byte)0xbc }, "UTF-8"));	}
 
 	void testRegex(String equation) {
-		System.out.println(Utils.extractElements(equation));
+		System.out.println(Regex.extractElements(equation));
 	}
 
 	void testAnalyzer(String equation) throws Exception {

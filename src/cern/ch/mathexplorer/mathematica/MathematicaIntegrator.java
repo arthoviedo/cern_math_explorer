@@ -1,14 +1,27 @@
 package cern.ch.mathexplorer.mathematica;
 
+import org.apache.commons.lang3.ArrayUtils;
+
+import cern.ch.mathexplorer.core.Constants;
+import cern.ch.mathexplorer.utils.OSUtils;
+
 import com.wolfram.jlink.*;
 
 public class MathematicaIntegrator {
 	public static void main(String[] argv) {
 		KernelLink ml = null;
-		String jLinkDir = "/usr/local/Wolfram/Mathematica/9.0/SystemFiles/Links/JLink";
+		String command = "";
+		if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
+			command = "C:/Program Files/Wolfram Research/Mathematica/9.0/MathKernel.exe";
+		}
+		if (OSUtils.getOS().equals(OSUtils.OS.LINUX)) {
+			command = "math";
+		}
+		String [] extraArgs = {"-linkmode", "launch", "-linkname", command + " -mathlink"};
+		String jLinkDir = Constants.getMathematicaLocation();
 				    System.setProperty("com.wolfram.jlink.libdir", jLinkDir);
 		try {
-			ml = MathLinkFactory.createKernelLink(argv);
+			ml = MathLinkFactory.createKernelLink(ArrayUtils.addAll(argv, extraArgs));
 		} catch (MathLinkException e) {
 			System.out.println("Fatal error opening link: " + e.getMessage());
 			return;
