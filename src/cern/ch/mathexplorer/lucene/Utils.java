@@ -17,6 +17,11 @@ public class Utils {
 	public final static Pattern PATTERN3 = Pattern.compile("<mn>.*?</mn>");
 	public final static Pattern PATTERN4 = Pattern.compile("<msub>.*?</msub>");
 	public final static Pattern PATTERN5 = Pattern.compile("<msup>.*?</msup>");
+	public final static Pattern PATTERN6 = Pattern.compile("<mfrac>.*?</mfrac>");
+	public final static Pattern PATTERN7 = Pattern.compile("<mroot>.*?</mroot>");
+	public final static Pattern PATTERN8 = Pattern.compile("<msqrt>.*?</msqrt>");
+	public final static Pattern PATTERN9 = Pattern.compile("<msubsup>.*?</msubsup>");
+	
 	public final static List<Pattern> PATTERNS = initPatternsList();
 	public final static int GROUP = 0;
 	private static List<Pattern> initPatternsList() {
@@ -26,6 +31,11 @@ public class Utils {
 		result.add(PATTERN3);
 		result.add(PATTERN4);
 		result.add(PATTERN5);
+		result.add(PATTERN6);
+		result.add(PATTERN7);
+		result.add(PATTERN8);
+		result.add(PATTERN9);
+		
 		return result;
 	}
 	

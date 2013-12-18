@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
-import java.io.UnsupportedEncodingException;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.ArrayList;
@@ -15,7 +14,6 @@ import java.util.HashSet;
 import java.util.List;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
-
 import java.util.Set;
 
 import javax.servlet.ServletContext;
@@ -33,7 +31,6 @@ import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.Fields;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.index.MultiFields;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.index.Terms;
@@ -47,9 +44,6 @@ import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.store.IOContext;
-import org.apache.lucene.store.RAMDirectory;
-import org.apache.lucene.store.SimpleFSDirectory;
 import org.apache.lucene.util.BytesRef;
 import org.apache.lucene.util.Version;
 
@@ -68,8 +62,8 @@ public class MathExplorer {
 	private static final String EQUATION_ELEMENT = "EQUATION";
 	private static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
 
-	private final static String equationsDataPath = "C:/Users/Artie/Desktop/Estudio/master_thesis_epfl/math_6262";
-	//private final static String equationsDataPath = "/share/math/ok_6226";
+	//private final static String equationsDataPath = "C:/Users/Artie/Desktop/Estudio/master_thesis_epfl/math_6262";
+	private final static String equationsDataPath = "/share/math/ok_6226";
 	private static final String LOCAL_PATH = "./WebContent/data";
 	
 	
@@ -345,9 +339,9 @@ public class MathExplorer {
 
 	public static void main(String[] args) throws Exception {
 		
-		MathExplorer m = new MathExplorer(null, false);
+		MathExplorer m = new MathExplorer(null, true);
 		//testUnicodeNormalization();
-		 m.testAnalyzer(Constants.SAMPLE_EQUATION_7);
+		 //m.testAnalyzer(Constants.SAMPLE_EQUATION_7);
 		
 		//List<EquationResult> a = m.search(Constants.SAMPLE_EQUATION_2.replaceAll(
 		//		"\n", ""));
@@ -358,7 +352,7 @@ public class MathExplorer {
 		// System.out.println("-------------");
 		// m.testRegex(Constants.SAMPLE_EQUATION_3);
 		// // System.out.println(search(SAMPLE_EQUATION_3));
-		// // exploreIndex();
+		m.exploreIndex();
 	}
 	
 	static String getTypeName(int type) {

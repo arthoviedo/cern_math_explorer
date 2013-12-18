@@ -27,7 +27,9 @@ public interface Constants extends Serializable {
 			+ "<mo>.</mo></mrow></math>";
 	public final static String SAMPLE_EQUATION_6 = "<math><mi>¼</mi></math>";
 	
-	public final static String SAMPLE_EQUATION_7 = "<math><mi>∄</mi><mi>¼</mi><mi>ℕ</mi><mi>Ⅻ</mi><mi>ℏ</mi><mi>ħ</mi><mi>Å</mi><mi>Ĳ</mi></math>";
+	public final static String SAMPLE_EQUATION_7 = "<math><mi>∄</mi><mi>¼</mi><mi>ℕ</mi><mi>Ⅻ</mi><mi>ℏ</mi><mi>ħ</mi>"
+			+ "<mi>Å</mi><mi>Ĳ</mi><mo>¯</mo><mo>±</mo><mi>∞</mi><mi>ϵ</mi><mi>α</mi>"
+			+ "<mo>′</mo><mi>ℰ</mi><mo>∂</mo><mi>α</mi><mi>𝒦</mi><mi>𝒲</mi></math>";
 	public final static String SAMPLE_EQUATION_8 = "<math><mi>Å</mi><mi>Ĳ</mi></math>";
 			
 	
