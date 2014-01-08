@@ -8,8 +8,18 @@ import cern.ch.mathexplorer.utils.OSUtils;
 import com.wolfram.jlink.*;
 
 public class MathematicaIntegrator {
-	public static void main(String[] argv) {
-		KernelLink ml = null;
+	
+	private static MathematicaIntegrator instance;
+	private KernelLink ml = null;
+	
+	public static MathematicaIntegrator getInstance() {
+		if (instance == null) {
+			instance = new MathematicaIntegrator();
+		}
+		return instance;
+	}
+	
+	private MathematicaIntegrator() {
 		String command = "";
 		if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
 			command = "C:/Program Files/Wolfram Research/Mathematica/9.0/MathKernel.exe";
@@ -19,13 +29,16 @@ public class MathematicaIntegrator {
 		}
 		String [] extraArgs = {"-linkmode", "launch", "-linkname", command + " -mathlink"};
 		String jLinkDir = Constants.getMathematicaLocation();
-				    System.setProperty("com.wolfram.jlink.libdir", jLinkDir);
+		System.setProperty("com.wolfram.jlink.libdir", jLinkDir);
 		try {
-			ml = MathLinkFactory.createKernelLink(ArrayUtils.addAll(argv, extraArgs));
+			ml = MathLinkFactory.createKernelLink(extraArgs);
 		} catch (MathLinkException e) {
 			System.out.println("Fatal error opening link: " + e.getMessage());
 			return;
 		}
+	}
+	
+	public void test () {
 		try {
 			// Get rid of the initial InputNamePacket the kernel will send
 			// when it is launched.
@@ -53,10 +66,31 @@ public class MathematicaIntegrator {
 			// step--no need to call waitForAnswer.
 			String strResult = ml.evaluateToOutputForm("4+4", 0);
 			System.out.println("4 + 4 = " + strResult);
+			
+			System.out.println("---");
+			String myExpression = "DisplayForm[ImportString[\"<math><mi>C</mi><mo>+</mo><mi>C</mi><mo>+</mo><mi>B</mi></math>"
+					+ "\", \"MathML\"]]";	
+			strResult = ml.evaluateToOutputForm(myExpression, 0);
+			System.out.println("Result: " + strResult);
+			
+			strResult = ml.evaluateToOutputForm("Simplify["+strResult+"]", 0);
+			System.out.println("Result: " + strResult);
+			
+			strResult = ml.evaluateToOutputForm(strResult, 0);
+			System.out.println("Result: " + strResult);
+			
+			
+			
 		} catch (MathLinkException e) {
 			System.out.println("MathLinkException occurred: " + e.getMessage());
 		} finally {
 			ml.close();
 		}
 	}
+	
+	public static void main(String[] args) {
+		MathematicaIntegrator mi = getInstance();
+		mi.test();
+	}
 }
+

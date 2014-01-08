@@ -5,7 +5,7 @@ import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.FieldType;
 
-public class VecTextField extends Field {
+public final class VecTextField extends Field {
 
 	/* Indexed, tokenized, not stored. */
 	public static final FieldType TYPE_NOT_STORED = new FieldType();

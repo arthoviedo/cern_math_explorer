@@ -18,16 +18,12 @@
 package cern.ch.mathexplorer.lucene;
 
 import java.io.IOException;
-import java.io.Reader;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
-import java.util.Arrays;
 
 import org.apache.lucene.analysis.TokenFilter;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
-import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
-import org.apache.lucene.analysis.tokenattributes.PositionIncrementAttribute;
 
 /**
  * Given a MathML token, creates tokens for each of the Non-Control/Non-Combining 

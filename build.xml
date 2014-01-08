@@ -3,53 +3,62 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="MathExplorerWeb">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="MathExplorerJSF">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../Desktop/Estudio/eclipse"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
-    <path id="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath">
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/annotations-api.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/catalina-ant.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/catalina-ha.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/catalina-tribes.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/catalina.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/ecj-3.7.2.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/el-api.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/jasper-el.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/jasper.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/jsp-api.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/servlet-api.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/tomcat-api.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/tomcat-coyote.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/tomcat-dbcp.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/tomcat-i18n-es.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/tomcat-i18n-fr.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/tomcat-i18n-ja.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/tomcat-jdbc.jar"/>
-        <pathelement location="../../Desktop/Estudio/apache-tomcat-7.0.27/lib/tomcat-util.jar"/>
-    </path>
     <path id="Web App Libraries.libraryclasspath">
+        <pathelement location="WebContent/WEB-INF/lib/JLink.jar"/>
         <pathelement location="WebContent/WEB-INF/lib/commons-lang3-3.1-sources.jar"/>
         <pathelement location="WebContent/WEB-INF/lib/commons-lang3-3.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javax.el-3.0.0.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javax.faces-2.2.4-sources.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javax.faces-2.2.4.jar"/>
         <pathelement location="WebContent/WEB-INF/lib/log4j-1.2.17.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/lucene-analyzers-common-4.5.1-SNAPSHOT.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/lucene-core-4.5.1-SNAPSHOT.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/lucene-queries-4.5.1-SNAPSHOT.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/lucene-analyzers-common-4.6-SNAPSHOT.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/lucene-core-4.6-SNAPSHOT.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/lucene-queries-4.6-SNAPSHOT.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/slf4j-api-1.5.11.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/snuggletex-core-1.2.2.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/solr-core-4.6.0.jar"/>
     </path>
     <path id="EAR Libraries.libraryclasspath"/>
-    <path id="MathExplorerWeb.classpath">
+    <path id="Apache Tomcat v7.0 [Apache Tomcat v7.0.47].libraryclasspath">
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/annotations-api.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/catalina-ant.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/catalina-ha.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/catalina-tribes.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/catalina.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/ecj-4.2.2.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/el-api.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/jasper-el.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/jasper.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/jsp-api.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/servlet-api.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/tomcat-api.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/tomcat-jdbc.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/tomcat-util.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/tomcat7-websocket.jar"/>
+        <pathelement location="../../Desktop/Estudio/tomcat/apache-tomcat-7.0.47/lib/websocket-api.jar"/>
+    </path>
+    <path id="MathExplorerJSF.classpath">
         <pathelement location="build/classes"/>
-        <path refid="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath"/>
         <path refid="Web App Libraries.libraryclasspath"/>
         <path refid="EAR Libraries.libraryclasspath"/>
+        <path refid="Apache Tomcat v7.0 [Apache Tomcat v7.0.47].libraryclasspath"/>
+        <pathelement location="WebContent/WEB-INF/lib/JLink.jar"/>
     </path>
     <target name="init">
         <mkdir dir="build/classes"/>
         <copy includeemptydirs="false" todir="build/classes">
             <fileset dir="src">
-                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -64,7 +73,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <classpath refid="MathExplorerWeb.classpath"/>
+            <classpath refid="MathExplorerJSF.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -81,9 +90,19 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="MathExplorer (2)">
+    <target name="MathematicaIntegrator">
+        <java classname="cern.ch.mathexplorer.mathematica.MathematicaIntegrator" failonerror="true" fork="yes">
+            <classpath refid="MathExplorerJSF.classpath"/>
+        </java>
+    </target>
+    <target name="MathExplorer (3)">
         <java classname="cern.ch.mathexplorer.core.MathExplorer" failonerror="true" fork="yes">
-            <classpath refid="MathExplorerWeb.classpath"/>
+            <classpath refid="MathExplorerJSF.classpath"/>
+        </java>
+    </target>
+    <target name="OSUtils">
+        <java classname="cern.ch.mathexplorer.utils.OSUtils" failonerror="true" fork="yes">
+            <classpath refid="MathExplorerJSF.classpath"/>
         </java>
     </target>
 </project>

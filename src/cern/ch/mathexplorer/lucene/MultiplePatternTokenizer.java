@@ -19,8 +19,6 @@ package cern.ch.mathexplorer.lucene;
 
 import java.io.IOException;
 import java.io.Reader;
-import java.text.Normalizer;
-import java.text.Normalizer.Form;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
