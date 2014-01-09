@@ -1,11 +1,11 @@
 package cern.ch.mathexplorer.mathematica;
 
-import org.apache.commons.lang3.ArrayUtils;
-
 import cern.ch.mathexplorer.core.Constants;
 import cern.ch.mathexplorer.utils.OSUtils;
 
-import com.wolfram.jlink.*;
+import com.wolfram.jlink.KernelLink;
+import com.wolfram.jlink.MathLinkException;
+import com.wolfram.jlink.MathLinkFactory;
 
 public class MathematicaIntegrator {
 	
@@ -67,14 +67,18 @@ public class MathematicaIntegrator {
 			String strResult = ml.evaluateToOutputForm("4+4", 0);
 			System.out.println("4 + 4 = " + strResult);
 			
+			String expression1 = "<math><mrow><mrow><mrow><msub><mi>D</mi><mi>i</mi></msub><mo>⁢</mo><msub><mi>D</mi><mi>j</mi></msub><mo>⁢</mo><msub><mi>F</mi><mrow><mi>l</mi><mo>⁢</mo><mi>k</mi></mrow></msub></mrow><mo>=</mo><mrow><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><mrow><mo>{</mo><mrow><msub><mi>D</mi><mi>i</mi></msub><mo>,</mo><msub><mi>D</mi><mi>j</mi></msub></mrow><mo>}</mo></mrow><mo>⁢</mo><msub><mi>F</mi><mrow><mi>k</mi><mo>⁢</mo><mi>l</mi></mrow></msub></mrow><mo>-</mo><mrow><mfrac><mi>i</mi><mn>2</mn></mfrac><mo>⁢</mo><mrow><mo>[</mo><mrow><msub><mi>F</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>,</mo><msub><mi>F</mi><mrow><mi>k</mi><mo>⁢</mo><mi>l</mi></mrow></msub></mrow><mo>]</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math>";
+			String expression2 = "<math><mi>C</mi><mo>+</mo><mi>C</mi><mo>+</mo><mi>B</mi></math>";
+			String expression3 = "<math><mrow><msub><mi>ℱ</mi><mn>01</mn></msub><mo>=</mo><mrow><mrow><msup><mi>e</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></msup><mo>⁢</mo><msub><mi>σ</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msup><mi>e</mi><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></msup><mo>⁢</mo><msub><mi>σ</mi><mn>3</mn></msub></mrow></mrow></mrow></math>";
+			
 			System.out.println("---");
-			String myExpression = "DisplayForm[ImportString[\"<math><mi>C</mi><mo>+</mo><mi>C</mi><mo>+</mo><mi>B</mi></math>"
+			String myExpression = "DisplayForm[ImportString[\""+ expression2
 					+ "\", \"MathML\"]]";	
 			strResult = ml.evaluateToOutputForm(myExpression, 0);
-			System.out.println("Result: " + strResult);
+			System.out.println("Imported expression: " + strResult);
 			
 			strResult = ml.evaluateToOutputForm("Simplify["+strResult+"]", 0);
-			System.out.println("Result: " + strResult);
+			System.out.println("Simplified result: " + strResult);
 			
 			strResult = ml.evaluateToOutputForm(strResult, 0);
 			System.out.println("Result: " + strResult);

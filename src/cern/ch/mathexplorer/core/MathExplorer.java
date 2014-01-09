@@ -339,9 +339,9 @@ public class MathExplorer {
 
 	public static void main(String[] args) throws Exception {
 		
-		MathExplorer m = new MathExplorer(null, true);
+		MathExplorer m = new MathExplorer(null, false);
 		//testUnicodeNormalization();
-		 //m.testAnalyzer(Constants.SAMPLE_EQUATION_7);
+		m.testAnalyzer(Constants.SAMPLE_EQUATION_9);
 		
 		//List<EquationResult> a = m.search(Constants.SAMPLE_EQUATION_2.replaceAll(
 		//		"\n", ""));
@@ -352,7 +352,7 @@ public class MathExplorer {
 		// System.out.println("-------------");
 		// m.testRegex(Constants.SAMPLE_EQUATION_3);
 		// // System.out.println(search(SAMPLE_EQUATION_3));
-		m.exploreIndex();
+		//m.exploreIndex();
 	}
 	
 	static String getTypeName(int type) {

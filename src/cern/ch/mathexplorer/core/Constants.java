@@ -27,11 +27,15 @@ public final class Constants implements Serializable {
 			+ "</mrow></mrow><mo>,</mo><mrow><mrow><mi>β</mi><mo>=</mo><mrow><mn>8</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>M</mi>\n"
 			+ "</mrow></mrow><mo>,</mo><mrow><mi>r</mi><mo>≥</mo><mrow><mn>2</mn><mo>⁢</mo><mi>M</mi></mrow></mrow></mrow></mrow>\n"
 			+ "<mo>.</mo></mrow></math>";
-	public final static String SAMPLE_EQUATION_6 = "<math><mi>¼</mi></math>";
+	public final static String SAMPLE_EQUATION_6 = "<math><msup><mi>¼</mi></msup></math>";
+	
 	
 	public final static String SAMPLE_EQUATION_7 = "";
-	public final static String SAMPLE_EQUATION_8 = "<math><mi>Å</mi><mi>Ĳ</mi></math>";
-			
+	public final static String SAMPLE_EQUATION_8 = "<math><msup><mi>Å</mi><mi>Ĳ</mi></msup></math>";
+	
+	public final static String SAMPLE_EQUATION_9 = "<math><mrow><msub><mi>ℱ</mi><mn>01</mn></msub><mo>=</mo><mrow><mrow><msup><mi>e</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></msup><mo>⁢</mo><msub><mi>σ</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msup><mi>e</mi><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></msup><mo>⁢</mo><msub><mi>σ</mi><mn>3</mn></msub></mrow></mrow></mrow></math>";
+	
+	
 	
 	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQUATION_1, 
 		SAMPLE_EQUATION_2, SAMPLE_EQUATION_3, SAMPLE_EQUATION_4, SAMPLE_EQUATION_5};

@@ -20,6 +20,8 @@ package cern.ch.mathexplorer.lucene;
 import java.io.IOException;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
+import java.util.Arrays;
+import java.util.HashSet;
 
 import org.apache.lucene.analysis.TokenFilter;
 import org.apache.lucene.analysis.TokenStream;
@@ -46,6 +48,8 @@ public final class UnicodeNormalizingFilter extends TokenFilter {
 	public UnicodeNormalizingFilter(TokenStream input) {
 		super(input);
 	}
+	
+	HashSet<String> singleCharTags = new HashSet<>(Arrays.asList("mi","mo","mn"));
 
 	/**
 	 * Used for the control flow:
@@ -61,6 +65,12 @@ public final class UnicodeNormalizingFilter extends TokenFilter {
 	String originalString;
 	String normalizedString;
 	String originalTerm = "";
+	
+	boolean consumeToken() throws IOException {
+		boolean ret = input.incrementToken();
+		originalTerm = termAtt.toString();
+		return ret;
+	}
 
 	@Override
 	public boolean incrementToken() throws IOException {
@@ -68,18 +78,18 @@ public final class UnicodeNormalizingFilter extends TokenFilter {
 		normalizedString = Normalizer.normalize(originalString, Form.NFKD);
 		if (firstTime) { //We only consume the token from the input
 			firstTime = false;
-			boolean ret = input.incrementToken();
-			originalTerm = termAtt.toString();
-			return ret;
+			return consumeToken();
 		}
 		if (originalString.equals(normalizedString)) { 	//Original string is already in normalized decomposed form
-														//There's no point in repeating work.
-			boolean ret = input.incrementToken();
-			originalTerm = termAtt.toString();
-			return ret;
+			return consumeToken();								//There's no point in repeating work.
 		} else {
-			String openingTag = "<" + normalizedString.substring(1, 3) + ">";
-			String closingTag = "</" + normalizedString.substring(1, 3) + ">";
+			int tagLength = normalizedString.indexOf(">") - normalizedString.indexOf("<"); 
+			String tag = normalizedString.substring(1, tagLength);
+			if (!singleCharTags.contains(tag)) {	//In case your token is a non atomic tag e.g. <msup>, you don't want to process further 
+				return consumeToken();
+			}
+			String openingTag = "<" + tag + ">";
+			String closingTag = "</" + tag + ">";
 			String content = normalizedString.replaceAll("<m.>", "");
 			content = content.replaceAll("</m.>", "");
 			if (charIndex < content.length()) {
