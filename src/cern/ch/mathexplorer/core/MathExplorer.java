@@ -371,7 +371,8 @@ public class MathExplorer {
 				System.out.print("\tCode:" + (int)c +"\t\tHex:"+ Integer.toHexString((int)c));
 				System.out.println("");
 			}
-			System.out.println("Normalized: " + b);
+			System.out.println("Norm"
+					+ "alized: " + b);
 			for (char c: b.toCharArray()){
 				System.out.print("Char: " + c);
 				System.out.print("\tType:" + Character.getType(c));
