@@ -1122,7 +1122,7 @@
 
 	<fieldType name="math_field_type" class="solr.TextField" positionIncrementGap="1"
 	indexed="true" stored="true" termVectors="true" termPositions="true" >
-		<analyzer class="cern.ch.mathexplorer.lucene.SolrMathMLAnalyzer"/>
+		<analyzer class="cern.ch.mathexplorer.lucene.analyzer.SolrMathMLAnalyzer"/>
 	</fieldType>
 	</types>
   

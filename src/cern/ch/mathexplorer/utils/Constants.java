@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public final class Constants implements Serializable {
 	
-	public static final String EQUATION_ELEMENT = "EQUATION";
+	public static final String MATH_FIELD = "math_field";
 	public static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
 
 
@@ -37,6 +37,7 @@ public final class Constants implements Serializable {
 	
 	public final static String SAMPLE_EQUATION_9 = "<math><mrow><msub><mi>ℱ</mi><mn>01</mn></msub><mo>=</mo><mrow><mrow><msup><mi>e</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></msup><mo>⁢</mo><msub><mi>σ</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msup><mi>e</mi><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></msup><mo>⁢</mo><msub><mi>σ</mi><mn>3</mn></msub></mrow></mrow></mrow></math>";
 	
+	public final static String SAMPLE_EQUATION_10 = "<math alttext=\"N=1\"><mrow><mi>N</mi><mo>=</mo><mn>1</mn></mrow></math>";
 	
 	
 	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQUATION_1, 

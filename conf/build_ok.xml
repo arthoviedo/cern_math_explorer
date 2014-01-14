@@ -40,6 +40,7 @@
 		<!-- Compile the java code -->
 		<javac srcdir="../src/cern/ch/mathexplorer/lucene/query" destdir="${build}">
 			<classpath>
+				<pathelement location="../WebContent/WEB-INF/lib/commons-lang3-3.1.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/lucene-core-4.6-SNAPSHOT.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/lucene-analyzers-common-4.6-SNAPSHOT.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/solr-core-4.6.0.jar"/>

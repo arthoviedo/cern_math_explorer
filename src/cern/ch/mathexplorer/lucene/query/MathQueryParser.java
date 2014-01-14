@@ -17,11 +17,11 @@ import org.apache.solr.search.SyntaxError;
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.Regex;
 
-public class TestQParser extends QParser {
+public class MathQueryParser extends QParser {
 	static Logger aLogger = java.util.logging.Logger
-			.getLogger(TestQParser.class.getName());
+			.getLogger(MathQueryParser.class.getName());
 	
-	public TestQParser(String qstr, SolrParams localParams, SolrParams params,
+	public MathQueryParser(String qstr, SolrParams localParams, SolrParams params,
 			SolrQueryRequest req) {
 		super(qstr, localParams, params, req);
 	}
@@ -51,7 +51,7 @@ public class TestQParser extends QParser {
 
 		for (String s : termsInQuery) {
 			query.add(new BooleanClause(new TermQuery(new Term(
-					Constants.EQUATION_ELEMENT, s)), Occur.SHOULD));
+					Constants.MATH_FIELD, s)), Occur.SHOULD));
 		}
 
 		/**

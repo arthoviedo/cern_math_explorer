@@ -10,29 +10,24 @@ import org.apache.commons.lang3.StringEscapeUtils;
 
 public class Regex {
 //	public final static Pattern PATTERN = Pattern.compile("<(mi|mo|mn|msup|msub)>(?=(.*?)</\\1>)");
-	public final static Pattern PATTERN1 = Pattern.compile("<mi>.*?</mi>");
-	public final static Pattern PATTERN2 = Pattern.compile("<mo>.*?</mo>");
-	public final static Pattern PATTERN3 = Pattern.compile("<mn>.*?</mn>");
-	public final static Pattern PATTERN4 = Pattern.compile("<msub>.*?</msub>");
-	public final static Pattern PATTERN5 = Pattern.compile("<msup>.*?</msup>");
-	public final static Pattern PATTERN6 = Pattern.compile("<mfrac>.*?</mfrac>");
-	public final static Pattern PATTERN7 = Pattern.compile("<mroot>.*?</mroot>");
-	public final static Pattern PATTERN8 = Pattern.compile("<msqrt>.*?</msqrt>");
-	public final static Pattern PATTERN9 = Pattern.compile("<msubsup>.*?</msubsup>");
 	
 	public final static List<Pattern> PATTERNS = initPatternsList();
 	public final static int GROUP = 0;
 	private static List<Pattern> initPatternsList() {
 		List<Pattern> result = new ArrayList<Pattern>();
-		result.add(PATTERN1);
-		result.add(PATTERN2);
-		result.add(PATTERN3);
-		result.add(PATTERN4);
-		result.add(PATTERN5);
-		result.add(PATTERN6);
-		result.add(PATTERN7);
-		result.add(PATTERN8);
-		result.add(PATTERN9);
+		result.add(Pattern.compile("<mi>.*?</mi>"));
+		result.add(Pattern.compile("<mo>.*?</mo>"));
+		result.add(Pattern.compile("<mn>.*?</mn>"));
+		result.add(Pattern.compile("<msub>.*?</msub>"));
+		result.add(Pattern.compile("<msup>.*?</msup>"));
+		result.add(Pattern.compile("<mfrac>.*?</mfrac>"));
+		result.add(Pattern.compile("<mroot>.*?</mroot>"));
+		result.add(Pattern.compile("<msqrt>.*?</msqrt>"));
+		result.add(Pattern.compile("<msubsup>.*?</msubsup>"));
+		// "bigrams"
+		result.add(Pattern.compile("<mi>.*?</mi><mo>.*?</mo>"));
+		// "trigrams"
+		result.add(Pattern.compile("<mi>.*?</mi><mo>.*?</mo><mi>.*?</mi>"));
 		
 		return result;
 	}

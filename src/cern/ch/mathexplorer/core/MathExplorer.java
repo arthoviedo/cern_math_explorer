@@ -47,9 +47,9 @@ import uk.ac.ed.ph.snuggletex.SnuggleEngine;
 import uk.ac.ed.ph.snuggletex.SnuggleInput;
 import uk.ac.ed.ph.snuggletex.SnuggleSession;
 import cern.ch.mathexplorer.core.EquationResult.EquationBuilder;
-import cern.ch.mathexplorer.lucene.analyzer.MathMLAnalyzer;
+import cern.ch.mathexplorer.lucene.analyzer.SolrMathMLAnalyzer;
 import cern.ch.mathexplorer.lucene.analyzer.VecTextField;
-import cern.ch.mathexplorer.lucene.query.TestQParser;
+import cern.ch.mathexplorer.lucene.query.MathQueryParser;
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.Regex;
 
@@ -71,7 +71,7 @@ public class MathExplorer {
 	static Version matchVersion = Version.LUCENE_46;
 	private Directory indexDirectory;
 	private IndexWriterConfig indexConfig;
-	private Analyzer analyzer = new MathMLAnalyzer(matchVersion);
+	private Analyzer analyzer = new SolrMathMLAnalyzer(matchVersion);
 	private DirectoryReader ireader;
 	private IndexSearcher isearcher;
 	private static MathExplorer singleton;
@@ -162,7 +162,7 @@ public class MathExplorer {
 			}
 			equationsInFile.add(text);
 			Document doc = new Document();
-			Field equationField = new VecTextField(Constants.EQUATION_ELEMENT,
+			Field equationField = new VecTextField(Constants.MATH_FIELD,
 					text, Store.YES);
 			doc.add(equationField);
 			doc.add(new Field(FILENAME, currentFile.getName(),
@@ -219,7 +219,7 @@ public class MathExplorer {
 		aLogger.info("Size of index: " + isearcher.getIndexReader().numDocs());
 		try {
 			aLogger.info("Searching");
-			Query query = new TestQParser(mathmlQuery, null, null, null).getQuery();
+			Query query = new MathQueryParser(mathmlQuery, null, null, null).getQuery();
 			// Query query =  createQuery(mathmlQuery);
 			aLogger.info("Created query");
 			ScoreDoc[] hits = isearcher.search(query, null, RESULTS_NUMBER).scoreDocs;
@@ -237,7 +237,7 @@ public class MathExplorer {
 					.setLineNumber(
 							Integer.parseInt(hitDoc.getValues(LINE)[0]))
 					.setMathmlExpression(
-							hitDoc.getValues(Constants.EQUATION_ELEMENT)[0]);
+							hitDoc.getValues(Constants.MATH_FIELD)[0]);
 				}
 				else {//The indexed elements are individual equations {
 					eqBuilder
@@ -257,10 +257,10 @@ public class MathExplorer {
 
 	public static void main(String[] args) throws Exception {
 		
-		MathExplorer m = new MathExplorer(null, true);
-		m.testAnalyzer(Constants.SAMPLE_EQUATION_2.replace("\n", ""));
+		MathExplorer m = new MathExplorer(null, false);
+		m.testAnalyzer(Constants.SAMPLE_EQUATION_10.replace("\n", ""));
 		
-		m.search(Constants.SAMPLE_EQUATION_2, true, INDEX_WHOLE_ARTICLE);
+		//m.search(Constants.SAMPLE_EQUATION_2, true, INDEX_WHOLE_ARTICLE);
 		//testUnicodeNormalization();
 		
 		//List<EquationResult> a = m.search(Constants.SAMPLE_EQUATION_2.replaceAll(
@@ -272,7 +272,7 @@ public class MathExplorer {
 		// System.out.println("-------------");
 		// m.testRegex(Constants.SAMPLE_EQUATION_3);
 		// // System.out.println(search(SAMPLE_EQUATION_3));
-		m.exploreIndex();
+		//m.exploreIndex();
 	}
 	
 	static String getTypeName(int type) {
@@ -328,7 +328,7 @@ public class MathExplorer {
 	}
 
 	void testAnalyzer(String equation) throws Exception {
-		TokenStream ts = analyzer.tokenStream(Constants.EQUATION_ELEMENT,
+		TokenStream ts = analyzer.tokenStream(Constants.MATH_FIELD,
 				new StringReader(equation));
 		OffsetAttribute offsetAttribute = ts
 				.addAttribute(OffsetAttribute.class);
@@ -353,11 +353,11 @@ public class MathExplorer {
 		IndexSearcher isearcher = new IndexSearcher(ireader);
 
 		Fields fields = MultiFields.getFields(ireader);
-		Terms terms = fields.terms(Constants.EQUATION_ELEMENT);
+		Terms terms = fields.terms(Constants.MATH_FIELD);
 		TermsEnum termsEnum = terms.iterator(null);
 		BytesRef text;
 		while ((text = termsEnum.next()) != null) {
-			Term current = new Term(Constants.EQUATION_ELEMENT, text);
+			Term current = new Term(Constants.MATH_FIELD, text);
 			System.out.println(text.utf8ToString() + ":"
 					+ ireader.docFreq(current));
 		}
