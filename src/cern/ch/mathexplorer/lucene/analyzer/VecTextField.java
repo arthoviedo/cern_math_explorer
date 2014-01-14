@@ -1,4 +1,4 @@
-package cern.ch.mathexplorer.lucene;
+package cern.ch.mathexplorer.lucene.analyzer;
 import java.io.Reader;
 
 import org.apache.lucene.analysis.TokenStream;

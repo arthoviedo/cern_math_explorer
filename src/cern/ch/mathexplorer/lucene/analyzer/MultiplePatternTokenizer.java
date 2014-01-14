@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package cern.ch.mathexplorer.lucene;
+package cern.ch.mathexplorer.lucene.analyzer;
 
 import java.io.IOException;
 import java.io.Reader;

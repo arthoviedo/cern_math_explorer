@@ -2,6 +2,8 @@ package cern.ch.mathexplorer.core;
 
 import java.io.Serializable;
 
+import cern.ch.mathexplorer.utils.Constants;
+
 public class EquationResult implements Serializable {
 	
 	

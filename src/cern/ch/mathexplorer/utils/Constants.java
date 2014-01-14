@@ -1,10 +1,12 @@
-package cern.ch.mathexplorer.core;
+package cern.ch.mathexplorer.utils;
 
 import java.io.Serializable;
 
-import cern.ch.mathexplorer.utils.OSUtils;
-
 public final class Constants implements Serializable {
+	
+	public static final String EQUATION_ELEMENT = "EQUATION";
+	public static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
+
 
 	public final static String SAMPLE_EQUATION_1 = "<math><mrow><mrow><mrow><mi>d</mi><mo>⁢</mo><msup><mi>s</mi><mn>2</mn></msup></mrow>\n"
 			+ "<mo>=</mo><mrow><mrow><msup><mi>e</mi><mrow><mn>2</mn><mo>⁢</mo><mover accent=\"true\"><mi>A</mi><mo>~</mo>\n"

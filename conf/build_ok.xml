@@ -1,31 +1,56 @@
-<project name="mathmlexplorer" basedir="." default="solranalyzerjar">
+<project name="mathmlexplorer" basedir="." default="buildJars">
 	<property name="build" value="../build"/>
 	<property file="build.properties"/>
-	
+
 	<target name="clean">
 		<delete dir="${build}"/>
 	</target>
 
 	<target name="init" depends="clean">
 		<mkdir dir="${build}"/>
-	</target>	
-	
-	<target name="compile" depends="init">
+	</target>
+
+	<target name="compileUtils" depends="init">
 		<!-- Compile the java code -->
-		<javac srcdir="../src/cern/ch/mathexplorer/lucene" destdir="${build}">
+		<javac srcdir="../src/cern/ch/mathexplorer/utils" destdir="${build}">
+			<classpath>
+				<pathelement location="../WebContent/WEB-INF/lib/commons-lang3-3.1.jar"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="compileAnalyzerLibraries" depends="init, compileUtils">
+		<!-- Compile the java code -->
+		<javac srcdir="../src/cern/ch/mathexplorer/lucene/analyzer" destdir="${build}">
 			<classpath>
 				<pathelement location="../WebContent/WEB-INF/lib/commons-lang3-3.1.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/lucene-core-4.6-SNAPSHOT.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/lucene-analyzers-common-4.6-SNAPSHOT.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/solr-core-4.6.0.jar"/>
-				
+
 			</classpath>
 		</javac>
-	</target>	
-	
-	<target name="solranalyzerjar" depends="compile">
+	</target>
+	<target name="solrAnalyzerJar" depends="compileAnalyzerLibraries">
 		<!-- Build the jar file -->
 		<jar basedir="${build}" destfile="${build}/solranalyzer.jar"/>
 	</target>
-	
+
+	<target name="compileQueryLibraries" depends="init, compileUtils">
+		<!-- Compile the java code -->
+		<javac srcdir="../src/cern/ch/mathexplorer/lucene/query" destdir="${build}">
+			<classpath>
+				<pathelement location="../WebContent/WEB-INF/lib/lucene-core-4.6-SNAPSHOT.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/lucene-analyzers-common-4.6-SNAPSHOT.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/solr-core-4.6.0.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/solr-solrj-4.6.0.jar"/>
+			</classpath>
+		</javac>
+	</target>
+	<target name="solrQueryJar" depends="compileQueryLibraries">
+		<!-- Build the jar file -->
+		<jar basedir="${build}" destfile="${build}/solrquery.jar"/>
+	</target>
+
+	<target name="buildJars" depends="solrAnalyzerJar, solrQueryJar"/>
 </project>

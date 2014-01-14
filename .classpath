@@ -15,6 +15,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/lucene-core-4.6-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/lucene-queries-4.6-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/snuggletex-core-1.2.2.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/solr-core-4.6.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/solr-core-4.6.0.jar" sourcepath="C:/Users/Artie/Desktop/Estudio/solr_lucene/solr-4.6.0"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/solr-solrj-4.6.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

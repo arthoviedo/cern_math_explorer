@@ -1,6 +1,6 @@
 package cern.ch.mathexplorer.mathematica;
 
-import cern.ch.mathexplorer.core.Constants;
+import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.OSUtils;
 
 import com.wolfram.jlink.KernelLink;

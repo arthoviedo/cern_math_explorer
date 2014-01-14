@@ -15,9 +15,9 @@ import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.servlet.ServletContext;
 
-import cern.ch.mathexplorer.core.Constants;
 import cern.ch.mathexplorer.core.EquationResult;
 import cern.ch.mathexplorer.core.MathExplorer;
+import cern.ch.mathexplorer.utils.Constants;
 
 @ManagedBean(name="mathBean")
 @SessionScoped
@@ -64,7 +64,7 @@ public class MathBean implements Serializable {
 			if (inputFormat.equals(Constants.LATEX)) {
 				finalQueryText = mathExplorer.texToMathML(finalQueryText);
 			}
-			queryResult = mathExplorer.searchArticles(finalQueryText);
+			queryResult = mathExplorer.search(finalQueryText);
 			if (queryResult.isEmpty()) {
 				message = "Your query did not produced any result";
 			} else {

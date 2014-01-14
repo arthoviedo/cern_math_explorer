@@ -1,4 +1,4 @@
-package cern.ch.mathexplorer.lucene;
+package cern.ch.mathexplorer.utils;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

@@ -1,4 +1,4 @@
-package cern.ch.mathexplorer.lucene;
+package cern.ch.mathexplorer.lucene.analyzer;
 import java.io.Reader;
 import java.util.Arrays;
 
@@ -8,9 +8,10 @@ import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.analysis.util.CharArraySet;
 import org.apache.lucene.util.Version;
-import org.apache.solr.analysis.SolrAnalyzer;
 
-public final class SolrMathMLAnalyzer extends SolrAnalyzer {
+import cern.ch.mathexplorer.utils.Regex;
+
+public final class MathMLAnalyzer extends Analyzer {
   
   private final Version matchVersion;
   private final CharArraySet stopWords; 
@@ -19,7 +20,7 @@ public final class SolrMathMLAnalyzer extends SolrAnalyzer {
    * Creates a new {@link WhitespaceAnalyzer}
    * @param matchVersion Lucene version to match See {@link <a href="#version">above</a>}
    */
-  public SolrMathMLAnalyzer(Version matchVersion) {
+  public MathMLAnalyzer(Version matchVersion) {
     this.matchVersion = matchVersion;
     String [] stopWordsArray = {"math", "mrow", "mfenced", "mstyle", "mpadded", "mtd" , "mtable", "mtr"};
     stopWords = new CharArraySet(matchVersion, Arrays.asList(stopWordsArray), true);
