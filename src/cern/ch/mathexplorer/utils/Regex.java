@@ -29,7 +29,6 @@ public class Regex {
 		result.add(Pattern.compile("<mi>.*?</mi><mo>.*?</mo>"));
 		// "trigrams"
 		result.add(Pattern.compile("<mi>.*?</mi><mo>.*?</mo><mi>.*?</mi>"));
-		
 		return result;
 	}
 	

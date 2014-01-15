@@ -1125,6 +1125,8 @@
 		<analyzer class="cern.ch.mathexplorer.lucene.analyzer.SolrMathMLAnalyzer"/>
 	</fieldType>
 	</types>
+	<field name="filename" type="string" indexed="false" stored="true"/>
+	
   
   <!-- Similarity is the scoring routine for each document vs. a query.
        A custom Similarity or SimilarityFactory may be specified here, but 
