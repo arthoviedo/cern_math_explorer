@@ -24,6 +24,7 @@ public class Regex {
 		result.add(Pattern.compile("<mroot>.*?</mroot>"));
 		result.add(Pattern.compile("<msqrt>.*?</msqrt>"));
 		result.add(Pattern.compile("<msubsup>.*?</msubsup>"));
+		result.add(Pattern.compile("<mrow>.*?</mrow>"));
 		// "bigrams"
 		result.add(Pattern.compile("<mi>.*?</mi><mo>.*?</mo>"));
 		// "trigrams"

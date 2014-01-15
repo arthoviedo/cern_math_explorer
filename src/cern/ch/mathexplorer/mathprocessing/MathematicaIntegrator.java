@@ -1,4 +1,4 @@
-package cern.ch.mathexplorer.mathematica;
+package cern.ch.mathexplorer.mathprocessing;
 
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.OSUtils;
