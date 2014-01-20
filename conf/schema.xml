@@ -181,7 +181,9 @@
 
    <field name="payloads" type="payloads" indexed="true" stored="true"/>
    
-   <field name="math_field" type="math_field_type"/>
+   <field name="math_ml_field" type="math_ml_field_type"/>
+   <field name="math_structural_feature_field" type="math_structural_feature_field_type"/>
+   
 
 
    <!--
@@ -1123,11 +1125,18 @@
       </analyzer>
     </fieldType>
 
-	<fieldType name="math_field_type" class="solr.TextField" positionIncrementGap="1"
+	<fieldType name="math_ml_field_type" class="solr.TextField" positionIncrementGap="1"
 	indexed="true" stored="true" termVectors="true" termPositions="true" >
 		<analyzer class="cern.ch.mathexplorer.lucene.analyzer.SolrMathMLAnalyzer"/>
 	</fieldType>
+	
+	<fieldType name="math_structural_feature_field_type" class="solr.TextField" positionIncrementGap="1"
+	indexed="true" stored="true" termVectors="true" termPositions="true" >
+		<analyzer class="cern.ch.mathexplorer.lucene.analyzer.SolrStructuralFeaturesAnalyzer"/>
+	</fieldType>
+	
 	</types>
+	
 	
   
   <!-- Similarity is the scoring routine for each document vs. a query.

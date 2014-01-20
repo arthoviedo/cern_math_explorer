@@ -51,7 +51,7 @@ public class MathQueryParser extends QParser {
 
 		for (String s : termsInQuery) {
 			query.add(new BooleanClause(new TermQuery(new Term(
-					Constants.MATH_FIELD, s)), Occur.SHOULD));
+					Constants.MATH_ML_FIELD, s)), Occur.SHOULD));
 		}
 
 		/**

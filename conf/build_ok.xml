@@ -19,7 +19,7 @@
 		</javac>
 	</target>
 
-	<target name="compileAnalyzerLibraries" depends="init, compileUtils">
+	<target name="compileAnalyzerLibraries" depends="init, compileUtils, compileMathematicaLibraries">
 		<!-- Compile the java code -->
 		<javac srcdir="../src/cern/ch/mathexplorer/lucene/analyzer" destdir="${build}">
 			<classpath>
@@ -27,10 +27,21 @@
 				<pathelement location="../WebContent/WEB-INF/lib/lucene-core-4.6-SNAPSHOT.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/lucene-analyzers-common-4.6-SNAPSHOT.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/solr-core-4.6.0.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/JLink.jar"/>
 
 			</classpath>
 		</javac>
 	</target>
+	
+	<target name="compileMathematicaLibraries" depends="init, compileUtils">
+			<!-- Compile the java code -->
+			<javac srcdir="../src/cern/ch/mathexplorer/mathematica" destdir="${build}">
+				<classpath>
+					<pathelement location="../WebContent/WEB-INF/lib/JLink.jar"/>
+				</classpath>
+			</javac>
+		</target>
+	
 	<target name="solrAnalyzerJar" depends="compileAnalyzerLibraries">
 		<!-- Build the jar file -->
 		<jar basedir="${build}" destfile="${build}/solranalyzer.jar"/>
