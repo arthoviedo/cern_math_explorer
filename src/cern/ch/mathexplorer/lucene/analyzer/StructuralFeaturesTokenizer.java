@@ -30,46 +30,18 @@ import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
 
 import com.wolfram.jlink.MathLinkException;
 
-import cern.ch.mathexplorer.mathematica.MathematicaIntegrator;
+import cern.ch.mathexplorer.mathematica.MathematicaEngine;
 import cern.ch.mathexplorer.mathematica.StructuralFeature;
 
 /**
- * This tokenizer uses regex pattern matching to construct distinct tokens for
- * the input stream. It takes two arguments: "pattern" and "group".
- * <p/>
- * <ul>
- * <li>"pattern" is the regular expression.</li>
- * <li>"group" says which group to extract into tokens.</li>
- * </ul>
- * <p>
- * group=-1 (the default) is equivalent to "split". In this case, the tokens
- * will be equivalent to the output from (without empty tokens):
- * {@link String#split(java.lang.String)}
- * </p>
- * <p>
- * Using group >= 0 selects the matching group as the token. For example, if you
- * have:<br/>
- * 
- * <pre>
- *  pattern = \'([^\']+)\'
- *  group = 0
- *  input = aaa 'bbb' 'ccc'
- * </pre>
- * 
- * the output will be two tokens: 'bbb' and 'ccc' (including the ' marks). With
- * the same input but using group=1, the output would be: bbb and ccc (no '
- * marks)
- * </p>
- * <p>
- * NOTE: This Tokenizer does not output tokens that are of zero length.
- * </p>
- * 
- * @see Pattern
+ * Extracts structural features from the given MathML expression/
+ * The tokenizer tries to interpret the expression in Mathematica
+ * and then looks for a serie of predefined patterns in the given expression
  */
 public final class StructuralFeaturesTokenizer extends Tokenizer {
 
 	private final CharTermAttribute featuresAtt = addAttribute(CharTermAttribute.class);
-	private MathematicaIntegrator mi = MathematicaIntegrator.getInstance();
+	private MathematicaEngine mi = MathematicaEngine.getInstance();
 	private final StringBuilder str = new StringBuilder();
 	private List<StructuralFeature> features;
 	int currentFeature = 0;
@@ -83,19 +55,19 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 	}
 
 	/**
-	 * creates a new PatternTokenizer returning tokens from group (-1 for split
+	 * Creates a new PatternTokenizer returning tokens from group (-1 for split
 	 * functionality)
 	 */
 	public StructuralFeaturesTokenizer(AttributeFactory factory, Reader input) {
 		super(factory, input);
 	}
 
-	
 	@Override
 	public boolean incrementToken() {
-		System.out.println("Incrementing token");
-		if(currentFeature >= features.size())
+		if(currentFeature >= features.size()) {
+			System.out.println("Returning false");
 			return false;
+		}
 		clearAttributes();
 		featuresAtt.setEmpty().append(features.get(currentFeature).getName());
 		currentFeature++;
@@ -106,8 +78,6 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 	@Override
 	public void end() throws IOException {
 		super.end();
-		// final int ofs = correctOffset(str.length());
-		// offsetAtt.setOffset(ofs, ofs);
 	}
 
 	@Override
@@ -115,6 +85,17 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 		super.reset();
 		fillBuffer(str, input);
 		currentFeature = 0;
+		try {
+			if (mi == null) {
+				mi = MathematicaEngine.getInstance();
+				
+			}
+			features = mi.getPatterns(str.toString());
+		} catch (MathLinkException e) {
+			e.printStackTrace();
+			throw new IOException("Problem while processing with Mathematica: "
+					+ e.getMessage());
+		}
 	}
 
 	// TODO: we should see if we can make this tokenizer work without reading
@@ -127,16 +108,5 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 		while ((len = input.read(buffer)) > 0) {
 			sb.append(buffer, 0, len);
 		}
-		try {
-			if (mi == null)
-				mi = MathematicaIntegrator.getInstance();
-			mi.importString(str.toString());
-			features = mi.getPatterns();
-		} catch (MathLinkException e) {
-			e.printStackTrace();
-			throw new IOException("Problem while processing with Mathematica: "
-					+ e.getMessage());
-		}
-
 	}
 }

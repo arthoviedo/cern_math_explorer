@@ -13,38 +13,36 @@ import com.wolfram.jlink.KernelLink;
 import com.wolfram.jlink.MathLinkException;
 import com.wolfram.jlink.MathLinkFactory;
 
-public class MathematicaIntegrator {
-
-	private static MathematicaIntegrator instance;
-	private KernelLink ml = null;
-	private LinkedList<StructuralFeature> features = new LinkedList<>();
+public class MathematicaEngine {
 
 	private final static String EMPTY_RESULT = "{}";
-
 	private final static String HOLD_COMPLETE = "HoldComplete";
 
-	public static MathematicaIntegrator getInstance() {
+	/**
+	 * Singleton instance
+	 */
+	private static MathematicaEngine instance;
+	private KernelLink ml = null;
+	private ArrayList<StructuralFeature> features = new ArrayList<>();
+
+	public static MathematicaEngine getInstance() {
 		if (instance == null) {
-			instance = new MathematicaIntegrator();
+			instance = new MathematicaEngine();
 		}
 		return instance;
 	}
 
-	private MathematicaIntegrator() {
+	private MathematicaEngine() {
 		String command = "";
-		if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
-			command = "C:/Program Files/Wolfram Research/Mathematica/9.0/MathKernel.exe";
-		}
-		if (OSUtils.getOS().equals(OSUtils.OS.LINUX)) {
-			command = "math";
-		}
+		command = Constants.getMathematicaCommand();
 		String[] extraArgs = { "-linkmode", "launch", "-linkname",
 				command + " -mathlink" };
-		String jLinkDir = Constants.getMathematicaLocation();
+		String jLinkDir = Constants.getMathematicaLinkLocation();
 		System.setProperty("com.wolfram.jlink.libdir", jLinkDir);
 		try {
 			ml = MathLinkFactory.createKernelLink(extraArgs);
 			loadFeatures();
+			ml.discardAnswer();
 		} catch (MathLinkException e) {
 			System.out.println("Fatal error opening link: " + e.getMessage());
 			return;
@@ -77,8 +75,10 @@ public class MathematicaIntegrator {
 	 * 
 	 * @throws MathLinkException
 	 */
-	public List<StructuralFeature> getPatterns() throws MathLinkException {
-
+	public List<StructuralFeature> getPatterns(String mathMLExpression) throws MathLinkException {
+		
+		importString(mathMLExpression);
+		
 		boolean couldInterpret = false;
 		if (tryInterpretOriginalString()) {
 			couldInterpret = true;
@@ -103,13 +103,24 @@ public class MathematicaIntegrator {
 				}
 			}
 		}
-		return new ArrayList(result);
+		return new ArrayList<StructuralFeature>(result);
 	}
 
-	public String importString(String mathMlExpression)
+	/**
+	 * Tries to import the given MathML expression.
+	 * The result is stored in the variable importedString
+	 * This variable would be used afterwards when tryin to be interpreted
+	 * as a math expression.
+	 * For more information about the command visit:
+	 * http://reference.wolfram.com/mathematica/ref/ImportString.html
+	 * @param mathMlExpression
+	 * @return
+	 * @throws MathLinkException
+	 */
+	private String importString(String mathMlExpression)
 			throws MathLinkException {
+		System.out.println("Importing string");
 		mathMlExpression = prepareMathMLString(mathMlExpression);
-		ml.discardAnswer();
 		String result = ml.evaluateToOutputForm(
 				"importedString = ImportString[\"" + mathMlExpression
 						+ "\", \"MathML\"]", 0);
@@ -118,11 +129,16 @@ public class MathematicaIntegrator {
 	}
 
 	/**
-	 * Tries to interpret the given mathml equation The subexpressions that
-	 * could be interpreted correctly are kept in the result by aplying the
-	 * filtering pattern HoldComplete[x_]
+	 * Tries to interpret the expression stored in the "importedString" variable.
+	 * If the original MathML string could not be interpreted, this function
+	 * tries to decompose the string by finding the RowBoxes that make up the expression
+	 * and tries to interpret the root element. 
+	 * For more information:
+	 * http://reference.wolfram.com/mathematica/ref/MakeExpression.html
+	 * The subexpressions that could be interpreted correctly are kept in the 
+	 * result by applying the filtering pattern HoldComplete[x_]
 	 */
-	public boolean tryInterpretByRowBox() throws MathLinkException {
+	private boolean tryInterpretByRowBox() throws MathLinkException {
 		System.out.println("Trying interpret by row boxes");
 		ml.evaluateToInputForm("boxForm = importedString", 0);
 		ml.evaluateToOutputForm("boxesPositions = Position[boxForm, RowBox]", 0);
@@ -137,9 +153,9 @@ public class MathematicaIntegrator {
 	}
 
 	/**
-	 * 
+	 * Tries to interpret the expression 
 	 */
-	public boolean tryInterpretOriginalString() throws MathLinkException {
+	private boolean tryInterpretOriginalString() throws MathLinkException {
 		System.out.println("Trying interpret original String");
 		String result = ml.evaluateToOutputForm(
 				"interpretedResults = MakeExpression[importedString]", 0);
@@ -147,18 +163,17 @@ public class MathematicaIntegrator {
 		return result.contains(HOLD_COMPLETE);
 	}
 
-	public String prepareMathMLString(String equation) {
+	private String prepareMathMLString(String equation) {
 		equation = equation.replace("<mo>=</mo>", "<mo>==</mo>");
 		equation = equation.replace("\"", "\\\"");
 		return equation;
 	}
 
 	public static void main(String[] args) throws MathLinkException {
-		MathematicaIntegrator mi = getInstance();
+		MathematicaEngine mi = getInstance();
 		String expression = Constants.SAMPLE_EQUATION_1;
 		System.out.println(expression);
-		mi.importString(expression);
-		List<StructuralFeature> features = mi.getPatterns();
+		List<StructuralFeature> features = mi.getPatterns(expression);
 		for (StructuralFeature f : features) {
 			System.out.println(f.getName());
 		}

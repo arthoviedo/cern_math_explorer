@@ -1,6 +1,8 @@
 package cern.ch.mathexplorer.utils;
 
-
+/**
+ * Auxiliary class for getting information about the running system
+ */
 public class OSUtils {
 	public enum OS{
 		WINDOWS, LINUX, MAC, OTHER;

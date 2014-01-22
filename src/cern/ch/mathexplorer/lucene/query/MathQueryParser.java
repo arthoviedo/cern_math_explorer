@@ -1,6 +1,8 @@
 package cern.ch.mathexplorer.lucene.query;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.apache.lucene.index.Term;
@@ -14,6 +16,8 @@ import org.apache.solr.request.SolrQueryRequest;
 import org.apache.solr.search.QParser;
 import org.apache.solr.search.SyntaxError;
 
+import cern.ch.mathexplorer.mathematica.MathematicaEngine;
+import cern.ch.mathexplorer.mathematica.StructuralFeature;
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.Regex;
 
@@ -47,11 +51,23 @@ public class MathQueryParser extends QParser {
 		 */
 
 		BooleanQuery query = new BooleanQuery();
-		Collection<String> termsInQuery = Regex.extractElements(qstr);
+		Collection<String> tokenInQuery = Regex.extractElements(qstr);
 
-		for (String s : termsInQuery) {
+		for (String mathMLToken : tokenInQuery) {
 			query.add(new BooleanClause(new TermQuery(new Term(
-					Constants.MATH_ML_FIELD, s)), Occur.SHOULD));
+					Constants.MATH_NOTATIONAL_FIELD, mathMLToken)), Occur.SHOULD));
+		}
+		
+		if (Constants.USE_MATHEMATICA) {
+			List<StructuralFeature> patterns = new ArrayList<>();
+			try {
+				patterns = MathematicaEngine.getInstance().getPatterns(qstr);
+				for (StructuralFeature pattern : patterns ) {
+					query.add(new BooleanClause(new TermQuery(new Term(
+							Constants.MATH_STRUCTURAL_FIELD, pattern.getName())), Occur.SHOULD));
+				}
+			} catch (Exception e) {
+			}
 		}
 
 		/**

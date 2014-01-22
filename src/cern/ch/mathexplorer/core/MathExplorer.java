@@ -47,8 +47,8 @@ import uk.ac.ed.ph.snuggletex.SnuggleEngine;
 import uk.ac.ed.ph.snuggletex.SnuggleInput;
 import uk.ac.ed.ph.snuggletex.SnuggleSession;
 import cern.ch.mathexplorer.core.EquationResult.EquationBuilder;
-import cern.ch.mathexplorer.lucene.analyzer.SolrMathMLAnalyzer;
-import cern.ch.mathexplorer.lucene.analyzer.SolrStructuralFeaturesAnalyzer;
+import cern.ch.mathexplorer.lucene.analyzer.SolrMathMLNotationalAnalyzer;
+import cern.ch.mathexplorer.lucene.analyzer.SolrStructuralAnalyzer;
 import cern.ch.mathexplorer.lucene.analyzer.VecTextField;
 import cern.ch.mathexplorer.lucene.query.MathQueryParser;
 import cern.ch.mathexplorer.utils.Constants;
@@ -73,8 +73,8 @@ public class MathExplorer {
 	private Directory indexDirectory;
 	private IndexWriterConfig indexConfig;
 	
-	private Analyzer analyzer = new SolrMathMLAnalyzer(matchVersion);
-	private Analyzer analyzer2 = new SolrStructuralFeaturesAnalyzer(matchVersion);
+	private Analyzer analyzer = new SolrMathMLNotationalAnalyzer(matchVersion);
+	private Analyzer analyzer2 = new SolrStructuralAnalyzer(matchVersion);
 	
 	private DirectoryReader ireader;
 	private IndexSearcher isearcher;
@@ -166,7 +166,7 @@ public class MathExplorer {
 			}
 			equationsInFile.add(text);
 			Document doc = new Document();
-			Field equationField = new VecTextField(Constants.MATH_ML_FIELD,
+			Field equationField = new VecTextField(Constants.MATH_NOTATIONAL_FIELD,
 					text, Store.YES);
 			doc.add(equationField);
 			doc.add(new Field(FILENAME, currentFile.getName(),
@@ -241,7 +241,7 @@ public class MathExplorer {
 					.setLineNumber(
 							Integer.parseInt(hitDoc.getValues(LINE)[0]))
 					.setMathmlExpression(
-							hitDoc.getValues(Constants.MATH_ML_FIELD)[0]);
+							hitDoc.getValues(Constants.MATH_NOTATIONAL_FIELD)[0]);
 				}
 				else {//The indexed elements are individual equations {
 					eqBuilder
@@ -332,9 +332,9 @@ public class MathExplorer {
 	}
 
 	void testAnalyzer(String equation) throws Exception {
-		TokenStream ts1 = analyzer.tokenStream(Constants.MATH_ML_FIELD,
+		TokenStream ts1 = analyzer.tokenStream(Constants.MATH_NOTATIONAL_FIELD,
 				new StringReader(equation));
-		TokenStream ts2 = analyzer2.tokenStream(Constants.MATH_FEATURES_FIELD,
+		TokenStream ts2 = analyzer2.tokenStream(Constants.MATH_STRUCTURAL_FIELD,
 				new StringReader(equation));
 		try {
 			ts1.reset();
@@ -360,11 +360,11 @@ public class MathExplorer {
 		IndexSearcher isearcher = new IndexSearcher(ireader);
 
 		Fields fields = MultiFields.getFields(ireader);
-		Terms terms = fields.terms(Constants.MATH_ML_FIELD);
+		Terms terms = fields.terms(Constants.MATH_NOTATIONAL_FIELD);
 		TermsEnum termsEnum = terms.iterator(null);
 		BytesRef text;
 		while ((text = termsEnum.next()) != null) {
-			Term current = new Term(Constants.MATH_ML_FIELD, text);
+			Term current = new Term(Constants.MATH_NOTATIONAL_FIELD, text);
 			System.out.println(text.utf8ToString() + ":"
 					+ ireader.docFreq(current));
 		}

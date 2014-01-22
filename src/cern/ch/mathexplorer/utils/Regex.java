@@ -7,9 +7,12 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 
-
+/**
+ * Contains the patterns that are used in the notational processing of the 
+ * math expression. Used for extract symbols, operators, numbers and
+ * other subelements form the MthML expression
+ */
 public class Regex {
-//	public final static Pattern PATTERN = Pattern.compile("<(mi|mo|mn|msup|msub)>(?=(.*?)</\\1>)");
 	
 	public final static List<Pattern> PATTERNS = initPatternsList();
 	public final static int GROUP = 0;
@@ -32,11 +35,14 @@ public class Regex {
 		return result;
 	}
 	
-	public static Collection<String> extractElements(String equation) {
+	/**
+	 * Extracts the elements present in the MathML expression 
+	 */
+	public static Collection<String> extractElements(String expression) {
 		List<String> result = new ArrayList<String>(); 
 		
 		for (Pattern p: PATTERNS) {
-			Matcher matcher = p.matcher(equation);
+			Matcher matcher = p.matcher(expression);
 			while (matcher.find()) {
 				result.add(matcher.group(GROUP));
 			}

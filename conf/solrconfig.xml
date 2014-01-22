@@ -1777,7 +1777,11 @@
   <!--
      <queryParser name="myparser" class="com.mycompany.MyQParserPlugin"/>
     -->
+  <!-- 	Arthur Oviedo AO-->
+  <!-- 	Query Parser for MathML queries, is in charge of creating the appropiate notational and structural tokens from the input
+  		query and then delegates the actual search to lucene -->
   <queryParser name="mathqueryparser" class="cern.ch.mathexplorer.lucene.query.MathQueryParserPlugin" />
+
   <!-- Function Parsers
 
        http://wiki.apache.org/solr/FunctionQuery

@@ -181,8 +181,10 @@
 
    <field name="payloads" type="payloads" indexed="true" stored="true"/>
    
-   <field name="math_ml_field" type="math_ml_field_type"/>
-   <field name="math_structural_feature_field" type="math_structural_feature_field_type"/>
+   <!-- Arthur Oviedo AO-->
+   <!-- Fields declaration using the field types declarated below-->
+   <field name="math_notational_field" type="math_notational_type"/>
+   <field name="math_structural_field" type="math_structural_type"/>
    
 
 
@@ -1125,12 +1127,17 @@
       </analyzer>
     </fieldType>
 
-	<fieldType name="math_ml_field_type" class="solr.TextField" positionIncrementGap="1"
+	<!-- Arthur Oviedo AO-->
+	<!-- Fields types specification-->
+	
+	<!-- Field type for MathMl info (Tokens that are extracted from the MathML representation)-->
+	<fieldType name="math_notational_type" class="solr.TextField" positionIncrementGap="1"
 	indexed="true" stored="true" termVectors="true" termPositions="true" >
-		<analyzer class="cern.ch.mathexplorer.lucene.analyzer.SolrMathMLAnalyzer"/>
+		<analyzer class="cern.ch.mathexplorer.lucene.analyzer.SolrMathMLNotationalAnalyzer"/>
 	</fieldType>
 	
-	<fieldType name="math_structural_feature_field_type" class="solr.TextField" positionIncrementGap="1"
+	<!-- Field type for  structural features extracted from the equation-->
+	<fieldType name="math_structural_type" class="solr.TextField" positionIncrementGap="1"
 	indexed="true" stored="true" termVectors="true" termPositions="true" >
 		<analyzer class="cern.ch.mathexplorer.lucene.analyzer.SolrStructuralFeaturesAnalyzer"/>
 	</fieldType>

@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public final class Constants implements Serializable {
 	
-	public static final String MATH_ML_FIELD = "math_ml_field";
-	public static final String MATH_FEATURES_FIELD = "math_features_field";
+	public static final String MATH_NOTATIONAL_FIELD = "math_notational_field";
+	public static final String MATH_STRUCTURAL_FIELD = "math_structural_field";
 	
 	public static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
 
@@ -73,7 +73,19 @@ public final class Constants implements Serializable {
 		return "";
 	}
 	
-	public static String getMathematicaLocation() {
+	public final static boolean USE_MATHEMATICA = true;
+	
+	public static String getMathematicaCommand() {
+		if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
+			return "C:/Program Files/Wolfram Research/Mathematica/9.0/MathKernel.exe";
+		}
+		if (OSUtils.getOS().equals(OSUtils.OS.LINUX)) {
+			return "math";
+		}
+		return "";
+	}
+	
+	public static String getMathematicaLinkLocation() {
 		if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
 			return "C:/Program Files/Wolfram Research/Mathematica/9.0/SystemFiles/Links/JLink";
 		}

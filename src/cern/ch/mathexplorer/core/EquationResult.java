@@ -6,11 +6,10 @@ import cern.ch.mathexplorer.utils.Constants;
 
 public class EquationResult implements Serializable {
 	
-	
-	String filename;
-	int lineNumber;
-	String mathmlExpression;
-	String downloadLink;
+	private String filename;
+	private int lineNumber;
+	private String mathmlExpression;
+	private String downloadLink;
 	
 	public String getFilename() {
 		return filename;

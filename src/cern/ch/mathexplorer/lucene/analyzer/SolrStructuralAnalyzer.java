@@ -6,16 +6,15 @@ import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.util.Version;
 import org.apache.solr.analysis.SolrAnalyzer;
 
-public final class SolrStructuralFeaturesAnalyzer extends SolrAnalyzer {
+public final class SolrStructuralAnalyzer extends SolrAnalyzer {
   
   
   /**
    * Creates a new {@link WhitespaceAnalyzer}
    * @param matchVersion Lucene version to match See {@link <a href="#version">above</a>}
    */
-  public SolrStructuralFeaturesAnalyzer(Version matchVersion) {
+  public SolrStructuralAnalyzer(Version matchVersion) {
   }
-  
   
   @Override
   protected TokenStreamComponents createComponents(final String fieldName,
