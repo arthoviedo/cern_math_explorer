@@ -65,7 +65,6 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 	@Override
 	public boolean incrementToken() {
 		if(currentFeature >= features.size()) {
-			System.out.println("Returning false");
 			return false;
 		}
 		clearAttributes();
@@ -88,7 +87,6 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 		try {
 			if (mi == null) {
 				mi = MathematicaEngine.getInstance();
-				
 			}
 			features = mi.getPatterns(str.toString());
 		} catch (MathLinkException e) {

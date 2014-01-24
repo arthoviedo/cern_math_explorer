@@ -56,6 +56,8 @@
 				<pathelement location="../WebContent/WEB-INF/lib/lucene-analyzers-common-4.6-SNAPSHOT.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/solr-core-4.6.0.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/solr-solrj-4.6.0.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/JLink.jar"/>
+
 			</classpath>
 		</javac>
 	</target>

@@ -89,11 +89,10 @@ public class MathematicaEngine {
 			return new ArrayList<>();
 		}
 		Set<StructuralFeature> result = new HashSet<>();
-		int subExpressionsNumber = Integer.parseInt(ml.evaluateToOutputForm(
-				("Length[interpretedResults]"), 0));
+		String sizeString = ml.evaluateToOutputForm(("Length[interpretedResults]"), 0);
+		int subExpressionsNumber = Integer.parseInt(sizeString);
 		for (int i = 1; i <= subExpressionsNumber; i++) {
-			System.out.println(ml.evaluateToOutputForm(
-					"currentExpression = interpretedResults[[" + i + "]]", 0));
+			String currentExpression = ml.evaluateToOutputForm("currentExpression = interpretedResults[[" + i + "]]", 0);
 			for (StructuralFeature currentFeature : features) {
 				String resultFeature = ml.evaluateToOutputForm(
 						"Position[currentExpression, "
@@ -103,7 +102,17 @@ public class MathematicaEngine {
 				}
 			}
 		}
+		clearVariables();
 		return new ArrayList<StructuralFeature>(result);
+	}
+	
+	/**
+	 * Removes all symbols definitions.
+	 * This helps to prevent blocks when importing an equation because
+	 * of previous relationships between the symbols of the imported equations
+	 */
+	private void clearVariables () {
+		ml.evaluateToOutputForm("Remove[\"Global`*\"];", 0);
 	}
 
 	/**
@@ -119,7 +128,6 @@ public class MathematicaEngine {
 	 */
 	private String importString(String mathMlExpression)
 			throws MathLinkException {
-		System.out.println("Importing string");
 		mathMlExpression = prepareMathMLString(mathMlExpression);
 		String result = ml.evaluateToOutputForm(
 				"importedString = ImportString[\"" + mathMlExpression
@@ -139,7 +147,6 @@ public class MathematicaEngine {
 	 * result by applying the filtering pattern HoldComplete[x_]
 	 */
 	private boolean tryInterpretByRowBox() throws MathLinkException {
-		System.out.println("Trying interpret by row boxes");
 		ml.evaluateToInputForm("boxForm = importedString", 0);
 		ml.evaluateToOutputForm("boxesPositions = Position[boxForm, RowBox]", 0);
 		String firstElement = ml.evaluateToOutputForm(
@@ -148,7 +155,6 @@ public class MathematicaEngine {
 		String result = ml.evaluateToOutputForm(
 				"interpretedResults = Cases[MakeExpression[Extract[boxForm, "
 						+ firstElementFixed + "]], HoldComplete[x_]]", 0);
-		System.out.println(result);
 		return !result.equals(EMPTY_RESULT);
 	}
 
@@ -156,10 +162,8 @@ public class MathematicaEngine {
 	 * Tries to interpret the expression 
 	 */
 	private boolean tryInterpretOriginalString() throws MathLinkException {
-		System.out.println("Trying interpret original String");
 		String result = ml.evaluateToOutputForm(
 				"interpretedResults = MakeExpression[importedString]", 0);
-		System.out.println(result);
 		return result.contains(HOLD_COMPLETE);
 	}
 
@@ -171,7 +175,7 @@ public class MathematicaEngine {
 
 	public static void main(String[] args) throws MathLinkException {
 		MathematicaEngine mi = getInstance();
-		String expression = Constants.SAMPLE_EQUATION_1;
+		String expression = Constants.SAMPLE_EQUATION_17;
 		System.out.println(expression);
 		List<StructuralFeature> features = mi.getPatterns(expression);
 		for (StructuralFeature f : features) {

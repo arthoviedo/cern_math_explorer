@@ -157,7 +157,6 @@
    <field name="last_modified" type="date" indexed="true" stored="true"/>
    <field name="links" type="string" indexed="true" stored="true" multiValued="true"/>
    
-   <field name="filename" type="string" indexed="true" stored="true"/>
    
 
    <!-- Main body of document extracted by SolrCell.
@@ -182,9 +181,11 @@
    <field name="payloads" type="payloads" indexed="true" stored="true"/>
    
    <!-- Arthur Oviedo AO-->
-   <!-- Fields declaration using the field types declarated below-->
+   <!-- Fields declaration using the field types declared below-->
    <field name="math_notational_field" type="math_notational_type"/>
    <field name="math_structural_field" type="math_structural_type"/>
+   <field name="filename" type="string" indexed="true" stored="true"/>
+   <field name="number_occurences" type="int" indexed="true" stored="true"/>
    
 
 
@@ -1139,7 +1140,7 @@
 	<!-- Field type for  structural features extracted from the equation-->
 	<fieldType name="math_structural_type" class="solr.TextField" positionIncrementGap="1"
 	indexed="true" stored="true" termVectors="true" termPositions="true" >
-		<analyzer class="cern.ch.mathexplorer.lucene.analyzer.SolrStructuralFeaturesAnalyzer"/>
+		<analyzer class="cern.ch.mathexplorer.lucene.analyzer.SolrStructuralAnalyzer"/>
 	</fieldType>
 	
 	</types>

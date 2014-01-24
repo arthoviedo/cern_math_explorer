@@ -45,16 +45,46 @@ public final class Constants implements Serializable {
 	
 	public final static String SAMPLE_EQUATION_11 = "<math alttext=\"N=1\"><mrow><mi>N</mi><mo>=</mo><mn>1</mn></mrow></math>";
 	
-	public final static String SAMPLE_EQUATION_12 = "<math><mrow><mi>U</mi><mo>==</mo><mrow><mo>(</mo><mi>y</mi><mo>-</mo><msub><mi>y</mi><mn>0</mn></msub><mo>)</mo></mrow><msub><mi>W</mi><mn>0</mn></msub><mo></mo><mo>,</mo><mi>δ</mi><msup><mi>ϕ</mi><mi>A</mi></msup><mo>==</mo><msup><mi>e</mi><mrow><mo>-</mo><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>⁢</mo><msub><mi>Δ</mi><mrow><mo>(</mo><mi>A</mi><mo>)</mo></mrow></msub><mo>⁢</mo><msub><mi>W</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>y</mi><mo>-</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow></mrow></mrow></msup><mo>==</mo><msup><mi>e</mi><mrow><mo>-</mo><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>⁢</mo><msub><mi>Δ</mi><mrow><mo>(</mo><mi>A</mi><mo>)</mo></mrow></msub><mo>⁢</mo><mi>U</mi></mrow></mrow></msup></mrow></math>";	
-	public final static String SAMPLE_EQUATION_13 = "<math><mrow><mrow><msub><mi>𝐀</mi><mi>μ</mi></msub><mo>=</mo><mrow><mrow><mi>𝐧</mi><mo>⁢</mo><msub><mi>C</mi><mi>μ</mi></msub></mrow><mo>+</mo><mrow><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>μ</mi></msub><mo>⁡</mo><mi>𝐧</mi></mrow><mo>)</mo></mrow><mo>×</mo><mi>𝐧</mi></mrow><mo>+</mo><msub><mi>𝐖</mi><mi>μ</mi></msub></mrow></mrow><mo>,</mo></mrow></math>";
-	public final static String SAMPLE_EQUATION_14 = "<math><msub><mi>S</mi><mrow><mi>B</mi><mo>⁢</mo><mover><mi>A</mi><mo>¯</mo></mover></mrow></msub></math>";
+	public final static String SAMPLE_EQUATION_12 = "<math><mrow><mi>U</mi><mo>==</mo><mrow><mo>(</mo><mi>y</mi><mo>-</mo><msub>"
+			+ "<mi>y</mi><mn>0</mn></msub><mo>)</mo></mrow><msub><mi>W</mi><mn>0</mn></msub><mo></mo><mo>,</mo><mi>δ</mi><msup>"
+			+ "<mi>ϕ</mi><mi>A</mi></msup><mo>==</mo><msup><mi>e</mi><mrow><mo>-</mo><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac>"
+			+ "<mo>⁢</mo><msub><mi>Δ</mi><mrow><mo>(</mo><mi>A</mi><mo>)</mo></mrow></msub><mo>⁢</mo><msub><mi>W</mi><mn>0</mn></msub>"
+			+ "<mo>⁢</mo><mrow><mo>(</mo><mrow><mi>y</mi><mo>-</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow></mrow>"
+			+ "</mrow></msup><mo>==</mo><msup><mi>e</mi><mrow><mo>-</mo><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>⁢</mo><msub>"
+			+ "<mi>Δ</mi><mrow><mo>(</mo><mi>A</mi><mo>)</mo></mrow></msub><mo>⁢</mo><mi>U</mi></mrow></mrow></msup></mrow></math>";	
+	public final static String SAMPLE_EQUATION_13 = "<math><mrow><mrow><msub><mi>𝐀</mi><mi>μ</mi></msub><mo>=</mo><mrow><mrow>"
+			+ "<mi>𝐧</mi><mo>⁢</mo><msub><mi>C</mi><mi>μ</mi></msub></mrow><mo>+</mo><mrow><mrow><mo>(</mo><mrow><msub><mo>∂</mo>"
+			+ "<mi>μ</mi></msub><mo>⁡</mo><mi>𝐧</mi></mrow><mo>)</mo></mrow><mo>×</mo><mi>𝐧</mi></mrow><mo>+</mo><msub><mi>𝐖</mi>"
+			+ "<mi>μ</mi></msub></mrow></mrow><mo>,</mo></mrow></math>";
+	public final static String SAMPLE_EQUATION_14 = "<math><msub><mi>S</mi><mrow><mi>B</mi><mo>⁢</mo><mover><mi>A</mi><mo>¯</mo>"
+			+ "</mover></mrow></msub></math>";
 	
-	public final static String SAMPLE_EQUATION_15 = "<math alttext=\"\\lambda=\\Theta+{i\\over g_{s}}\\ ,\\ \\ \\ \\ \\ \\Theta\\equiv\\chi_{\\infty}\\ ,\"><mrow><mi>λ</mi><mo>=</mo><mi>Θ</mi><mo>+</mo><mfrac><mi>i</mi><msub><mi>g</mi><mi>s</mi></msub></mfrac><mo></mo><mo>,</mo><mi>Θ</mi><mo>≡</mo><msub><mi>χ</mi><mi>∞</mi></msub><mo></mo><mo>,</mo></mrow></math>";
+	public final static String SAMPLE_EQUATION_15 = "<math alttext=\"\\lambda=\\Theta+{i\\over g_{s}}\\ ,\\ \\ \\ \\ \\ \\Theta\\"
+			+ "equiv\\chi_{\\infty}\\ ,\"><mrow><mi>λ</mi><mo>=</mo><mi>Θ</mi><mo>+</mo><mfrac><mi>i</mi><msub><mi>g</mi><mi>s</mi>"
+			+ "</msub></mfrac><mo></mo><mo>,</mo><mi>Θ</mi><mo>≡</mo><msub><mi>χ</mi><mi>∞</mi></msub><mo></mo><mo>,</mo></mrow>"
+			+ "</math>";
+	
+	public final static String SAMPLE_EQUATION_16 = "<math alttext=\"G/K\"><mrow><mi>G</mi><mo>/</mo><mi>K</mi></mrow></math>";
+	
+	public final static String SAMPLE_EQUATION_17 = "<math alttext=\" \\ displaystyle \\ sum_{i}\\ mu_{i}\\ frac{(x^{i}_{n})^{2}}"
+			+ "{x^{-}_{n}}\\ cot(\\ mu_ {i}[x^{+%}_{n}-\\ hat{x}^{+}])+\\ sum_{a}m_{a}\\ frac{(y^{a}_{n})^{2}}{x^{-}_{n}}"
+			+ "\\coth(m_ {a}[% x^{+}_{n}-\\ hat {x}^{+}])\"><mrow><mrow><munder><mo>\\[Sum]</mo><mi>i</mi></munder><mrow><msub><mi>"
+			+ "\\[Mu]</mi><mi>i</mi></msub><mo>\\[InvisibleTimes]</mo><mfrac><msup><mrow><mo>(</mo><msubsup><mi>x</mi><mi>n</mi>"
+			+ "<mi>i</mi></msubsup><mo>)</mo></mrow><mn>2</mn></msup><msubsup><mi>x</mi><mi>n</mi><mo>-</mo></msubsup></mfrac>"
+			+ "<mo>\\[InvisibleTimes]</mo><mrow><mi>cot</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><msub><mi>\\[Mu]</mi><mi>i</mi></msub>"
+			+ "<mo>\\[InvisibleTimes]</mo><mrow><mo>[</mo><mrow><msubsup><mi>x</mi><mi>n</mi><mo>+</mo></msubsup><mo>-</mo><msup>"
+			+ "<mover accent=\" true\"><mi>x</mi><mo>^</mo></mover><mo>+</mo></msup></mrow><mo>]</mo></mrow></mrow><mo>)</mo></mrow>"
+			+ "</mrow></mrow></mrow><mo>+</mo><mrow><munder><mo>\\[Sum]</mo><mi>a</mi></munder><mrow><msub><mi>m</mi><mi>a</mi>"
+			+ "</msub><mo>\\[InvisibleTimes]</mo><mfrac><msup><mrow><mo>(</mo><msubsup><mi>y</mi><mi>n</mi><mi>a</mi></msubsup>"
+			+ "<mo>)</mo></mrow><mn>2</mn></msup><msubsup><mi>x</mi><mi>n</mi><mo>-</mo></msubsup></mfrac><mo>\\[InvisibleTimes]</mo>"
+			+ "<mrow><mi>coth</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><msub><mi>m</mi><mi>a</mi></msub><mo>\\[InvisibleTimes]</mo><mrow>"
+			+ "<mo>[</mo><mrow><msubsup><mi>x</mi><mi>n</mi><mo>+</mo></msubsup><mo>-</mo><msup><mover accent=\" true\"><mi>x</mi>"
+			+ "<mo>^</mo></mover><mo>+</mo></msup></mrow><mo>]</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></mrow></mrow></math>";
 	
 	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQUATION_1, 
 		SAMPLE_EQUATION_2, SAMPLE_EQUATION_3, SAMPLE_EQUATION_4, SAMPLE_EQUATION_5, SAMPLE_EQUATION_6,
 		SAMPLE_EQUATION_7, SAMPLE_EQUATION_8, SAMPLE_EQUATION_9, SAMPLE_EQUATION_10, SAMPLE_EQUATION_11, SAMPLE_EQUATION_12,
-		SAMPLE_EQUATION_13, SAMPLE_EQUATION_14, SAMPLE_EQUATION_15};
+		SAMPLE_EQUATION_13, SAMPLE_EQUATION_14, SAMPLE_EQUATION_15, SAMPLE_EQUATION_16};
 	
 	public final static String MATHML = "MathML";
 	public final static String LATEX = "LaTeX";
