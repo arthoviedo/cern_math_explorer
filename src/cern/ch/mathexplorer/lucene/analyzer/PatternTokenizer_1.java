@@ -21,9 +21,12 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
+
+import cern.ch.mathexplorer.utils.Console;
 
 /**
  * This tokenizer uses regex pattern matching to construct distinct tokens
@@ -85,7 +88,7 @@ public final class PatternTokenizer_1 extends Tokenizer {
 
   @Override
   public boolean incrementToken() {
-	  System.out.println("Incrementing token");
+	Console.print("Incrementing token");
     if (index >= str.length()) return false;
     clearAttributes();
     if (group >= 0) {
@@ -95,8 +98,8 @@ public final class PatternTokenizer_1 extends Tokenizer {
         index = matcher.start(group);
         final int endIndex = matcher.end(group);
         
-        System.out.println("Str: " + str);
-        System.out.println("Index: " + index + " endIndex: " + endIndex);
+        Console.print("Str: " + str);
+        Console.print("Index: " + index + " endIndex: " + endIndex);
         
         if (index == endIndex) {
         	continue;       

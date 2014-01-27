@@ -1,9 +1,15 @@
-<project name="mathmlexplorer" basedir="." default="buildJars">
+<project name="mathmlexplorer" basedir="." default="buildJar">
 	<property name="build" value="../build"/>
+	<property name ="src_home" value = "../src/cern/ch/mathexplorer"/>
+
 	<property file="build.properties"/>
 
 	<target name="clean">
 		<delete dir="${build}"/>
+	</target>
+
+	<target name="clean_after">
+		<delete dir="${build}/cern"/>
 	</target>
 
 	<target name="init" depends="clean">
@@ -12,7 +18,7 @@
 
 	<target name="compileUtils" depends="init">
 		<!-- Compile the java code -->
-		<javac srcdir="../src/cern/ch/mathexplorer/utils" destdir="${build}">
+		<javac srcdir="${src_home}/utils" destdir="${build}">
 			<classpath>
 				<pathelement location="../WebContent/WEB-INF/lib/commons-lang3-3.1.jar"/>
 			</classpath>
@@ -21,35 +27,7 @@
 
 	<target name="compileAnalyzerLibraries" depends="init, compileUtils, compileMathematicaLibraries">
 		<!-- Compile the java code -->
-		<javac srcdir="../src/cern/ch/mathexplorer/lucene/analyzer" destdir="${build}">
-			<classpath>
-				<pathelement location="../WebContent/WEB-INF/lib/commons-lang3-3.1.jar"/>
-				<pathelement location="../WebContent/WEB-INF/lib/lucene-core-4.6-SNAPSHOT.jar"/>
-				<pathelement location="../WebContent/WEB-INF/lib/lucene-analyzers-common-4.6-SNAPSHOT.jar"/>
-				<pathelement location="../WebContent/WEB-INF/lib/solr-core-4.6.0.jar"/>
-				<pathelement location="../WebContent/WEB-INF/lib/JLink.jar"/>
-
-			</classpath>
-		</javac>
-	</target>
-	
-	<target name="compileMathematicaLibraries" depends="init, compileUtils">
-			<!-- Compile the java code -->
-			<javac srcdir="../src/cern/ch/mathexplorer/mathematica" destdir="${build}">
-				<classpath>
-					<pathelement location="../WebContent/WEB-INF/lib/JLink.jar"/>
-				</classpath>
-			</javac>
-		</target>
-	
-	<target name="solrAnalyzerJar" depends="compileAnalyzerLibraries">
-		<!-- Build the jar file -->
-		<jar basedir="${build}" destfile="${build}/solranalyzer.jar"/>
-	</target>
-
-	<target name="compileQueryLibraries" depends="init, compileUtils">
-		<!-- Compile the java code -->
-		<javac srcdir="../src/cern/ch/mathexplorer/lucene/query" destdir="${build}">
+		<javac srcdir="${src_home}/lucene/analyzer" destdir="${build}">
 			<classpath>
 				<pathelement location="../WebContent/WEB-INF/lib/commons-lang3-3.1.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/lucene-core-4.6-SNAPSHOT.jar"/>
@@ -61,10 +39,53 @@
 			</classpath>
 		</javac>
 	</target>
-	<target name="solrQueryJar" depends="compileQueryLibraries">
-		<!-- Build the jar file -->
-		<jar basedir="${build}" destfile="${build}/solrquery.jar"/>
+
+	<target name="compileMathematicaLibraries" depends="init, compileUtils">
+		<!-- Compile the java code -->
+		<javac srcdir="${src_home}/mathematica" destdir="${build}">
+			<classpath>
+				<pathelement location="../WebContent/WEB-INF/lib/JLink.jar"/>
+			</classpath>
+		</javac>
 	</target>
 
-	<target name="buildJars" depends="solrAnalyzerJar, solrQueryJar"/>
+	<target name="solr_mathexplorerJar" depends="compileAnalyzerLibraries, compileQueryLibraries, copy_source_files">
+		<!-- Build the jar file -->
+		<!--jar basedir="${build}" destfile="${build}/solr_mathexplorer.jar"/-->
+		<jar destfile="${build}/solr_mathexplorer.jar" >
+			<fileset dir="${build}" includes="**/*.class"/>
+			<fileset dir="${build}" includes="**/*.java"/>
+		</jar>
+	</target>
+
+	<target name="compileQueryLibraries" depends="init, compileUtils">
+		<!-- Compile the java code -->
+		<javac srcdir="${src_home}/lucene/query" destdir="${build}">
+			<classpath>
+				<pathelement location="../WebContent/WEB-INF/lib/commons-lang3-3.1.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/lucene-core-4.6-SNAPSHOT.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/lucene-analyzers-common-4.6-SNAPSHOT.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/solr-core-4.6.0.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/solr-solrj-4.6.0.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/JLink.jar"/>
+			</classpath>
+		</javac>
+	</target>
+	<!--target name="solrQueryJar" depends="compileQueryLibraries">
+		< Build the jar file >
+		<jar basedir="${build}" destfile="${build}/solrquery.jar"/>
+	</target-->
+
+	<target name="copy_source_files">
+		<copy todir="${build}/cern/ch/mathexplorer/mathematica">
+			<fileset dir="${src_home}/mathematica/"/>
+		</copy>
+		<copy todir="${build}/cern/ch/mathexplorer/lucene">
+			<fileset dir="${src_home}/lucene/"/>
+		</copy>
+		<copy todir="${build}/cern/ch/mathexplorer/utils">
+			<fileset dir="${src_home}/utils/"/>
+		</copy>
+	</target>
+	<target name="buildJar" depends="solr_mathexplorerJar, clean_after"/>
 </project>

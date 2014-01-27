@@ -18,20 +18,20 @@ public class Regex {
 	public final static int GROUP = 0;
 	private static List<Pattern> initPatternsList() {
 		List<Pattern> result = new ArrayList<Pattern>();
-		result.add(Pattern.compile("<mi>.*?</mi>"));
-		result.add(Pattern.compile("<mo>.*?</mo>"));
-		result.add(Pattern.compile("<mn>.*?</mn>"));
+		result.add(Pattern.compile("<mi>[^<]*?</mi>"));
+		result.add(Pattern.compile("<mo>[^<]*?</mo>"));
+		result.add(Pattern.compile("<mn>[^<]*?</mn>"));
 		result.add(Pattern.compile("<msub>.*?</msub>"));
 		result.add(Pattern.compile("<msup>.*?</msup>"));
 		result.add(Pattern.compile("<mfrac>.*?</mfrac>"));
 		result.add(Pattern.compile("<mroot>.*?</mroot>"));
 		result.add(Pattern.compile("<msqrt>.*?</msqrt>"));
 		result.add(Pattern.compile("<msubsup>.*?</msubsup>"));
-		//result.add(Pattern.compile("<mrow>.*?</mrow>"));
+		result.add(Pattern.compile("<mrow>.*?</mrow>"));
 		// "bigrams"
-		result.add(Pattern.compile("<mi>.*?</mi><mo>.*?</mo>"));
+		result.add(Pattern.compile("<mi>[^<]*?</mi><mo>[^<]*?</mo>"));
 		// "trigrams"
-		result.add(Pattern.compile("<mi>.*?</mi><mo>.*?</mo><mi>.*?</mi>"));
+		result.add(Pattern.compile("<mi>[^<]*?</mi><mo>[^<]*?</mo><mi>[^<]*?</mi>"));
 		return result;
 	}
 	

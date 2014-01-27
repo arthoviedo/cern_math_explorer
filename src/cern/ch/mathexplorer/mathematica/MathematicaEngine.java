@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.OSUtils;
 
@@ -77,33 +78,40 @@ public class MathematicaEngine {
 	 */
 	public List<StructuralFeature> getPatterns(String mathMLExpression) throws MathLinkException {
 		
-		importString(mathMLExpression);
-		
-		boolean couldInterpret = false;
-		if (tryInterpretOriginalString()) {
-			couldInterpret = true;
-		} else if (tryInterpretByRowBox()) {
-			couldInterpret = true;
-		}
-		if (!couldInterpret) {
-			return new ArrayList<>();
-		}
-		Set<StructuralFeature> result = new HashSet<>();
-		String sizeString = ml.evaluateToOutputForm(("Length[interpretedResults]"), 0);
-		int subExpressionsNumber = Integer.parseInt(sizeString);
-		for (int i = 1; i <= subExpressionsNumber; i++) {
-			String currentExpression = ml.evaluateToOutputForm("currentExpression = interpretedResults[[" + i + "]]", 0);
-			for (StructuralFeature currentFeature : features) {
-				String resultFeature = ml.evaluateToOutputForm(
-						"Position[currentExpression, "
-								+ currentFeature.getPattern() + "]", 0);
-				if (!resultFeature.equals(EMPTY_RESULT)) {
-					result.add(currentFeature);
+		try {
+			importString(mathMLExpression);
+			
+			boolean couldInterpret = false;
+			if (tryInterpretOriginalString()) {
+				couldInterpret = true;
+			} else if (tryInterpretByRowBox()) {
+				couldInterpret = true;
+			}
+			if (!couldInterpret) {
+				return new ArrayList<>();
+			}
+			Set<StructuralFeature> result = new HashSet<>();
+			String sizeString = ml.evaluateToOutputForm(("Length[interpretedResults]"), 0);
+			int subExpressionsNumber = Integer.parseInt(sizeString);
+			for (int i = 1; i <= subExpressionsNumber; i++) {
+				String currentExpression = ml.evaluateToOutputForm("currentExpression = interpretedResults[[" + i + "]]", 0);
+				for (StructuralFeature currentFeature : features) {
+					String resultFeature = ml.evaluateToOutputForm(
+							"Position[currentExpression, "
+									+ currentFeature.getPattern() + "]", 0);
+					if (!resultFeature.equals(EMPTY_RESULT)) {
+						result.add(currentFeature);
+					}
 				}
 			}
+			clearVariables();
+			return new ArrayList<StructuralFeature>(result);
+		} catch ( Exception e) {
+			e.printStackTrace();
+			return new ArrayList<>();
 		}
-		clearVariables();
-		return new ArrayList<StructuralFeature>(result);
+		
+		
 	}
 	
 	/**
@@ -132,7 +140,7 @@ public class MathematicaEngine {
 		String result = ml.evaluateToOutputForm(
 				"importedString = ImportString[\"" + mathMlExpression
 						+ "\", \"MathML\"]", 0);
-		System.out.println(result);
+		Console.print(result);
 		return result;
 	}
 
@@ -176,10 +184,10 @@ public class MathematicaEngine {
 	public static void main(String[] args) throws MathLinkException {
 		MathematicaEngine mi = getInstance();
 		String expression = Constants.SAMPLE_EQUATION_17;
-		System.out.println(expression);
+		Console.print(expression);
 		List<StructuralFeature> features = mi.getPatterns(expression);
 		for (StructuralFeature f : features) {
-			System.out.println(f.getName());
+			Console.print(f.getName());
 		}
 	}
 

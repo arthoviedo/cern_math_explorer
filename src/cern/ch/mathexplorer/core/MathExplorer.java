@@ -51,6 +51,7 @@ import cern.ch.mathexplorer.lucene.analyzer.SolrMathMLNotationalAnalyzer;
 import cern.ch.mathexplorer.lucene.analyzer.SolrStructuralAnalyzer;
 import cern.ch.mathexplorer.lucene.analyzer.VecTextField;
 import cern.ch.mathexplorer.lucene.query.MathQueryParser;
+import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.Regex;
 
@@ -262,7 +263,7 @@ public class MathExplorer {
 	public static void main(String[] args) throws Exception {
 		
 		MathExplorer m = new MathExplorer(null, false);
-		m.testAnalyzer(Constants.SAMPLE_EQUATION_16);
+		m.testAnalyzer(Constants.SAMPLE_EQUATION_5);
 		
 		//m.search(Constants.SAMPLE_EQUATION_2, true, INDEX_WHOLE_ARTICLE);
 		//testUnicodeNormalization();
@@ -288,12 +289,12 @@ public class MathExplorer {
 		String [] tests ={ "Å", "A", "Ĳ", "ℕ", "Ⅻ", "ℎ", "ℏ", "Ω", "Ω"};
 		for (String a: tests) {
 			String b = Normalizer.normalize(a, Form.NFKD);
-			System.out.println("Original: " + a);
+			Console.print("Original: " + a);
 			for (char c: a.toCharArray()){
 				System.out.print("Char: " + c);
 				System.out.print("\tType:" + Character.getType(c));
 				System.out.print("\tCode:" + (int)c +"\t\tHex:"+ Integer.toHexString((int)c));
-				System.out.println("");
+				Console.print("");
 			}
 			System.out.println("Norm"
 					+ "alized: " + b);
@@ -301,19 +302,19 @@ public class MathExplorer {
 				System.out.print("Char: " + c);
 				System.out.print("\tType:" + Character.getType(c));
 				System.out.print("\tCode:" + (int)c +"\t\tHex:"+ Integer.toHexString((int)c));
-				System.out.println("");
+				Console.print("");
 			}
-			System.out.println("");
+			Console.print("");
 		}
 	}
 	
 	static void testUnicodeEncodings() throws Exception{
 		String a = "\u223c";
-		System.out.println("a:" + a);
+		Console.print("a:" + a);
 		byte[] a_bytes = a.getBytes();
 		
 		String b = "\\xe2\\x88\\xbc";
-		System.out.println("b:" + b);
+		Console.print("b:" + b);
 		byte[] b_bytes = b.getBytes("utf-8");
 
 		
@@ -321,14 +322,14 @@ public class MathExplorer {
 		System.out.println("c:" +c);
 		byte[] c_bytes = c.getBytes();
 
-		System.out.println(a.equals(b));
-		System.out.println(a.equals(c));
+		Console.print(a.equals(b));
+		Console.print(a.equals(c));
 		
 		System.out.println("d:" + new String(new byte[] {
 			    (byte)0xe2, (byte)0x88, (byte)0xbc }, "UTF-8"));	}
 
 	void testRegex(String equation) {
-		System.out.println(Regex.extractElements(equation));
+		Console.print(Regex.extractElements(equation));
 	}
 
 	void testAnalyzer(String equation) throws Exception {
@@ -339,14 +340,14 @@ public class MathExplorer {
 		try {
 			ts1.reset();
 			while (ts1.incrementToken()) {
-				System.out.println(ts1.getAttribute(CharTermAttribute.class)+":" + 
+				Console.print(ts1.getAttribute(CharTermAttribute.class)+":" + 
 						ts1.getAttribute(OffsetAttribute.class).startOffset()+"-"+ts1.getAttribute(OffsetAttribute.class).endOffset());
 			}
 			ts2.reset();
 			while (ts2.incrementToken()) {
-				System.out.println(ts2.getAttribute(CharTermAttribute.class));
+				Console.print(ts2.getAttribute(CharTermAttribute.class));
 			}
-			System.out.println("***********************");
+			Console.print("***********************");
 			ts1.end();
 			ts2.end();
 		} finally {

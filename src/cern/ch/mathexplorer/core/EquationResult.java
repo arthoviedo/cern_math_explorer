@@ -6,6 +6,7 @@ import cern.ch.mathexplorer.utils.Constants;
 
 public class EquationResult implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	private String filename;
 	private int lineNumber;
 	private String mathmlExpression;

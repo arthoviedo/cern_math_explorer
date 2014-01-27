@@ -89,7 +89,7 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 				mi = MathematicaEngine.getInstance();
 			}
 			features = mi.getPatterns(str.toString());
-		} catch (MathLinkException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			throw new IOException("Problem while processing with Mathematica: "
 					+ e.getMessage());
