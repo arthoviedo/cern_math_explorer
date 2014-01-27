@@ -263,7 +263,7 @@ public class MathExplorer {
 	public static void main(String[] args) throws Exception {
 		
 		MathExplorer m = new MathExplorer(null, false);
-		m.testAnalyzer(Constants.SAMPLE_EQUATION_5);
+		m.testAnalyzer(Constants.SAMPLE_EQUATION_12);
 		
 		//m.search(Constants.SAMPLE_EQUATION_2, true, INDEX_WHOLE_ARTICLE);
 		//testUnicodeNormalization();
