@@ -1,8 +1,10 @@
 package cern.ch.mathexplorer.lucene.query;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Logger;
 
 import org.apache.lucene.index.Term;
@@ -16,6 +18,9 @@ import org.apache.solr.request.SolrQueryRequest;
 import org.apache.solr.search.QParser;
 import org.apache.solr.search.SyntaxError;
 
+import uk.ac.ed.ph.snuggletex.SnuggleEngine;
+import uk.ac.ed.ph.snuggletex.SnuggleInput;
+import uk.ac.ed.ph.snuggletex.SnuggleSession;
 import cern.ch.mathexplorer.mathematica.MathematicaEngine;
 import cern.ch.mathexplorer.mathematica.StructuralFeature;
 import cern.ch.mathexplorer.utils.Constants;
@@ -30,12 +35,29 @@ public class MathQueryParser extends QParser {
 		super(qstr, localParams, params, req);
 	}
 
+	private static SnuggleEngine engine = new SnuggleEngine();
+	
 	@Override
 	public Query parse() throws SyntaxError {
 		aLogger.info("Query before: " + qstr);
 		qstr = Regex.cleanQuery(qstr);
-		aLogger.info("Query after: " + qstr);
 
+		if (qstr.contains("FORMAT(latex)")) {
+			qstr = qstr.replace("FORMAT(latex)", "");
+			if (engine == null) {
+				engine = new SnuggleEngine();
+			}
+			try {
+				qstr = texToMathML(qstr);
+			} catch (IOException e) {
+				e.printStackTrace();
+				throw new SyntaxError("Error parsing LaTeX: " + e.getMessage());
+			}
+		} else {
+			qstr = qstr.replace("FORMAT(mathml)", "");
+		}
+		aLogger.info("Query after: " + qstr);
+		
 		// QueryParser parser = new QueryParser(matchVersion, DUMMY_FIELDNAME,
 		// analyzer);
 		// Query query = parser.parse(eq2);
@@ -61,7 +83,7 @@ public class MathQueryParser extends QParser {
 		if (Constants.USE_MATHEMATICA) {
 			List<StructuralFeature> patterns = new ArrayList<>();
 			try {
-				patterns = MathematicaEngine.getInstance().getPatterns(qstr);
+				patterns = MathematicaEngine.getInstance("QUERY").getPatterns(qstr);
 				for (StructuralFeature pattern : patterns ) {
 					query.add(new BooleanClause(new TermQuery(new Term(
 							Constants.MATH_STRUCTURAL_FIELD, pattern.getName())), Occur.SHOULD));
@@ -86,5 +108,33 @@ public class MathQueryParser extends QParser {
 		 */
 
 		return query;
+	}
+	
+	public static String texToMathML(String texText) throws IOException {
+		
+		
+		texText.replaceAll("\\$\\$", "$");
+		if (!texText.endsWith("$")) {
+			texText += "$";
+		}
+		
+		if (!texText.startsWith("$")) {
+			texText = "$" + texText;
+		}
+		
+		SnuggleSession session = engine.createSession();
+		session.parseInput(new SnuggleInput(texText));
+		String result = session.buildXMLString();
+		aLogger.info(texText +" --> \n" +result);
+		return result;
+	}
+	
+	public static void main(String[] args) throws IOException {
+		Scanner s = new Scanner(System.in);
+		String eq = s.nextLine();
+		while (eq != null) {
+			System.out.println(texToMathML(eq));
+			eq = s.nextLine();
+		}
 	}
 }

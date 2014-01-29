@@ -36,7 +36,7 @@ public class InputServlet extends AbstractServlet {
 	    // MathExplorer.getInstance(getServletContext());
 	    
 		try {
-			MathExplorer.getInstance(getServletContext()).search(Constants.SAMPLE_EQUATION_1);
+			MathExplorer.getInstance(getServletContext()).search(Constants.SAMPLE_EQ_1);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -9,82 +9,48 @@ public final class Constants implements Serializable {
 	
 	public static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
 
-
-	public final static String SAMPLE_EQUATION_1 = "<math><mrow><mrow><mrow><mi>d</mi><mo>⁢</mo><msup><mi>s</mi><mn>2</mn></msup></mrow>"
-			+ "<mo>=</mo><mrow><mrow><msup><mi>e</mi><mrow><mn>2</mn><mo>⁢</mo><mover accent=\"true\"><mi>A</mi><mo>~</mo>"
-			+ "</mover></mrow></msup><mo>⁢</mo><msub><mi>η</mi><mrow><mi>μ</mi><mo>⁢</mo><mi>ν</mi>" +
-					"</mrow></msub><mo>⁢</mo><mi>d</mi><mo>⁢</mo><msup><mi>x</mi><mi>μ</mi></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo>"
-					+ "<msup><mi>x</mi><mi>ν</mi></msup>" +
-					"</mrow><mo>+</mo><mrow><msup><mi>e</mi><mrow><mn>2</mn><mo>⁢</mo><mover accent=\"true\"><mi>B</mi><mo>~</mo>"
-					+ "</mover></mrow></msup><mo>⁢</mo>" +
-							"<msub><mi>δ</mi><mrow><mi>m</mi><mo>⁢</mo><mi>n</mi></mrow></msub><mo>⁢</mo><mi>d</mi><mo>"
-							+ "⁢</mo><msup><mi>y</mi><mi>m</mi></msup><mo>" +
-							"⁢</mo><mi>d</mi><mo>⁢</mo><msup><mi>y</mi><mi>n</mi></msup></mrow></mrow></mrow><mo>,</mo></mrow></math>";
-	public final static String SAMPLE_EQUATION_2 = "<math><mrow><msub><mi>ε</mi><mrow><mi>μ</mi><mo>⁢</mo><mi>ν</mi><mo>⁢"
-			+ "</mo><mi>ρ</mi></mrow></msub><mo>⁢</mo><mrow><msub>"
-			+ "<mo>∂</mo><mi>ν</mi></msub><mo>⁡</mo><msub><mi>A</mi><mi>ρ</mi></msub></mrow></mrow></math>";
-	public final static String SAMPLE_EQUATION_3 = "<math><mrow><mi>S</mi><mo>=</mo><mrow><msub><mi>S</mi><mi>B</mi></msub>"
-			+ "<mo>+</mo><msub><mi>S</mi><mi>F</mi></msub></mrow></mrow></math>";
-	public final static String SAMPLE_EQUATION_4 = "<math><mrow><mrow><msub><mi>ω</mi><mi>n</mi></msub><mo>/</mo>"
-			+ "<msup><mi>α</mi><mo>′</mo></msup></mrow><mo>⁢</mo><msup><mi>p</mi><mo>+</mo></msup></mrow></math>";
-	public final static String SAMPLE_EQUATION_5 = "<math><mrow><mrow><mrow><mi>t</mi><mo>→</mo><mrow><mi>t</mi><mo>+</mo><mi>β</mi>"
-			+ "</mrow></mrow><mo>,</mo><mrow><mrow><mi>β</mi><mo>=</mo><mrow><mn>8</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>M</mi>"
-			+ "</mrow></mrow><mo>,</mo><mrow><mi>r</mi><mo>≥</mo><mrow><mn>2</mn><mo>⁢</mo><mi>M</mi></mrow></mrow></mrow></mrow>"
-			+ "<mo>.</mo></mrow></math>";
-	public final static String SAMPLE_EQUATION_6 = "<math><msup><mi>¼</mi></msup></math>";
-	
-	public final static String SAMPLE_EQUATION_7 = "";
-	public final static String SAMPLE_EQUATION_8 = "<math><msup><mi>Å</mi><mi>Ĳ</mi></msup></math>";
-	
-	public final static String SAMPLE_EQUATION_9 = "<math><mrow><msub><mi>ℱ</mi><mn>01</mn></msub><mo>=</mo><mrow><mrow>"
-			+ "<msup><mi>e</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></msup><mo>⁢</mo><msub><mi>σ</mi><mn>0</mn>"
-			+ "</msub></mrow><mo>+</mo><mrow><msup><mi>e</mi><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></msup>"
-			+ "<mo>⁢</mo><msub><mi>σ</mi><mn>3</mn></msub></mrow></mrow></mrow></math>";
-	
-	public final static String SAMPLE_EQUATION_10 = "<math alttext=\"N=1\"><mrow><mi>N</mi><mo>=</mo><mn>1</mn></mrow></math>";
-	
-	public final static String SAMPLE_EQUATION_11 = "<math alttext=\"N=1\"><mrow><mi>N</mi><mo>=</mo><mn>1</mn></mrow></math>";
-	
-	public final static String SAMPLE_EQUATION_12 = "<math><mrow><mi>U</mi><mo>==</mo><mrow><mo>(</mo><mi>y</mi><mo>-</mo><msub>"
-			+ "<mi>y</mi><mn>0</mn></msub><mo>)</mo></mrow><msub><mi>W</mi><mn>0</mn></msub><mo></mo><mo>,</mo><mi>δ</mi><msup>"
-			+ "<mi>ϕ</mi><mi>A</mi></msup><mo>==</mo><msup><mi>e</mi><mrow><mo>-</mo><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac>"
-			+ "<mo>⁢</mo><msub><mi>Δ</mi><mrow><mo>(</mo><mi>A</mi><mo>)</mo></mrow></msub><mo>⁢</mo><msub><mi>W</mi><mn>0</mn></msub>"
-			+ "<mo>⁢</mo><mrow><mo>(</mo><mrow><mi>y</mi><mo>-</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow></mrow>"
-			+ "</mrow></msup><mo>==</mo><msup><mi>e</mi><mrow><mo>-</mo><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>⁢</mo><msub>"
-			+ "<mi>Δ</mi><mrow><mo>(</mo><mi>A</mi><mo>)</mo></mrow></msub><mo>⁢</mo><mi>U</mi></mrow></mrow></msup></mrow></math>";	
-	public final static String SAMPLE_EQUATION_13 = "<math><mrow><mrow><msub><mi>𝐀</mi><mi>μ</mi></msub><mo>=</mo><mrow><mrow>"
-			+ "<mi>𝐧</mi><mo>⁢</mo><msub><mi>C</mi><mi>μ</mi></msub></mrow><mo>+</mo><mrow><mrow><mo>(</mo><mrow><msub><mo>∂</mo>"
-			+ "<mi>μ</mi></msub><mo>⁡</mo><mi>𝐧</mi></mrow><mo>)</mo></mrow><mo>×</mo><mi>𝐧</mi></mrow><mo>+</mo><msub><mi>𝐖</mi>"
-			+ "<mi>μ</mi></msub></mrow></mrow><mo>,</mo></mrow></math>";
-	public final static String SAMPLE_EQUATION_14 = "<math><msub><mi>S</mi><mrow><mi>B</mi><mo>⁢</mo><mover><mi>A</mi><mo>¯</mo>"
-			+ "</mover></mrow></msub></math>";
-	
-	public final static String SAMPLE_EQUATION_15 = "<math alttext=\"\\lambda=\\Theta+{i\\over g_{s}}\\ ,\\ \\ \\ \\ \\ \\Theta\\"
-			+ "equiv\\chi_{\\infty}\\ ,\"><mrow><mi>λ</mi><mo>=</mo><mi>Θ</mi><mo>+</mo><mfrac><mi>i</mi><msub><mi>g</mi><mi>s</mi>"
-			+ "</msub></mfrac><mo></mo><mo>,</mo><mi>Θ</mi><mo>≡</mo><msub><mi>χ</mi><mi>∞</mi></msub><mo></mo><mo>,</mo></mrow>"
+	//Schrodinger Equation
+	public final static String SAMPLE_EQ_1 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><msup><mi>ℏ</mi>"
+			+ "<mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><msup><mo>∇</mo><mn>2</mn></msup><mi>Ψ</mi><mo>+</mo><mi>V</mi>"
+			+ "<mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle></mfenced><mi>Ψ</mi><mo>=</mo><mo>-</mo>"
+			+ "<mi>i</mi><mi>ℏ</mi><mfrac><mrow><mo>∂</mo><mi>Ψ</mi></mrow><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac></mrow></math>";
+	//Strong force
+	public final static String SAMPLE_EQ_2 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi mathvariant=\"script\">L</mi>"
+			+ "<mstyle mathvariant=\"normal\"><mi>Q</mi><mi>C</mi><mi>D</mi></mstyle></msub><mo>=</mo><msub><mover accent=\"true\">"
+			+ "<mi>ψ</mi><mo>̄</mo></mover><mi>i</mi></msub><mfenced close=\")\" open=\"(\"><mrow><mi>i</mi><msup><mi>γ</mi><mi>μ</mi>"
+			+ "</msup><msub><mfenced close=\")\" open=\"(\"><msub><mi>D</mi><mi>μ</mi></msub></mfenced><mrow><mi>i</mi><mi>j</mi></mrow>"
+			+ "</msub><mo>-</mo><mi>m</mi><mspace width=\"0.167em\"/><msub><mi>δ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow>"
+			+ "</mfenced><msub><mi>ψ</mi><mi>j</mi></msub><mo>-</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><msubsup><mi>G</mi><mrow>"
+			+ "<mi>μ</mi><mi>ν</mi></mrow><mi>a</mi></msubsup><msubsup><mi>G</mi><mi>a</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msubsup>"
 			+ "</math>";
-	
-	public final static String SAMPLE_EQUATION_16 = "<math alttext=\"G/K\"><mrow><mi>G</mi><mo>/</mo><mi>K</mi></mrow></math>";
-	
-	public final static String SAMPLE_EQUATION_17 = "<math alttext=\" \\ displaystyle \\ sum_{i}\\ mu_{i}\\ frac{(x^{i}_{n})^{2}}"
-			+ "{x^{-}_{n}}\\ cot(\\ mu_ {i}[x^{+%}_{n}-\\ hat{x}^{+}])+\\ sum_{a}m_{a}\\ frac{(y^{a}_{n})^{2}}{x^{-}_{n}}"
-			+ "\\coth(m_ {a}[% x^{+}_{n}-\\ hat {x}^{+}])\"><mrow><mrow><munder><mo>\\[Sum]</mo><mi>i</mi></munder><mrow><msub><mi>"
-			+ "\\[Mu]</mi><mi>i</mi></msub><mo>\\[InvisibleTimes]</mo><mfrac><msup><mrow><mo>(</mo><msubsup><mi>x</mi><mi>n</mi>"
-			+ "<mi>i</mi></msubsup><mo>)</mo></mrow><mn>2</mn></msup><msubsup><mi>x</mi><mi>n</mi><mo>-</mo></msubsup></mfrac>"
-			+ "<mo>\\[InvisibleTimes]</mo><mrow><mi>cot</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><msub><mi>\\[Mu]</mi><mi>i</mi></msub>"
-			+ "<mo>\\[InvisibleTimes]</mo><mrow><mo>[</mo><mrow><msubsup><mi>x</mi><mi>n</mi><mo>+</mo></msubsup><mo>-</mo><msup>"
-			+ "<mover accent=\" true\"><mi>x</mi><mo>^</mo></mover><mo>+</mo></msup></mrow><mo>]</mo></mrow></mrow><mo>)</mo></mrow>"
-			+ "</mrow></mrow></mrow><mo>+</mo><mrow><munder><mo>\\[Sum]</mo><mi>a</mi></munder><mrow><msub><mi>m</mi><mi>a</mi>"
-			+ "</msub><mo>\\[InvisibleTimes]</mo><mfrac><msup><mrow><mo>(</mo><msubsup><mi>y</mi><mi>n</mi><mi>a</mi></msubsup>"
-			+ "<mo>)</mo></mrow><mn>2</mn></msup><msubsup><mi>x</mi><mi>n</mi><mo>-</mo></msubsup></mfrac><mo>\\[InvisibleTimes]</mo>"
-			+ "<mrow><mi>coth</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><msub><mi>m</mi><mi>a</mi></msub><mo>\\[InvisibleTimes]</mo><mrow>"
-			+ "<mo>[</mo><mrow><msubsup><mi>x</mi><mi>n</mi><mo>+</mo></msubsup><mo>-</mo><msup><mover accent=\" true\"><mi>x</mi>"
-			+ "<mo>^</mo></mover><mo>+</mo></msup></mrow><mo>]</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></mrow></mrow></math>";
-	
-	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQUATION_1, 
-		SAMPLE_EQUATION_2, SAMPLE_EQUATION_3, SAMPLE_EQUATION_4, SAMPLE_EQUATION_5, SAMPLE_EQUATION_6,
-		SAMPLE_EQUATION_7, SAMPLE_EQUATION_8, SAMPLE_EQUATION_9, SAMPLE_EQUATION_10, SAMPLE_EQUATION_11, SAMPLE_EQUATION_12,
-		SAMPLE_EQUATION_13, SAMPLE_EQUATION_14, SAMPLE_EQUATION_15, SAMPLE_EQUATION_16};
+	//Quantum electrodynamics
+	public final static String SAMPLE_EQ_3 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"script\">L</mi>"
+			+ "<mo>=</mo><mover accent=\"true\"><mi>ψ</mi><mo>̄</mo></mover><mfenced close=\")\" open=\"(\"><mrow><mi>i</mi><msup>"
+			+ "<mi>γ</mi><mi>μ</mi></msup><msub><mi>D</mi><mi>μ</mi></msub><mo>-</mo><mi>m</mi></mrow></mfenced><mi>ψ</mi><mo>-</mo>"
+			+ "<mfrac><mn>1</mn><mn>4</mn></mfrac><msub><mi>F</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub><msup><mi>F</mi><mrow>"
+			+ "<mi>μ</mi><mi>ν</mi></mrow></msup></math>";
+	//Mass number
+	public final static String SAMPLE_EQ_4 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>A</mi><mo>=</mo><mi>Z</mi><mo>+</mo>"
+			+ "<mi>N</mi></math>";
+	//Radiation flux
+	public final static String SAMPLE_EQ_5 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>I</mi><mo>=</mo><msub><mi>I</mi>"
+			+ "<mn>0</mn></msub><msup><mi>e</mi><mrow><mo>-</mo><mi>μ</mi><mi>x</mi></mrow></msup></math>";
+	//Ampere circuital law
+	public final static String SAMPLE_EQ_6 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mo>∮</mo><mi>S</mi></msub>"
+			+ "<mstyle mathvariant=\"bold\"><mi>B</mi></mstyle><mo>⋅</mo><mstyle mathvariant=\"normal\"><mi>d</mi></mstyle>"
+			+ "<mstyle mathvariant=\"bold\"><mi>l</mi></mstyle><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><msub><mo>∮</mo><mi>S</mi>"
+			+ "</msub><mfenced close=\")\" open=\"(\"><mrow><mstyle mathvariant=\"bold\"><mi>J</mi></mstyle><mo>+</mo><msub><mi>ϵ</mi>"
+			+ "<mn>0</mn></msub><mfrac><mrow><mo>∂</mo><mstyle mathvariant=\"bold\"><mi>E</mi></mstyle></mrow><mrow><mo>∂</mo><mi>t</mi>"
+			+ "</mrow></mfrac></mrow></mfenced><mo>⋅</mo><mstyle mathvariant=\"normal\"><mi>d</mi></mstyle><mstyle mathvariant=\"bold\">"
+			+ "<mi>A</mi></mstyle></math>";
+	//Einstein field equation
+	public final static String SAMPLE_EQ_7 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>G</mi><mrow><mi>μ</mi>"
+			+ "<mi>ν</mi></mrow></msub><mo>≡</mo><msub><mi>R</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub><mo>-</mo><mfrac><mn>1</mn>"
+			+ "<mn>2</mn></mfrac><mi>R</mi><mspace width=\"0.167em\"/><msub><mi>g</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub>"
+			+ "<mo>=</mo><mfrac><mrow><mn>8</mn><mi>π</mi><mi>G</mi></mrow><msup><mi>c</mi><mn>4</mn></msup></mfrac><msub><mi>T</mi>"
+			+ "<mrow><mi>μ</mi><mi>ν</mi></mrow></msub><mo>.</mo><mspace width=\"0.167em\"/></math>";
+	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQ_1, SAMPLE_EQ_2, SAMPLE_EQ_3, SAMPLE_EQ_4, SAMPLE_EQ_5,
+		SAMPLE_EQ_6, SAMPLE_EQ_7};
 	
 	public final static String MATHML = "MathML";
 	public final static String LATEX = "LaTeX";

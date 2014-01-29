@@ -41,7 +41,7 @@ import cern.ch.mathexplorer.mathematica.StructuralFeature;
 public final class StructuralFeaturesTokenizer extends Tokenizer {
 
 	private final CharTermAttribute featuresAtt = addAttribute(CharTermAttribute.class);
-	private MathematicaEngine mi = MathematicaEngine.getInstance();
+	private MathematicaEngine mi = MathematicaEngine.getInstance("INDEXING");
 	private final StringBuilder str = new StringBuilder();
 	private List<StructuralFeature> features;
 	int currentFeature = 0;
@@ -86,7 +86,7 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 		currentFeature = 0;
 		try {
 			if (mi == null) {
-				mi = MathematicaEngine.getInstance();
+				mi = MathematicaEngine.getInstance("INDEXING");
 			}
 			features = mi.getPatterns(str.toString());
 		} catch (Exception e) {

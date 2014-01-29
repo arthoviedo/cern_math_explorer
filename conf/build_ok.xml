@@ -68,6 +68,7 @@
 				<pathelement location="../WebContent/WEB-INF/lib/solr-core-4.6.0.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/solr-solrj-4.6.0.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/JLink.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/snuggletex-core-1.2.2.jar"/>
 			</classpath>
 		</javac>
 	</target>
