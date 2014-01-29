@@ -262,7 +262,7 @@ public class MathematicaEngine {
 
 	public static void main(String[] args) throws MathLinkException {
 		MathematicaEngine mi = getInstance("TESTING");
-		String expression = Constants.SAMPLE_EQ_1;
+		String expression = Constants.SAMPLE_EQ_7;
 		Console.print(expression);
 		List<StructuralFeature> features = mi.getPatterns(expression);
 		for (StructuralFeature f : features) {

@@ -10,10 +10,12 @@ public final class Constants implements Serializable {
 	public static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
 
 	//Schrodinger Equation
-	public final static String SAMPLE_EQ_1 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><msup><mi>ℏ</mi>"
-			+ "<mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><msup><mo>∇</mo><mn>2</mn></msup><mi>Ψ</mi><mo>+</mo><mi>V</mi>"
-			+ "<mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle></mfenced><mi>Ψ</mi><mo>=</mo><mo>-</mo>"
-			+ "<mi>i</mi><mi>ℏ</mi><mfrac><mrow><mo>∂</mo><mi>Ψ</mi></mrow><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac></mrow></math>";
+	public final static String SAMPLE_EQ_1 = "<math><mi>i</mi><mi>ℏ</mi><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac>"
+			+ "<mi>Ψ</mi><mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced><mo>=</mo>"
+			+ "<mfenced close=\"]\" open=\"[\"><mrow><mfrac><mrow><mo>-</mo><msup><mi>ℏ</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn>"
+			+ "<mi>m</mi></mrow></mfrac><msup><mo>∇</mo><mn>2</mn></msup><mo>+</mo><mi>V</mi><mfenced close=\")\" open=\"(\">"
+			+ "<mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced></mrow></mfenced><mi>Ψ</mi>"
+			+ "<mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced></math>";
 	//Strong force
 	public final static String SAMPLE_EQ_2 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi mathvariant=\"script\">L</mi>"
 			+ "<mstyle mathvariant=\"normal\"><mi>Q</mi><mi>C</mi><mi>D</mi></mstyle></msub><mo>=</mo><msub><mover accent=\"true\">"
@@ -46,7 +48,7 @@ public final class Constants implements Serializable {
 	//Einstein field equation
 	public final static String SAMPLE_EQ_7 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>G</mi><mrow><mi>μ</mi>"
 			+ "<mi>ν</mi></mrow></msub><mo>≡</mo><msub><mi>R</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub><mo>-</mo><mfrac><mn>1</mn>"
-			+ "<mn>2</mn></mfrac><mi>R</mi><mspace width=\"0.167em\"/><msub><mi>g</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub>"
+			+ "<mn>2</mn></mfrac><mi>R</mi><msub><mi>g</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub>"
 			+ "<mo>=</mo><mfrac><mrow><mn>8</mn><mi>π</mi><mi>G</mi></mrow><msup><mi>c</mi><mn>4</mn></msup></mfrac><msub><mi>T</mi>"
 			+ "<mrow><mi>μ</mi><mi>ν</mi></mrow></msub><mo>.</mo><mspace width=\"0.167em\"/></math>";
 	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQ_1, SAMPLE_EQ_2, SAMPLE_EQ_3, SAMPLE_EQ_4, SAMPLE_EQ_5,
