@@ -1,19 +1,14 @@
 package cern.ch.mathexplorer.mathematica;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.Set;
 
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
-import cern.ch.mathexplorer.utils.OSUtils;
 
 import com.wolfram.jlink.KernelLink;
 import com.wolfram.jlink.MathLinkException;
@@ -81,7 +76,9 @@ public class MathematicaEngine {
 	}
 	
 	private void loadFeatures() {
-		features.add(new StructuralFeature("simple_sum", "x_+y_"));
+		features.add(new StructuralFeature(
+				"simple_sum", 
+				"x_+y_"));
 		features.add(new StructuralFeature("simple_substraction", "x_-y_"));
 		features.add(new StructuralFeature("simple_product", "x_*y_"));
 		features.add(new StructuralFeature("simple_division", "x_/y_"));
@@ -96,11 +93,16 @@ public class MathematicaEngine {
 		features.add(new StructuralFeature("quadratic", "a_.+b_.x_+c_.x_^2"));
 		features.add(new StructuralFeature(
 				"sum_same_symbol_different_subscript",
-				"a_*Subscript[x_, y_] + b_*Subscript[x_, z_]"));
+				"a_.* Subscript[x_, y_] + b_.* Subscript[x_, z_]"));
 		features.add(new StructuralFeature(
-				"subtraction_same_symbol_different_subscript",
-				"a_*Subscript[x_, y_] - b_*Subscript[x_, z_]"));
-		
+				"product_same_symbol_different_subscript",
+				"a_.* Subscript[x_, y_] * b_.* Subscript[x_, z_]"));
+		features.add(new StructuralFeature("product_crossed_sub_super_index",
+				"a_.* Subscript[x_, v2_]^v3_  * Subscript[v1_, v3_]^v2_"));
+		features.add(new StructuralFeature("sum_crossed_sub_super_index",
+				"a_.* Subscript[x_, v2_]^v3_  +  b_.* Subscript[v1_, v3_]^v2_"));
+		features.add(new StructuralFeature("n_equals",
+				"N == N_Integer"));
 	}
 
 	/**
@@ -262,7 +264,7 @@ public class MathematicaEngine {
 
 	public static void main(String[] args) throws MathLinkException {
 		MathematicaEngine mi = getInstance("TESTING");
-		String expression = Constants.SAMPLE_EQ_7;
+		String expression = Constants.SAMPLE_EQ_2;
 		Console.print(expression);
 		List<StructuralFeature> features = mi.getPatterns(expression);
 		for (StructuralFeature f : features) {

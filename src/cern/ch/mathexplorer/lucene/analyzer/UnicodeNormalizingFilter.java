@@ -27,6 +27,8 @@ import org.apache.lucene.analysis.TokenFilter;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 
+import cern.ch.mathexplorer.utils.Console;
+
 /**
  * Given a MathML token, creates tokens for each of the Non-Control/Non-Combining 
  * (Letters/Numbers/Math Symbols, etc) 
@@ -75,6 +77,7 @@ public final class UnicodeNormalizingFilter extends TokenFilter {
 	@Override
 	public boolean incrementToken() throws IOException {
 		originalString = originalTerm.toString();
+		Console.print("Incrementing token: " + originalString);
 		normalizedString = Normalizer.normalize(originalString, Form.NFKD);
 		if (firstTime) { //We only consume the token from the input
 			firstTime = false;

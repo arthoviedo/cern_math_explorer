@@ -3,8 +3,10 @@ package cern.ch.mathexplorer.lucene.query;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.logging.Logger;
 
 import org.apache.lucene.index.Term;
@@ -23,6 +25,7 @@ import uk.ac.ed.ph.snuggletex.SnuggleInput;
 import uk.ac.ed.ph.snuggletex.SnuggleSession;
 import cern.ch.mathexplorer.mathematica.MathematicaEngine;
 import cern.ch.mathexplorer.mathematica.StructuralFeature;
+import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.Regex;
 
@@ -78,6 +81,7 @@ public class MathQueryParser extends QParser {
 		for (String mathMLToken : tokenInQuery) {
 			query.add(new BooleanClause(new TermQuery(new Term(
 					Constants.MATH_NOTATIONAL_FIELD, mathMLToken)), Occur.SHOULD));
+			Console.print(mathMLToken);
 		}
 		
 		if (Constants.USE_MATHEMATICA) {
@@ -87,6 +91,7 @@ public class MathQueryParser extends QParser {
 				for (StructuralFeature pattern : patterns ) {
 					query.add(new BooleanClause(new TermQuery(new Term(
 							Constants.MATH_STRUCTURAL_FIELD, pattern.getName())), Occur.SHOULD));
+					Console.print(pattern.getName());
 				}
 			} catch (Exception e) {
 			}
@@ -129,12 +134,9 @@ public class MathQueryParser extends QParser {
 		return result;
 	}
 	
-	public static void main(String[] args) throws IOException {
-		Scanner s = new Scanner(System.in);
-		String eq = s.nextLine();
-		while (eq != null) {
-			System.out.println(texToMathML(eq));
-			eq = s.nextLine();
-		}
+	public static void main(String[] args) throws Exception {
+		MathQueryParser mqp = new MathQueryParser(Constants.SAMPLE_EQ_6
+				, null, null, null);
+		mqp.parse();
 	}
 }

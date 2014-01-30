@@ -25,6 +25,8 @@ public final class SolrMathMLNotationalAnalyzer extends SolrAnalyzer {
       final Reader reader) {
 	  Tokenizer source2 = new MultiplePatternTokenizer(reader, Regex.PATTERNS, Regex.GROUP);
 	  TokenStream unicodeNormalizer = new UnicodeNormalizingFilter(source2);
-	  return new TokenStreamComponents(source2, unicodeNormalizer);
+	  TokenStream numericRounder 	= new NumericRoundFilter(source2);
+	  
+	  return new TokenStreamComponents(source2, numericRounder);
   }
 }

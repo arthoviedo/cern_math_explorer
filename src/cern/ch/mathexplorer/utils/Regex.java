@@ -15,12 +15,18 @@ import org.apache.commons.lang3.StringEscapeUtils;
 public class Regex {
 	
 	public final static List<Pattern> PATTERNS = initPatternsList();
+	public final static Pattern TRIVIAL_EQUATION = 
+			Pattern.compile("<math[^<]*?<m.[^<]*?</m.></math>");
+	public final static Pattern NUMBER_ELEMENT = 
+			Pattern.compile("<mn[^<]*?</mn>");
+	
+	
 	public final static int GROUP = 0;
 	private static List<Pattern> initPatternsList() {
 		List<Pattern> result = new ArrayList<Pattern>();
-		result.add(Pattern.compile("<mi>[^<]*?</mi>"));
-		result.add(Pattern.compile("<mo>[^<]*?</mo>"));
-		result.add(Pattern.compile("<mn>[^<]*?</mn>"));
+		result.add(Pattern.compile("<mi[^<]*?</mi>"));
+		result.add(Pattern.compile("<mo[^<]*?</mo>"));
+		result.add(Pattern.compile("<mn[^<]*?</mn>"));
 		result.add(Pattern.compile("<msub>.*?</msub>"));
 		result.add(Pattern.compile("<msup>.*?</msup>"));
 		result.add(Pattern.compile("<mfrac>.*?</mfrac>"));
@@ -37,6 +43,10 @@ public class Regex {
 		// "trigrams"
 		result.add(Pattern.compile("<mi>[^<]*?</mi><mo>[^<]*?</mo><mi>[^<]*?</mi>"));
 		return result;
+	}
+	
+	public boolean isTrivialEquation(String mathML) {
+		return TRIVIAL_EQUATION.matcher(mathML).matches();
 	}
 	
 	/**
@@ -58,10 +68,18 @@ public class Regex {
 		queryString = queryString.replaceAll("\\r|\\n|  +", "");
 		queryString = queryString.replaceAll(" selected=\".*?\"", "");
 		queryString = queryString.replaceAll("mtext", "mi");
+		queryString = queryString.replaceAll(" mathvariant=\".*?\"", "");
+		queryString = queryString.replaceAll("<mstyle>", "");
+		queryString = queryString.replaceAll("</mstyle>", "");
+		
 		
 		//queryString = queryString.replaceAll("&theta;", "θ");
 		queryString = StringEscapeUtils.unescapeHtml4(queryString);
 		
 		return queryString;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(new Regex().isTrivialEquation("<math alttext=\"\\alpha\"><mo>=</mo></math>"));
 	}
 }

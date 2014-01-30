@@ -51,6 +51,12 @@ public final class Constants implements Serializable {
 			+ "<mn>2</mn></mfrac><mi>R</mi><msub><mi>g</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub>"
 			+ "<mo>=</mo><mfrac><mrow><mn>8</mn><mi>π</mi><mi>G</mi></mrow><msup><mi>c</mi><mn>4</mn></msup></mfrac><msub><mi>T</mi>"
 			+ "<mrow><mi>μ</mi><mi>ν</mi></mrow></msub><mo>.</mo><mspace width=\"0.167em\"/></math>";
+	public final static String SAMPLE_EQ_1_N = "<math><mi>i</mi><mi>ℏ</mi><mfrac><mn>1.0264</mn><mrow><mn>4.6</mn><mn>9</mn></mrow></mfrac>"
+			+ "<mn>9...15</mn><mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced><mo>=</mo>"
+			+ "<mfenced close=\"]\" open=\"[\"><mrow><mfrac><mrow><mn>2300002500</mn><msup><mn>90000</mn><mn>2.0135</mn></msup></mrow><mrow><mn>2</mn>"
+			+ "<mi>m</mi></mrow></mfrac><msup><mo>∇</mo><mn>2</mn></msup><mo>+</mo><mi>V</mi><mfenced close=\")\" open=\"(\">"
+			+ "<mstyle mathvariant=\"bold\"><mn>1.38197</mn></mstyle><mi>t</mi></mfenced></mrow></mfenced><mi>Ψ</mi>"
+			+ "<mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced></math>";
 	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQ_1, SAMPLE_EQ_2, SAMPLE_EQ_3, SAMPLE_EQ_4, SAMPLE_EQ_5,
 		SAMPLE_EQ_6, SAMPLE_EQ_7};
 	
