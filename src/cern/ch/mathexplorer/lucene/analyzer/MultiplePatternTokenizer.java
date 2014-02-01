@@ -30,6 +30,7 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
 
 import cern.ch.mathexplorer.utils.Console;
+import cern.ch.mathexplorer.utils.Regex;
 
 /**
  * This tokenizer uses regex pattern matching to construct distinct tokens for
@@ -69,7 +70,7 @@ public final class MultiplePatternTokenizer extends Tokenizer {
 	private final CharTermAttribute termAtt = addAttribute(CharTermAttribute.class);
 	private final OffsetAttribute offsetAtt = addAttribute(OffsetAttribute.class);
 
-	private final StringBuilder str = new StringBuilder();
+	private StringBuilder str = new StringBuilder();
 
 	// Current position where we are looking for next match
 	private int stringIndex;
@@ -199,6 +200,7 @@ public final class MultiplePatternTokenizer extends Tokenizer {
 	public void reset() throws IOException {
 		super.reset();
 		fillBuffer(str, input);
+		str = new StringBuilder(Regex.cleanQuery(str.toString()));
 		for (Matcher m : matchers) {
 			m.reset(str);
 		}

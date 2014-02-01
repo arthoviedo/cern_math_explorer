@@ -77,7 +77,6 @@ public final class UnicodeNormalizingFilter extends TokenFilter {
 	@Override
 	public boolean incrementToken() throws IOException {
 		originalString = originalTerm.toString();
-		Console.print("Incrementing token: " + originalString);
 		normalizedString = Normalizer.normalize(originalString, Form.NFKD);
 		if (firstTime) { //We only consume the token from the input
 			firstTime = false;

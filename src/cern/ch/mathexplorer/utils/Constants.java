@@ -1,6 +1,11 @@
 package cern.ch.mathexplorer.utils;
 
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public final class Constants implements Serializable {
 	
@@ -97,5 +102,57 @@ public final class Constants implements Serializable {
 			return "/usr/local/Wolfram/Mathematica/9.0/SystemFiles/Links/JLink";
 		}
 		return "";
+	}
+	
+	public enum CHARACTER_CATEGORIES{
+		INTEGRALS(new HashSet<>(Arrays.asList("\u222B" // Integral
+				, "\u222C" // Double integral
+				, "\u222D" // Triple integral
+				, "\u222E" // Contour integral
+				, "\u222F" // Surface integral
+				, "\u2230" // Volume integral
+				, "\u2231" // Clockwise integral
+				, "\u2232" // Clockwise contour integral
+				, "\u2233" // Anticlockwise contour integral
+				, "\u2A0B" // Summation with integral
+				, "\u2A0C" // Quadruple integral
+				, "\u2A0D" // Finite part integral
+				, "\u2A0E" // Integral with double stroke
+				, "\u2A0F" // Integral Average with slash
+				, "\u2A10" // Circulation function
+				, "\u2A11" // Anticlockwise integral
+				, "\u2A12" // Line integration with rectangular path around pole
+				, "\u2A13" // Line integration with semicircular path around pole
+				, "\u2A14" // Line integration not including pole
+				, "\u2A15" // Integral aroud a point operator
+				, "\u2A16" // Quaternion integral
+				, "\u2A17" // Integral with leftwards arrow with hook
+				, "\u2A18" // Integral with times sign
+				, "\u2A19" // Integral with intersection
+				, "\u2A1A" // Integral with union
+				, "\u2A1B" // Integral with overbar
+				, "\u2A14" // Line integration not including pole
+				, "\u2A1C" // Integral with underbar
+		)));
+		private Set<String> characters;
+		private CHARACTER_CATEGORIES(Set<String> characters){
+			this.characters = characters; 
+		}
+		
+		public Set<String> getCharacters(){
+			return characters;
+		}
+	}
+	
+	public static final Map<String, CHARACTER_CATEGORIES> characterToCategoryMap = initCharactersMap();
+
+	private static Map<String, CHARACTER_CATEGORIES> initCharactersMap() {
+		Map<String, CHARACTER_CATEGORIES> map = new HashMap<>();
+		for(CHARACTER_CATEGORIES category : CHARACTER_CATEGORIES.values()){
+			for (String character: category.characters){
+				map.put(character, category);
+			}
+		}
+		return map;
 	}
 }

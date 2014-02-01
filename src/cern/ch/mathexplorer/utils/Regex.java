@@ -35,13 +35,13 @@ public class Regex {
 		result.add(Pattern.compile("<msubsup>.*?</msubsup>"));
 		result.add(Pattern.compile("<mrow>.*?</mrow>"));
 		// "bigrams"
-		result.add(Pattern.compile("<mi>[^<]*?</mi><mo>[^<]*?</mo>"));
-		result.add(Pattern.compile("<mi>[^<]*?</mi><mi>[^<]*?</mi>"));
-		result.add(Pattern.compile("<mo>[^<]*?</mo><mi>[^<]*?</mi>"));
+		result.add(Pattern.compile("<m.>[^<]*?</m.><m.>[^<]*?</m.>"));
+		//result.add(Pattern.compile("<mi>[^<]*?</mi><mi>[^<]*?</mi>"));
+		//result.add(Pattern.compile("<mo>[^<]*?</mo><mi>[^<]*?</mi>"));
 		
 		
 		// "trigrams"
-		result.add(Pattern.compile("<mi>[^<]*?</mi><mo>[^<]*?</mo><mi>[^<]*?</mi>"));
+		result.add(Pattern.compile("<m.>[^<]*?</m.><m.>[^<]*?</m.><m.>[^<]*?</m.>"));
 		return result;
 	}
 	

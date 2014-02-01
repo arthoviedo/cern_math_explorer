@@ -51,7 +51,6 @@ public final class NumericRoundFilter extends TokenFilter {
 
 	BigDecimal _0 = new BigDecimal(0);
 	BigDecimal bd = _0;
-	private final static int MAX_ITERATIONS = 5;
 	String currentToken;
 	boolean firstTime = true;
 	BigDecimal previousValue = new BigDecimal(Integer.MAX_VALUE);
@@ -80,7 +79,7 @@ public final class NumericRoundFilter extends TokenFilter {
 			}
 		}
 		if (currentToken.startsWith("<mn") && currentToken.endsWith("</mn>")) {
-			if (bd.equals(new BigDecimal(0))) {
+			if (bd.equals(_0)) {
 				String suspectedNumber = currentToken.replace("<mn>", "");
 				suspectedNumber = suspectedNumber.replace("</mn>", "");
 				try {

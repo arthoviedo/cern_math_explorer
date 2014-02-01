@@ -10,7 +10,7 @@ package cern.ch.mathexplorer.mathematica;
  * @author cern
  *
  */
-public class StructuralFeature {
+public class StructuralPattern {
 	/**
 	 * The name of this feature
 	 */
@@ -21,7 +21,7 @@ public class StructuralFeature {
 	 */
 	private String pattern;
 	
-	public StructuralFeature(String name, String pattern) {
+	public StructuralPattern(String name, String pattern) {
 		super();
 		this.name = name;
 		this.pattern = pattern;
@@ -38,6 +38,4 @@ public class StructuralFeature {
 	public void setPattern(String pattern) {
 		this.pattern = pattern;
 	}
-	
-	
 }

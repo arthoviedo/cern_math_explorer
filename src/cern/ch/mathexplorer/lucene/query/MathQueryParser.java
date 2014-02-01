@@ -23,10 +23,12 @@ import org.apache.solr.search.SyntaxError;
 import uk.ac.ed.ph.snuggletex.SnuggleEngine;
 import uk.ac.ed.ph.snuggletex.SnuggleInput;
 import uk.ac.ed.ph.snuggletex.SnuggleSession;
+import cern.ch.mathexplorer.lucene.analyzer.RelatedOperatorsFilter;
 import cern.ch.mathexplorer.mathematica.MathematicaEngine;
-import cern.ch.mathexplorer.mathematica.StructuralFeature;
+import cern.ch.mathexplorer.mathematica.StructuralPattern;
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
+import cern.ch.mathexplorer.utils.Constants.CHARACTER_CATEGORIES;
 import cern.ch.mathexplorer.utils.Regex;
 
 public class MathQueryParser extends QParser {
@@ -82,21 +84,34 @@ public class MathQueryParser extends QParser {
 			query.add(new BooleanClause(new TermQuery(new Term(
 					Constants.MATH_NOTATIONAL_FIELD, mathMLToken)), Occur.SHOULD));
 			Console.print(mathMLToken);
+			if (mathMLToken.startsWith("<mo>") && mathMLToken.endsWith("</mo>")) {	//OPERATOR CATEGORY TOKEN
+				String operator = mathMLToken.replace("<mo>", "").replace("</mo>", "");
+				CHARACTER_CATEGORIES category = null;
+				if ( (category = (Constants.characterToCategoryMap.get(operator)) ) != null) {
+					query.add(new BooleanClause(new TermQuery(new Term(
+							Constants.MATH_NOTATIONAL_FIELD, category.name())), Occur.SHOULD));
+				}
+			}
 		}
-		
 		if (Constants.USE_MATHEMATICA) {
-			List<StructuralFeature> patterns = new ArrayList<>();
+			List<StructuralPattern> patterns = new ArrayList<>();
 			try {
 				patterns = MathematicaEngine.getInstance("QUERY").getPatterns(qstr);
-				for (StructuralFeature pattern : patterns ) {
+				for (StructuralPattern pattern : patterns ) {
 					query.add(new BooleanClause(new TermQuery(new Term(
 							Constants.MATH_STRUCTURAL_FIELD, pattern.getName())), Occur.SHOULD));
-					Console.print(pattern.getName());
 				}
 			} catch (Exception e) {
 			}
 		}
-
+		for (BooleanClause a : query.getClauses()){
+			System.out.println(a);
+		}
+		
+		
+		query.setMinimumNumberShouldMatch(1);
+		
+		
 		/**
 		 * Collection<String> termsInQuery = Utils.extractElements(eq2);
 		 * ArrayList<SpanQuery> spanQueries = Lists.newArrayList();

@@ -24,7 +24,7 @@ public class MathematicaEngine {
 	 */
 	//private static MathematicaEngine instance;
 	private KernelLink ml = null;
-	private ArrayList<StructuralFeature> features = new ArrayList<>();
+	private ArrayList<StructuralPattern> features = new ArrayList<>();
 	
     private static final Map<String, MathematicaEngine> instances = new HashMap<String, MathematicaEngine>();
 	
@@ -76,32 +76,32 @@ public class MathematicaEngine {
 	}
 	
 	private void loadFeatures() {
-		features.add(new StructuralFeature(
+		features.add(new StructuralPattern(
 				"simple_sum", 
 				"x_+y_"));
-		features.add(new StructuralFeature("simple_substraction", "x_-y_"));
-		features.add(new StructuralFeature("simple_product", "x_*y_"));
-		features.add(new StructuralFeature("simple_division", "x_/y_"));
-		features.add(new StructuralFeature("numeric_fraction",
+		features.add(new StructuralPattern("simple_substraction", "x_-y_"));
+		features.add(new StructuralPattern("simple_product", "x_*y_"));
+		features.add(new StructuralPattern("simple_division", "x_/y_"));
+		features.add(new StructuralPattern("numeric_fraction",
 				"x_Integer/y_Integer"));
-		features.add(new StructuralFeature("numeric_fraction_1_numerator",
+		features.add(new StructuralPattern("numeric_fraction_1_numerator",
 				"1/x_Integer"));
-		features.add(new StructuralFeature("sine", "Sin[x_]"));
-		features.add(new StructuralFeature("cosine", "Cos[x_]"));
-		features.add(new StructuralFeature("tangent", "Tan[x_]"));
-		features.add(new StructuralFeature("exponential", "e^x_"));
-		features.add(new StructuralFeature("quadratic", "a_.+b_.x_+c_.x_^2"));
-		features.add(new StructuralFeature(
+		features.add(new StructuralPattern("sine", "Sin[x_]"));
+		features.add(new StructuralPattern("cosine", "Cos[x_]"));
+		features.add(new StructuralPattern("tangent", "Tan[x_]"));
+		features.add(new StructuralPattern("exponential", "e^x_"));
+		features.add(new StructuralPattern("quadratic", "a_.+b_.x_+c_.x_^2"));
+		features.add(new StructuralPattern(
 				"sum_same_symbol_different_subscript",
 				"a_.* Subscript[x_, y_] + b_.* Subscript[x_, z_]"));
-		features.add(new StructuralFeature(
+		features.add(new StructuralPattern(
 				"product_same_symbol_different_subscript",
 				"a_.* Subscript[x_, y_] * b_.* Subscript[x_, z_]"));
-		features.add(new StructuralFeature("product_crossed_sub_super_index",
+		features.add(new StructuralPattern("product_crossed_sub_super_index",
 				"a_.* Subscript[x_, v2_]^v3_  * Subscript[v1_, v3_]^v2_"));
-		features.add(new StructuralFeature("sum_crossed_sub_super_index",
+		features.add(new StructuralPattern("sum_crossed_sub_super_index",
 				"a_.* Subscript[x_, v2_]^v3_  +  b_.* Subscript[v1_, v3_]^v2_"));
-		features.add(new StructuralFeature("n_equals",
+		features.add(new StructuralPattern("n_equals",
 				"N == N_Integer"));
 	}
 
@@ -112,7 +112,7 @@ public class MathematicaEngine {
 	 * 
 	 * @throws MathLinkException
 	 */
-	public List<StructuralFeature> getPatterns(String mathMLExpression)
+	public List<StructuralPattern> getPatterns(String mathMLExpression)
 			throws MathLinkException {
 
 		try {
@@ -127,7 +127,7 @@ public class MathematicaEngine {
 			if (!couldInterpret) {
 				return new ArrayList<>();
 			}
-			Set<StructuralFeature> result = new HashSet<>();
+			Set<StructuralPattern> result = new HashSet<>();
 			String sizeString = ml.evaluateToOutputForm(
 					("Length[interpretedResults]"), 0);
 			int subExpressionsNumber = Integer.parseInt(sizeString);
@@ -136,7 +136,7 @@ public class MathematicaEngine {
 						"currentExpression = interpretedResults[[" + i + "]]",
 						0);
 				Console.print(currentExpression);
-				for (StructuralFeature currentFeature : features) {
+				for (StructuralPattern currentFeature : features) {
 					String resultFeature = ml.evaluateToOutputForm(
 							"Position[currentExpression, "
 									+ currentFeature.getPattern() + "]", 0);
@@ -146,7 +146,7 @@ public class MathematicaEngine {
 				}
 			}
 			clearVariables();
-			return new ArrayList<StructuralFeature>(result);
+			return new ArrayList<StructuralPattern>(result);
 		} catch (Exception e) {
 			e.printStackTrace();
 			// TODO: Solve better
@@ -258,6 +258,7 @@ public class MathematicaEngine {
 
 	private String prepareMathMLString(String equation) {
 		equation = equation.replace("<mo>=</mo>", "<mo>==</mo>");
+		equation = equation.replace("<mo>≡</mo>", "<mo>==</mo>");
 		equation = equation.replace("\"", "\\\"");
 		return equation;
 	}
@@ -266,8 +267,8 @@ public class MathematicaEngine {
 		MathematicaEngine mi = getInstance("TESTING");
 		String expression = Constants.SAMPLE_EQ_2;
 		Console.print(expression);
-		List<StructuralFeature> features = mi.getPatterns(expression);
-		for (StructuralFeature f : features) {
+		List<StructuralPattern> features = mi.getPatterns(expression);
+		for (StructuralPattern f : features) {
 			Console.print(f.getName());
 		}
 	}

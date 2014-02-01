@@ -19,19 +19,13 @@ package cern.ch.mathexplorer.lucene.analyzer;
 
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
-import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
-
-import com.wolfram.jlink.MathLinkException;
 
 import cern.ch.mathexplorer.mathematica.MathematicaEngine;
-import cern.ch.mathexplorer.mathematica.StructuralFeature;
+import cern.ch.mathexplorer.mathematica.StructuralPattern;
 
 /**
  * Extracts structural features from the given MathML expression/
@@ -43,12 +37,11 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 	private final CharTermAttribute featuresAtt = addAttribute(CharTermAttribute.class);
 	private MathematicaEngine mi = MathematicaEngine.getInstance("INDEXING");
 	private final StringBuilder str = new StringBuilder();
-	private List<StructuralFeature> features;
+	private List<StructuralPattern> features;
 	int currentFeature = 0;
 
 	/**
-	 * creates a new PatternTokenizer returning tokens from group (-1 for split
-	 * functionality)
+	 * Creates a new StructuralFeaturesTokenizer
 	 */
 	public StructuralFeaturesTokenizer(Reader input) {
 		this(AttributeFactory.DEFAULT_ATTRIBUTE_FACTORY, input);
