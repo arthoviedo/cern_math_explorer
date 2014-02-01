@@ -107,8 +107,6 @@ public class MathQueryParser extends QParser {
 		for (BooleanClause a : query.getClauses()){
 			System.out.println(a);
 		}
-		
-		
 		query.setMinimumNumberShouldMatch(1);
 		
 		
