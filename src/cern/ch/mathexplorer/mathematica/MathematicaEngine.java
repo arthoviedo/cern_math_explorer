@@ -76,33 +76,44 @@ public class MathematicaEngine {
 	}
 	
 	private void loadFeatures() {
-		features.add(new StructuralPattern(
-				"simple_sum", 
+		features.add(new StructuralPattern("simple_sum", 
 				"x_+y_"));
-		features.add(new StructuralPattern("simple_substraction", "x_-y_"));
-		features.add(new StructuralPattern("simple_product", "x_*y_"));
-		features.add(new StructuralPattern("simple_division", "x_/y_"));
+		features.add(new StructuralPattern("simple_substraction",
+				"x_-y_"));
+		features.add(new StructuralPattern("simple_product",
+				"x_*y_"));
+		features.add(new StructuralPattern("simple_division",
+				"x_/y_"));
 		features.add(new StructuralPattern("numeric_fraction",
 				"x_Integer/y_Integer"));
 		features.add(new StructuralPattern("numeric_fraction_1_numerator",
 				"1/x_Integer"));
-		features.add(new StructuralPattern("sine", "Sin[x_]"));
-		features.add(new StructuralPattern("cosine", "Cos[x_]"));
-		features.add(new StructuralPattern("tangent", "Tan[x_]"));
-		features.add(new StructuralPattern("exponential", "e^x_"));
-		features.add(new StructuralPattern("quadratic", "a_.+b_.x_+c_.x_^2"));
-		features.add(new StructuralPattern(
-				"sum_same_symbol_different_subscript",
+		features.add(new StructuralPattern("sine",
+				"Sin[x_]"));
+		features.add(new StructuralPattern("cosine",
+				"Cos[x_]"));
+		features.add(new StructuralPattern("tangent",
+				"Tan[x_]"));
+		features.add(new StructuralPattern("exponential",
+				"e^x_"));
+		features.add(new StructuralPattern("quadratic", 
+				"a_.+b_.x_+c_.x_^2"));
+		features.add(new StructuralPattern("sum_same_symbol_different_subscript",
 				"a_.* Subscript[x_, y_] + b_.* Subscript[x_, z_]"));
-		features.add(new StructuralPattern(
-				"product_same_symbol_different_subscript",
+		features.add(new StructuralPattern("product_same_symbol_different_subscript",
 				"a_.* Subscript[x_, y_] * b_.* Subscript[x_, z_]"));
 		features.add(new StructuralPattern("product_crossed_sub_super_index",
-				"a_.* Subscript[x_, v2_]^v3_  * Subscript[v1_, v3_]^v2_"));
+				"a_.* Subscript[v1_, v2_]^v3_  * Subscript[v1_, v3_]^v2_"));
 		features.add(new StructuralPattern("sum_crossed_sub_super_index",
-				"a_.* Subscript[x_, v2_]^v3_  +  b_.* Subscript[v1_, v3_]^v2_"));
+				"a_.* Subscript[v1_, v2_]^v3_  +  b_.* Subscript[v1_, v3_]^v2_"));
 		features.add(new StructuralPattern("n_equals",
 				"N == N_Integer"));
+		features.add(new StructuralPattern("derivative_over_time",
+				"d*x_*t*(d^-1)"));
+		features.add(new StructuralPattern("X equals X sub something",
+				"X_ == Subscript[ X_, Z_]*Y_"));
+		features.add(new StructuralPattern("X equals X sub something times neg exponential",
+				"X_ == Subscript[ X_, Z_]*Y_.*e^(-1*W_)"));
 	}
 
 	/**
@@ -265,7 +276,7 @@ public class MathematicaEngine {
 
 	public static void main(String[] args) throws MathLinkException {
 		MathematicaEngine mi = getInstance("TESTING");
-		String expression = Constants.SAMPLE_EQ_2;
+		String expression = Constants.SAMPLE_EQ_1;
 		Console.print(expression);
 		List<StructuralPattern> features = mi.getPatterns(expression);
 		for (StructuralPattern f : features) {

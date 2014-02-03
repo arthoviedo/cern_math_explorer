@@ -148,8 +148,12 @@ public class MathQueryParser extends QParser {
 	}
 	
 	public static void main(String[] args) throws Exception {
+		System.out.println(texToMathML("A = \\mathrm{d} N /\\mathrm{d} t"));
+		System.out.println(Regex.cleanQuery(texToMathML("A = \\mathrm{d} N /\\mathrm{d} t")));
 		MathQueryParser mqp = new MathQueryParser(Constants.SAMPLE_EQ_6
 				, null, null, null);
 		mqp.parse();
+		
+		
 	}
 }
