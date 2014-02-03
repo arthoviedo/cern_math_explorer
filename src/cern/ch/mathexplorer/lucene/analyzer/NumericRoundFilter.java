@@ -86,6 +86,7 @@ public final class NumericRoundFilter extends TokenFilter {
 					Double d = Double.parseDouble(suspectedNumber);
 					bd = new BigDecimal(suspectedNumber);
 				} catch (Exception e) {
+					System.out.println("Problematic number: "+suspectedNumber);
 					e.printStackTrace();
 					firstTime = true;
 					return input.incrementToken(); // The element could not be
@@ -102,7 +103,13 @@ public final class NumericRoundFilter extends TokenFilter {
 				return input.incrementToken();
 			}
 			previousValue = bd;
-			bd = bd.round(new MathContext(bd.scale()));
+			try {
+				bd = bd.round(new MathContext(bd.scale()));
+				
+			} catch (Exception e){
+				System.out.println("*****************: " + bd.toString() + "    ---   " + currentToken);
+				throw e;
+			}
 			termAtt.setEmpty().append("<mn>" + bd + "</mn>");
 			
 			

@@ -61,8 +61,8 @@ public final class Constants implements Serializable {
 	public final static String SAMPLE_EQ_1_N = "<math><mi>i</mi><mi>ℏ</mi><mfrac><mn>1.0264</mn><mrow><mn>4.6</mn><mn>9</mn></mrow></mfrac>"
 			+ "<mn>9...15</mn><mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced><mo>=</mo>"
 			+ "<mfenced close=\"]\" open=\"[\"><mrow><mfrac><mrow><mn>2300002500</mn><msup><mn>90000</mn><mn>2.0135</mn></msup></mrow><mrow><mn>2</mn>"
-			+ "<mi>m</mi></mrow></mfrac><msup><mo>∇</mo><mn>2</mn></msup><mo>+</mo><mi>V</mi><mfenced close=\")\" open=\"(\">"
-			+ "<mstyle mathvariant=\"bold\"><mn>1.38197</mn></mstyle><mi>t</mi></mfenced></mrow></mfenced><mi>Ψ</mi>"
+			+ "<mi>m</mi></mrow></mfrac><msup><mm>4000.0000</mm><mn>2</mn></msup><mo>+</mo><mn>V</mn><mfenced close=\")\" open=\"(\">"
+			+ "<mstyle mathvariant=\"bold\"><mn>1.38197</mn></mstyle><mi>t</mi></mfenced></mrow></mfenced><mn>0.0000</mn>"
 			+ "<mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced></math>";
 	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQ_1, SAMPLE_EQ_2, SAMPLE_EQ_3, SAMPLE_EQ_4, SAMPLE_EQ_5,
 		SAMPLE_EQ_6, SAMPLE_EQ_7};
