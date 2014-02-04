@@ -36,7 +36,8 @@ import cern.ch.mathexplorer.utils.Regex;
 /**
  * Generates different approximations for the <mn><mn/> tokens. by iteratively
  * applying the round function <mn>1.38197</mn> generates the following tokens:
- * <mn>1.3820</mn>, <mn>1.382</mn>, <mn>1.38</mn>, <mn>1.4</mn>, <mn>1.0</mn> and <mn>1</mn> 
+ * <mn>1.3820</mn>, <mn>1.382</mn>, <mn>1.38</mn>, <mn>1.4</mn>, <mn>1.0</mn>
+ * and <mn>1</mn>
  * 
  * @author Arthur Oviedo (arthoviedo@gmail.com)
  * 
@@ -54,6 +55,7 @@ public final class NumericRoundFilter extends TokenFilter {
 	String currentToken;
 	boolean firstTime = true;
 	BigDecimal previousValue = new BigDecimal(Integer.MAX_VALUE);
+
 	// boolean restart = false;
 	@Override
 	public boolean incrementToken() throws IOException {
@@ -86,33 +88,29 @@ public final class NumericRoundFilter extends TokenFilter {
 					Double d = Double.parseDouble(suspectedNumber);
 					bd = new BigDecimal(suspectedNumber);
 				} catch (Exception e) {
-					System.out.println("Problematic number: "+suspectedNumber);
+					Console.print("Problematic number: " + suspectedNumber);
 					e.printStackTrace();
 					firstTime = true;
 					return input.incrementToken(); // The element could not be
 													// interpreted as a number,
 													// so we continue
 				}
-
 			}
-			//Console.print("********" + bd + " Scale:" + bd.scale());
+			try {
+				if (bd.scale() == 0
+						|| bd.equals(bd.round(new MathContext(bd.scale())))) {
+					firstTime = true;
+					// bd = _0;
+					return input.incrementToken();
+				}
+				previousValue = bd;
+				bd = bd.round(new MathContext(bd.scale()));
 
-			if (bd.scale() == 0 || bd.equals(bd.round(new MathContext(bd.scale())))) {
-				firstTime = true;
-				// bd = _0;
+			} catch (Exception e) {
 				return input.incrementToken();
 			}
-			previousValue = bd;
-			try {
-				bd = bd.round(new MathContext(bd.scale()));
-				
-			} catch (Exception e){
-				System.out.println("*****************: " + bd.toString() + "    ---   " + currentToken);
-				throw e;
-			}
 			termAtt.setEmpty().append("<mn>" + bd + "</mn>");
-			
-			
+
 			return true;
 
 			// return input.incrementToken();

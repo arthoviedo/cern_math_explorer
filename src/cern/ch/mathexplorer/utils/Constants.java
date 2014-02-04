@@ -58,6 +58,7 @@ public final class Constants implements Serializable {
 			+ "<mrow><mi>μ</mi><mi>ν</mi></mrow></msub><mo>.</mo><mspace width=\"0.167em\"/></math>";
 	public final static String SAMPLE_EQ_8 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>A</mi><mo>=</mo><mi>d</mi><mi>N</mi>"
 			+ "<mo>/</mo><mi>d</mi><mi>t</mi></math>";
+	public final static String SAMPLE_EQ_9 = "<math><mn>1E+2</mn></math>";
 	public final static String SAMPLE_EQ_1_N = "<math><mi>i</mi><mi>ℏ</mi><mfrac><mn>1.0264</mn><mrow><mn>4.6</mn><mn>9</mn></mrow></mfrac>"
 			+ "<mn>9...15</mn><mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced><mo>=</mo>"
 			+ "<mfenced close=\"]\" open=\"[\"><mrow><mfrac><mrow><mn>2300002500</mn><msup><mn>90000</mn><mn>2.0135</mn></msup></mrow><mrow><mn>2</mn>"

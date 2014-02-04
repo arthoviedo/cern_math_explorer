@@ -1,5 +1,10 @@
 package cern.ch.mathexplorer.mathematica;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -22,97 +27,100 @@ public class MathematicaEngine {
 	/**
 	 * Singleton instance
 	 */
-	//private static MathematicaEngine instance;
+	// private static MathematicaEngine instance;
 	private KernelLink ml = null;
 	private ArrayList<StructuralPattern> features = new ArrayList<>();
-	
-    private static final Map<String, MathematicaEngine> instances = new HashMap<String, MathematicaEngine>();
-	
+
+	private static final Map<String, MathematicaEngine> instances = new HashMap<String, MathematicaEngine>();
+
 	public static MathematicaEngine getInstance(String key) {
 		MathematicaEngine instance = instances.get(key);
 		if (instance == null) {
 			instance = new MathematicaEngine();
-			
+
 			instances.put(key, instance);
 		}
 		return instance;
 	}
 
 	private MathematicaEngine() {
-		
+		if (features.isEmpty()) {
+			loadFeatures();
+		}
+		try {
+			initLink();
+		} catch (MathLinkException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private void initLink() throws MathLinkException {
 		String command = "";
 		command = Constants.getMathematicaCommand();
 		String[] extraArgs = { "-linkmode", "launch", "-linkname",
 				command + " -mathlink" };
-		
+
 		String jLinkDir = Constants.getMathematicaLinkLocation();
 		System.setProperty("com.wolfram.jlink.libdir", jLinkDir);
+		
 		try {
-			ml = MathLinkFactory.createKernelLink(extraArgs);
-			//ml.clearError();
-			if (features.isEmpty()) {
-				loadFeatures();
-			}
-			ml.discardAnswer();
-
+			KernelLink newLink = MathLinkFactory.createKernelLink(extraArgs);
+			// ml.clearError();
+			
+			newLink.discardAnswer();
+			ml = newLink;
 		} catch (MathLinkException e) {
 			e.printStackTrace();
-			System.out.println("Fatal error opening link: " + e.getMessage());
-			return;
+			Console.print("Fatal error opening link: " + e.getMessage());
+			throw e;
 		}
+
 	}
 
-	private void killMathKernel (){
+	private void killMathKernel() {
 		try {
 			String command1 = "killall -s 9 Mathematica";
 			String command2 = "killall -s 9 MathKernel";
-			
+
 			Runtime.getRuntime().exec(command1);
 			Runtime.getRuntime().exec(command2);
-		}
-		catch (Exception e) {
-			
+		} catch (Exception e) {
+
 		}
 	}
-	
+
 	private void loadFeatures() {
-		features.add(new StructuralPattern("simple_sum", 
-				"x_+y_"));
-		features.add(new StructuralPattern("simple_substraction",
-				"x_-y_"));
-		features.add(new StructuralPattern("simple_product",
-				"x_*y_"));
-		features.add(new StructuralPattern("simple_division",
-				"x_/y_"));
+		features.add(new StructuralPattern("simple_sum", "x_+y_"));
+		features.add(new StructuralPattern("simple_substraction", "x_-y_"));
+		features.add(new StructuralPattern("simple_product", "x_*y_"));
+		features.add(new StructuralPattern("simple_division", "x_/y_"));
 		features.add(new StructuralPattern("numeric_fraction",
 				"x_Integer/y_Integer"));
 		features.add(new StructuralPattern("numeric_fraction_1_numerator",
 				"1/x_Integer"));
-		features.add(new StructuralPattern("sine",
-				"Sin[x_]"));
-		features.add(new StructuralPattern("cosine",
-				"Cos[x_]"));
-		features.add(new StructuralPattern("tangent",
-				"Tan[x_]"));
-		features.add(new StructuralPattern("exponential",
-				"e^x_"));
-		features.add(new StructuralPattern("quadratic", 
-				"a_.+b_.x_+c_.x_^2"));
-		features.add(new StructuralPattern("sum_same_symbol_different_subscript",
+		features.add(new StructuralPattern("sine", "Sin[x_]"));
+		features.add(new StructuralPattern("cosine", "Cos[x_]"));
+		features.add(new StructuralPattern("tangent", "Tan[x_]"));
+		features.add(new StructuralPattern("exponential", "e^x_"));
+		features.add(new StructuralPattern("quadratic", "a_.+b_.x_+c_.x_^2"));
+		features.add(new StructuralPattern(
+				"sum_same_symbol_different_subscript",
 				"a_.* Subscript[x_, y_] + b_.* Subscript[x_, z_]"));
-		features.add(new StructuralPattern("product_same_symbol_different_subscript",
+		features.add(new StructuralPattern(
+				"product_same_symbol_different_subscript",
 				"a_.* Subscript[x_, y_] * b_.* Subscript[x_, z_]"));
 		features.add(new StructuralPattern("product_crossed_sub_super_index",
 				"a_.* Subscript[v1_, v2_]^v3_  * Subscript[v1_, v3_]^v2_"));
 		features.add(new StructuralPattern("sum_crossed_sub_super_index",
 				"a_.* Subscript[v1_, v2_]^v3_  +  b_.* Subscript[v1_, v3_]^v2_"));
-		features.add(new StructuralPattern("n_equals",
-				"N == N_Integer"));
+		features.add(new StructuralPattern("n_equals", "N == N_Integer"));
 		features.add(new StructuralPattern("derivative_over_time",
 				"d*x_*t*(d^-1)"));
 		features.add(new StructuralPattern("X equals X sub something",
 				"X_ == Subscript[ X_, Z_]*Y_"));
-		features.add(new StructuralPattern("X equals X sub something times neg exponential",
+		features.add(new StructuralPattern(
+				"X equals X sub something times neg exponential",
 				"X_ == Subscript[ X_, Z_]*Y_.*e^(-1*W_)"));
 	}
 
@@ -125,8 +133,15 @@ public class MathematicaEngine {
 	 */
 	public List<StructuralPattern> getPatterns(String mathMLExpression)
 			throws MathLinkException {
-
+		if (ml == null) {
+			try {
+				initLink();
+			} catch (Exception e) {
+				return new ArrayList<>();
+			}
+		}
 		try {
+			Console.print(mathMLExpression);
 			importString(mathMLExpression);
 
 			boolean couldInterpret = false;
@@ -142,30 +157,39 @@ public class MathematicaEngine {
 			String sizeString = ml.evaluateToOutputForm(
 					("Length[interpretedResults]"), 0);
 			int subExpressionsNumber = Integer.parseInt(sizeString);
+			HashSet<String> analyzedExpressions = new HashSet<>();
 			for (int i = 1; i <= subExpressionsNumber; i++) {
 				String currentExpression = ml.evaluateToOutputForm(
 						"currentExpression = interpretedResults[[" + i + "]]",
 						0);
 				Console.print(currentExpression);
-				for (StructuralPattern currentFeature : features) {
-					String resultFeature = ml.evaluateToOutputForm(
-							"Position[currentExpression, "
-									+ currentFeature.getPattern() + "]", 0);
-					if (!resultFeature.equals(EMPTY_RESULT)) {
-						result.add(currentFeature);
+				if (!analyzedExpressions.contains(currentExpression)) {
+					for (StructuralPattern currentFeature : features) {
+						String resultFeature = ml.evaluateToOutputForm(
+								"Position[currentExpression, "
+										+ currentFeature.getPattern() + "]", 0);
+						if (!resultFeature.equals(EMPTY_RESULT)) {
+							result.add(currentFeature);
+						}
 					}
+					analyzedExpressions.add(currentExpression);
 				}
 			}
 			clearVariables();
 			return new ArrayList<StructuralPattern>(result);
 		} catch (Exception e) {
 			e.printStackTrace();
+			Console.print("Error while importing String");
 			// TODO: Solve better
 			// Just in case, we restart our link
-			killMathKernel();
-			instances.put("QUERY", new MathematicaEngine());
-			instances.put("INDEXING", new MathematicaEngine());
-			instances.put("TESTING", new MathematicaEngine());
+			// Cleanup operation can still fail
+			try {
+				killMathKernel();
+				initLink();
+			} catch (Exception e1) {
+				Console.print("Error while cleaning up");
+				e1.printStackTrace();
+			}
 			return new ArrayList<>();
 		}
 
@@ -220,31 +244,33 @@ public class MathematicaEngine {
 	private boolean tryInterpretByRowBox() throws MathLinkException {
 		ml.evaluateToInputForm("boxForm = importedString", 0);
 		ml.evaluateToInputForm("interpretedResults = List[]", 0);
-		String positions = ml.evaluateToOutputForm("boxesPositions = Position[boxForm, RowBox]", 0);
-		positions = positions.substring(1, positions.length()-1);
+		String positions = ml.evaluateToOutputForm(
+				"boxesPositions = Position[boxForm, RowBox]", 0);
+		positions = positions.substring(1, positions.length() - 1);
 		Console.print(positions);
-		
+
 		String sizePositions = ml.evaluateToOutputForm(
 				("Length[boxesPositions]"), 0);
 		int numberOccurences = Integer.parseInt(sizePositions);
-		
+
 		String result = "";
-		for (int i = 1; i<= numberOccurences; i++) {
-			String subExpressionPos = ml.evaluateToOutputForm("subexpressionPos=boxesPositions[["+i+"]]", 0);
+		for (int i = 1; i <= numberOccurences; i++) {
+			String subExpressionPos = ml.evaluateToOutputForm(
+					"subexpressionPos=boxesPositions[[" + i + "]]", 0);
 			String subExpressionPosFixed = subExpressionPos.replace("0}", "1}");
 			result = ml.evaluateToOutputForm(
 					"AppendTo[interpretedResults, Cases[MakeExpression[Extract[boxForm, "
-							+ subExpressionPosFixed + "]], HoldComplete[x_]]]", 0);
+							+ subExpressionPosFixed + "]], HoldComplete[x_]]]",
+					0);
 		}
-		
-		//String firstElement = ml.evaluateToOutputForm(
-		//		"firstElement = boxesPositions[[1]]", 0);
-		
-		
-		//String firstElementFixed = firstElement.replace("0}", "1}");
-		//String result = ml.evaluateToOutputForm(
-		//		"interpretedResults = Cases[MakeExpression[Extract[boxForm, "
-		//				+ firstElementFixed + "]], HoldComplete[x_]]", 0);
+
+		// String firstElement = ml.evaluateToOutputForm(
+		// "firstElement = boxesPositions[[1]]", 0);
+
+		// String firstElementFixed = firstElement.replace("0}", "1}");
+		// String result = ml.evaluateToOutputForm(
+		// "interpretedResults = Cases[MakeExpression[Extract[boxForm, "
+		// + firstElementFixed + "]], HoldComplete[x_]]", 0);
 		if (result == null) {
 			Console.print("Error while interpreting original string ("
 					+ ml.error() + "):" + ml.errorMessage());
@@ -274,14 +300,27 @@ public class MathematicaEngine {
 		return equation;
 	}
 
-	public static void main(String[] args) throws MathLinkException {
+	public static void main(String[] args) throws Exception {
+		test();
 		MathematicaEngine mi = getInstance("TESTING");
-		String expression = Constants.SAMPLE_EQ_1;
+		String expression = "<math alttext=\"\\frac{dP(0,0,...;t)}{dt}=Q+u\\sum_{nn}{P(0,0,...;t)}-(2du+k)P(0,0,...;t)\"><mrow><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>P</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>;</mo><mi>t</mi></mrow><mo>)</mo></mrow></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mi>Q</mi><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><munder><mo>∑</mo><mrow><mi>n</mi><mo>⁢</mo><mi>n</mi></mrow></munder><mrow><mi>P</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>;</mo><mi>t</mi></mrow><mo>)</mo></mrow></mrow></mrow></mrow><mo>-</mo><mrow><mrow><mo>(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mo>+</mo><mi>k</mi></mrow><mo>)</mo></mrow><mo>⁢</mo><mi>P</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>;</mo><mi>t</mi></mrow><mo>)</mo></mrow></mrow></mrow></mrow></math>";
 		Console.print(expression);
 		List<StructuralPattern> features = mi.getPatterns(expression);
 		for (StructuralPattern f : features) {
 			Console.print(f.getName());
 		}
+	}
+	
+	public static void test() throws Exception{
+		BufferedReader br = new BufferedReader(new FileReader(new File("/share/math/arxiv_cds/arx1312.6708.eq")));
+		String line = "";
+		MathematicaEngine instance = getInstance("TESTING");
+		int count = 0;
+		while ( (line = br.readLine())!=null ) {
+			instance.getPatterns(line);
+			Console.print(count++);
+		}
+		br.close();
 	}
 
 }
