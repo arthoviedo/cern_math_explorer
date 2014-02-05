@@ -148,10 +148,8 @@ public class MathQueryParser extends QParser {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		Console.print(texToMathML("$H\\rightarrow W^+W^-$"));
-		Console.print(Regex.cleanQuery(texToMathML("$H\\rightarrow W^+W^-$")));
-		MathQueryParser mqp = new MathQueryParser("<math><mi>H</mi><mo>→</mo><msup><mi>W</mi><mo>+</mo></msup><msup>"
-				+ "<mi>W</mi><mo>-</mo></msup></math>", null, null, null);
+		Regex.cleanQuery(texToMathML("$H\\rightarrow W^+W^-$"));
+		MathQueryParser mqp = new MathQueryParser("<math alttext=\"\\mbox{\\bf\\{}(\\mathcal{H}|\\textrm{d}J\\,)\\mbox{\\bf,}\\,(\\mathcal{H}|\textrm{d}K\\,%)\\mbox{\\bf\\}}=({\\mathcal{M}}_{i}|{\\textrm{d}J}\\,\\overleftrightarrow{\\partial}^%{i}{\\textrm{d}K})\\,,\"><mrow><mtext>{</mtext><mrow><mo>(</mo><mi>ℋ</mi><mo>|</mo><mtext>d</mtext><mi>J</mi><mo>)</mo></mrow><mtext>,</mtext><mrow><mo>(</mo><mi>ℋ</mi><mo>|</mo><mtext>d</mtext><mi>K</mi><mo>)</mo></mrow><mtext>}</mtext><mo>=</mo><mrow><mo>(</mo><msub><mi>ℳ</mi><mi>i</mi></msub><mo>|</mo><mtext>d</mtext><mi>J</mi><msup><mover accent=\"true\"><mo>∂</mo><mo>↔</mo></mover><mi>i</mi></msup><mtext>d</mtext><mi>K</mi><mo>)</mo></mrow><mo>,</mo></mrow></math>", null, null, null);
 		mqp.parse();
 		
 		

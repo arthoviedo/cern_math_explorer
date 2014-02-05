@@ -26,6 +26,7 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 
 import cern.ch.mathexplorer.mathematica.MathematicaEngine;
 import cern.ch.mathexplorer.mathematica.StructuralPattern;
+import cern.ch.mathexplorer.utils.Regex;
 
 /**
  * Extracts structural features from the given MathML expression/
@@ -36,7 +37,7 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 
 	private final CharTermAttribute featuresAtt = addAttribute(CharTermAttribute.class);
 	private MathematicaEngine mi = MathematicaEngine.getInstance("INDEXING");
-	private final StringBuilder str = new StringBuilder();
+	private StringBuilder str = new StringBuilder();
 	private List<StructuralPattern> features;
 	int currentFeature = 0;
 
@@ -76,6 +77,7 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 	public void reset() throws IOException {
 		super.reset();
 		fillBuffer(str, input);
+		str = new StringBuilder(Regex.cleanQuery(str.toString()));
 		currentFeature = 0;
 		try {
 			if (mi == null) {

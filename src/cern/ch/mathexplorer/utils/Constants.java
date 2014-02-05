@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import cern.ch.mathexplorer.lucene.query.MathQueryParser;
+
 public final class Constants implements Serializable {
 	
 	public static final String MATH_NOTATIONAL_FIELD = "math_notational_field";
@@ -65,6 +67,14 @@ public final class Constants implements Serializable {
 			+ "<mi>m</mi></mrow></mfrac><msup><mm>4000.0000</mm><mn>2</mn></msup><mo>+</mo><mn>V</mn><mfenced close=\")\" open=\"(\">"
 			+ "<mstyle mathvariant=\"bold\"><mn>1.38197</mn></mstyle><mi>t</mi></mfenced></mrow></mfenced><mn>0.0000</mn>"
 			+ "<mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced></math>";
+	public final static String SAMPLE_EQ_TEXT = "<math alttext=\"\\mbox{\\bf\\{}(\\mathcal{H}|\\textrm{d}J\\,)\\mbox{\\bf,}\\,"
+			+ "(\\mathcal{H}|\textrm{d}K\\,%)\\mbox{\\bf\\}}=({\\mathcal{M}}_{i}|{\\textrm{d}J}\\,\\overleftrightarrow{\\partial}"
+			+ "^%{i}{\\textrm{d}K})\\,,\"><mrow><mtext>{</mtext><mrow><mo>(</mo><mi>ℋ</mi><mo>|</mo><mtext>d</mtext><mi>J</mi>"
+			+ "<mo>)</mo></mrow><mtext>,</mtext><mrow><mo>(</mo><mi>ℋ</mi><mo>|</mo><mtext>d</mtext><mi>K</mi><mo>)</mo></mrow>"
+			+ "<mtext>}</mtext><mo>=</mo><mrow><mo>(</mo><msub><mi>ℳ</mi><mi>i</mi></msub><mo>|</mo><mtext>d</mtext><mi>J</mi><msup>"
+			+ "<mover accent=\"true\"><mo>∂</mo><mo>↔</mo></mover><mi>i</mi></msup><mtext>d</mtext><mi>K</mi><mo>)</mo></mrow>"
+			+ "<mo>,</mo></mrow></math>";
+
 	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQ_1, SAMPLE_EQ_2, SAMPLE_EQ_3, SAMPLE_EQ_4, SAMPLE_EQ_5,
 		SAMPLE_EQ_6, SAMPLE_EQ_7};
 	
