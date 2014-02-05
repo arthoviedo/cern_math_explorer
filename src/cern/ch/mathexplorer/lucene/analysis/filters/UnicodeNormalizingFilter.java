@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package cern.ch.mathexplorer.lucene.analyzer;
+package cern.ch.mathexplorer.lucene.analysis.filters;
 
 import java.io.IOException;
 import java.text.Normalizer;

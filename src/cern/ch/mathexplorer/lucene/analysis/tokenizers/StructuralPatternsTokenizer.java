@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package cern.ch.mathexplorer.lucene.analyzer;
+package cern.ch.mathexplorer.lucene.analysis.tokenizers;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -33,18 +33,17 @@ import cern.ch.mathexplorer.utils.Regex;
  * The tokenizer tries to interpret the expression in Mathematica
  * and then looks for a serie of predefined patterns in the given expression
  */
-public final class StructuralFeaturesTokenizer extends Tokenizer {
+public final class StructuralPatternsTokenizer extends MathTokenizer {
 
 	private final CharTermAttribute featuresAtt = addAttribute(CharTermAttribute.class);
 	private MathematicaEngine mi = MathematicaEngine.getInstance("INDEXING");
-	private StringBuilder str = new StringBuilder();
 	private List<StructuralPattern> features;
 	int currentFeature = 0;
 
 	/**
 	 * Creates a new StructuralFeaturesTokenizer
 	 */
-	public StructuralFeaturesTokenizer(Reader input) {
+	public StructuralPatternsTokenizer(Reader input) {
 		this(AttributeFactory.DEFAULT_ATTRIBUTE_FACTORY, input);
 	}
 
@@ -52,7 +51,7 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 	 * Creates a new PatternTokenizer returning tokens from group (-1 for split
 	 * functionality)
 	 */
-	public StructuralFeaturesTokenizer(AttributeFactory factory, Reader input) {
+	public StructuralPatternsTokenizer(AttributeFactory factory, Reader input) {
 		super(factory, input);
 	}
 
@@ -77,7 +76,6 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 	public void reset() throws IOException {
 		super.reset();
 		fillBuffer(str, input);
-		str = new StringBuilder(Regex.cleanQuery(str.toString()));
 		currentFeature = 0;
 		try {
 			if (mi == null) {
@@ -91,15 +89,4 @@ public final class StructuralFeaturesTokenizer extends Tokenizer {
 		}
 	}
 
-	// TODO: we should see if we can make this tokenizer work without reading
-	// the entire document into RAM, perhaps with Matcher.hitEnd/requireEnd ?
-	final char[] buffer = new char[8192];
-
-	private void fillBuffer(StringBuilder sb, Reader input) throws IOException {
-		int len;
-		sb.setLength(0);
-		while ((len = input.read(buffer)) > 0) {
-			sb.append(buffer, 0, len);
-		}
-	}
 }

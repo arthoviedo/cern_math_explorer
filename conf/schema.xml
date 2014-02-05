@@ -1134,13 +1134,13 @@
 	<!-- Field type for MathMl info (Tokens that are extracted from the MathML representation)-->
 	<fieldType name="math_notational_type" class="solr.TextField" positionIncrementGap="1"
 	indexed="true" stored="true" termVectors="true" termPositions="true" >
-		<analyzer class="cern.ch.mathexplorer.lucene.analyzer.SolrMathMLNotationalAnalyzer"/>
+		<analyzer class="cern.ch.mathexplorer.lucene.analysis.analyzer.SolrMathMLNotationalAnalyzer"/>
 	</fieldType>
 	
 	<!-- Field type for  structural features extracted from the equation-->
 	<fieldType name="math_structural_type" class="solr.TextField" positionIncrementGap="1"
 	indexed="true" stored="true" termVectors="true" termPositions="true" >
-		<analyzer class="cern.ch.mathexplorer.lucene.analyzer.SolrStructuralAnalyzer"/>
+		<analyzer class="cern.ch.mathexplorer.lucene.analysis.analyzer.SolrStructuralAnalyzer"/>
 	</fieldType>
 	
 	</types>

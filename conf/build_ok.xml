@@ -27,7 +27,7 @@
 
 	<target name="compileAnalyzerLibraries" depends="init, compileUtils, compileMathematicaLibraries">
 		<!-- Compile the java code -->
-		<javac srcdir="${src_home}/lucene/analyzer" destdir="${build}">
+		<javac srcdir="${src_home}/lucene/analysis" destdir="${build}">
 			<classpath>
 				<pathelement location="../WebContent/WEB-INF/lib/commons-lang3-3.1.jar"/>
 				<pathelement location="../WebContent/WEB-INF/lib/lucene-core-4.6-SNAPSHOT.jar"/>

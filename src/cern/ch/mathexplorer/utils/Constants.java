@@ -7,8 +7,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import cern.ch.mathexplorer.lucene.query.MathQueryParser;
-
 public final class Constants implements Serializable {
 	
 	public static final String MATH_NOTATIONAL_FIELD = "math_notational_field";

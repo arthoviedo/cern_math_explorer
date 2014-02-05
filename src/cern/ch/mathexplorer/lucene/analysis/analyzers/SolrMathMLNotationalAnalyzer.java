@@ -1,4 +1,4 @@
-package cern.ch.mathexplorer.lucene.analyzer;
+package cern.ch.mathexplorer.lucene.analysis.analyzers;
 import java.io.Reader;
 
 import org.apache.lucene.analysis.TokenStream;
@@ -6,6 +6,10 @@ import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.util.Version;
 import org.apache.solr.analysis.SolrAnalyzer;
 
+import cern.ch.mathexplorer.lucene.analysis.filters.NumericRoundFilter;
+import cern.ch.mathexplorer.lucene.analysis.filters.RelatedOperatorsFilter;
+import cern.ch.mathexplorer.lucene.analysis.filters.UnicodeNormalizingFilter;
+import cern.ch.mathexplorer.lucene.analysis.tokenizers.MultiplePatternTokenizer;
 import cern.ch.mathexplorer.utils.Regex;
 
 public final class SolrMathMLNotationalAnalyzer extends SolrAnalyzer {

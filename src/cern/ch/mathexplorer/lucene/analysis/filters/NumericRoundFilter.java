@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package cern.ch.mathexplorer.lucene.analyzer;
+package cern.ch.mathexplorer.lucene.analysis.filters;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -46,7 +46,7 @@ public final class NumericRoundFilter extends TokenFilter {
 
 	private final CharTermAttribute termAtt = addAttribute(CharTermAttribute.class);
 
-	protected NumericRoundFilter(TokenStream input) {
+	public NumericRoundFilter(TokenStream input) {
 		super(input);
 	}
 

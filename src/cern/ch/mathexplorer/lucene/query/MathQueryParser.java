@@ -23,7 +23,7 @@ import org.apache.solr.search.SyntaxError;
 import uk.ac.ed.ph.snuggletex.SnuggleEngine;
 import uk.ac.ed.ph.snuggletex.SnuggleInput;
 import uk.ac.ed.ph.snuggletex.SnuggleSession;
-import cern.ch.mathexplorer.lucene.analyzer.RelatedOperatorsFilter;
+import cern.ch.mathexplorer.lucene.analysis.filters.RelatedOperatorsFilter;
 import cern.ch.mathexplorer.mathematica.MathematicaEngine;
 import cern.ch.mathexplorer.mathematica.StructuralPattern;
 import cern.ch.mathexplorer.utils.Config;

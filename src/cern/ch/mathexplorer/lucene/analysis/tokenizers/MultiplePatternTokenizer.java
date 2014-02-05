@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package cern.ch.mathexplorer.lucene.analyzer;
+package cern.ch.mathexplorer.lucene.analysis.tokenizers;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -65,15 +65,10 @@ import cern.ch.mathexplorer.utils.Regex;
  * 
  * @see Pattern
  */
-public final class MultiplePatternTokenizer extends Tokenizer {
+public final class MultiplePatternTokenizer extends MathTokenizer {
 
 	private final CharTermAttribute termAtt = addAttribute(CharTermAttribute.class);
 	private final OffsetAttribute offsetAtt = addAttribute(OffsetAttribute.class);
-
-	private StringBuilder str = new StringBuilder();
-
-	// Current position where we are looking for next match
-	private int stringIndex;
 
 	private final int group;
 	private final List<Matcher> matchers;
@@ -146,49 +141,6 @@ public final class MultiplePatternTokenizer extends Tokenizer {
 		}
 	}
 	
-	
-	public boolean incrementTokenBK() {
-		// Console.print("Incrementing token");
-		if (stringIndex >= str.length())
-			return false;
-		clearAttributes();
-
-		if (group >= 0) {
-			boolean atLeastOneMatch = false;
-
-			// try to match the first regex
-			int minStartIndex = Integer.MAX_VALUE;
-			int minEndIndex = Integer.MAX_VALUE;
-			for (Matcher m : matchers) {
-				if (m.find(stringIndex)) {
-					int start = m.start(group);
-					int end = m.end(group);
-					if (start < minStartIndex && start != end) {
-						minEndIndex = m.end(group);
-						minStartIndex = m.start(group);
-						atLeastOneMatch = true;
-					}
-				}
-			}
-			// match a specific group
-			if (!atLeastOneMatch) {
-				stringIndex = Integer.MAX_VALUE; // mark exhausted
-				return false;
-			}
-
-			termAtt.setEmpty().append(str, minStartIndex, minEndIndex);
-			offsetAtt.setOffset(correctOffset(minStartIndex),
-					correctOffset(minEndIndex));
-
-			stringIndex = minStartIndex + 1;
-			Console.print("Index:" + stringIndex);
-			firstTimeToken = true;
-			return true;
-		} else {
-			throw new UnsupportedOperationException();
-		}
-	}
-
 	@Override
 	public void end() throws IOException {
 		super.end();
@@ -200,12 +152,10 @@ public final class MultiplePatternTokenizer extends Tokenizer {
 	public void reset() throws IOException {
 		super.reset();
 		fillBuffer(str, input);
-		str = new StringBuilder(Regex.cleanQuery(str.toString()));
 		for (Matcher m : matchers) {
 			m.reset(str);
 		}
 		getAllMatches();
-		stringIndex = 0;
 	}
 	
 	private void getAllMatches() {
@@ -224,15 +174,5 @@ public final class MultiplePatternTokenizer extends Tokenizer {
 		}
 	}
 
-	// TODO: we should see if we can make this tokenizer work without reading
-	// the entire document into RAM, perhaps with Matcher.hitEnd/requireEnd ?
-	final char[] buffer = new char[8192];
-
-	private void fillBuffer(StringBuilder sb, Reader input) throws IOException {
-		int len;
-		sb.setLength(0);
-		while ((len = input.read(buffer)) > 0) {
-			sb.append(buffer, 0, len);
-		}
-	}
+	
 }
