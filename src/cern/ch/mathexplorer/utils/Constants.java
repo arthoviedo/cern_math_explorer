@@ -8,20 +8,19 @@ import java.util.Map;
 import java.util.Set;
 
 public final class Constants implements Serializable {
-	
+
 	public static final String MATH_NOTATIONAL_FIELD = "math_notational_field";
 	public static final String MATH_STRUCTURAL_FIELD = "math_structural_field";
-	
-	public static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
 
-	//Schrodinger Equation
+	public static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
+	// Schrodinger Equation
 	public final static String SAMPLE_EQ_1 = "<math><mi>i</mi><mi>ℏ</mi><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac>"
 			+ "<mi>Ψ</mi><mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced><mo>=</mo>"
 			+ "<mfenced close=\"]\" open=\"[\"><mrow><mfrac><mrow><mo>-</mo><msup><mi>ℏ</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn>"
 			+ "<mi>m</mi></mrow></mfrac><msup><mo>∇</mo><mn>2</mn></msup><mo>+</mo><mi>V</mi><mfenced close=\")\" open=\"(\">"
 			+ "<mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced></mrow></mfenced><mi>Ψ</mi>"
 			+ "<mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced></math>";
-	//Strong force
+	// Strong force
 	public final static String SAMPLE_EQ_2 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi mathvariant=\"script\">L</mi>"
 			+ "<mstyle mathvariant=\"normal\"><mi>Q</mi><mi>C</mi><mi>D</mi></mstyle></msub><mo>=</mo><msub><mover accent=\"true\">"
 			+ "<mi>ψ</mi><mo>̄</mo></mover><mi>i</mi></msub><mfenced close=\")\" open=\"(\"><mrow><mi>i</mi><msup><mi>γ</mi><mi>μ</mi>"
@@ -30,19 +29,19 @@ public final class Constants implements Serializable {
 			+ "</mfenced><msub><mi>ψ</mi><mi>j</mi></msub><mo>-</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><msubsup><mi>G</mi><mrow>"
 			+ "<mi>μ</mi><mi>ν</mi></mrow><mi>a</mi></msubsup><msubsup><mi>G</mi><mi>a</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msubsup>"
 			+ "</math>";
-	//Quantum electrodynamics
+	// Quantum electrodynamics
 	public final static String SAMPLE_EQ_3 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"script\">L</mi>"
 			+ "<mo>=</mo><mover accent=\"true\"><mi>ψ</mi><mo>̄</mo></mover><mfenced close=\")\" open=\"(\"><mrow><mi>i</mi><msup>"
 			+ "<mi>γ</mi><mi>μ</mi></msup><msub><mi>D</mi><mi>μ</mi></msub><mo>-</mo><mi>m</mi></mrow></mfenced><mi>ψ</mi><mo>-</mo>"
 			+ "<mfrac><mn>1</mn><mn>4</mn></mfrac><msub><mi>F</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub><msup><mi>F</mi><mrow>"
 			+ "<mi>μ</mi><mi>ν</mi></mrow></msup></math>";
-	//Mass number
+	// Mass number
 	public final static String SAMPLE_EQ_4 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>A</mi><mo>=</mo><mi>Z</mi><mo>+</mo>"
 			+ "<mi>N</mi></math>";
-	//Radiation flux
+	// Radiation flux
 	public final static String SAMPLE_EQ_5 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>I</mi><mo>=</mo><msub><mi>I</mi>"
 			+ "<mn>0</mn></msub><msup><mi>e</mi><mrow><mo>-</mo><mi>μ</mi><mi>x</mi></mrow></msup></math>";
-	//Ampere circuital law
+	// Ampere circuital law
 	public final static String SAMPLE_EQ_6 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mo>∮</mo><mi>S</mi></msub>"
 			+ "<mstyle mathvariant=\"bold\"><mi>B</mi></mstyle><mo>⋅</mo><mstyle mathvariant=\"normal\"><mi>d</mi></mstyle>"
 			+ "<mstyle mathvariant=\"bold\"><mi>l</mi></mstyle><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><msub><mo>∮</mo><mi>S</mi>"
@@ -50,7 +49,7 @@ public final class Constants implements Serializable {
 			+ "<mn>0</mn></msub><mfrac><mrow><mo>∂</mo><mstyle mathvariant=\"bold\"><mi>E</mi></mstyle></mrow><mrow><mo>∂</mo><mi>t</mi>"
 			+ "</mrow></mfrac></mrow></mfenced><mo>⋅</mo><mstyle mathvariant=\"normal\"><mi>d</mi></mstyle><mstyle mathvariant=\"bold\">"
 			+ "<mi>A</mi></mstyle></math>";
-	//Einstein field equation
+	// Einstein field equation
 	public final static String SAMPLE_EQ_7 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>G</mi><mrow><mi>μ</mi>"
 			+ "<mi>ν</mi></mrow></msub><mo>≡</mo><msub><mi>R</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub><mo>-</mo><mfrac><mn>1</mn>"
 			+ "<mn>2</mn></mfrac><mi>R</mi><msub><mi>g</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msub>"
@@ -72,13 +71,12 @@ public final class Constants implements Serializable {
 			+ "<mtext>}</mtext><mo>=</mo><mrow><mo>(</mo><msub><mi>ℳ</mi><mi>i</mi></msub><mo>|</mo><mtext>d</mtext><mi>J</mi><msup>"
 			+ "<mover accent=\"true\"><mo>∂</mo><mo>↔</mo></mover><mi>i</mi></msup><mtext>d</mtext><mi>K</mi><mo>)</mo></mrow>"
 			+ "<mo>,</mo></mrow></math>";
+	public final static String[] SAMPLE_EQUATIONS = { SAMPLE_EQ_1, SAMPLE_EQ_2,
+			SAMPLE_EQ_3, SAMPLE_EQ_4, SAMPLE_EQ_5, SAMPLE_EQ_6, SAMPLE_EQ_7 };
 
-	public final static String [] SAMPLE_EQUATIONS = {SAMPLE_EQ_1, SAMPLE_EQ_2, SAMPLE_EQ_3, SAMPLE_EQ_4, SAMPLE_EQ_5,
-		SAMPLE_EQ_6, SAMPLE_EQ_7};
-	
 	public final static String MATHML = "MathML";
 	public final static String LATEX = "LaTeX";
-	
+
 	public static final String XML_EXTENSION = ".xhtml";
 	public static final String INDEX_FILE_EXTENSION = ".eq";
 	public static final String URL_PUBLIC_FOLDER = "https://googledrive.com/host/0B3PGNL_gfdnqWWZ6eUpBTWRqc1k/";
@@ -92,7 +90,7 @@ public final class Constants implements Serializable {
 		}
 		return "";
 	}
-	
+
 	public static String getMathematicaCommand() {
 		if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
 			return "C:/Program Files/Wolfram Research/Mathematica/9.0/MathKernel.exe";
@@ -102,7 +100,7 @@ public final class Constants implements Serializable {
 		}
 		return "";
 	}
-	
+
 	public static String getMathematicaLinkLocation() {
 		if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
 			return "C:/Program Files/Wolfram Research/Mathematica/9.0/SystemFiles/Links/JLink";
@@ -112,8 +110,8 @@ public final class Constants implements Serializable {
 		}
 		return "";
 	}
-	
-	public enum CHARACTER_CATEGORIES{
+
+	public enum CHARACTER_CATEGORIES {
 		INTEGRALS(new HashSet<>(Arrays.asList("\u222B" // Integral
 				, "\u222C" // Double integral
 				, "\u222D" // Triple integral
@@ -131,7 +129,8 @@ public final class Constants implements Serializable {
 				, "\u2A10" // Circulation function
 				, "\u2A11" // Anticlockwise integral
 				, "\u2A12" // Line integration with rectangular path around pole
-				, "\u2A13" // Line integration with semicircular path around pole
+				, "\u2A13" // Line integration with semicircular path around
+							// pole
 				, "\u2A14" // Line integration not including pole
 				, "\u2A15" // Integral aroud a point operator
 				, "\u2A16" // Quaternion integral
@@ -142,23 +141,374 @@ public final class Constants implements Serializable {
 				, "\u2A1B" // Integral with overbar
 				, "\u2A14" // Line integration not including pole
 				, "\u2A1C" // Integral with underbar
+		))), ARROWS(new HashSet<>(Arrays.asList("←" //
+				, "→" //
+				, "↑" //
+				, "↓" //
+				, "↔" //
+				, "↕" //
+				, "↖" //
+				, "↗" //
+				, "↘" //
+				, "↙" //
+				, "↚" //
+				, "↛" //
+				, "↮" //
+				, "⟵" //
+				, "⟶" //
+				, "⟷" //
+				, "⇐" //
+				, "⇒" //
+				, "⇑" //
+				, "⇓" //
+				, "⇔" //
+				, "⇕" //
+				, "⇖" //
+				, "⇗" //
+				, "⇘" //
+				, "⇙" //
+				, "⇍" //
+				, "⇏" //
+				, "⇎" //
+				, "⟸" //
+				, "⟹" //
+				, "⟺" //
+				, "⇦" //
+				, "⇨" //
+				, "⇧" //
+				, "⇩" //
+				, "⬄" //
+				, "⇳" //
+				, "⬀" //
+				, "⬁" //
+				, "⬂" //
+				, "⬃" //
+				, "⬅" //
+				, "➡" //
+				, "⬆" //
+				, "⬇" //
+				, "⬈" //
+				, "⬉" //
+				, "⬊" //
+				, "⬋" //
+				, "⬌" //
+				, "⬍" //
+				, "⇆" //
+				, "⇄" //
+				, "⇅" //
+				, "⇵" //
+				, "⇈" //
+				, "⇊" //
+				, "⇇" //
+				, "⇉" //
+				, "⬱" //
+				, "⇶" //
+				, "⇠" //
+				, "⇢" //
+				, "⇡" //
+				, "⇣" //
+				, "⇚" //
+				, "⇛" //
+				, "⤊" //
+				, "⤋" //
+				, "⭅" //
+				, "⭆" //
+				, "⟰" //
+				, "⟱" //
+				, "↢" //
+				, "↣" //
+				, "↼" //
+				, "⇀" //
+				, "↽" //
+				, "⇁" //
+				, "↿" //
+				, "↾" //
+				, "⇃" //
+				, "⇂" //
+				, "⇋" //
+				, "⇌" //
+				, "⟻" //
+				, "⟼" //
+				, "⇽" //
+				, "⇾" //
+				, "⇿" //
+				, "⇜" //
+				, "⇝" //
+				, "⬳" //
+				, "⟿" //
+				, "⥊" //
+				, "⥋" //
+				, "⥌" //
+				, "⥍" //
+				, "⥎" //
+				, "⥏" //
+				, "⥐" //
+				, "⥑" //
+				, "⥒" //
+				, "⥓" //
+				, "⥔" //
+				, "⥕" //
+				, "⥖" //
+				, "⥗" //
+				, "⥘" //
+				, "⥙" //
+				, "⥚" //
+				, "⥛" //
+				, "⥜" //
+				, "⥝" //
+				, "⥞" //
+				, "⥟" //
+				, "⥠" //
+				, "⥡" //
+				, "⥢" //
+				, "⥤" //
+				, "⥣" //
+				, "⥥" //
+				, "⥦" //
+				, "⥨" //
+				, "⥧" //
+				, "⥩" //
+				, "⥮" //
+				, "⥯" //
+				, "⥪" //
+				, "⥬" //
+				, "⥫" //
+				, "⥭" //
+				, "↤" //
+				, "↦" //
+				, "↥" //
+				, "↧" //
+				, "⇤" //
+				, "⇥" //
+				, "⤒" //
+				, "⤓" //
+				, "↨" //
+				, "↞" //
+				, "↠" //
+				, "↟" //
+				, "↡" //
+				, "⇷" //
+				, "⇸" //
+				, "⤉" //
+				, "⤈" //
+				, "⇹" //
+				, "⇺" //
+				, "⇻" //
+				, "⇞" //
+				, "⇟" //
+				, "⇼" //
+				, "⬴" //
+				, "⤀" //
+				, "⬵" //
+				, "⤁" //
+				, "⬹" //
+				, "⤔" //
+				, "⬺" //
+				, "⤕" //
+				, "⤂" //
+				, "⤃" //
+				, "⤄" //
+				, "⬶" //
+				, "⤅" //
+				, "⬻" //
+				, "⤖" //
+				, "⬷" //
+				, "⤐" //
+				, "⬼" //
+				, "⤗" //
+				, "⬽" //
+				, "⤘" //
+				, "⤆" //
+				, "⤇" //
+				, "⤌" //
+				, "⤍" //
+				, "⤎" //
+				, "⤏" //
+				, "⬸" //
+				, "⤑" //
+				, "⤝" //
+				, "⤞" //
+				, "⤟" //
+				, "⤠" //
+				, "⤙" //
+				, "⤚" //
+				, "⤛" //
+				, "⤜" //
+				, "⤡" //
+				, "⤢" //
+				, "⤣" //
+				, "⤤" //
+				, "⤥" //
+				, "⤦" //
+				, "⤪" //
+				, "⤨" //
+				, "⤧" //
+				, "⤩" //
+				, "⤭" //
+				, "⤮" //
+				, "⤯" //
+				, "⤰" //
+				, "⤱" //
+				, "⤲" //
+				, "⤫" //
+				, "⤬" //
+				, "↰" //
+				, "↱" //
+				, "↲" //
+				, "↳" //
+				, "⬐" //
+				, "⬎" //
+				, "⬑" //
+				, "⬏" //
+				, "↴" //
+				, "↵" //
+				, "⤶" //
+				, "⤷" //
+				, "⤴" //
+				, "⤵" //
+				, "↩" //
+				, "↪" //
+				, "↫" //
+				, "↬" //
+				, "⥼" //
+				, "⥽" //
+				, "⥾" //
+				, "⥿" //
+				, "⥂" //
+				, "⥃" //
+				, "⥄" //
+				, "⭀" //
+				, "⥱" //
+				, "⥶" //
+				, "⥸" //
+				, "⭂" //
+				, "⭈" //
+				, "⭊" //
+				, "⥵" //
+				, "⭁" //
+				, "⭇" //
+				, "⭉" //
+				, "⥲" //
+				, "⭋" //
+				, "⭌" //
+				, "⥳" //
+				, "⥴" //
+				, "⥆" //
+				, "⥅" //
+				, "⥹" //
+				, "⥻" //
+				, "⬰" //
+				, "⇴" //
+				, "⥈" //
+				, "⬾" //
+				, "⥇" //
+				, "⬲" //
+				, "⟴" //
+				, "⥷" //
+				, "⭃" //
+				, "⥺" //
+				, "⭄" //
+				, "⇱" //
+				, "⇲" //
+				, "↸" //
+				, "↹" //
+				, "↯" //
+				, "↭" //
+				, "⥉" //
+				, "⥰" //
+				, "⬿" //
+				, "⤳" //
+				, "↜" //
+				, "↝" //
+				, "⤼" //
+				, "⤽" //
+				, "↶" //
+				, "↷" //
+				, "⤾" //
+				, "⤿" //
+				, "⤸" //
+				, "⤹" //
+				, "⤺" //
+				, "⤻" //
+				, "↺" //
+				, "↻" //
+				, "⥀" //
+				, "⥁" //
+				, "⟲" //
+				, "⟳" //
+				, "➳" //
+				, "➴" //
+				, "➵" //
+				, "➶" //
+				, "➷" //
+				, "➸" //
+				, "➹" //
+				, "➔" //
+				, "➘" //
+				, "➙" //
+				, "➚" //
+				, "⇪" //
+				, "⇫" //
+				, "⇬" //
+				, "⇭" //
+				, "⇮" //
+				, "⇯" //
+				, "➩" //
+				, "➪" //
+				, "➫" //
+				, "➬" //
+				, "➭" //
+				, "➮" //
+				, "➯" //
+				, "➱" //
+				, "⇰" //
+				, "➛" //
+				, "➜" //
+				, "➝" //
+				, "➞" //
+				, "➟" //
+				, "➠" //
+				, "➢" //
+				, "➣" //
+				, "➤" //
+				, "➥" //
+				, "➦" //
+				, "➧" //
+				, "➨" //
+				, "➲" //
+				, "➺" //
+				, "➻" //
+				, "➼" //
+				, "➽" //
+				, "➾" //
+				, "◄" //
+				, "►" //
+				, "◅" //
+				, "▻" //
+				, "☚" //
+				, "☛" //
+				, "☜" //
+				, "☝" //
+				, "☞" //
+				, "☟" //
 		)));
 		private Set<String> characters;
-		private CHARACTER_CATEGORIES(Set<String> characters){
-			this.characters = characters; 
+
+		private CHARACTER_CATEGORIES(Set<String> characters) {
+			this.characters = characters;
 		}
-		
-		public Set<String> getCharacters(){
+
+		public Set<String> getCharacters() {
 			return characters;
 		}
 	}
-	
+
 	public static final Map<String, CHARACTER_CATEGORIES> characterToCategoryMap = initCharactersMap();
 
 	private static Map<String, CHARACTER_CATEGORIES> initCharactersMap() {
 		Map<String, CHARACTER_CATEGORIES> map = new HashMap<>();
-		for(CHARACTER_CATEGORIES category : CHARACTER_CATEGORIES.values()){
-			for (String character: category.characters){
+		for (CHARACTER_CATEGORIES category : CHARACTER_CATEGORIES.values()) {
+			for (String character : category.characters) {
 				map.put(character, category);
 			}
 		}
