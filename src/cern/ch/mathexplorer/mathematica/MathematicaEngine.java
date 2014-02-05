@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
@@ -29,7 +30,6 @@ public class MathematicaEngine {
 	 */
 	// private static MathematicaEngine instance;
 	private KernelLink ml = null;
-	private ArrayList<StructuralPattern> features = new ArrayList<>();
 
 	private static final Map<String, MathematicaEngine> instances = new HashMap<String, MathematicaEngine>();
 
@@ -44,9 +44,6 @@ public class MathematicaEngine {
 	}
 
 	private MathematicaEngine() {
-		if (features.isEmpty()) {
-			loadFeatures();
-		}
 		try {
 			initLink();
 		} catch (MathLinkException e) {
@@ -90,39 +87,7 @@ public class MathematicaEngine {
 		}
 	}
 
-	private void loadFeatures() {
-		features.add(new StructuralPattern("simple_sum", "x_+y_"));
-		features.add(new StructuralPattern("simple_substraction", "x_-y_"));
-		features.add(new StructuralPattern("simple_product", "x_*y_"));
-		features.add(new StructuralPattern("simple_division", "x_/y_"));
-		features.add(new StructuralPattern("numeric_fraction",
-				"x_Integer/y_Integer"));
-		features.add(new StructuralPattern("numeric_fraction_1_numerator",
-				"1/x_Integer"));
-		features.add(new StructuralPattern("sine", "Sin[x_]"));
-		features.add(new StructuralPattern("cosine", "Cos[x_]"));
-		features.add(new StructuralPattern("tangent", "Tan[x_]"));
-		features.add(new StructuralPattern("exponential", "e^x_"));
-		features.add(new StructuralPattern("quadratic", "a_.+b_.x_+c_.x_^2"));
-		features.add(new StructuralPattern(
-				"sum_same_symbol_different_subscript",
-				"a_.* Subscript[x_, y_] + b_.* Subscript[x_, z_]"));
-		features.add(new StructuralPattern(
-				"product_same_symbol_different_subscript",
-				"a_.* Subscript[x_, y_] * b_.* Subscript[x_, z_]"));
-		features.add(new StructuralPattern("product_crossed_sub_super_index",
-				"a_.* Subscript[v1_, v2_]^v3_  * Subscript[v1_, v3_]^v2_"));
-		features.add(new StructuralPattern("sum_crossed_sub_super_index",
-				"a_.* Subscript[v1_, v2_]^v3_  +  b_.* Subscript[v1_, v3_]^v2_"));
-		features.add(new StructuralPattern("n_equals", "N == N_Integer"));
-		features.add(new StructuralPattern("derivative_over_time",
-				"d*x_*t*(d^-1)"));
-		features.add(new StructuralPattern("X equals X sub something",
-				"X_ == Subscript[ X_, Z_]*Y_"));
-		features.add(new StructuralPattern(
-				"X equals X sub something times neg exponential",
-				"X_ == Subscript[ X_, Z_]*Y_.*e^(-1*W_)"));
-	}
+
 
 	/**
 	 * This method should be called after an invokation of the tryInterpretRoot
@@ -164,7 +129,7 @@ public class MathematicaEngine {
 						0);
 				Console.print(currentExpression);
 				if (!analyzedExpressions.contains(currentExpression)) {
-					for (StructuralPattern currentFeature : features) {
+					for (StructuralPattern currentFeature : Patterns.getPatterns()) {
 						String resultFeature = ml.evaluateToOutputForm(
 								"Position[currentExpression, "
 										+ currentFeature.getPattern() + "]", 0);
@@ -263,14 +228,6 @@ public class MathematicaEngine {
 							+ subExpressionPosFixed + "]], HoldComplete[x_]]]",
 					0);
 		}
-
-		// String firstElement = ml.evaluateToOutputForm(
-		// "firstElement = boxesPositions[[1]]", 0);
-
-		// String firstElementFixed = firstElement.replace("0}", "1}");
-		// String result = ml.evaluateToOutputForm(
-		// "interpretedResults = Cases[MakeExpression[Extract[boxForm, "
-		// + firstElementFixed + "]], HoldComplete[x_]]", 0);
 		if (result == null) {
 			Console.print("Error while interpreting original string ("
 					+ ml.error() + "):" + ml.errorMessage());

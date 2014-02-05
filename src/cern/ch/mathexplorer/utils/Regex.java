@@ -71,7 +71,12 @@ public class Regex {
 		queryString = queryString.replaceAll(" mathvariant=\".*?\"", "");
 		queryString = queryString.replaceAll("<mstyle>", "");
 		queryString = queryString.replaceAll("</mstyle>", "");
-		
+		queryString = queryString.replaceAll("<mo>=</mo>", "<mo>==</mo>");
+		queryString = queryString.replaceAll("<mo>≡</mo>", "<mo>==</mo>");
+		queryString = queryString.replaceAll("<mspace.*?>", "");
+		queryString = queryString.replaceAll("</mspace>", "");
+		queryString = queryString.replaceAll("<mo>.</mo></math>", "</math>");
+		queryString = queryString.replaceAll("<mo>,</mo></math>", "</math>");
 		
 		//queryString = queryString.replaceAll("&theta;", "θ");
 		queryString = StringEscapeUtils.unescapeHtml4(queryString);
