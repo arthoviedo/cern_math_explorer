@@ -1,0 +1,45 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction}{3}
+\contentsline {chapter}{\numberline {2}Theoretical Background}{5}
+\contentsline {section}{\numberline {2.1}Boolean Model}{5}
+\contentsline {section}{\numberline {2.2}Vector Space Model}{5}
+\contentsline {chapter}{\numberline {3}Technical Considerations}{7}
+\contentsline {section}{\numberline {3.1}Digital Representations of Mathematics}{8}
+\contentsline {subsection}{\numberline {3.1.1}MathML}{8}
+\contentsline {subsection}{\numberline {3.1.2}OpenMath}{8}
+\contentsline {subsection}{\numberline {3.1.3}LaTeX}{8}
+\contentsline {section}{\numberline {3.2}Math Extraction Tools}{8}
+\contentsline {section}{\numberline {3.3}From LaTeX to MathML}{8}
+\contentsline {subsection}{\numberline {3.3.1}From PDF to MathML}{8}
+\contentsline {subsubsection}{Maxtract}{8}
+\contentsline {subsubsection}{InftyReader}{8}
+\contentsline {subsubsection}{OCR analysis}{8}
+\contentsline {subsection}{\numberline {3.3.2}Other projects}{8}
+\contentsline {section}{\numberline {3.4}Computational Algebraic Systems}{8}
+\contentsline {subsection}{\numberline {3.4.1}Mathematica}{8}
+\contentsline {subsection}{\numberline {3.4.2}Mapple}{8}
+\contentsline {subsection}{\numberline {3.4.3}Matlab}{8}
+\contentsline {subsection}{\numberline {3.4.4}Octane}{8}
+\contentsline {subsection}{\numberline {3.4.5}SAGE}{8}
+\contentsline {chapter}{\numberline {4}Related Work}{9}
+\contentsline {section}{\numberline {4.1}Status of MIR}{9}
+\contentsline {subsection}{\numberline {4.1.1}TREC}{9}
+\contentsline {subsection}{\numberline {4.1.2}TREC}{9}
+\contentsline {subsection}{\numberline {4.1.3}CLEF}{9}
+\contentsline {subsection}{\numberline {4.1.4}NTCIR}{9}
+\contentsline {section}{\numberline {4.2}Mathematical based search projects}{9}
+\contentsline {subsection}{\numberline {4.2.1}MIAS}{9}
+\contentsline {subsection}{\numberline {4.2.2}EgoMath}{9}
+\contentsline {subsection}{\numberline {4.2.3}DLMFSearch}{9}
+\contentsline {subsection}{\numberline {4.2.4}MathWebSearch}{9}
+\contentsline {section}{\numberline {4.3}Other related projects and initiatives}{9}
+\contentsline {subsection}{\numberline {4.3.1}arXMLiv}{9}
+\contentsline {chapter}{\numberline {A}Annexes}{11}
+\contentsline {section}{\numberline {A.1}Conception des masques}{11}
+\contentsline {section}{\numberline {A.2}Constantes physiques et propri\'et\'es des mat\'eriaux}{12}
+\contentsline {section}{\numberline {A.3}Contenu du CD-ROM}{12}
+\contentsline {section}{\numberline {A.4}Processus de fabrication}{13}
+\contentsline {section}{\numberline {A.5}Protocole du processus de fabrication}{13}
+\contentsline {section}{\numberline {A.6}Article en cours d'impression: ``Three-Phase Electrostatic Rotary Stepper Micromotor with a Flexural Pivot Bearing''}{13}
+\contentsline {section}{\numberline {A.7}Article de la conf\'erence Transducers 2009: ``Single mask 3-phase electrostatic rotary stepper micromotor''}{13}
+\contentsline {chapter}{Bibliographie}{10}

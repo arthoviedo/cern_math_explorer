@@ -1,0 +1,71 @@
+
+\documentclass[a4paper]{article}
+
+\usepackage[bookmarks=false]{hyperref}
+\hypersetup{colorlinks,%
+	linkcolor=magenta,%
+	citecolor=blue}
+\hypersetup{pdftitle={Install and use LaTeX for your papers},%
+	pdfauthor={Christophe Yamahata},%
+	pdfdisplaydoctitle=true}
+
+\title{Using \LaTeX\ to submit manuscripts to peer reviewed journals.}
+
+\author{Christophe Yamahata \footnote{\href{mailto:christophe.yamahata@a3.epfl.ch}{christophe.yamahata@a3.epfl.ch}}}
+
+
+\date{May 17$^{th}$, 2008}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Hereafter, I describe all the steps that have to  be followed if you want to 
+prepare scientific papers with \LaTeX. This information is for a PC working 
+under Windows XP or Vista. I take the example of a submission to 
+J. Micromech. Microeng. but you can also find templates for the IEEE J. MEMS
+or any \emph{serious} journal.
+\end{abstract}
+
+
+\section*{Basic steps}
+
+\begin{flushleft}
+\begin{enumerate}
+\item Download the complete MikTeX 2.9 distribution \cite{MikTeX} \\
+    (using `Net Installer': \href{http://miktex.org/2.9/setup}{http://miktex.org/2.9/setup}). \\
+    It can take time if your network connection is slow\ldots
+    
+\item Install MikTeX using the same setup executable file.
+    This step also takes long time (typically $\sim 30~$min).
+
+\item ONLY ONCE MikTeX has been installed, you can download and install WinShell (\href{http://www.winshell.de/}{http://www.winshell.de/}) \cite{WinShell}.
+	\begin{itemize}
+    \item  Open `Winshell.exe'
+    \item You can check in ``Options'' $>$ ``Programm Calls'' that MikTeX is the distribution used to compile \LaTeX.
+	\end{itemize}
+	
+\item Create a new folder where you will copy  the \LaTeX\ template files 
+	\begin{itemize}
+	\item First, you can simply open the `.tex' file that I enclose in this e-mail. After conversion with PDFLaTeX, 
+	it will look like the PDF file that I also enclose.
+	\item Then, try with the template provided by IoP for \emph{J. Micromech. Microeng} \cite{JMM}. \\
+    You can download these files and the guidelines here: \\
+	\href{ftp://ftp.iop.org/pub/journals/ioplatexguidelines.zip}{ftp://ftp.iop.org/pub/journals/ioplatexguidelines.zip} \\
+	\end{itemize}
+\end{enumerate}
+\end{flushleft}
+If you need further information about the \LaTeX\ language, you can check 
+``The Not So Short Introduction to \LaTeXe''. You can find it here: \\
+	\indent \href{http://tobi.oetiker.ch/lshort/lshort.pdf}{http://tobi.oetiker.ch/lshort/lshort.pdf}
+
+
+\begin{thebibliography}{10}
+\bibitem{MikTeX} MikTeX {\emph{\href{http://www.miktex.org/}{www.miktex.org}  } }
+\bibitem{WinShell} WinShell {\emph{\href{http://www.winshell.de/}{www.winshell.de}}}
+\bibitem{JMM} J. Micromech. Microeng. {\emph{\href{http://www.iop.org/EJ/journal/JMM/}{www.iop.org/EJ/journal/JMM}} } 
+\end{thebibliography}
+
+\end{document}
+
