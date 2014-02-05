@@ -291,17 +291,17 @@ public class MathExplorer {
 			String b = Normalizer.normalize(a, Form.NFKD);
 			Console.print("Original: " + a);
 			for (char c: a.toCharArray()){
-				System.out.print("Char: " + c);
-				System.out.print("\tType:" + Character.getType(c));
-				System.out.print("\tCode:" + (int)c +"\t\tHex:"+ Integer.toHexString((int)c));
+				Console.print("Char: " + c);
+				Console.print("\tType:" + Character.getType(c));
+				Console.print("\tCode:" + (int)c +"\t\tHex:"+ Integer.toHexString((int)c));
 				Console.print("");
 			}
-			System.out.println("Norm"
+			Console.print("Norm"
 					+ "alized: " + b);
 			for (char c: b.toCharArray()){
-				System.out.print("Char: " + c);
-				System.out.print("\tType:" + Character.getType(c));
-				System.out.print("\tCode:" + (int)c +"\t\tHex:"+ Integer.toHexString((int)c));
+				Console.print("Char: " + c);
+				Console.print("\tType:" + Character.getType(c));
+				Console.print("\tCode:" + (int)c +"\t\tHex:"+ Integer.toHexString((int)c));
 				Console.print("");
 			}
 			Console.print("");

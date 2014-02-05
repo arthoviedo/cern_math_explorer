@@ -46,19 +46,9 @@ public final class RelatedOperatorsFilter extends TokenFilter {
 	protected RelatedOperatorsFilter(TokenStream input) {
 		super(input);
 	}
-
-	//private static Set<String> INTEGRALS = ;
-
-	
 		
-	
-	
-	BigDecimal _0 = new BigDecimal(0);
 	String currentToken;
 	boolean firstTime = true;
-	BigDecimal previousValue = new BigDecimal(Integer.MAX_VALUE);
-
-	// boolean restart = false;
 
 	@Override
 	public boolean incrementToken() throws IOException {

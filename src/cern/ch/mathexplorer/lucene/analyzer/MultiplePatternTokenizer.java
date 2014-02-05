@@ -126,7 +126,7 @@ public final class MultiplePatternTokenizer extends Tokenizer {
 	
 	@Override
 	public boolean incrementToken() {
-		// System.out.println("Incrementing token");
+		// Console.print("Incrementing token");
 		if (matches.isEmpty())
 			return false;
 		clearAttributes();
@@ -148,7 +148,7 @@ public final class MultiplePatternTokenizer extends Tokenizer {
 	
 	
 	public boolean incrementTokenBK() {
-		// System.out.println("Incrementing token");
+		// Console.print("Incrementing token");
 		if (stringIndex >= str.length())
 			return false;
 		clearAttributes();

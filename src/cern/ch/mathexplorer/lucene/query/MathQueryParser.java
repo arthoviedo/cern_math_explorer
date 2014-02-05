@@ -26,6 +26,7 @@ import uk.ac.ed.ph.snuggletex.SnuggleSession;
 import cern.ch.mathexplorer.lucene.analyzer.RelatedOperatorsFilter;
 import cern.ch.mathexplorer.mathematica.MathematicaEngine;
 import cern.ch.mathexplorer.mathematica.StructuralPattern;
+import cern.ch.mathexplorer.utils.Config;
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.Constants.CHARACTER_CATEGORIES;
@@ -72,8 +73,8 @@ public class MathQueryParser extends QParser {
 		/**
 		 * PhraseQuery query = new PhraseQuery(); query.setSlop(100);
 		 * Collection<String> termsInQuery = Utils.extractElements(queryString);
-		 * System.out.println("New query:"); for (String s: termsInQuery) {
-		 * System.out.println("Query term: " + s); query.add(new
+		 * Console.print("New query:"); for (String s: termsInQuery) {
+		 * Console.print("Query term: " + s); query.add(new
 		 * Term(EQUATION_ELEMENT, s)); }
 		 */
 
@@ -93,7 +94,7 @@ public class MathQueryParser extends QParser {
 				}
 			}
 		}
-		if (Constants.USE_MATHEMATICA) {
+		if (Config.USE_MATHEMATICA) {
 			List<StructuralPattern> patterns = new ArrayList<>();
 			try {
 				patterns = MathematicaEngine.getInstance("QUERY").getPatterns(qstr);
@@ -105,7 +106,7 @@ public class MathQueryParser extends QParser {
 			}
 		}
 		for (BooleanClause a : query.getClauses()){
-			System.out.println(a);
+			Console.print(a);
 		}
 		query.setMinimumNumberShouldMatch(1);
 		
@@ -117,14 +118,13 @@ public class MathQueryParser extends QParser {
 		 * for (String s: termsInQuery) { spanQueries.add(new SpanTermQuery(new
 		 * Term(DUMMY_FIELDNAME, s))); } SpanQuery [] a =
 		 * spanQueries.toArray(new SpanQuery [1]); SpanNearQuery query = new
-		 * SpanNearQuery(a, 5, false); System.out.println(query.toString());
+		 * SpanNearQuery(a, 5, false); Console.print(query.toString());
 		 */
 		/**
 		 * MoreLikeThis mlt = new MoreLikeThis(ireader);
 		 * mlt.setAnalyzer(analyzer); Query query = mlt.like(new
 		 * StringReader(eq2), EQUATION_ELEMENT);
 		 */
-
 		return query;
 	}
 	
@@ -148,8 +148,8 @@ public class MathQueryParser extends QParser {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println(texToMathML("$H\\rightarrow W^+W^-$"));
-		System.out.println(Regex.cleanQuery(texToMathML("$H\\rightarrow W^+W^-$")));
+		Console.print(texToMathML("$H\\rightarrow W^+W^-$"));
+		Console.print(Regex.cleanQuery(texToMathML("$H\\rightarrow W^+W^-$")));
 		MathQueryParser mqp = new MathQueryParser("<math><mi>H</mi><mo>→</mo><msup><mi>W</mi><mo>+</mo></msup><msup>"
 				+ "<mi>W</mi><mo>-</mo></msup></math>", null, null, null);
 		mqp.parse();

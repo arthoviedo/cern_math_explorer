@@ -22,6 +22,6 @@ public class OSUtils {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(getOS());
+		Console.print(getOS());
 	}
 }

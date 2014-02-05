@@ -85,8 +85,6 @@ public final class Constants implements Serializable {
 		return "";
 	}
 	
-	public final static boolean USE_MATHEMATICA = true;
-	
 	public static String getMathematicaCommand() {
 		if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
 			return "C:/Program Files/Wolfram Research/Mathematica/9.0/MathKernel.exe";

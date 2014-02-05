@@ -80,6 +80,6 @@ public class Regex {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(new Regex().isTrivialEquation("<math alttext=\"\\alpha\"><mo>=</mo></math>"));
+		Console.print(new Regex().isTrivialEquation("<math alttext=\"\\alpha\"><mo>=</mo></math>"));
 	}
 }
