@@ -15,7 +15,7 @@ public final class Constants implements Serializable {
 	public static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
 	// Schrodinger Equation
 	public final static String SAMPLE_EQ_1 = "<math><mi>i</mi><mi>ℏ</mi><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac>"
-			+ "<mi>Ψ</mi><mfenced close=\")\" open=\"(\"><mi>r</mi></mstyle><mi>t</mi></mfenced><mo>=</mo>"
+			+ "<mi>Ψ</mi><mfenced close=\")\" open=\"(\"><mi>r</mi><mi>t</mi></mfenced><mo>=</mo>"
 			+ "<mfenced close=\"]\" open=\"[\"><mrow><mfrac><mrow><mo>-</mo><msup><mi>ℏ</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn>"
 			+ "<mi>m</mi></mrow></mfrac><msup><mo>∇</mo><mn>2</mn></msup><mo>+</mo><mi>V</mi><mfenced close=\")\" open=\"(\">"
 			+ "<mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced></mrow></mfenced><mi>Ψ</mi>"
@@ -71,6 +71,10 @@ public final class Constants implements Serializable {
 			+ "<mtext>}</mtext><mo>=</mo><mrow><mo>(</mo><msub><mi>ℳ</mi><mi>i</mi></msub><mo>|</mo><mtext>d</mtext><mi>J</mi><msup>"
 			+ "<mover accent=\"true\"><mo>∂</mo><mo>↔</mo></mover><mi>i</mi></msup><mtext>d</mtext><mi>K</mi><mo>)</mo></mrow>"
 			+ "<mo>,</mo></mrow></math>";
+	public final static String SAMPLE_TRIG_EX = "<math xmlns=\" http://www.w3.org/1998/Math/MathML\"><msup><mfenced close=\")\" open=\"(\"><mrow>"
+			+ "<mi>cos</mi><mfenced close=\")\" open=\"(\"><mi>x</mi></mfenced></mrow></mfenced><mn>2</mn></msup><mo>+</mo><msup>"
+			+ "<mfenced close=\")\" open=\"(\"><mrow><mi>sin</mi><mfenced close=\")\" open=\"(\"><mi>x</mi></mfenced></mrow></mfenced>"
+			+ "<mn>2</mn></msup></math>";
 	public final static String SAMPLE_HEP_PROCESS = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>H</mi><mo>→</mo><msup><mi>W</mi><mo>+</mo>"
 			+ "</msup><msup><mi>W</mi><mo>-</mo></msup></math>";
 	public final static String[] SAMPLE_EQUATIONS = { SAMPLE_EQ_1, SAMPLE_EQ_2,

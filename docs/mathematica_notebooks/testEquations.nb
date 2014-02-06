@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     32095,        921]
-NotebookOptionsPosition[     30987,        883]
-NotebookOutlinePosition[     31330,        898]
-CellTagsIndexPosition[     31287,        895]
+NotebookDataLength[     37932,       1095]
+NotebookOptionsPosition[     36166,       1035]
+NotebookOutlinePosition[     36509,       1050]
+CellTagsIndexPosition[     36466,       1047]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -38,7 +38,7 @@ open=\\\"(\\\"><mi>r</mi><mi>t</mi></mfenced></math>\n\>\"", ",", " ",
  CellChangeTimes->{{3.60059308059735*^9, 3.6005931383166513`*^9}, {
    3.60059320717459*^9, 3.6005932978587766`*^9}, {3.600593333342806*^9, 
    3.600593346639567*^9}, {3.6005934918528724`*^9, 3.600593494306013*^9}, 
-   3.600594258341713*^9, 3.600594691108466*^9}],
+   3.600594258341713*^9, 3.600594691108466*^9, 3.6006028018783755`*^9}],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.6005930293164167`*^9, 3.600593029333418*^9}}],
@@ -696,9 +696,10 @@ Cell[BoxData[
   RowBox[{"eqsSim1", " ", "=", " ", 
    RowBox[{"Map", "[", 
     RowBox[{
-     RowBox[{"Simplify", "[", "ReleaseHold", "]"}], ",", " ", "eqs"}], 
+     RowBox[{"FullSimplify", "[", "ReleaseHold", "]"}], ",", " ", "eqs"}], 
     "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.6005969571180744`*^9, 3.6005970968270655`*^9}}],
+ CellChangeTimes->{{3.6005969571180744`*^9, 3.6005970968270655`*^9}, {
+  3.6005978606547537`*^9, 3.6005978682411876`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -878,7 +879,158 @@ Cell[BoxData[
       SubscriptBox["W", "-"], " ", 
       SuperscriptBox["W", "+"]}]}]}], "}"}],
   DisplayForm]], "Output",
- CellChangeTimes->{3.6005971137460327`*^9, 3.600597290384136*^9}]
+ CellChangeTimes->{3.6005971137460327`*^9, 3.600597290384136*^9, 
+  3.6005978734844875`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"ExportString", "[", 
+  RowBox[{
+   RowBox[{"eqsSim1", "[", 
+    RowBox[{"[", "2", "]"}], "]"}], ",", " ", "\"\<MathML\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.600597734299526*^9, 3.6005977568598166`*^9}, {
+  3.6005977949489956`*^9, 3.6005977950199995`*^9}, {3.6005978455928917`*^9, 
+  3.600597845672897*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqB", " ", "=", " ", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<<math \
+xmlns=\\\"http://www.w3.org/1998/Math/MathML\\\"><mi>cos</mi><msup><mi>x</mi><\
+mn>2</mn></msup><mo>+</mo><mi>sin</mi><msup><mi>x</mi><mn>2</mn></msup></math>\
+\n\>\"", ",", " ", "\"\<MathML\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6005994550559483`*^9, 3.600599520601697*^9}, {
+   3.6005997178169775`*^9, 3.600599719580078*^9}, {3.600599801449761*^9, 
+   3.600599822558968*^9}, {3.6006000882261634`*^9, 3.600600090416289*^9}, {
+   3.600602715816453*^9, 3.600602723786909*^9}, {3.600602835506299*^9, 
+   3.6006028841950836`*^9}, {3.600602918964072*^9, 3.600602947883726*^9}, 
+   3.6006030047439785`*^9, 3.6006040419283023`*^9, {3.600604130580373*^9, 
+   3.600604139548886*^9}, 3.6006042330842357`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"ReleaseHold", "[", 
+   RowBox[{"MakeExpression", "[", "eqB", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6005997242843475`*^9, 3.600599729831664*^9}, {
+  3.6005998263091826`*^9, 3.600599826769209*^9}, {3.6006040564621334`*^9, 
+  3.6006040688748436`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"cos", "+", "sin"}], ")"}], " ", 
+  SuperscriptBox["x", "2"]}]], "Output",
+ CellChangeTimes->{
+  3.600599730310692*^9, 3.6005998276922617`*^9, 3.6006000953735723`*^9, 
+   3.600603008225178*^9, {3.6006040460225363`*^9, 3.600604069564883*^9}, 
+   3.60060414556223*^9, 3.600604237724501*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DisplayForm", "[", "eqB", "]"}]], "Input",
+ CellChangeTimes->{{3.6006030115703692`*^9, 3.600603017755723*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  FormBox[
+   TagBox[
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["cos", "2"], "x"}], "+", 
+     RowBox[{
+      SuperscriptBox["sin", "2"], "x"}]}],
+    "MathMLPresentationTag",
+    AutoDelete->True],
+   TraditionalForm],
+  DisplayForm]], "Output",
+ CellChangeTimes->{3.6006030182537518`*^9, 3.6006040485436807`*^9, 
+  3.60060414800937*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqC", " ", "=", " ", 
+  RowBox[{
+  "ImportString", "[", 
+   "\"\<<math xmlns=\\\"http://www.w3.org/1998/Math/MathML\\\"><msup><mfenced \
+close=\\\")\\\" open=\\\"(\\\"><mrow><mi>cos</mi><mfenced close=\\\")\\\" \
+open=\\\"(\\\"><mi>x</mi></mfenced></mrow></mfenced><mn>2</mn></msup><mo>+</\
+mo><msup><mfenced close=\\\")\\\" open=\\\"(\\\"><mrow><mi>sin</mi><mfenced \
+close=\\\")\\\" \
+open=\\\"(\\\"><mi>x</mi></mfenced></mrow></mfenced><mn>2</mn></msup></math>\>\
+\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6006044121724787`*^9, 3.600604426022271*^9}}],
+
+Cell[BoxData[
+ RowBox[{"FormBox", "[", 
+  RowBox[{
+   RowBox[{"TagBox", "[", 
+    RowBox[{
+     RowBox[{"RowBox", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"SuperscriptBox", "[", 
+         RowBox[{
+          RowBox[{"RowBox", "[", 
+           RowBox[{"{", 
+            RowBox[{"\<\"(\"\>", ",", 
+             RowBox[{"RowBox", "[", 
+              RowBox[{"{", 
+               
+               RowBox[{"\<\"cos\"\>", ",", "\<\"(\"\>", ",", "\<\"x\"\>", 
+                ",", "\<\")\"\>"}], "}"}], "]"}], ",", "\<\")\"\>"}], "}"}], 
+           "]"}], ",", "\<\"2\"\>"}], "]"}], ",", "\<\"+\"\>", ",", 
+        RowBox[{"SuperscriptBox", "[", 
+         RowBox[{
+          RowBox[{"RowBox", "[", 
+           RowBox[{"{", 
+            RowBox[{"\<\"(\"\>", ",", 
+             RowBox[{"RowBox", "[", 
+              RowBox[{"{", 
+               
+               RowBox[{"\<\"sin\"\>", ",", "\<\"(\"\>", ",", "\<\"x\"\>", 
+                ",", "\<\")\"\>"}], "}"}], "]"}], ",", "\<\")\"\>"}], "}"}], 
+           "]"}], ",", "\<\"2\"\>"}], "]"}]}], "}"}], "]"}], 
+     ",", "\<\"MathMLPresentationTag\"\>", ",", 
+     RowBox[{"AutoDelete", "\[Rule]", "True"}]}], "]"}], ",", 
+   "TraditionalForm"}], "]"}]], "Output",
+ CellChangeTimes->{3.6006044324306374`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MakeExpression", "[", "eqC", "]"}]], "Input",
+ CellChangeTimes->{{3.600604434585761*^9, 3.6006044395350437`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"HoldComplete", "[", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"Cos", "[", "x", "]"}], "2"], "+", 
+   SuperscriptBox[
+    RowBox[{"Sin", "[", "x", "]"}], "2"]}], "]"}]], "Output",
+ CellChangeTimes->{3.6006044448603487`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"ReleaseHold", "[", 
+   RowBox[{"MakeExpression", "[", "eqC", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.600604449096591*^9, 3.6006044660845623`*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{{3.60060445905416*^9, 3.60060446708762*^9}}]
 }, Open  ]]
 },
 WindowSize->{1286, 673},
@@ -897,31 +1049,53 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 1081, 20, 152, "Input"],
-Cell[1641, 42, 94, 1, 31, InheritFromParent],
-Cell[1738, 45, 1210, 22, 212, "Input"],
-Cell[2951, 69, 828, 15, 152, "Input"],
-Cell[3782, 86, 440, 11, 72, "Input"],
-Cell[4225, 99, 493, 11, 132, "Input"],
-Cell[4721, 112, 850, 15, 157, "Input"],
-Cell[5574, 129, 905, 17, 172, "Input"],
-Cell[6482, 148, 455, 11, 112, "Input"],
-Cell[6940, 161, 923, 17, 172, "Input"],
-Cell[7866, 180, 2048, 38, 372, "Input"],
-Cell[9917, 220, 548, 11, 31, "Input"],
+Cell[557, 20, 1105, 20, 152, "Input"],
+Cell[1665, 42, 94, 1, 31, InheritFromParent],
+Cell[1762, 45, 1210, 22, 212, "Input"],
+Cell[2975, 69, 828, 15, 152, "Input"],
+Cell[3806, 86, 440, 11, 72, "Input"],
+Cell[4249, 99, 493, 11, 132, "Input"],
+Cell[4745, 112, 850, 15, 157, "Input"],
+Cell[5598, 129, 905, 17, 172, "Input"],
+Cell[6506, 148, 455, 11, 112, "Input"],
+Cell[6964, 161, 923, 17, 172, "Input"],
+Cell[7890, 180, 2048, 38, 372, "Input"],
+Cell[9941, 220, 548, 11, 31, "Input"],
 Cell[CellGroupData[{
-Cell[10490, 235, 170, 3, 31, "Input"],
-Cell[10663, 240, 7186, 249, 160, "Output"]
+Cell[10514, 235, 170, 3, 31, "Input"],
+Cell[10687, 240, 7186, 249, 160, "Output"]
 }, Open  ]],
-Cell[17864, 492, 288, 8, 31, "Input"],
+Cell[17888, 492, 288, 8, 31, "Input"],
 Cell[CellGroupData[{
-Cell[18177, 504, 134, 2, 31, "Input"],
-Cell[18314, 508, 6374, 182, 97, "Output"]
+Cell[18201, 504, 134, 2, 31, "Input"],
+Cell[18338, 508, 6374, 182, 97, "Output"]
 }, Open  ]],
-Cell[24703, 693, 269, 7, 31, "Input"],
+Cell[24727, 693, 326, 8, 31, "Input"],
 Cell[CellGroupData[{
-Cell[24997, 704, 140, 2, 31, "Input"],
-Cell[25140, 708, 5831, 172, 97, "Output"]
+Cell[25078, 705, 140, 2, 31, "Input"],
+Cell[25221, 709, 5858, 173, 97, "Output"]
+}, Open  ]],
+Cell[31094, 885, 341, 8, 31, "Input"],
+Cell[31438, 895, 836, 15, 132, InheritFromParent],
+Cell[CellGroupData[{
+Cell[32299, 914, 315, 6, 31, "Input"],
+Cell[32617, 922, 339, 8, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32993, 935, 134, 2, 31, "Input"],
+Cell[33130, 939, 367, 14, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33534, 958, 582, 11, 132, "Input"],
+Cell[34119, 971, 1264, 33, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35420, 1009, 137, 2, 31, "Input"],
+Cell[35560, 1013, 247, 7, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35844, 1025, 211, 4, 31, "Input"],
+Cell[36058, 1031, 92, 1, 31, "Output"]
 }, Open  ]]
 }
 ]

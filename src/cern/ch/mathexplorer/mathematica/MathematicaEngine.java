@@ -13,8 +13,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
+import cern.ch.mathexplorer.utils.Regex;
 
 import com.wolfram.jlink.KernelLink;
 import com.wolfram.jlink.MathLinkException;
@@ -28,7 +31,6 @@ public class MathematicaEngine {
 	/**
 	 * Singleton instance
 	 */
-	// private static MathematicaEngine instance;
 	private KernelLink ml = null;
 
 	private static final Map<String, MathematicaEngine> instances = new HashMap<String, MathematicaEngine>();
@@ -51,7 +53,7 @@ public class MathematicaEngine {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private void initLink() throws MathLinkException {
 		String command = "";
 		command = Constants.getMathematicaCommand();
@@ -60,11 +62,11 @@ public class MathematicaEngine {
 
 		String jLinkDir = Constants.getMathematicaLinkLocation();
 		System.setProperty("com.wolfram.jlink.libdir", jLinkDir);
-		
+
 		try {
 			KernelLink newLink = MathLinkFactory.createKernelLink(extraArgs);
 			// ml.clearError();
-			
+
 			newLink.discardAnswer();
 			ml = newLink;
 		} catch (MathLinkException e) {
@@ -86,8 +88,6 @@ public class MathematicaEngine {
 
 		}
 	}
-
-
 
 	/**
 	 * This method should be called after an invokation of the tryInterpretRoot
@@ -129,7 +129,8 @@ public class MathematicaEngine {
 						0);
 				Console.print(currentExpression);
 				if (!analyzedExpressions.contains(currentExpression)) {
-					for (StructuralPattern currentFeature : Patterns.getPatterns()) {
+					for (StructuralPattern currentFeature : Patterns
+							.getPatterns()) {
 						String resultFeature = ml.evaluateToOutputForm(
 								"Position[currentExpression, "
 										+ currentFeature.getPattern() + "]", 0);
@@ -257,23 +258,62 @@ public class MathematicaEngine {
 		return equation;
 	}
 
+	/**
+	 * Tries to apply the SIMPLIFY/FULL_SIMPLIFY procedures to the given
+	 * expression If the process cannot be done, it return the original given
+	 * string
+	 */
+	public String simplifyExpression(String mathMLExpression) {
+		try {
+
+			importString(mathMLExpression);
+			
+			String result = ml.evaluateToOutputForm("ExportString[Simplify[ReleaseHold[MakeExpression[importedString]]],\"MathML\"]", 0);
+			if (result.contains("<merror>") || result.contains("$Failed")) { // There was some error in the process, so we return the original string
+				return mathMLExpression;
+			}
+			result = result.replaceAll("\\r|\\n|  +", "");
+			
+			return StringEscapeUtils.unescapeHtml4(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Console.print("Error while importing String");
+			// TODO: Solve better
+			// Just in case, we restart our link
+			// Cleanup operation can still fail
+			try {
+				killMathKernel();
+				initLink();
+			} catch (Exception e1) {
+				Console.print("Error while cleaning up");
+				e1.printStackTrace();
+			}
+			return mathMLExpression;
+		}
+	}
+
+	private enum SimplifyMode {
+		SIMPLIFY, FULL_SIMPLIFY;
+	}
+
 	public static void main(String[] args) throws Exception {
-		test();
 		MathematicaEngine mi = getInstance("TESTING");
-		String expression = "<math alttext=\"\\frac{dP(0,0,...;t)}{dt}=Q+u\\sum_{nn}{P(0,0,...;t)}-(2du+k)P(0,0,...;t)\"><mrow><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>P</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>;</mo><mi>t</mi></mrow><mo>)</mo></mrow></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mi>Q</mi><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><munder><mo>∑</mo><mrow><mi>n</mi><mo>⁢</mo><mi>n</mi></mrow></munder><mrow><mi>P</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>;</mo><mi>t</mi></mrow><mo>)</mo></mrow></mrow></mrow></mrow><mo>-</mo><mrow><mrow><mo>(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mo>+</mo><mi>k</mi></mrow><mo>)</mo></mrow><mo>⁢</mo><mi>P</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>;</mo><mi>t</mi></mrow><mo>)</mo></mrow></mrow></mrow></mrow></math>";
+		String expression = Constants.SAMPLE_EQ_1;
 		Console.print(expression);
 		List<StructuralPattern> features = mi.getPatterns(expression);
 		for (StructuralPattern f : features) {
 			Console.print(f.getName());
 		}
+		Console.print(mi.simplifyExpression(expression));
 	}
-	
-	public static void test() throws Exception{
-		BufferedReader br = new BufferedReader(new FileReader(new File("/share/math/arxiv_cds/arx1312.6708.eq")));
+
+	public static void test() throws Exception {
+		BufferedReader br = new BufferedReader(new FileReader(new File(
+				"/share/math/arxiv_cds/arx1312.6708.eq")));
 		String line = "";
 		MathematicaEngine instance = getInstance("TESTING");
 		int count = 0;
-		while ( (line = br.readLine())!=null ) {
+		while ((line = br.readLine()) != null) {
 			instance.getPatterns(line);
 			Console.print(count++);
 		}

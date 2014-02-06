@@ -148,7 +148,7 @@ public class MathQueryParser extends QParser {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		String query = Regex.cleanQuery(texToMathML("$H\\rightarrow b\\bar{b}$"));
+		String query = Regex.cleanQuery(texToMathML("$ (\\cos(x))^2 + (\\sin(x))^2 $"));
 		MathQueryParser mqp = new MathQueryParser(query, null, null, null);
 		mqp.parse();
 	}
