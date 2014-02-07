@@ -67,7 +67,7 @@ public class Regex {
 	public static String cleanQuery(String queryString) {
 		queryString = queryString.replaceAll("\\r|\\n|  +", "");
 		queryString = queryString.replaceAll(" selected=\".*?\"", "");
-		queryString = queryString.replaceAll("mtext", "mi");
+		queryString = queryString.replaceAll("<mtext.*?</mtext>", "");
 		queryString = queryString.replaceAll(" mathvariant=\".*?\"", "");
 		queryString = queryString.replaceAll("<mstyle>", "");
 		queryString = queryString.replaceAll("</mstyle>", "");

@@ -17,6 +17,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
 
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
+import cern.ch.mathexplorer.utils.OSUtils;
 import cern.ch.mathexplorer.utils.Regex;
 
 import com.wolfram.jlink.KernelLink;
@@ -79,11 +80,22 @@ public class MathematicaEngine {
 
 	private void killMathKernel() {
 		try {
-			String command1 = "killall -s 9 Mathematica";
-			String command2 = "killall -s 9 MathKernel";
+			if (OSUtils.getOS().equals(OSUtils.OS.LINUX) ||
+					OSUtils.getOS().equals(OSUtils.OS.MAC)) {
+				String command1 = "killall -s 9 Mathematica";
+				String command2 = "killall -s 9 MathKernel";
+				Runtime.getRuntime().exec(command1);
+				Runtime.getRuntime().exec(command2);
+			}
+			
+			if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
+				String command1 = "taskkill /im MathKerel.exe";
+				String command2 = "taskkill /im Mathematica.exe";
+				
+				Runtime.getRuntime().exec(command1);
+				Runtime.getRuntime().exec(command2);
+			}
 
-			Runtime.getRuntime().exec(command1);
-			Runtime.getRuntime().exec(command2);
 		} catch (Exception e) {
 
 		}

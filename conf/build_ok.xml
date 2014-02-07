@@ -45,6 +45,8 @@
 		<javac srcdir="${src_home}/mathematica" destdir="${build}">
 			<classpath>
 				<pathelement location="../WebContent/WEB-INF/lib/JLink.jar"/>
+				<pathelement location="../WebContent/WEB-INF/lib/commons-lang3-3.1.jar"/>
+
 			</classpath>
 		</javac>
 	</target>
