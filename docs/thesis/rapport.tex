@@ -9,13 +9,12 @@
 \usepackage{array}
 \usepackage{multirow}
 \usepackage[latin1]{inputenc}
-
 %\def\pgfsysdriver{pgfsys-dvipdfm.def}
 %\usepackage{tikz}
-
 \usepackage{textcomp}
-
 \usepackage{verbatim} 
+
+\usepackage{hyperref}
 
 % Uncomment to show frames
 %\usepackage{showframe}
@@ -88,10 +87,9 @@
 %\begin{titlepage}
 %\fancyhf{}
 
+
 \include{titre}
-
 %\end{titlepage}
-
 
 %% start the show...
 
@@ -101,15 +99,14 @@
 
 \tableofcontents
 
-%\listoffigures
-%\listoftables
+\listoffigures
+\listoftables
 \include{chap1-introduction}
 \include{chap-theoretical_background}
 \include{chap-technical_considerations}
 \include{chap-related_work}
-\include{chap-math_explorer}
+\include{chap-cern_math_explorer}
 \include{chap-evaluation}
-%\include{chap2-etat-art}
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{chapter}{Bibliographie}
 \nocite{*}
@@ -117,7 +114,7 @@
 \bibliography{bibliographie}
 \begin{appendix}
 \appendix
-\include{annexes}
+%\include{annexes}
 \end{appendix}
 \end{document}
 

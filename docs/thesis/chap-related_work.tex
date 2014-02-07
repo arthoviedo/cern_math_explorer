@@ -6,10 +6,24 @@
 \subsection{CLEF}
 \subsection{NTCIR}
 \section{Mathematical based search projects}
-\subsection{MIAS}
+\subsection{MIaS}
+MIaS\cite{mias_1} (Math Indexer and Searcher), currently, is one of the flagship projects in the indexing and searching of mathematical content. As most of the other projects, it processes documents in MathML format. It allows the user to include in the queries mathematical expressions and textual content. During indexing time, equations are transformed following a set of heuristics that include:
+\begin{itemize}
+  \item Ordering of elements: Taking into account commutativity of certain operators (Addition, multiplication), elements are ordered such that $3 + a$ would be converted into $a + 3$ (Since the <mi> tag comes first than the <mn> tag)
+  \item Unification of variables: This process takes into the account the structure of the equations in despite of the naming of the variables. Expressions like $a+b^a$ and $x+y^x$ would be converted into an expressions of the form $id_1 + id_2^{id_1}$ which would match.
+  \item Unification of constants: This step consists of replacing all occurrences of constants (<mn> tags) by a const symbol. 
+\end{itemize}
+The extracted tokens from a given equation consist of all its valid sub-expressions. The original expression is given a weight value of 1, and following sub-expressions are given smaller weights depending on how general or specific they are.  
+The system, also as most of the current projects, is developed by using the Apache Lucene framework. The system adapts the default scoring equation such that the given weight is taken into account.  
 \subsection{EgoMath}
+EgoMath\cite{egomath1} and its new version EgoMath$^2$\cite{egomath2}, is a system oriented to index the mathematical content from the Wikipedia.org database. The processing steps before indexing are similar to the ones in MIaS (Rearranging of symbols, unification of constants). The extraction process started from a complete dump of the Wikipedia database and filtering only the math articles, which are identified by the ”<math>" tag. This consists on around thirty thousand articles, from which 240.000 equations were identified. The processing step includes translating the equation from LaTeX into MathML format and then indexing both representation.
+Some additional effort is done into splitting large mathematical blocks like tables into single mathematical expressions.
+
 \subsection{DLMFSearch}
 \subsection{MathWebSearch}
+\subsection{LaTEXSearch}
+LaTEXSearch \url{http://latexsearch.com/} is a system developed by the scientific publisher Springer that allows to search over a database of around eight million latex snippets extracted from their publications. The system, unfortunately, is proprietary and no details are provided about the internals of the system.
+	 
 \section{Other related projects and initiatives}
 \subsection{arXMLiv}
 \thispagestyle{empty}

@@ -21,7 +21,9 @@ public class Patterns {
 		patterns.add(new StructuralPattern("sine", "Sin[x_]"));
 		patterns.add(new StructuralPattern("cosine", "Cos[x_]"));
 		patterns.add(new StructuralPattern("sum sine cosine", "a_.*Cos[x_] + b_.*Sin[x_]"));
-		patterns.add(new StructuralPattern("sum sine cosine h", "a_.*Cosh[x_] + b_.*Sinh[x_]"));
+		patterns.add(new StructuralPattern("product sine cosine", "a_.*Cos[x_] * b_.*Sin[x_]"));
+		patterns.add(new StructuralPattern("sum sineh cosine h", "a_.*Cosh[x_] + b_.*Sinh[x_]"));
+		patterns.add(new StructuralPattern("product sineh cosine h", "a_.*Cosh[x_] * b_.*Sinh[x_]"));
 		patterns.add(new StructuralPattern("tangent", "Tan[x_]"));
 		patterns.add(new StructuralPattern("exponential", "e^x_"));
 		patterns.add(new StructuralPattern("quadratic", "a_.+b_.x_+c_.x_^2"));

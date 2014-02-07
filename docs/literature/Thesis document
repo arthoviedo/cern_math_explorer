@@ -1,0 +1,18 @@
+Recognition of mathematical formulas in pdfs
+
+The problem consists on given a PDF file, recognizing an extracting the mathematical formulas from it.
+There are mainly 2 different approaches for attacking this problem:
+*Employing OCR (Optical character recognition). This is the approach followed by the infty project. Which is commercial.
+*By interpreting the pdf structure. This gives the advantage of solving some problems like ambiguity with similar characters (1 and I ad l). The unique
+ available tool that can be found in the internet is called maxtract.
+
+Representing the recognized formulas
+There are several ways to represent formulas, the most widely used is in latex format. A standard way is using the MathML or the OpenAccessML lmarkup languages. Since these representations require that the formula was correctly recognized in terms of variables, operators and relations among them and because the current tools do not work good enough, we had to came up with a different approach.
+As an initial approximation, we can the formula as a vector of the characters that could be identified.
+
+
+Extracting formulas from PDFs turns out to be difficult, so we change direction and focus on LaTeX files.
+Here, some tools like latexml consist on reimplementing the pdf compiler to produce a valid xml.
+We use this to extract formulas from a set of files
+For initial experiments we use the KDD 2011 dataset of hep files.
+

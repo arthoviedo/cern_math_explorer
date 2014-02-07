@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.24)  1 FEB 2014 18:42
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  7 FEB 2014 18:05
 entering extended mode
 **rapport.tex
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\rapport.tex
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -17,16 +17,18 @@ ishmax, welsh, loaded.
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\bk12.clo"
 File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+Requested font "cmr12" at 12.0pt
+ -> cmr12
 )
-\c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -56,7 +58,10 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))
+)
+Requested font "aer12" at 12.0pt
+ -> aer12
+))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
@@ -81,7 +86,7 @@ Language: english 2005/03/30 v3.3o English support from the babel system
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
-\babel@savecnt=\count88
+\babel@savecnt=\count89
 \U@D=\dimen103
 )
 \l@canadian = a dialect from \language\l@american 
@@ -101,7 +106,7 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
@@ -201,29 +206,165 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks18
 \verbatim@in@stream=\read1
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen107
+\Hy@linkcounter=\count90
+\Hy@pagecounter=\count91
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count92
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count93
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\xelatex\xetexurl\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2004/03/15  ver 3.1  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen108
+Requested font "pzdr" at 0.00002pt
+ -> pzdr
+\Fld@menulength=\count94
+\Field@Width=\dimen109
+\Fld@charsize=\dimen110
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count95
+\c@Item=\count96
+\c@Hfootnote=\count97
+)
+
+Package hyperref Message: Driver (autodetected): hxetex.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hxetex.def"
+File: hxetex.def 2012/11/06 v6.83m Hyperref driver for XeTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
+File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\stringenc.sty"
+Package: stringenc 2011/12/02 v1.10 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box26
+\c@Hy@AnnotLevel=\count98
+\HyField@AnnotCount=\count99
+\Fld@listcount=\count100
+\c@bookmark@seq@number=\count101
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package rerunfilecheck Info: Feature \pdfmdfivesum is not available
+(rerunfilecheck)             (e.g. pdfTeX or LuaTeX with package `pdftexcmds').
+
+(rerunfilecheck)             Therefore file contents cannot be checked efficien
+tly
+(rerunfilecheck)             and the loading of the package is aborted.
+)
+\Hy@SectionHShift=\skip54
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen107
-\lightrulewidth=\dimen108
-\cmidrulewidth=\dimen109
-\belowrulesep=\dimen110
-\belowbottomsep=\dimen111
-\aboverulesep=\dimen112
-\abovetopsep=\dimen113
-\cmidrulesep=\dimen114
-\cmidrulekern=\dimen115
-\defaultaddspace=\dimen116
-\@cmidla=\count89
-\@cmidlb=\count90
-\@aboverulesep=\dimen117
-\@belowrulesep=\dimen118
-\@thisruleclass=\count91
-\@lastruleclass=\count92
-\@thisrulewidth=\dimen119
+\heavyrulewidth=\dimen111
+\lightrulewidth=\dimen112
+\cmidrulewidth=\dimen113
+\belowrulesep=\dimen114
+\belowbottomsep=\dimen115
+\aboverulesep=\dimen116
+\abovetopsep=\dimen117
+\cmidrulesep=\dimen118
+\cmidrulekern=\dimen119
+\defaultaddspace=\dimen120
+\@cmidla=\count102
+\@cmidlb=\count103
+\@aboverulesep=\dimen121
+\@belowrulesep=\dimen122
+\@thisruleclass=\count104
+\@lastruleclass=\count105
+\@thisrulewidth=\dimen123
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip54
+\@mathmargin=\skip55
 
 For additional information on amsmath, use the `?' option.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
@@ -231,51 +372,51 @@ Package: amstext 2000/06/29 v2.01
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks19
-\ex@=\dimen120
+\@emptytoks=\toks20
+\ex@=\dimen124
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen121
+\pmbraise@=\dimen125
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count93
+\inf@bad=\count106
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count94
-\leftroot@=\count95
+\uproot@=\count107
+\leftroot@=\count108
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count96
-\DOTSCASE@=\count97
+\classnum@=\count109
+\DOTSCASE@=\count110
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
-\big@size=\dimen122
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen126
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count98
-\c@MaxMatrixCols=\count99
-\dotsspace@=\muskip10
-\c@parentequation=\count100
-\dspbrk@lvl=\count101
-\tag@help=\toks20
-\row@=\count102
-\column@=\count103
-\maxfields@=\count104
-\andhelp@=\toks21
-\eqnshift@=\dimen123
-\alignsep@=\dimen124
-\tagshift@=\dimen125
-\tagwidth@=\dimen126
-\totwidth@=\dimen127
-\lineht@=\dimen128
-\@envbody=\toks22
-\multlinegap=\skip55
-\multlinetaggap=\skip56
-\mathdisplay@stack=\toks23
+\macc@depth=\count111
+\c@MaxMatrixCols=\count112
+\dotsspace@=\muskip11
+\c@parentequation=\count113
+\dspbrk@lvl=\count114
+\tag@help=\toks21
+\row@=\count115
+\column@=\count116
+\maxfields@=\count117
+\andhelp@=\toks22
+\eqnshift@=\dimen127
+\alignsep@=\dimen128
+\tagshift@=\dimen129
+\tagwidth@=\dimen130
+\totwidth@=\dimen131
+\lineht@=\dimen132
+\@envbody=\toks23
+\multlinegap=\skip56
+\multlinetaggap=\skip57
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
@@ -296,10 +437,6 @@ LaTeX Info: Redefining \halign on input line 111.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks24
-)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
@@ -309,105 +446,175 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: xetex.def on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+("C:\Program Files (x86)\MiKTeX 2.9\tex\xelatex\xetex-def\xetex.def"
+File: xetex.def 2013/04/29 v0.96 LaTeX color/graphics driver for XeTeX (RRM/JK)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count105
 ))
-\Gin@req@height=\dimen129
-\Gin@req@width=\dimen130
+\Gin@req@height=\dimen133
+\Gin@req@width=\dimen134
 )
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\rapport.aux
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\titre.aux)
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap1-introduction.au
-x)
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-theoretical_back
-ground.aux)
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-technical_consid
-erations.aux)
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-related_work.aux
-) (C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-evaluation.aux
-) (C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\annexes.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 82.
-LaTeX Font Info:    Try loading font information for OT2+cmr on input line 82.
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.aux
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\titre.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap1-introduction.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-theoretical_background.a
+ux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-technical_considerations
+.aux) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 81.
+LaTeX Font Info:    Try loading font information for OT2+cmr on input line 81.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cyrillic\ot2cmr.fd"
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 82.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 81.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring OFF on input line 81.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
-\scratchdimen=\dimen131
-\scratchbox=\box28
-\nofMPsegments=\count107
-\nofMParguments=\count108
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count109
-\MPscratchDim=\dimen132
-\MPnumerator=\count110
-\makeMPintoPDFobject=\count111
-\everyMPtoPDFconversion=\toks26
-) (C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\titre.tex
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count118
+)
+LaTeX Info: Redefining \ref on input line 81.
+LaTeX Info: Redefining \pageref on input line 81.
+LaTeX Info: Redefining \nameref on input line 81.
+
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.out)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.out)
+\@outlinefile=\write3
+
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\titre.tex
+Requested font "aer10" at 10.0pt
+ -> aer10
+Requested font "cmex7" at 7.0pt
+ -> cmex7
+Requested font "cmex7" at 5.0pt
+ -> cmex7
 LaTeX Font Info:    Try loading font information for U+msa on input line 22.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
+Requested font "msam10" at 10.0pt
+ -> msam10
+Requested font "msam7" at 7.0pt
+ -> msam7
+Requested font "msam5" at 5.0pt
+ -> msam5
 LaTeX Font Info:    Try loading font information for U+msb on input line 22.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<logo/logo.png, id=1, 720.44156pt x 350.81062pt>
-File: logo/logo.png Graphic file (type png)
- <use logo/logo.png>
-Package pdftex.def Info: logo/logo.png used on input line 22.
-(pdftex.def)             Requested size: 155.99762pt x 75.9581pt.
+Requested font "msbm10" at 10.0pt
+ -> msbm10
+Requested font "msbm7" at 7.0pt
+ -> msbm7
+Requested font "msbm5" at 5.0pt
+ -> msbm5
+File: logo/logo.png Graphic file (type QTm)
 
-Overfull \vbox (15.9581pt too high) detected at line 22
+<use  "logo/logo.png" >
+Overfull \vbox (15.83064pt too high) detected at line 22
  []
 
+Requested font "aebx10" at 10.0pt
+ -> aebx10
 
 Overfull \hbox (214.79935pt too wide) in paragraph at lines 9--23
  [] 
  []
 
+Requested font "aer17" at 24.88pt
+ -> aer17
+Requested font "aebx12" at 24.88pt
+ -> aebx12
+Requested font "aer17" at 17.28pt
+ -> aer17
+Requested font "aebx12" at 17.28pt
+ -> aebx12
+Requested font "aecsc10" at 24.88pt
+ -> aecsc10
+Requested font "aecsc10" at 17.28pt
+ -> aecsc10
+Requested font "aeti12" at 17.28pt
+ -> aeti12
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\se-ascii-print.def"
+File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
+
+)
 [1
 
 
 
-{C:/Users/Artie/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Ar
-tie/Desktop/Estudio/master_thesis_epfl/thesis/logo/logo.png>]) [2]
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\rapport.toc
+]) [2] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.toc
+Requested font "aebx12" at 12.0pt
+ -> aebx12
+Requested font "cmr8" at 8.0pt
+ -> cmr8
+Requested font "cmr6" at 6.0pt
+ -> cmr6
+Requested font "cmmi12" at 12.0pt
+ -> cmmi12
+Requested font "cmmi8" at 8.0pt
+ -> cmmi8
+Requested font "cmmi6" at 6.0pt
+ -> cmmi6
+Requested font "cmsy10" at 12.0pt
+ -> cmsy10
+Requested font "cmsy8" at 8.0pt
+ -> cmsy8
+Requested font "cmsy6" at 6.0pt
+ -> cmsy6
+Requested font "cmex10" at 12.0pt
+ -> cmex10
+Requested font "cmex8" at 8.0pt
+ -> cmex8
+Requested font "cmex7" at 6.0pt
+ -> cmex7
+Requested font "msam10" at 12.0pt
+ -> msam10
+Requested font "msam10" at 8.0pt
+ -> msam10
+Requested font "msam7" at 6.0pt
+ -> msam7
+Requested font "msbm10" at 12.0pt
+ -> msbm10
+Requested font "msbm10" at 8.0pt
+ -> msbm10
+Requested font "msbm7" at 6.0pt
+ -> msbm7
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -418,119 +625,167 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ])
-\tf@toc=\write3
- [2]
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap1-introduction.te
-x
-Chapter 1.
-) [3
+\tf@toc=\write4
+ [2] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.lof)
+\tf@lof=\write5
+
+[3
+
+] [4
+
+] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.lot)
+\tf@lot=\write6
+ [5]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap1-introduction.tex
+[6
 
 
 ]
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-theoretical_back
-ground.tex [4
+Chapter 1.
+) [7]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-theoretical_background.t
+ex [8
 
 
 
 ]
 Chapter 2.
-) [5]
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-technical_consid
-erations.tex [6
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--19
+
+ []
+
+[9]
+Requested font "aer8" at 8.0pt
+ -> aer8
+Requested font "aer6" at 6.0pt
+ -> aer6
+
+Overfull \hbox (35.58633pt too wide) in paragraph at lines 37--37
+[] 
+ []
 
 
+LaTeX Warning: Citation `demaine' on page 10 undefined on input line 40.
 
-]
+) [10]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-technical_considerations
+.tex
 Chapter 3.
+Requested font "aer12" at 14.4pt
+ -> aer12
+Requested font "aebx12" at 14.4pt
+ -> aebx12
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7])
-[8]
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-related_work.tex
+ [11
+
+
+
+])
+[12] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.tex
 Chapter 4.
-) [9
 
+LaTeX Warning: Citation `mias_1' on page 13 undefined on input line 10.
 
-
-]
-No file chap-math_explorer.tex.
-No file chap-evaluation.tex.
-No file rapport.bbl.
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\annexes.tex [10
-
-
-
-
-
-
-
-]
-Appendix A.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11]
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 70.
-LaTeX Font Info:    No file TS1aer.fd. on input line 70.
-
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 12.
+LaTeX Font Info:    No file TS1aer.fd. on input line 12.
 
 LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textbullet' on input line 70.
+(Font)              for symbol `textbullet' on input line 12.
+
+Requested font "tcrm1200" at 12.0pt
+ -> tcrm1200
+[13
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 76.
 
-Missing character: There is no é in font cmr12!
+]
 
-Underfull \hbox (badness 1308) in paragraph at lines 105--105
-[]\T1/aer/bx/n/17.28 Article de la con-férence Trans-duc-ers
+LaTeX Warning: Citation `egomath1' on page 14 undefined on input line 19.
+
+
+LaTeX Warning: Citation `egomath2' on page 14 undefined on input line 19.
+
+Missing character: There is no â€ in font aer12!
+LaTeX Font Info:    Try loading font information for T1+aett on input line 25.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+Requested font "aett12" at 12.0pt
+ -> aett12
+) [14]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.tex
+Chapter 5.
+[15
+
+
+
+]
+Overfull \hbox (10.91698pt too wide) in paragraph at lines 55--55
+[]\T1/aett/m/n/12 "\ \varphi\ are\ shown,\ as\ well\ as\ the\ weight\ and\ tens
+ion"[] 
  []
 
-) [12] [13]
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\rapport.aux
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\titre.aux)
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap1-introduction.au
-x)
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-theoretical_back
-ground.aux)
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-technical_consid
-erations.aux)
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-related_work.aux
-)
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-math_explorer.au
-x)
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\chap-evaluation.aux)
-(C:\Users\Artie\Desktop\Estudio\master_thesis_epfl\thesis\annexes.aux))
+Missing character: There is no Ï† in font aett12!
+
+Overfull \hbox (10.91698pt too wide) in paragraph at lines 59--59
+[]\T1/aett/m/n/12 <math><mrow><mi></mi><mo></mo><mrow><mi>a</mi><mo></mo><mi>r<
+/mi>[] 
+ []
+
+[16]
+Overfull \hbox (23.25288pt too wide) in paragraph at lines 61--61
+[]\T1/aett/m/n/12 <mi>h</mi><mo></mo><mi>o</mi><mo></mo><mi>w</mi><mo></mo><mi>
+n</mi>[] 
+ []
+
+) [17]
+No file chap-evaluation.tex.
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.bbl [18
+
+
+
+
+]
+Requested font "aeti12" at 12.0pt
+ -> aeti12
+Missing character: There is no ï¿½ in font aeti12!
+Missing character: There is no ï¿½ in font aeti12!
+ [19])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
+
+[20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
+ (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.aux
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\titre.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap1-introduction.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-theoretical_background.a
+ux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-technical_considerations
+.aux) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 119.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 119.
+
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 119.
  ) 
 Here is how much of TeX's memory you used:
- 3717 strings out of 493921
- 50800 string characters out of 3144876
- 98720 words of memory out of 3000000
- 6835 multiletter control sequences out of 15000+200000
- 43889 words of font info for 95 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 35i,14n,43p,335b,348s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Artie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
-tcrm1200.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc
-10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on rapport.pdf (15 pages, 189270 bytes).
-PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 10300 strings out of 429035
+ 140810 string characters out of 3166907
+ 204062 words of memory out of 3000000
+ 13372 multiletter control sequences out of 15000+200000
+ 35914 words of font info for 59 fonts, out of 3000000 for 9000
+ 912 hyphenation exceptions out of 8191
+ 35i,14n,47p,713b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
 
+Output written on rapport.pdf (22 pages).

@@ -1,0 +1,82 @@
+\chapter{CERN Math Explorer}
+\label{chapter-cern_math_explorer}
+In this chapter we propose our solution for a scalable math based oriented search engine. We present the key points of our system, and how they are related to previous built systems.
+
+\section{Information Retrieval Model}
+Our main goal is to develop a system that compliments the already available search capabilities in Invenio and in particular the CDS instance. Our system was developed using the Apache Solr/Lucene framework.
+
+
+\subsection{Notational Features}
+Notational features correspond to the elements that relate to the actual naming of the variables, constants and numeric quantities found in an equation. Here we extract tokens that represent single leaf nodes (E.g. <mi>, <mn>, <mo> tags), and simple constructs like subscript and superscript elements, fractions, roots.
+We also extract bi-grams and tri-grams as analogue to that is done for text indexing in current systems.
+
+After examining a set of relevant documents from our dataset, we identified some heuristics that could be applied to improve the recall of our system:
+
+\begin{itemize}
+  \item Unicode Normalizing:
+  \item Numeric Approximation: Some equations relate specific numeric quantities. While most of the previously explorer systems, handled <mn> tags by only representing them as a constant identifier, this approach is not suitable. A lot of articles in CDS relate to specific experiments under certain conditions, and require a high level of precision in the measurements. 
+  \item Grouping of similar operators:
+\end{itemize}
+
+\subsection{Structural Features}
+
+
+\subsection{Development with Lucene/Solr}
+
+\subsection{Integration with Mathematica}
+This section describes some aspects that should be considered while implementing the integration with the Mathematica CAS. 
+
+\subsubsection{Recursive interpretation}
+
+\subsubsection{Error handling}
+Sometimes after certain time Mathematica will crash, launch an exception and following invocations would fails as well.
+Also, re-instantiating a KernelLink will yield an Exception. For this scenario, killing the associated processes to Mathematica was necessary:
+
+\begin{verbatim}
+killall -s 9 Mathematica
+killall -s 9 MathKernel
+\end{verbatim} 
+
+or 
+
+\begin{verbatim}
+taskkill /im Mathematica.exe
+taskkill /im MathKernel.exe
+\end{verbatim} 
+
+Depending on the OS the system is running on.
+
+With this, the next creation of a new KernelLink works properly and the subsequent invocations work as expected.
+
+\subsubsection{Timeout Handling}
+Unfortunately, checking the quality of a LaTeX document is a difficult job and users have a lot of freedom in the way they write their document since the only visible result is the rendered version. 
+One example we found during our work is the following TeX snippet:
+\begin{verbatim}
+	"\ \varphi\ are\ shown,\ as\ well\ as\ the\ weight\ and\ tension"
+\end{verbatim}
+A human can easily identify that this corresponds to text and that should be inserted into a proper "mbox" or "text" tag. In this case, the snippet produced the following MathML code
+\begin{verbatim}
+<math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo></mo><mi>r</mi>
+<mo></mo><mi>e</mi></mrow><mo></mo><mrow><mi>s</mi><mo></mo>
+<mi>h</mi><mo></mo><mi>o</mi><mo></mo><mi>w</mi><mo></mo><mi>n</mi>
+</mrow><mo>,</mo><mrow><mi>a</mi><mo></mo>
+<mi>s</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo>
+<mi>e</mi><mo></mo><mi>l</mi><mo></mo><mi>l</mi>
+</mrow><mo></mo><mrow><mi>a</mi><mo></mo>
+<mi>s</mi></mrow><mo></mo><mrow><mi>t</mi><mo></mo>
+<mi>h</mi><mo></mo><mi>e</mi></mrow><mo></mo>
+<mrow><mi>w</mi><mo></mo><mi>e</mi><mo></mo>
+<mi>i</mi><mo></mo><mi>g</mi><mo></mo><mi>h</mi>
+<mo></mo><mi>t</mi></mrow><mo></mo><mrow>
+<mi>a</mi><mo></mo><mi>n</mi><mo></mo><mi>d</mi>
+</mrow><mo></mo><mrow><mi>t</mi><mo></mo><mi>e</mi>
+<mo></mo><mi>n</mi><mo></mo><mi>s</mi><mo></mo>
+<mi>i</mi><mo></mo><mi>o</mi><mo></mo><mi>n</mi>
+</mrow></mrow></math>
+\end{verbatim}
+
+Mathematica took around 10 minutes to interpret it.
+In the ideal case we would be able to identify the malformed expressions and pass to Mathematica only well-formed equations to be processed but as this simple example shows, that is a very challenging task and may require more work.
+As a remedial situation, we used a fixed timeout to stop the processing of a given expression.
+
+\subsection{Integration with CDS}
