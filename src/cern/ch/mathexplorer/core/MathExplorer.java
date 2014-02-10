@@ -49,6 +49,7 @@ import uk.ac.ed.ph.snuggletex.SnuggleSession;
 import cern.ch.mathexplorer.core.EquationResult.EquationBuilder;
 import cern.ch.mathexplorer.lucene.analysis.VecTextField;
 import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrMathMLNotationalAnalyzer;
+import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrNormalizerMathMLNotationalAnalyzer;
 import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrStructuralAnalyzer;
 import cern.ch.mathexplorer.lucene.query.MathQueryParser;
 import cern.ch.mathexplorer.utils.Console;
@@ -76,6 +77,8 @@ public class MathExplorer {
 	
 	private Analyzer analyzer = new SolrMathMLNotationalAnalyzer(matchVersion);
 	private Analyzer analyzer2 = new SolrStructuralAnalyzer(matchVersion);
+	private Analyzer analyzer3 = new SolrNormalizerMathMLNotationalAnalyzer(matchVersion);
+	
 	
 	private DirectoryReader ireader;
 	private IndexSearcher isearcher;
@@ -263,7 +266,7 @@ public class MathExplorer {
 	public static void main(String[] args) throws Exception {
 		
 		MathExplorer m = new MathExplorer(null, false);
-		m.testAnalyzer(Constants.SAMPLE_EQ_TEXT);
+		m.testAnalyzer(Constants.SAMPLE_EQ_2);
 		
 		//m.search(Constants.SAMPLE_EQUATION_2, true, INDEX_WHOLE_ARTICLE);
 		//testUnicodeNormalization();
@@ -337,6 +340,9 @@ public class MathExplorer {
 				new StringReader(equation));
 		TokenStream ts2 = analyzer2.tokenStream(Constants.MATH_STRUCTURAL_FIELD,
 				new StringReader(equation));
+		TokenStream ts3 = analyzer3.tokenStream(Constants.MATH_STRUCTURAL_FIELD,
+				new StringReader(equation));
+		
 		try {
 			ts1.reset();
 			while (ts1.incrementToken()) {
@@ -347,9 +353,15 @@ public class MathExplorer {
 			while (ts2.incrementToken()) {
 				Console.print(ts2.getAttribute(CharTermAttribute.class));
 			}
+			ts3.reset();
+			while (ts3.incrementToken()) {
+				Console.print(ts3.getAttribute(CharTermAttribute.class)+":" + 
+						ts3.getAttribute(OffsetAttribute.class).startOffset()+"-"+ts3.getAttribute(OffsetAttribute.class).endOffset());
+			}
 			Console.print("***********************");
 			ts1.end();
 			ts2.end();
+			ts3.end();
 		} finally {
 			// ts.close();
 		}

@@ -25,12 +25,11 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
 
-import cern.ch.mathexplorer.utils.Console;
-import cern.ch.mathexplorer.utils.Regex;
+import cern.ch.mathexplorer.mathematica.MathematicaConfig;
+import cern.ch.mathexplorer.mathematica.MathematicaConfig.NORMALIZATION_MODE;
 
 /**
  * This tokenizer uses regex pattern matching to construct distinct tokens for
@@ -71,7 +70,7 @@ public final class MultiplePatternTokenizer extends MathTokenizer {
 	private final OffsetAttribute offsetAtt = addAttribute(OffsetAttribute.class);
 
 	private final int group;
-	private final List<Matcher> matchers;
+	private final List<Matcher> matchers = new ArrayList<>();
 
 	private LinkedList<Match> matches;
 	boolean firstTimeToken = true;
@@ -84,7 +83,13 @@ public final class MultiplePatternTokenizer extends MathTokenizer {
 			int group) {
 		this(AttributeFactory.DEFAULT_ATTRIBUTE_FACTORY, input, patterns, group);
 	}
-
+	
+	public MultiplePatternTokenizer(Reader input, List<Pattern> patterns,
+			int group, NORMALIZATION_MODE normalizationMode) {
+		this(AttributeFactory.DEFAULT_ATTRIBUTE_FACTORY, input, patterns, group);
+		this.normalizationMode = normalizationMode; 
+	}
+	
 	/**
 	 * creates a new PatternTokenizer returning tokens from group (-1 for split
 	 * functionality)
@@ -93,10 +98,13 @@ public final class MultiplePatternTokenizer extends MathTokenizer {
 			List<Pattern> patterns, int group) {
 		super(factory, input);
 		this.group = group;
+		init(patterns);
 
+	}
+	
+	private void init(List<Pattern> patterns) {
 		// Use "" instead of str so don't consume chars
 		// (fillBuffer) from the input on throwing IAE below:
-		matchers = new ArrayList<>();
 		for (Pattern p : patterns) {
 			Matcher m = p.matcher("");
 			// confusingly group count depends ENTIRELY on the pattern but is
@@ -109,6 +117,7 @@ public final class MultiplePatternTokenizer extends MathTokenizer {
 			}
 			matchers.add(m);
 		}
+
 	}
 
 	int matchIndex = 0;

@@ -24,9 +24,9 @@ import uk.ac.ed.ph.snuggletex.SnuggleEngine;
 import uk.ac.ed.ph.snuggletex.SnuggleInput;
 import uk.ac.ed.ph.snuggletex.SnuggleSession;
 import cern.ch.mathexplorer.lucene.analysis.filters.RelatedOperatorsFilter;
+import cern.ch.mathexplorer.mathematica.MathematicaConfig;
 import cern.ch.mathexplorer.mathematica.MathematicaEngine;
 import cern.ch.mathexplorer.mathematica.StructuralPattern;
-import cern.ch.mathexplorer.utils.Config;
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.Constants.CHARACTER_CATEGORIES;
@@ -94,10 +94,10 @@ public class MathQueryParser extends QParser {
 				}
 			}
 		}
-		if (Config.USE_MATHEMATICA) {
+		if (MathematicaConfig.USE_MATHEMATICA) {
 			List<StructuralPattern> patterns = new ArrayList<>();
 			try {
-				patterns = MathematicaEngine.getInstance("QUERY").getPatterns(qstr);
+				patterns = MathematicaEngine.getInstance("QUERY").getPatternsWithTimeout(qstr);
 				for (StructuralPattern pattern : patterns ) {
 					query.add(new BooleanClause(new TermQuery(new Term(
 							Constants.MATH_STRUCTURAL_FIELD, pattern.getName())), Occur.SHOULD));

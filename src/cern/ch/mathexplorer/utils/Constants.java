@@ -10,7 +10,9 @@ import java.util.Set;
 public final class Constants implements Serializable {
 
 	public static final String MATH_NOTATIONAL_FIELD = "math_notational_field";
+	public static final String MATH_NORMALIZED_NOTATIONAL_FIELD = "math_normalized_notational_field";
 	public static final String MATH_STRUCTURAL_FIELD = "math_structural_field";
+	
 
 	public static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
 	// Schrodinger Equation
@@ -77,6 +79,17 @@ public final class Constants implements Serializable {
 			+ "<mn>2</mn></msup></math>";
 	public final static String SAMPLE_HEP_PROCESS = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>H</mi><mo>→</mo><msup><mi>W</mi><mo>+</mo>"
 			+ "</msup><msup><mi>W</mi><mo>-</mo></msup></math>";
+	public final static String SAMPLE_EQ_TIMEOUT = "<math alttext=\"{}^{(b)}High\\ Energy\\ Accelerator\\ Research\\ Organization\\ (KEK),\\ Tsukuba,\\ %Ibaraki,"
+			+ "\\ Japan\"><mrow><mrow><mmultiscripts><mi>H</mi><mprescripts/><none/><mrow><mo>(</mo><mi>b</mi><mo>)</mo></mrow></mmultiscripts><mo>⁢</mo><mi>i</mi>"
+			+ "<mo>⁢</mo><mi>g</mi><mo>⁢</mo><mi>h</mi></mrow><mo></mo><mrow><mi>E</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>g</mi><mo>"
+			+ "⁢</mo><mi>y</mi></mrow><mo></mo><mrow><mi>A</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>e</mi><mo>"
+			+ "⁢</mo><mi>r</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>r</mi></mrow><mo></mo><mrow><mi>R</mi><mo>⁢</mo><mi>e</mi><mo>"
+			+ "⁢</mo><mi>s</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>h</mi></mrow><mo></mo><mrow><mi>O</mi><mo>⁢"
+			+ "</mo><mi>r</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>z</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>t</mi>"
+			+ "<mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi></mrow><mo> </mo><mrow><mo>(</mo><mrow><mi>K</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mi>K</mi>"
+			+ "</mrow><mo>)</mo></mrow><mo>, </mo><mrow><mi>T</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mi>k</mi><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mi>b</mi>"
+			+ "<mo>⁢</mo><mi>a</mi></mrow><mo>, </mo><mrow><mi>I</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>k</mi>"
+			+ "<mo>⁢</mo><mi>i</mi></mrow><mo>, </mo><mrow><mi>J</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>p</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>n</mi></mrow></mrow></math>";
 	public final static String[] SAMPLE_EQUATIONS = { SAMPLE_EQ_1, SAMPLE_EQ_2,
 			SAMPLE_EQ_3, SAMPLE_EQ_4, SAMPLE_EQ_5, SAMPLE_EQ_6, SAMPLE_EQ_7, SAMPLE_EQ_8, SAMPLE_EQ_9, SAMPLE_EQ_1_N, SAMPLE_EQ_TEXT, SAMPLE_HEP_PROCESS };
 

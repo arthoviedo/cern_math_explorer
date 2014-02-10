@@ -2,8 +2,6 @@ package cern.ch.mathexplorer.mathematica;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,14 +9,18 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Pattern;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.OSUtils;
-import cern.ch.mathexplorer.utils.Regex;
 
 import com.wolfram.jlink.KernelLink;
 import com.wolfram.jlink.MathLinkException;
@@ -27,6 +29,9 @@ import com.wolfram.jlink.MathLinkFactory;
 public class MathematicaEngine {
 
 	private final static String EMPTY_RESULT = "{}";
+	
+	// The imported string contained text instead of an actual equation
+	private final static String TEXT_IN_EQUATION = "XML`MathML`Symbols`Multiscripts";
 	private final static String HOLD_COMPLETE = "HoldComplete";
 
 	/**
@@ -48,59 +53,37 @@ public class MathematicaEngine {
 
 	private MathematicaEngine() {
 		try {
-			initLink();
+			ml = MathematicaUtils.initLink();
 		} catch (MathLinkException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	private void initLink() throws MathLinkException {
-		String command = "";
-		command = Constants.getMathematicaCommand();
-		String[] extraArgs = { "-linkmode", "launch", "-linkname",
-				command + " -mathlink" };
 
-		String jLinkDir = Constants.getMathematicaLinkLocation();
-		System.setProperty("com.wolfram.jlink.libdir", jLinkDir);
 
-		try {
-			KernelLink newLink = MathLinkFactory.createKernelLink(extraArgs);
-			// ml.clearError();
-
-			newLink.discardAnswer();
-			ml = newLink;
-		} catch (MathLinkException e) {
-			e.printStackTrace();
-			Console.print("Fatal error opening link: " + e.getMessage());
-			throw e;
-		}
-
+	
+	/**
+	 * This method should be called after an invokation of the tryInterpretRoot
+	 * sincew it relies on the Mathematica variable interpretedResults holding a
+	 * list of all the interpreted subExpressions
+	 * Returns a list of the structural patterns that were identified in the given expression
+	 * If the process takes more than the defined timeout, an empty result would be returned.
+	 */
+	public List<StructuralPattern> getPatternsWithTimeout(String mathMLExpression){
+		List<StructuralPattern> result = new ArrayList<>();
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future future = executor.submit(new MathematicaTask(mathMLExpression, TASK.GET_PATTERNS));
+        try {
+        	result = (List<StructuralPattern>) future.get(MathematicaConfig.TIMEOUT_TIME, MathematicaConfig.TIMEOUT_TIMEUNIT);
+        } catch (TimeoutException te) {
+        	ml.abortEvaluation();
+        } catch (Exception e) {
+        	
+        }
+		return result;
 	}
-
-	private void killMathKernel() {
-		try {
-			if (OSUtils.getOS().equals(OSUtils.OS.LINUX) ||
-					OSUtils.getOS().equals(OSUtils.OS.MAC)) {
-				String command1 = "killall -s 9 Mathematica";
-				String command2 = "killall -s 9 MathKernel";
-				Runtime.getRuntime().exec(command1);
-				Runtime.getRuntime().exec(command2);
-			}
-			
-			if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
-				String command1 = "taskkill /im MathKerel.exe";
-				String command2 = "taskkill /im Mathematica.exe";
-				
-				Runtime.getRuntime().exec(command1);
-				Runtime.getRuntime().exec(command2);
-			}
-
-		} catch (Exception e) {
-
-		}
-	}
-
+	
 	/**
 	 * This method should be called after an invokation of the tryInterpretRoot
 	 * sincew it relies on the Mathematica variable interpretedResults holding a
@@ -108,11 +91,11 @@ public class MathematicaEngine {
 	 * 
 	 * @throws MathLinkException
 	 */
-	public List<StructuralPattern> getPatterns(String mathMLExpression)
+	private List<StructuralPattern> getPatterns(String mathMLExpression)
 			throws MathLinkException {
 		if (ml == null) {
 			try {
-				initLink();
+				MathematicaUtils.initLink();
 			} catch (Exception e) {
 				return new ArrayList<>();
 			}
@@ -120,7 +103,7 @@ public class MathematicaEngine {
 		try {
 			Console.print(mathMLExpression);
 			importString(mathMLExpression);
-
+	
 			boolean couldInterpret = false;
 			if (tryInterpretOriginalString()) {
 				couldInterpret = true;
@@ -141,6 +124,9 @@ public class MathematicaEngine {
 						0);
 				Console.print(currentExpression);
 				if (!analyzedExpressions.contains(currentExpression)) {
+					if(currentExpression.contains(TEXT_IN_EQUATION)){
+						continue;
+					}
 					for (StructuralPattern currentFeature : Patterns
 							.getPatterns()) {
 						String resultFeature = ml.evaluateToOutputForm(
@@ -162,17 +148,95 @@ public class MathematicaEngine {
 			// Just in case, we restart our link
 			// Cleanup operation can still fail
 			try {
-				killMathKernel();
-				initLink();
+				MathematicaUtils.killMathKernel();
+				MathematicaUtils.initLink();
 			} catch (Exception e1) {
 				Console.print("Error while cleaning up");
 				e1.printStackTrace();
 			}
 			return new ArrayList<>();
 		}
-
+	
 	}
 
+	/**
+	 * Calls the method for simplifyin a given string.
+	 * If the method takes more than the defined timeout, the original string is returned 
+	 */
+	public String simplyExpressionWithTimeout(String mathMLExpression){
+		ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future future = executor.submit(new MathematicaTask(mathMLExpression, TASK.SIMPLIFY_EXPRESSION));
+        try {
+        	return (String) future.get(MathematicaConfig.TIMEOUT_TIME, MathematicaConfig.TIMEOUT_TIMEUNIT);
+        } catch (TimeoutException te) {
+        	ml.abortEvaluation();
+        } catch (Exception e) {
+        	
+        }
+		return mathMLExpression;
+	}
+	
+	/**
+	 * Tries to apply the SIMPLIFY/FULL_SIMPLIFY procedures to the given
+	 * expression If the process cannot be done, it return the original given
+	 * string
+	 */
+	private String simplifyExpression(String mathMLExpression) {
+		try {
+	
+			importString(mathMLExpression);
+			
+			String result = ml.evaluateToOutputForm("ExportString[Simplify[ReleaseHold[MakeExpression[importedString]]],\"MathML\"]", 0);
+			if (result.contains("<merror>") || result.contains("$Failed")) { // There was some error in the process, so we return the original string
+				return mathMLExpression;
+			}
+			result = result.replaceAll("\\r|\\n|  +", "");
+			
+			return StringEscapeUtils.unescapeHtml4(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Console.print("Error while importing String");
+			// TODO: Solve better
+			// Just in case, we restart our link
+			// Cleanup operation can still fail
+			try {
+				MathematicaUtils.killMathKernel();
+				MathematicaUtils.initLink();
+			} catch (Exception e1) {
+				Console.print("Error while cleaning up");
+				e1.printStackTrace();
+			}
+			return mathMLExpression;
+		}
+	}
+
+	enum TASK {
+		GET_PATTERNS,
+		SIMPLIFY_EXPRESSION;
+	}
+
+	private class MathematicaTask implements Callable {
+
+		String mathMLExpression;
+		TASK taskType;
+		
+		public MathematicaTask(String mathMLExpression, TASK taskType) {
+			this.mathMLExpression = mathMLExpression;
+			this.taskType = taskType;
+		}
+		
+		@Override
+		public Object call() throws Exception {
+			if(taskType.equals(TASK.GET_PATTERNS))
+				return getPatterns(mathMLExpression);
+			else if(taskType.equals(TASK.SIMPLIFY_EXPRESSION))
+				return simplifyExpression(mathMLExpression);
+			 
+			throw new UnsupportedOperationException("Task type not recognized");
+		}
+		
+	}
+	
 	/**
 	 * Removes all symbols definitions. This helps to prevent blocks when
 	 * importing an equation because of previous relationships between the
@@ -246,7 +310,7 @@ public class MathematicaEngine {
 					+ ml.error() + "):" + ml.errorMessage());
 			throw new MathLinkException(ml.error());
 		}
-		return !result.equals(EMPTY_RESULT);
+		return !result.equals(EMPTY_RESULT) && !result.contains(TEXT_IN_EQUATION);
 	}
 
 	/**
@@ -260,6 +324,8 @@ public class MathematicaEngine {
 					+ ml.error() + "):" + ml.errorMessage());
 			throw new MathLinkException(ml.error());
 		}
+		if (result.contains(TEXT_IN_EQUATION)) 
+			return false;
 		return result.contains(HOLD_COMPLETE);
 	}
 
@@ -270,66 +336,19 @@ public class MathematicaEngine {
 		return equation;
 	}
 
-	/**
-	 * Tries to apply the SIMPLIFY/FULL_SIMPLIFY procedures to the given
-	 * expression If the process cannot be done, it return the original given
-	 * string
-	 */
-	public String simplifyExpression(String mathMLExpression) {
-		try {
-
-			importString(mathMLExpression);
-			
-			String result = ml.evaluateToOutputForm("ExportString[Simplify[ReleaseHold[MakeExpression[importedString]]],\"MathML\"]", 0);
-			if (result.contains("<merror>") || result.contains("$Failed")) { // There was some error in the process, so we return the original string
-				return mathMLExpression;
-			}
-			result = result.replaceAll("\\r|\\n|  +", "");
-			
-			return StringEscapeUtils.unescapeHtml4(result);
-		} catch (Exception e) {
-			e.printStackTrace();
-			Console.print("Error while importing String");
-			// TODO: Solve better
-			// Just in case, we restart our link
-			// Cleanup operation can still fail
-			try {
-				killMathKernel();
-				initLink();
-			} catch (Exception e1) {
-				Console.print("Error while cleaning up");
-				e1.printStackTrace();
-			}
-			return mathMLExpression;
-		}
-	}
-
 	private enum SimplifyMode {
 		SIMPLIFY, FULL_SIMPLIFY;
 	}
 
 	public static void main(String[] args) throws Exception {
 		MathematicaEngine mi = getInstance("TESTING");
-		String expression = Constants.SAMPLE_EQ_1;
+		String expression = Constants.SAMPLE_EQ_TIMEOUT;
 		Console.print(expression);
 		List<StructuralPattern> features = mi.getPatterns(expression);
 		for (StructuralPattern f : features) {
 			Console.print(f.getName());
 		}
 		Console.print(mi.simplifyExpression(expression));
-	}
-
-	public static void test() throws Exception {
-		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"/share/math/arxiv_cds/arx1312.6708.eq")));
-		String line = "";
-		MathematicaEngine instance = getInstance("TESTING");
-		int count = 0;
-		while ((line = br.readLine()) != null) {
-			instance.getPatterns(line);
-			Console.print(count++);
-		}
-		br.close();
 	}
 
 }

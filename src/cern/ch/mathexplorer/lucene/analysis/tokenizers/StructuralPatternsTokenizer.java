@@ -81,7 +81,7 @@ public final class StructuralPatternsTokenizer extends MathTokenizer {
 			if (mi == null) {
 				mi = MathematicaEngine.getInstance("INDEXING");
 			}
-			features = mi.getPatterns(str.toString());
+			features = mi.getPatternsWithTimeout(str.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new IOException("Problem while processing with Mathematica: "
