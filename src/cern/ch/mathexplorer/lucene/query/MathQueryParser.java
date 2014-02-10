@@ -62,6 +62,7 @@ public class MathQueryParser extends QParser {
 		} else {
 			qstr = qstr.replace("FORMAT(mathml)", "");
 		}
+		
 		aLogger.info("Query after: " + qstr);
 		
 		// QueryParser parser = new QueryParser(matchVersion, DUMMY_FIELDNAME,
@@ -103,6 +104,21 @@ public class MathQueryParser extends QParser {
 							Constants.MATH_STRUCTURAL_FIELD, pattern.getName())), Occur.SHOULD));
 				}
 			} catch (Exception e) {
+			}
+			String normalizedStr = MathematicaEngine.getInstance("QUERY").simplyExpressionWithTimeout(qstr);
+			Collection<String> tokenInNormalizedQuery = Regex.extractElements(normalizedStr);
+			for (String mathMLToken : tokenInNormalizedQuery) {
+				query.add(new BooleanClause(new TermQuery(new Term(
+						Constants.MATH_NORMALIZED_NOTATIONAL_FIELD, mathMLToken)), Occur.SHOULD));
+				Console.print(mathMLToken);
+				if (mathMLToken.startsWith("<mo>") && mathMLToken.endsWith("</mo>")) {	//OPERATOR CATEGORY TOKEN
+					String operator = mathMLToken.replace("<mo>", "").replace("</mo>", "");
+					CHARACTER_CATEGORIES category = null;
+					if ( (category = (Constants.characterToCategoryMap.get(operator)) ) != null) {
+						query.add(new BooleanClause(new TermQuery(new Term(
+								Constants.MATH_NOTATIONAL_FIELD, category.name())), Occur.SHOULD));
+					}
+				}
 			}
 		}
 		for (BooleanClause a : query.getClauses()){

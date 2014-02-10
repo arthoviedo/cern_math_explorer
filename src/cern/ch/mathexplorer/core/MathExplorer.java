@@ -48,8 +48,8 @@ import uk.ac.ed.ph.snuggletex.SnuggleInput;
 import uk.ac.ed.ph.snuggletex.SnuggleSession;
 import cern.ch.mathexplorer.core.EquationResult.EquationBuilder;
 import cern.ch.mathexplorer.lucene.analysis.VecTextField;
-import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrMathMLNotationalAnalyzer;
-import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrNormalizerMathMLNotationalAnalyzer;
+import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrNotationalAnalyzer;
+import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrNormalizerNotationalAnalyzer;
 import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrStructuralAnalyzer;
 import cern.ch.mathexplorer.lucene.query.MathQueryParser;
 import cern.ch.mathexplorer.utils.Console;
@@ -75,9 +75,9 @@ public class MathExplorer {
 	private Directory indexDirectory;
 	private IndexWriterConfig indexConfig;
 	
-	private Analyzer analyzer = new SolrMathMLNotationalAnalyzer(matchVersion);
+	private Analyzer analyzer = new SolrNotationalAnalyzer(matchVersion);
 	private Analyzer analyzer2 = new SolrStructuralAnalyzer(matchVersion);
-	private Analyzer analyzer3 = new SolrNormalizerMathMLNotationalAnalyzer(matchVersion);
+	private Analyzer analyzer3 = new SolrNormalizerNotationalAnalyzer(matchVersion);
 	
 	
 	private DirectoryReader ireader;
