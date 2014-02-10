@@ -2,6 +2,7 @@ package cern.ch.mathexplorer.lucene.query;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -15,6 +16,7 @@ import org.apache.lucene.search.BooleanClause.Occur;
 import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TermQuery;
+import org.apache.lucene.util.UnicodeUtil;
 import org.apache.solr.common.params.SolrParams;
 import org.apache.solr.request.SolrQueryRequest;
 import org.apache.solr.search.QParser;
@@ -57,8 +59,7 @@ public class MathQueryParser extends QParser {
 
 	void addOperatorsCategory(String mathMLToken, BooleanQuery query, MATH_FIELD field) {
 		if (mathMLToken.startsWith("<mo>") && mathMLToken.endsWith("</mo>")) { // OPERATOR CATEGORY TOKEN
-			String operator = mathMLToken.replace("<mo>", "").replace("</mo>",
-					"");
+			String operator = mathMLToken.replace("<mo>", "").replace("</mo>", "");
 			CHARACTER_CATEGORIES category = null;
 			if ((category = (Constants.characterToCategoryMap.get(operator))) != null) {
 				query.add(new BooleanClause(new TermQuery(new Term(
@@ -77,7 +78,7 @@ public class MathQueryParser extends QParser {
 				query.add(new BooleanClause(
 						new TermQuery(new Term(
 								MATH_FIELD.MATH_STRUCTURAL_FIELD.getName(), pattern
-										.getName())), Occur.SHOULD));
+										.getPattern())), Occur.SHOULD));
 			}
 		} catch (Exception e) {
 		}
@@ -129,7 +130,7 @@ public class MathQueryParser extends QParser {
 	}
 
 	public static String texToMathML(String texText) throws IOException {
-
+		texText = texText.trim();
 		texText.replaceAll("\\$\\$", "$");
 		if (!texText.endsWith("$")) {
 			texText += "$";
@@ -147,8 +148,7 @@ public class MathQueryParser extends QParser {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String query = Regex
-				.cleanQuery(texToMathML("$ (\\cos(x))^2 + (\\sin(x))^2 $"));
+		String query = Regex.cleanQuery(texToMathML(" $ x y \\times z $ "));
 		MathQueryParser mqp = new MathQueryParser(query, null, null, null);
 		mqp.parse();
 	}

@@ -70,6 +70,8 @@ public final class Constants implements Serializable {
 	public final static String SAMPLE_EQ_8 = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>A</mi><mo>=</mo><mi>d</mi><mi>N</mi>"
 			+ "<mo>/</mo><mi>d</mi><mi>t</mi></math>";
 	public final static String SAMPLE_EQ_9 = "<math><mn>1E+2</mn></math>";
+	
+	 public final static String SAMPLE_EQ_10 = "<math><mi>x</mi><mo>*</mo><mi>y</mi></math>"; 
 	public final static String SAMPLE_EQ_1_N = "<math><mi>i</mi><mi>ℏ</mi><mfrac><mn>1.0264</mn><mrow><mn>4.6</mn><mn>9</mn></mrow></mfrac>"
 			+ "<mn>9...15</mn><mfenced close=\")\" open=\"(\"><mstyle mathvariant=\"bold\"><mi>r</mi></mstyle><mi>t</mi></mfenced><mo>=</mo>"
 			+ "<mfenced close=\"]\" open=\"[\"><mrow><mfrac><mrow><mn>2300002500</mn><msup><mn>90000</mn><mn>2.0135</mn></msup></mrow><mrow><mn>2</mn>"
@@ -100,11 +102,24 @@ public final class Constants implements Serializable {
 			+ "</mrow><mo>)</mo></mrow><mo>, </mo><mrow><mi>T</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mi>k</mi><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mi>b</mi>"
 			+ "<mo>⁢</mo><mi>a</mi></mrow><mo>, </mo><mrow><mi>I</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>k</mi>"
 			+ "<mo>⁢</mo><mi>i</mi></mrow><mo>, </mo><mrow><mi>J</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>p</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>n</mi></mrow></mrow></math>";
-	public final static String[] SAMPLE_EQUATIONS = { SAMPLE_EQ_1, SAMPLE_EQ_2,
+	
+	public final static String[] SAMPLE_MATHML_EQUATIONS = { SAMPLE_EQ_1, SAMPLE_EQ_2,
 			SAMPLE_EQ_3, SAMPLE_EQ_4, SAMPLE_EQ_5, SAMPLE_EQ_6, SAMPLE_EQ_7, SAMPLE_EQ_8, SAMPLE_EQ_9, SAMPLE_EQ_1_N, SAMPLE_EQ_TEXT, SAMPLE_HEP_PROCESS };
-
+	//LHC instantaneous luminosity depending only on the beam parameters
+	public final static String SAMPLE_LATEX_EQ_1 = "$\\mathcal{L} = \\frac{N_b^2 n_b f_{rev} \\gamma_r}{4 \\pi \\epsilon_n \\beta^*} \\mathnormal{F}$";
+	
+	//Electron effective mass
+	public final static String SAMPLE_LATEX_EQ_2 = "${m^*}^{-1} = \\frac{1}{\\hbar^{2}} \\bigtriangledown_k \\bigtriangledown_k E$";
+	
+	//Fermi energy
+	public final static String SAMPLE_LATEX_EQ_3 = "$E_F = \\frac{E_C + E_V}{2} + \\frac{\\kappa_{B}T}{2} \\ln \\left(\\frac{N_V}{N_C}\\right)$";
+	
+	public final static String SAMPLE_LATEX_EQ_4 = "$ \\bigtriangledown\\cdot\\overrightarrow{J_n} = q~R_{net} + q~\\frac{\\partial n}{\\partial t}$";
+	
+	public final static String SAMPLE_LATEX_EQ_5 = "$ X\\tau_{n,p} = \\tau_{min} + \\frac{\\tau_{max} - \\tau_{min}}{1 + (\\frac{N_A + N_D}{N_{ref}})^{\\gamma}} $";
+	
 	public static void main(String[] args) {
-		for (String s: SAMPLE_EQUATIONS) {
+		for (String s: SAMPLE_MATHML_EQUATIONS) {
 			System.out.println(Regex.cleanQuery(s));
 		}
 	}
@@ -176,7 +191,13 @@ public final class Constants implements Serializable {
 				, "\u2A1B" // Integral with overbar
 				, "\u2A14" // Line integration not including pole
 				, "\u2A1C" // Integral with underbar
-		))), ARROWS(new HashSet<>(Arrays.asList("←" //
+		))), 
+		MULTIPLICATION(new HashSet<>(Arrays.asList(
+				"\u2062",	//Invisible times
+				"*",
+				"×",
+				"·")))
+		, ARROWS(new HashSet<>(Arrays.asList("←" //
 				, "→" //
 				, "↑" //
 				, "↓" //

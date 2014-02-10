@@ -61,7 +61,7 @@ public final class StructuralPatternsTokenizer extends MathTokenizer {
 			return false;
 		}
 		clearAttributes();
-		featuresAtt.setEmpty().append(features.get(currentFeature).getName());
+		featuresAtt.setEmpty().append(features.get(currentFeature).getPattern());
 		currentFeature++;
 		return true;
 

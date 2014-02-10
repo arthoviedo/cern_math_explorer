@@ -268,7 +268,7 @@ public class MathExplorer {
 		
 		MathExplorer m = new MathExplorer(null, false);
 		m.testAnalyzer(Constants.SAMPLE_EQ_2);
-		
+		System.out.println("Finished");
 		//m.search(Constants.SAMPLE_EQUATION_2, true, INDEX_WHOLE_ARTICLE);
 		//testUnicodeNormalization();
 		

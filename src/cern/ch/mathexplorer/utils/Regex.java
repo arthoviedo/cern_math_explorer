@@ -57,8 +57,11 @@ public class Regex {
 		
 		for (Pattern p: PATTERNS) {
 			Matcher matcher = p.matcher(expression);
-			while (matcher.find()) {
-				result.add(matcher.group(GROUP));
+			for(int i = 0; i< expression.length(); i++) {
+				if (matcher.find(i)) {
+					i = matcher.start()+1;
+					result.add(matcher.group(GROUP));
+				}
 			}
 		}
 		return result;

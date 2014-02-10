@@ -1,8 +1,5 @@
 package cern.ch.mathexplorer.mathematica;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,18 +10,15 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
-import cern.ch.mathexplorer.utils.OSUtils;
 
 import com.wolfram.jlink.KernelLink;
 import com.wolfram.jlink.MathLinkException;
-import com.wolfram.jlink.MathLinkFactory;
 
 public class MathematicaEngine {
 
@@ -34,11 +28,11 @@ public class MathematicaEngine {
 	private final static String TEXT_IN_EQUATION = "XML`MathML`Symbols`Multiscripts";
 	private final static String HOLD_COMPLETE = "HoldComplete";
 
-	/**
-	 * Singleton instance
-	 */
 	private KernelLink ml = null;
 
+	/**
+	 * Multiton pattern, one instance per type of element
+	 */
 	private static final Map<String, MathematicaEngine> instances = new HashMap<String, MathematicaEngine>();
 
 	public static MathematicaEngine getInstance(String key) {
@@ -61,8 +55,6 @@ public class MathematicaEngine {
 	}
 
 
-
-	
 	/**
 	 * This method should be called after an invokation of the tryInterpretRoot
 	 * sincew it relies on the Mathematica variable interpretedResults holding a
@@ -342,11 +334,11 @@ public class MathematicaEngine {
 
 	public static void main(String[] args) throws Exception {
 		MathematicaEngine mi = getInstance("TESTING");
-		String expression = Constants.SAMPLE_EQ_TIMEOUT;
+		String expression = Constants.SAMPLE_HEP_PROCESS;
 		Console.print(expression);
 		List<StructuralPattern> features = mi.getPatterns(expression);
 		for (StructuralPattern f : features) {
-			Console.print(f.getName());
+			Console.print(f.getPattern());
 		}
 		Console.print(mi.simplifyExpression(expression));
 	}

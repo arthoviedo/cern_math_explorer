@@ -2,14 +2,12 @@ package cern.ch.mathexplorer.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cern.ch.mathexplorer.core.EquationResult;
 import cern.ch.mathexplorer.core.MathExplorer;
 import cern.ch.mathexplorer.utils.Constants;
 
@@ -80,7 +78,7 @@ public class InputServlet extends AbstractServlet {
 		
 		String result = "<br/>Some MathML examples you can use: <table border=1><br/>\n";
 		
-		for (String s : Constants.SAMPLE_EQUATIONS) {
+		for (String s : Constants.SAMPLE_MATHML_EQUATIONS) {
 			result += "<tr><td>";
 			result += s+"\n";
 			result += "<xmp>"+s+"</xmp><br/>\n";

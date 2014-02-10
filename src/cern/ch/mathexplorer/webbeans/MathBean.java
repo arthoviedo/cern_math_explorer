@@ -2,7 +2,6 @@ package cern.ch.mathexplorer.webbeans;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +40,7 @@ public class MathBean implements Serializable {
 		
 		mathExplorer = MathExplorer.getInstance(servletContext);
 		queryText  = "";
-		sampleEquations = Constants.SAMPLE_EQUATIONS;
+		sampleEquations = Constants.SAMPLE_MATHML_EQUATIONS;
 		queryResult = new ArrayList<>();
 		message = "";
 		inputFormat = Constants.MATHML;
