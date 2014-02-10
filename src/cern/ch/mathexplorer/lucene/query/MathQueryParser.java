@@ -30,141 +30,125 @@ import cern.ch.mathexplorer.mathematica.StructuralPattern;
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.Constants.CHARACTER_CATEGORIES;
+import cern.ch.mathexplorer.utils.Constants.MATH_FIELD;
 import cern.ch.mathexplorer.utils.Regex;
 
 public class MathQueryParser extends QParser {
 	static Logger aLogger = java.util.logging.Logger
 			.getLogger(MathQueryParser.class.getName());
-	
-	public MathQueryParser(String qstr, SolrParams localParams, SolrParams params,
-			SolrQueryRequest req) {
+
+	public MathQueryParser(String qstr, SolrParams localParams,
+			SolrParams params, SolrQueryRequest req) {
 		super(qstr, localParams, params, req);
 	}
 
 	private static SnuggleEngine engine = new SnuggleEngine();
+
+	public void addNotationalTokens(BooleanQuery query, String mathML, MATH_FIELD field) {
+		Collection<String> tokenInQuery = Regex.extractElements(mathML);
+		for (String mathMLToken : tokenInQuery) {
+			query.add(new BooleanClause(new TermQuery(new Term(
+					field.getName(), mathMLToken)),
+					Occur.SHOULD));
+			addOperatorsCategory(mathMLToken, query, field);
+			Console.print(mathMLToken);
+		}
+	}
+
+	void addOperatorsCategory(String mathMLToken, BooleanQuery query, MATH_FIELD field) {
+		if (mathMLToken.startsWith("<mo>") && mathMLToken.endsWith("</mo>")) { // OPERATOR CATEGORY TOKEN
+			String operator = mathMLToken.replace("<mo>", "").replace("</mo>",
+					"");
+			CHARACTER_CATEGORIES category = null;
+			if ((category = (Constants.characterToCategoryMap.get(operator))) != null) {
+				query.add(new BooleanClause(new TermQuery(new Term(
+						field.getName(), category.name())),
+						Occur.SHOULD));
+			}
+		}
+	}
+
+	void addStructuralPatterns(BooleanQuery query, String mathML){
+		List<StructuralPattern> patterns = new ArrayList<>();
+		try {
+			patterns = MathematicaEngine.getInstance("QUERY")
+					.getPatternsWithTimeout(mathML);
+			for (StructuralPattern pattern : patterns) {
+				query.add(new BooleanClause(
+						new TermQuery(new Term(
+								MATH_FIELD.MATH_STRUCTURAL_FIELD.getName(), pattern
+										.getName())), Occur.SHOULD));
+			}
+		} catch (Exception e) {
+		}
+
+	}
 	
+	private String fromLatexToMathML() throws SyntaxError {
+		qstr = qstr.replace("FORMAT(latex)", "");
+		if (engine == null) {
+			engine = new SnuggleEngine();
+		}
+		try {
+			qstr = texToMathML(qstr);
+			return qstr;
+		} catch (IOException e) {
+			e.printStackTrace();
+			throw new SyntaxError("Error parsing LaTeX: " + e.getMessage());
+		}
+	} 
+
 	@Override
 	public Query parse() throws SyntaxError {
 		aLogger.info("Query before: " + qstr);
 		qstr = Regex.cleanQuery(qstr);
 
 		if (qstr.contains("FORMAT(latex)")) {
-			qstr = qstr.replace("FORMAT(latex)", "");
-			if (engine == null) {
-				engine = new SnuggleEngine();
-			}
-			try {
-				qstr = texToMathML(qstr);
-			} catch (IOException e) {
-				e.printStackTrace();
-				throw new SyntaxError("Error parsing LaTeX: " + e.getMessage());
-			}
-		} else {
+			qstr = fromLatexToMathML();
+		}
+		else {
 			qstr = qstr.replace("FORMAT(mathml)", "");
 		}
-		
-		aLogger.info("Query after: " + qstr);
-		
-		// QueryParser parser = new QueryParser(matchVersion, DUMMY_FIELDNAME,
-		// analyzer);
-		// Query query = parser.parse(eq2);
-		// SpanTermQuery query = new SpanTermQuery(new Term(DUMMY_FIELDNAME,
-		// "39"));
 
-		/**
-		 * PhraseQuery query = new PhraseQuery(); query.setSlop(100);
-		 * Collection<String> termsInQuery = Utils.extractElements(queryString);
-		 * Console.print("New query:"); for (String s: termsInQuery) {
-		 * Console.print("Query term: " + s); query.add(new
-		 * Term(EQUATION_ELEMENT, s)); }
-		 */
+		aLogger.info("Query after: " + qstr);
 
 		BooleanQuery query = new BooleanQuery();
-		Collection<String> tokenInQuery = Regex.extractElements(qstr);
-
-		for (String mathMLToken : tokenInQuery) {
-			query.add(new BooleanClause(new TermQuery(new Term(
-					Constants.MATH_NOTATIONAL_FIELD, mathMLToken)), Occur.SHOULD));
-			Console.print(mathMLToken);
-			if (mathMLToken.startsWith("<mo>") && mathMLToken.endsWith("</mo>")) {	//OPERATOR CATEGORY TOKEN
-				String operator = mathMLToken.replace("<mo>", "").replace("</mo>", "");
-				CHARACTER_CATEGORIES category = null;
-				if ( (category = (Constants.characterToCategoryMap.get(operator)) ) != null) {
-					query.add(new BooleanClause(new TermQuery(new Term(
-							Constants.MATH_NOTATIONAL_FIELD, category.name())), Occur.SHOULD));
-				}
-			}
-		}
+		addNotationalTokens(query, qstr, MATH_FIELD.MATH_NOTATIONAL_FIELD);
 		if (MathematicaConfig.USE_MATHEMATICA) {
-			List<StructuralPattern> patterns = new ArrayList<>();
-			try {
-				patterns = MathematicaEngine.getInstance("QUERY").getPatternsWithTimeout(qstr);
-				for (StructuralPattern pattern : patterns ) {
-					query.add(new BooleanClause(new TermQuery(new Term(
-							Constants.MATH_STRUCTURAL_FIELD, pattern.getName())), Occur.SHOULD));
-				}
-			} catch (Exception e) {
-			}
-			String normalizedStr = MathematicaEngine.getInstance("QUERY").simplyExpressionWithTimeout(qstr);
-			Collection<String> tokenInNormalizedQuery = Regex.extractElements(normalizedStr);
-			for (String mathMLToken : tokenInNormalizedQuery) {
-				query.add(new BooleanClause(new TermQuery(new Term(
-						Constants.MATH_NORMALIZED_NOTATIONAL_FIELD, mathMLToken)), Occur.SHOULD));
-				Console.print(mathMLToken);
-				if (mathMLToken.startsWith("<mo>") && mathMLToken.endsWith("</mo>")) {	//OPERATOR CATEGORY TOKEN
-					String operator = mathMLToken.replace("<mo>", "").replace("</mo>", "");
-					CHARACTER_CATEGORIES category = null;
-					if ( (category = (Constants.characterToCategoryMap.get(operator)) ) != null) {
-						query.add(new BooleanClause(new TermQuery(new Term(
-								Constants.MATH_NOTATIONAL_FIELD, category.name())), Occur.SHOULD));
-					}
-				}
-			}
+			String normalizedStr = MathematicaEngine.getInstance("QUERY")
+					.simplyExpressionWithTimeout(qstr);
+			addStructuralPatterns(query, qstr);
+			addNotationalTokens(query, normalizedStr, MATH_FIELD.MATH_NORMALIZED_NOTATIONAL_FIELD);
 		}
-		for (BooleanClause a : query.getClauses()){
+		for (BooleanClause a : query.getClauses()) {
 			Console.print(a);
 		}
 		query.setMinimumNumberShouldMatch(1);
-		
-		
-		/**
-		 * Collection<String> termsInQuery = Utils.extractElements(eq2);
-		 * ArrayList<SpanQuery> spanQueries = Lists.newArrayList();
-		 * 
-		 * for (String s: termsInQuery) { spanQueries.add(new SpanTermQuery(new
-		 * Term(DUMMY_FIELDNAME, s))); } SpanQuery [] a =
-		 * spanQueries.toArray(new SpanQuery [1]); SpanNearQuery query = new
-		 * SpanNearQuery(a, 5, false); Console.print(query.toString());
-		 */
-		/**
-		 * MoreLikeThis mlt = new MoreLikeThis(ireader);
-		 * mlt.setAnalyzer(analyzer); Query query = mlt.like(new
-		 * StringReader(eq2), EQUATION_ELEMENT);
-		 */
+
 		return query;
 	}
-	
+
 	public static String texToMathML(String texText) throws IOException {
-		
-		
+
 		texText.replaceAll("\\$\\$", "$");
 		if (!texText.endsWith("$")) {
 			texText += "$";
 		}
-		
+
 		if (!texText.startsWith("$")) {
 			texText = "$" + texText;
 		}
-		
+
 		SnuggleSession session = engine.createSession();
 		session.parseInput(new SnuggleInput(texText));
 		String result = session.buildXMLString();
-		aLogger.info(texText +" --> \n" +result);
+		aLogger.info(texText + " --> \n" + result);
 		return result;
 	}
-	
+
 	public static void main(String[] args) throws Exception {
-		String query = Regex.cleanQuery(texToMathML("$ (\\cos(x))^2 + (\\sin(x))^2 $"));
+		String query = Regex
+				.cleanQuery(texToMathML("$ (\\cos(x))^2 + (\\sin(x))^2 $"));
 		MathQueryParser mqp = new MathQueryParser(query, null, null, null);
 		mqp.parse();
 	}

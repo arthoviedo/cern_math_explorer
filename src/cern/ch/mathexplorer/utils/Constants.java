@@ -9,10 +9,20 @@ import java.util.Set;
 
 public final class Constants implements Serializable {
 
-	public static final String MATH_NOTATIONAL_FIELD = "math_notational_field";
-	public static final String MATH_NORMALIZED_NOTATIONAL_FIELD = "math_normalized_notational_field";
-	public static final String MATH_STRUCTURAL_FIELD = "math_structural_field";
-	
+	public static enum MATH_FIELD {
+		MATH_NOTATIONAL_FIELD("math_notational_field"),
+		MATH_NORMALIZED_NOTATIONAL_FIELD("math_normalized_notational_field"),
+		MATH_STRUCTURAL_FIELD("math_structural_field");
+		
+		String name;
+		MATH_FIELD(String name){
+			this.name = name;
+		}
+		
+		public String getName(){
+			return name;
+		}
+	}
 
 	public static final String EQUATIONS_TEXT = "EQUATIONS_TEXT";
 	// Schrodinger Equation

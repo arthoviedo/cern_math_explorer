@@ -54,6 +54,7 @@ import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrStructuralAnalyzer;
 import cern.ch.mathexplorer.lucene.query.MathQueryParser;
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
+import cern.ch.mathexplorer.utils.Constants.MATH_FIELD;
 import cern.ch.mathexplorer.utils.Regex;
 
 public class MathExplorer {
@@ -170,7 +171,7 @@ public class MathExplorer {
 			}
 			equationsInFile.add(text);
 			Document doc = new Document();
-			Field equationField = new VecTextField(Constants.MATH_NOTATIONAL_FIELD,
+			Field equationField = new VecTextField(MATH_FIELD.MATH_NOTATIONAL_FIELD.getName(),
 					text, Store.YES);
 			doc.add(equationField);
 			doc.add(new Field(FILENAME, currentFile.getName(),
@@ -245,7 +246,7 @@ public class MathExplorer {
 					.setLineNumber(
 							Integer.parseInt(hitDoc.getValues(LINE)[0]))
 					.setMathmlExpression(
-							hitDoc.getValues(Constants.MATH_NOTATIONAL_FIELD)[0]);
+							hitDoc.getValues(MATH_FIELD.MATH_NOTATIONAL_FIELD.getName())[0]);
 				}
 				else {//The indexed elements are individual equations {
 					eqBuilder
@@ -336,11 +337,11 @@ public class MathExplorer {
 	}
 
 	void testAnalyzer(String equation) throws Exception {
-		TokenStream ts1 = analyzer.tokenStream(Constants.MATH_NOTATIONAL_FIELD,
+		TokenStream ts1 = analyzer.tokenStream(MATH_FIELD.MATH_NOTATIONAL_FIELD.getName(),
 				new StringReader(equation));
-		TokenStream ts2 = analyzer2.tokenStream(Constants.MATH_STRUCTURAL_FIELD,
+		TokenStream ts2 = analyzer2.tokenStream(MATH_FIELD.MATH_STRUCTURAL_FIELD.getName(),
 				new StringReader(equation));
-		TokenStream ts3 = analyzer3.tokenStream(Constants.MATH_STRUCTURAL_FIELD,
+		TokenStream ts3 = analyzer3.tokenStream(MATH_FIELD.MATH_NORMALIZED_NOTATIONAL_FIELD.getName(),
 				new StringReader(equation));
 		
 		try {
@@ -373,11 +374,11 @@ public class MathExplorer {
 		IndexSearcher isearcher = new IndexSearcher(ireader);
 
 		Fields fields = MultiFields.getFields(ireader);
-		Terms terms = fields.terms(Constants.MATH_NOTATIONAL_FIELD);
+		Terms terms = fields.terms(MATH_FIELD.MATH_NOTATIONAL_FIELD.getName());
 		TermsEnum termsEnum = terms.iterator(null);
 		BytesRef text;
 		while ((text = termsEnum.next()) != null) {
-			Term current = new Term(Constants.MATH_NOTATIONAL_FIELD, text);
+			Term current = new Term(MATH_FIELD.MATH_NOTATIONAL_FIELD.getName(), text);
 			System.out.println(text.utf8ToString() + ":"
 					+ ireader.docFreq(current));
 		}
