@@ -334,7 +334,7 @@ public class MathematicaEngine {
 
 	public static void main(String[] args) throws Exception {
 		MathematicaEngine mi = getInstance("TESTING");
-		String expression = Constants.SAMPLE_HEP_PROCESS;
+		String expression = Constants.SAMPLE_EQ_10;
 		Console.print(expression);
 		List<StructuralPattern> features = mi.getPatterns(expression);
 		for (StructuralPattern f : features) {

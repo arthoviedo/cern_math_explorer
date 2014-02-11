@@ -17,13 +17,9 @@ public class Patterns {
 		patterns.add(new StructuralPattern("x_*y_"));
 		patterns.add(new StructuralPattern("x_/y_"));
 		
-		patterns.add(new StructuralPattern("x_.+y_."));
-		patterns.add(new StructuralPattern("x_.-y_."));
-		patterns.add(new StructuralPattern("x_.*y_."));
-		patterns.add(new StructuralPattern("x_./y_."));
 		
-		patterns.add(new StructuralPattern("x_.+y_.+z_."));
-		patterns.add(new StructuralPattern("x_.*y_.*z_."));
+		patterns.add(new StructuralPattern("x_+y_+z_"));
+		patterns.add(new StructuralPattern("x_*y_*z_"));
 		
 		patterns.add(new StructuralPattern("a_.x_^2+b_.y_^2"));
 		patterns.add(new StructuralPattern("a_.x_^3+b_.y_^3"));
@@ -123,7 +119,6 @@ public class Patterns {
 		for(int i = 0; i< list1.size(); i++){
 			String a1 = list1.get(i);
 			for (int j = i; j<list2.size(); j++) {
-				
 				variations.add(a1+","+list2.get(j));
 			}
 		}
@@ -132,10 +127,17 @@ public class Patterns {
 	
 	static List<String> add2ArgsOperators() {
 		ArrayList<String> ret = new ArrayList<>();
-		List<String> operators = Arrays.asList("Plus[%s]", "Times[%s]", "Divide[%s]");
+		List<String> operators = Arrays.asList("Plus[%s]", "Times[%s]");
 		for(String operator: operators) {
 			for(String variation: sameArg2Variations()) {
 				ret.add(String.format(operator, variation));
+			}
+		}
+		
+		for(String variation: sameArg2Variations()) {
+			if(sameArg2Variations().contains("s1_")
+					||sameArg2Variations().contains("s2_") ) {
+				ret.add(String.format("Divide[%s]", variation));
 			}
 		}
 		return ret;
