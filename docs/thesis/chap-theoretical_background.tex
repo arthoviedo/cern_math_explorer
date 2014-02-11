@@ -8,6 +8,30 @@ This model was the first one to be developed and is currently one of the most us
 
 \section{Vector Space Model}
 
+\section{Probabilistic Relevance Model}
+The probabilistic relevance model was developed in 1976 by Robertson and Jones\cite{probabilistic_relevance_model}. The similarity of a document $d_{j}$ to a query $q$ is given by the probability of $d_{j}$ being relevant to $q$. It assumes there is a set $R$ that is preferred to be the answer set for $q$. The model assumes that the document in $R$ are relevant to $q$ and the documents in $\bar{R}$ are not relevant. $R$ then is the set that maximizes:
+
+$$sim(d_{j},q) = \frac{ P(R|d_{j})} {P(\bar{R} |d_{j})} $$
+
+The importance of this model is that it serves as a solid base for state of the art information retrieval models.
+
+\section{Okapi BM25}
+
+The Okapi BM25 ranking function is one of the current state-of-the-art models in information retrieval\cite{okapibm25}. The actual scoring function is called BM25 and Okapi refers to the first system implementing this function in the 1980s. 
+Given a query $Q$ as a vector of keywords $q_{1}, q_{2}, ... , q_{n}$ then the score for a document $d$ is:
+
+$$score(d, Q) = \sum_{i=1}^{n}IDF{(q_i)}*\frac{ frec(q_i, D)}{frec(q_i, D)+k_1*((1-b)+b*\frac{|D|}{avgdl})} $$
+and $$IDF(q_i) = \log{\frac{N - df(q_i)+0.5}{df(q_i)+0.5}} $$
+
+where $frec(q_i, D)$ is the number of occurrences of keyword $q_i$ in $D$, $avgdl$ is the average length (In keywords) of a document, and $k_1$ and $b$ are free parameters. Usually $k_1 = 2$ and $b \in [0, 1]$ controls how important is the length normalization, being set normally to $0.75$. $N$ is the size of the collection, $df(q_i)$ is the number of documents that contain term $q_i$ 
+
+A further variation that takes into account structure in the form of a document containing different fields and each of them having its own length and importance (boost) can be formulated as follows, known as BM25F can be expressed as follows:
+
+$$score(d, Q) = \sum_{i=1}^{n} \frac{weigth(q_i, d)}{k+ weigth(q_i, d)} * IDF(q_i)$$
+and 
+$$weight(q_i, d) = \sum_{j=1}^m \frac{frec(q_i, D, field_j)*boost_j)}{((1-b_j) + b_j*\frac{|l_j|}{avgfl_j})} $$
+where $m$ is the number of different fields, $boost_j$ is the relative importance for each field, $b_j$ is analogous to the $b$ constant in the BM25 group of equations, $|l_j|$ is the length of the $field_j$ and $avgfl_j$ is the average length of the $field_j$.
+
 \section{Tree Edit Distance}
 As it will be discussed, one of the most common formats to represent mathematical equations, MathML, is a XML based format, and whose structure represents a rooted tree. Because of this, it makes sense to consider some models to compare and analyse mathematical expressions taking into account their natural tree structure. The most natural way of addressing this, is through the well studied abstract problem of Tree Edit Distance problem, where the idea is to compute a distance between a pair of trees. It should be noted that the development of this problem is very similar to the String Edit Distance problem.
 The Tree Edit Distance problem can be formulated as follows:
