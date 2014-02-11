@@ -1,5 +1,8 @@
 package cern.ch.mathexplorer.mathematica;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -71,7 +74,14 @@ public class MathematicaEngine {
         } catch (TimeoutException te) {
         	ml.abortEvaluation();
         } catch (Exception e) {
-        	
+        	try {
+				MathematicaUtils.killMathKernel(ml);
+				MathematicaUtils.initLink();
+
+			} catch (Exception e1) {
+				Console.print("Error while cleaning up");
+				e1.printStackTrace();
+			}
         }
 		return result;
 	}
@@ -140,7 +150,7 @@ public class MathematicaEngine {
 			// Just in case, we restart our link
 			// Cleanup operation can still fail
 			try {
-				MathematicaUtils.killMathKernel();
+				MathematicaUtils.killMathKernel(ml);
 				MathematicaUtils.initLink();
 			} catch (Exception e1) {
 				Console.print("Error while cleaning up");
@@ -172,7 +182,13 @@ public class MathematicaEngine {
         } catch (TimeoutException te) {
         	ml.abortEvaluation();
         } catch (Exception e) {
-        	
+        	try {
+				MathematicaUtils.killMathKernel(ml);
+				MathematicaUtils.initLink();
+			} catch (Exception e1) {
+				Console.print("Error while cleaning up");
+				e1.printStackTrace();
+			}
         }
 		return mathMLExpression;
 	}
@@ -204,7 +220,7 @@ public class MathematicaEngine {
 			// Just in case, we restart our link
 			// Cleanup operation can still fail
 			try {
-				MathematicaUtils.killMathKernel();
+				MathematicaUtils.killMathKernel(ml);
 				MathematicaUtils.initLink();
 			} catch (Exception e1) {
 				Console.print("Error while cleaning up");
@@ -350,6 +366,8 @@ public class MathematicaEngine {
 	}
 
 	public static void main(String[] args) throws Exception {
+		test();
+		
 		MathematicaEngine mi = getInstance("TESTING");
 		String expression = Constants.SAMPLE_EQ_5;
 		Console.print(expression);
@@ -360,6 +378,23 @@ public class MathematicaEngine {
 		Console.print(mi.simplifyExpression(expression, false));
 		Console.print(mi.simplifyExpression(expression, true));
 
+	}
+	
+	public static void test() throws Exception {
+		BufferedReader br = new BufferedReader(new FileReader(new File(
+				"/share/math/arxiv_cds/arx1312.6708.eq")));
+		String line = "";
+		MathematicaEngine instance = getInstance("TESTING");
+		int count = 0;
+		while ((line = br.readLine()) != null) {
+			//instance.simplyExpressionWithTimeout(line);
+			//instance.getPatternsWithTimeout(line);
+			instance.getPatterns(line);
+			instance.simplifyExpression(line, true);
+			
+			Console.print(count++);
+		}
+		br.close();
 	}
 
 }

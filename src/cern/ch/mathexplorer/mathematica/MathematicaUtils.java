@@ -5,6 +5,7 @@ import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.OSUtils;
 
 import com.wolfram.jlink.KernelLink;
+import com.wolfram.jlink.MathKeyListener;
 import com.wolfram.jlink.MathLinkException;
 import com.wolfram.jlink.MathLinkFactory;
 
@@ -32,7 +33,10 @@ public class MathematicaUtils {
 		}
 	}
 	
-	static void killMathKernel() {
+	static void killMathKernel(KernelLink link) {
+		if (link !=null) {
+			link.close();
+		}
 		try {
 			if (OSUtils.getOS().equals(OSUtils.OS.LINUX) ||
 					OSUtils.getOS().equals(OSUtils.OS.MAC)) {
@@ -56,7 +60,7 @@ public class MathematicaUtils {
 		}
 	}
 	public static void main(String[] args) {
-		killMathKernel();
+		killMathKernel(null);
 	}
 }
 
