@@ -89,6 +89,6 @@ public class Regex {
 	}
 	
 	public static void main(String[] args) {
-		Console.print(new Regex().isTrivialEquation("<math alttext=\"\\alpha\"><mo>=</mo></math>"));
+		Console.print(extractElements("<math><mn>2</mn><mo>+</mo><mn>3</mn></math>"));
 	}
 }

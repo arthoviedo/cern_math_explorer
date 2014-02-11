@@ -36,6 +36,7 @@ public class MathematicaUtils {
 		try {
 			if (OSUtils.getOS().equals(OSUtils.OS.LINUX) ||
 					OSUtils.getOS().equals(OSUtils.OS.MAC)) {
+				Console.print("Killing processes in linux!!!!!!!");
 				String command1 = "killall -s 9 Mathematica";
 				String command2 = "killall -s 9 MathKernel";
 				Runtime.getRuntime().exec(command1);
@@ -43,7 +44,7 @@ public class MathematicaUtils {
 			}
 			
 			if (OSUtils.getOS().equals(OSUtils.OS.WINDOWS)) {
-				String command1 = "taskkill /im MathKerel.exe";
+				String command1 = "taskkill /im MathKernel.exe";
 				String command2 = "taskkill /im Mathematica.exe";
 				
 				Runtime.getRuntime().exec(command1);
@@ -54,4 +55,9 @@ public class MathematicaUtils {
 
 		}
 	}
+	public static void main(String[] args) {
+		killMathKernel();
+	}
 }
+
+

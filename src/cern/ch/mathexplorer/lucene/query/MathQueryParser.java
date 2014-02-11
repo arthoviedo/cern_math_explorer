@@ -148,7 +148,7 @@ public class MathQueryParser extends QParser {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String query = Regex.cleanQuery(texToMathML(" $ x y \\times z $ "));
+		String query = Regex.cleanQuery(texToMathML(" \\Gamma(x) \\Gamma(1-x) "));
 		MathQueryParser mqp = new MathQueryParser(query, null, null, null);
 		mqp.parse();
 	}

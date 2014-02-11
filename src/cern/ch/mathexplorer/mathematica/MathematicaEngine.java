@@ -151,13 +151,22 @@ public class MathematicaEngine {
 	
 	}
 
+	public String simplyExpressionWithTimeout(String mathMLExpression){
+		if (MathematicaConfig.NROMALIZATION_MODE.equals(MathematicaConfig.NORMALIZATION_MODES.FULL_SIMPLIFICATION)) {
+			return simplyExpressionWithTimeout(mathMLExpression, true);
+		} else {
+			return simplyExpressionWithTimeout(mathMLExpression, false);
+		}
+	}
+
+	
 	/**
 	 * Calls the method for simplifyin a given string.
 	 * If the method takes more than the defined timeout, the original string is returned 
 	 */
-	public String simplyExpressionWithTimeout(String mathMLExpression){
+	public String simplyExpressionWithTimeout(String mathMLExpression, boolean full){
 		ExecutorService executor = Executors.newSingleThreadExecutor();
-        Future future = executor.submit(new MathematicaTask(mathMLExpression, TASK.SIMPLIFY_EXPRESSION));
+        Future future = executor.submit(new MathematicaTask(mathMLExpression, TASK.SIMPLIFY_EXPRESSION, full));
         try {
         	return (String) future.get(MathematicaConfig.TIMEOUT_TIME, MathematicaConfig.TIMEOUT_TIMEUNIT);
         } catch (TimeoutException te) {
@@ -173,16 +182,19 @@ public class MathematicaEngine {
 	 * expression If the process cannot be done, it return the original given
 	 * string
 	 */
-	private String simplifyExpression(String mathMLExpression) {
+	private String simplifyExpression(String mathMLExpression, boolean full) {
 		try {
 	
 			importString(mathMLExpression);
-			
-			String result = ml.evaluateToOutputForm("ExportString[Simplify[ReleaseHold[MakeExpression[importedString]]],\"MathML\"]", 0);
+			String mode = full? "FullSimplify":"Simplify";
+			String result = ml.evaluateToOutputForm("ExportString["+mode+"[ReleaseHold[MakeExpression[importedString]]],\"MathML\"]", 0);
+			clearVariables();
 			if (result.contains("<merror>") || result.contains("$Failed")) { // There was some error in the process, so we return the original string
 				return mathMLExpression;
 			}
 			result = result.replaceAll("\\r|\\n|  +", "");
+			result = result.replaceAll("<annotation.*?</annotation>", "");
+			
 			
 			return StringEscapeUtils.unescapeHtml4(result);
 		} catch (Exception e) {
@@ -211,18 +223,23 @@ public class MathematicaEngine {
 
 		String mathMLExpression;
 		TASK taskType;
+		Object [] args;
 		
-		public MathematicaTask(String mathMLExpression, TASK taskType) {
+		public MathematicaTask(String mathMLExpression, TASK taskType, Object ... extraArgs) {
 			this.mathMLExpression = mathMLExpression;
 			this.taskType = taskType;
+			this.args = extraArgs;
 		}
 		
 		@Override
 		public Object call() throws Exception {
-			if(taskType.equals(TASK.GET_PATTERNS))
+			if(taskType.equals(TASK.GET_PATTERNS)) {
 				return getPatterns(mathMLExpression);
-			else if(taskType.equals(TASK.SIMPLIFY_EXPRESSION))
-				return simplifyExpression(mathMLExpression);
+			}
+			else if(taskType.equals(TASK.SIMPLIFY_EXPRESSION)) {
+				boolean full = (Boolean) args[0];
+				return simplifyExpression(mathMLExpression, full);
+			}
 			 
 			throw new UnsupportedOperationException("Task type not recognized");
 		}
@@ -334,13 +351,15 @@ public class MathematicaEngine {
 
 	public static void main(String[] args) throws Exception {
 		MathematicaEngine mi = getInstance("TESTING");
-		String expression = Constants.SAMPLE_EQ_10;
+		String expression = Constants.SAMPLE_EQ_5;
 		Console.print(expression);
 		List<StructuralPattern> features = mi.getPatterns(expression);
 		for (StructuralPattern f : features) {
 			Console.print(f.getPattern());
 		}
-		Console.print(mi.simplifyExpression(expression));
+		Console.print(mi.simplifyExpression(expression, false));
+		Console.print(mi.simplifyExpression(expression, true));
+
 	}
 
 }

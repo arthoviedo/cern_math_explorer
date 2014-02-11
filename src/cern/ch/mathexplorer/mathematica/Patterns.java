@@ -17,7 +17,6 @@ public class Patterns {
 		patterns.add(new StructuralPattern("x_*y_"));
 		patterns.add(new StructuralPattern("x_/y_"));
 		
-		
 		patterns.add(new StructuralPattern("x_+y_+z_"));
 		patterns.add(new StructuralPattern("x_*y_*z_"));
 		
@@ -95,20 +94,20 @@ public class Patterns {
 				String.format("Superscript[X_,%s]",secondArg), 
 				String.format("Superscript[X_,%s]",secondArg),
 				String.format("Power[X_,%s]",secondArg),
-				"SubPlus[X_]", 
-				"SubMinus[X_]", 
-				"SubStar[X_]", 
-				"SuperPlus[X_]", 
-				"SuperMinus[X_]", 
-				"SuperStar[X_]", 
-				"SuperDagger[X_]", 
+				//"SubPlus[X_]", 
+				//"SubMinus[X_]", 
+				//"SubStar[X_]", 
+				//"SuperPlus[X_]", 
+				//"SuperMinus[X_]", 
+				//"SuperStar[X_]", 
+				//"SuperDagger[X_]", 
 				String.format("Overscript[X_, %s]",secondArg), 
-				String.format("Underscript[X_,%s]",secondArg),
-				"OverBar[X_]", 
-				"OverVector[X_]", 
-				"OverHat[X_]", 
-				"OverDot[X_]", 
-				"UnderBar[X_]");
+				String.format("Underscript[X_,%s]",secondArg));
+				//"OverBar[X_]", 
+				//"OverVector[X_]", 
+				//"OverHat[X_]", 
+				//"OverDot[X_]", 
+				//"UnderBar[X_]");
 	}
 	
 	static List<String> sameArg2Variations() {
@@ -148,8 +147,6 @@ public class Patterns {
 	}
 	
 	public static void main(String[] args) {
-		for(StructuralPattern p: patterns) {
-			System.out.println(p);
-		}
+		System.out.println(patterns.size());
 	}
 }

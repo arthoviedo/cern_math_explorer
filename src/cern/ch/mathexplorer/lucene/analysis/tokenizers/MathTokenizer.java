@@ -13,12 +13,12 @@ public abstract class MathTokenizer extends Tokenizer {
 
 	protected StringBuilder str = new StringBuilder();
 	final char[] buffer = new char[8192];
-	protected MathematicaConfig.NORMALIZATION_MODE normalizationMode = MathematicaConfig.NORMALIZATION_MODE.NO_SIMPLIFICATION;
+	protected MathematicaConfig.NORMALIZATION_MODES normalizationMode = MathematicaConfig.NORMALIZATION_MODES.NO_SIMPLIFICATION;
 	protected MathTokenizer(AttributeFactory factory, Reader input) {
 		super(factory, input);
 	}
 	
-	protected MathTokenizer(AttributeFactory factory, Reader input, MathematicaConfig.NORMALIZATION_MODE normalizationMode) {
+	protected MathTokenizer(AttributeFactory factory, Reader input, MathematicaConfig.NORMALIZATION_MODES normalizationMode) {
 		super(factory, input);
 		this.normalizationMode = normalizationMode;
 	}
@@ -34,14 +34,14 @@ public abstract class MathTokenizer extends Tokenizer {
 			sb.append(buffer, 0, len);
 		}
 		String tmp = str.toString();
-		if (normalizationMode.equals(MathematicaConfig.NORMALIZATION_MODE.NO_SIMPLIFICATION)){
+		if (normalizationMode.equals(MathematicaConfig.NORMALIZATION_MODES.NO_SIMPLIFICATION)){
 			
 		}
-		if (normalizationMode.equals(MathematicaConfig.NORMALIZATION_MODE.SIMPLE_SIMPLIFICATION)){
-			tmp = MathematicaEngine.getInstance("INDEXING").simplyExpressionWithTimeout(tmp);
+		if (normalizationMode.equals(MathematicaConfig.NORMALIZATION_MODES.STANDARD_SIMPLIFICATION)){
+			tmp = MathematicaEngine.getInstance("INDEXING").simplyExpressionWithTimeout(tmp, false);
 		}
-		if (normalizationMode.equals(MathematicaConfig.NORMALIZATION_MODE.FULL_SIMPLIFICATION)){
-			tmp = MathematicaEngine.getInstance("INDEXING").simplyExpressionWithTimeout(tmp);
+		if (normalizationMode.equals(MathematicaConfig.NORMALIZATION_MODES.FULL_SIMPLIFICATION)){
+			tmp = MathematicaEngine.getInstance("INDEXING").simplyExpressionWithTimeout(tmp, true);
 		}
 		str = new StringBuilder(Regex.cleanQuery(tmp));
 

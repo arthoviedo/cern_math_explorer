@@ -10,7 +10,7 @@ import cern.ch.mathexplorer.lucene.analysis.filters.NumericRoundFilter;
 import cern.ch.mathexplorer.lucene.analysis.filters.RelatedOperatorsFilter;
 import cern.ch.mathexplorer.lucene.analysis.filters.UnicodeNormalizingFilter;
 import cern.ch.mathexplorer.lucene.analysis.tokenizers.MultiplePatternTokenizer;
-import cern.ch.mathexplorer.mathematica.MathematicaConfig.NORMALIZATION_MODE;
+import cern.ch.mathexplorer.mathematica.MathematicaConfig;
 import cern.ch.mathexplorer.utils.Regex;
 
 public final class SolrNormalizerNotationalAnalyzer extends SolrAnalyzer {
@@ -31,7 +31,7 @@ public final class SolrNormalizerNotationalAnalyzer extends SolrAnalyzer {
   protected TokenStreamComponents createComponents(final String fieldName,
       final Reader reader) {
 	  Tokenizer source2 = new MultiplePatternTokenizer(reader, Regex.PATTERNS, Regex.GROUP,
-			  NORMALIZATION_MODE.SIMPLE_SIMPLIFICATION);
+			  MathematicaConfig.NROMALIZATION_MODE);
 	  TokenStream unicodeNormalizer = new UnicodeNormalizingFilter(source2);
 	  TokenStream numericRounder 	= new NumericRoundFilter(unicodeNormalizer);
 	  TokenStream relatedOperators 	= new RelatedOperatorsFilter(numericRounder);

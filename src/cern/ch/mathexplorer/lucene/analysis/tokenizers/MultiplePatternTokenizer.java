@@ -28,8 +28,7 @@ import java.util.regex.Pattern;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
 
-import cern.ch.mathexplorer.mathematica.MathematicaConfig;
-import cern.ch.mathexplorer.mathematica.MathematicaConfig.NORMALIZATION_MODE;
+import cern.ch.mathexplorer.mathematica.MathematicaConfig.NORMALIZATION_MODES;
 
 /**
  * This tokenizer uses regex pattern matching to construct distinct tokens for
@@ -85,7 +84,7 @@ public final class MultiplePatternTokenizer extends MathTokenizer {
 	}
 	
 	public MultiplePatternTokenizer(Reader input, List<Pattern> patterns,
-			int group, NORMALIZATION_MODE normalizationMode) {
+			int group, NORMALIZATION_MODES normalizationMode) {
 		this(AttributeFactory.DEFAULT_ATTRIBUTE_FACTORY, input, patterns, group);
 		this.normalizationMode = normalizationMode; 
 	}
