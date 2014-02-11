@@ -194,8 +194,10 @@ public final class Constants implements Serializable {
 		))), 
 		MULTIPLICATION(new HashSet<>(Arrays.asList(
 				"\u2062",	//Invisible times
-				"*",
+				//"*",		Needs to be considered in context
 				"×",
+				"✕",
+				"✖",
 				"·")))
 		, ARROWS(new HashSet<>(Arrays.asList("←" //
 				, "→" //

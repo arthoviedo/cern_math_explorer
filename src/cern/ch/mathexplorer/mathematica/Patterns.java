@@ -16,23 +16,38 @@ public class Patterns {
 		patterns.add(new StructuralPattern("x_-y_"));
 		patterns.add(new StructuralPattern("x_*y_"));
 		patterns.add(new StructuralPattern("x_/y_"));
+		
+		patterns.add(new StructuralPattern("x_.+y_."));
+		patterns.add(new StructuralPattern("x_.-y_."));
+		patterns.add(new StructuralPattern("x_.*y_."));
+		patterns.add(new StructuralPattern("x_./y_."));
+		
+		patterns.add(new StructuralPattern("x_.+y_.+z_."));
+		patterns.add(new StructuralPattern("x_.*y_.*z_."));
+		
+		patterns.add(new StructuralPattern("a_.x_^2+b_.y_^2"));
+		patterns.add(new StructuralPattern("a_.x_^3+b_.y_^3"));
+		patterns.add(new StructuralPattern("a_.x_^n_+b_.y_^n_"));
+		patterns.add(new StructuralPattern("a_.x_^n_+b_.y_^n_"));
+		patterns.add(new StructuralPattern("a_.+b_.x_+c_.x_^2"));
+		
+		patterns.add(new StructuralPattern("(x_+y_)^2"));
+		patterns.add(new StructuralPattern("(x_-y_)^2"));
+		patterns.add(new StructuralPattern("(x_+y_)^3"));
+		patterns.add(new StructuralPattern("(x_-y_)^3"));
+		
 		patterns.add(new StructuralPattern("x_Integer/y_Integer"));
 		patterns.add(new StructuralPattern("1/x_Integer"));
-		patterns.add(new StructuralPattern("Sin[x_]"));
-		patterns.add(new StructuralPattern("Cos[x_]"));
 		patterns.add(new StructuralPattern("a_.*Cos[x_] + b_.*Sin[x_]"));
 		patterns.add(new StructuralPattern("a_.*Cos[x_] * b_.*Sin[x_]"));
 		patterns.add(new StructuralPattern("a_.*Cosh[x_] + b_.*Sinh[x_]"));
 		patterns.add(new StructuralPattern("a_.*Cosh[x_] * b_.*Sinh[x_]"));
-		patterns.add(new StructuralPattern("Tan[x_]"));
 		patterns.add(new StructuralPattern("_.*e^x_"));
-		patterns.add(new StructuralPattern("a_.+b_.x_+c_.x_^2"));
 		patterns.add(new StructuralPattern("a_.* Subscript[x_, y_] + b_.* Subscript[x_, z_]"));
 		patterns.add(new StructuralPattern("a_.* Subscript[x_, y_] * b_.* Subscript[x_, z_]"));
 		patterns.add(new StructuralPattern("a_.* Subscript[v1_, v2_]^v3_  * Subscript[v1_, v3_]^v2_"));
 		patterns.add(new StructuralPattern("a_.* Subscript[v1_, v2_]^v3_  +  b_.* Subscript[v1_, v3_]^v2_"));
 		patterns.add(new StructuralPattern("N == N_Integer"));
-		patterns.add(new StructuralPattern("d*x_*t*(d^-1)"));
 		//patterns.add(new StructuralPattern("d*x_*x*(d^-1)"));
 		patterns.add(new StructuralPattern("X_ == Subscript[ X_, Z_]*Y_"));
 		patterns.add(new StructuralPattern("X_ == Subscript[ X_, Z_]*Y_.*e^(-1*W_)"));
@@ -49,6 +64,14 @@ public class Patterns {
 		patterns.add(new StructuralPattern("Log[a_. Superscript[X_, s1_] * Superscript[X_, s2_]]" ));
 		patterns.add(new StructuralPattern("Log[a_. Subscript[X_, s1_] * Subscript[X_, s2_]]" ));
 		patterns.add(new StructuralPattern("Subscript[X_, max] - Subscript[X_, min]" ));
+		
+		//Lorentz tranformation - spacetime interval
+		patterns.add(new StructuralPattern("a_.*s^2 = (Subscript[b_, i_ j_]) *  x_^i_ + x_^j_"));
+		patterns.add(new StructuralPattern(" (Subscript[Λ, a_]^b_) (Subscript[Λ, c_]^d_)"));
+		patterns.add(new StructuralPattern(" 1/c^2"));
+		patterns.add(new StructuralPattern("d*x_*t*(d^-1)"));
+		
+		//Relativistic Wave equations
 		
 		
 		for (String s: add2ArgsOperators()) {

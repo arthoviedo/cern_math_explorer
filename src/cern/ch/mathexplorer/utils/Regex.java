@@ -24,6 +24,7 @@ public class Regex {
 	public final static int GROUP = 0;
 	private static List<Pattern> initPatternsList() {
 		List<Pattern> result = new ArrayList<Pattern>();
+		result.add(Pattern.compile("<math.*?</math>"));
 		result.add(Pattern.compile("<mi[^<]*?</mi>"));
 		result.add(Pattern.compile("<mo[^<]*?</mo>"));
 		result.add(Pattern.compile("<mn[^<]*?</mn>"));
