@@ -13,7 +13,18 @@ We also extract bi-grams and tri-grams as analogue to that is done for text inde
 After examining a set of relevant documents from our dataset, we identified some heuristics that could be applied to improve the recall of our system:
 
 \begin{itemize}
-  \item Unicode Normalizing:
+  \item Unicode Normalizing: The first issue we discovered is that because of the big wide of different characters to represent the possible mathematical symbols, there is needed for an automatic way to match different possible variations of a single character. Some simple examples of this can be: $A$ and its compliment $\bar{A}$ in the case of set theory or ...
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+Character Rendering & Character Name & Latex Command & NFC & NFD & NFKC & NFKD \\ 
+\hline 
+A & LATIN CAPITAL LETTER  & A & 0x41 & 0x41 & 0x41 & 0x41 \\ 
+Ā & LATIN CAPITAL LETTER A WITH MACRON  & \={A} & 0x41 & 0x41 & 0x41 & 0x41 \\ 
+Å & LATIN CAPITAL LETTER A WITH RING  & \r{A} & 0x41 & 0x41 & 0x41 & 0x41 \\ 
+
+
+\hline 
+\end{tabular} 
   \item Numeric Approximation: Some equations relate specific numeric quantities. While most of the previously explorer systems, handled <mn> tags by only representing them as a constant identifier, this approach is not suitable. A lot of articles in CDS relate to specific experiments under certain conditions, and require a high level of precision in the measurements. 
   \item Grouping of similar operators:
 \end{itemize}

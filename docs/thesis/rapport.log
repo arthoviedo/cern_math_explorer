@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  11 FEB 2014 00:57
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  11 FEB 2014 18:45
 entering extended mode
 **rapport.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.tex
@@ -434,6 +434,16 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: mathtext 1999/01/28 v1.0 transparent text-and-math defs
 LaTeX Info: Redefining \halign on input line 111.
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+\TX@col@width=\dimen133
+\TX@old@table=\dimen134
+\TX@old@col=\dimen135
+\TX@target=\dimen136
+\TX@delta=\dimen137
+\TX@cols=\count118
+\TX@ftn=\toks25
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -452,12 +462,12 @@ Package graphics Info: Driver file: xetex.def on input line 91.
 File: xetex.def 2013/04/29 v0.96 LaTeX color/graphics driver for XeTeX (RRM/JK)
 
 ))
-\Gin@req@height=\dimen133
-\Gin@req@width=\dimen134
+\Gin@req@height=\dimen138
+\Gin@req@width=\dimen139
 )
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.aux
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\titre.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap1-introduction.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-introduction.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-theoretical_background.a
 ux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-technical_considerations
@@ -503,7 +513,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count118
+\c@section@level=\count119
 )
 LaTeX Info: Redefining \ref on input line 81.
 LaTeX Info: Redefining \pageref on input line 81.
@@ -645,7 +655,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 ] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.lot)
 \tf@lot=\write6
  [5]
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap1-introduction.tex
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-introduction.tex
 [6
 
 
@@ -661,13 +671,14 @@ ex [8
 Chapter 2.
 
 LaTeX Warning: Citation `probabilistic_relevance_model' on page 9 undefined on 
-input line 12.
-
-
-LaTeX Warning: Citation `okapibm25' on page 9 undefined on input line 20.
+input line 14.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 36--43
+
+LaTeX Warning: Citation `okapibm25' on page 10 undefined on input line 22.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--45
 
  []
 
@@ -677,14 +688,15 @@ Requested font "aer8" at 8.0pt
 Requested font "aer6" at 6.0pt
  -> aer6
 
-Overfull \hbox (35.58633pt too wide) in paragraph at lines 61--61
+Overfull \hbox (35.58633pt too wide) in paragraph at lines 63--63
 [] 
  []
 
+[11]
 
-LaTeX Warning: Citation `demaine' on page 11 undefined on input line 64.
+LaTeX Warning: Citation `demaine' on page 12 undefined on input line 66.
 
-[11]) [12]
+) [12]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-technical_considerations
 .tex
 Chapter 3.
@@ -735,49 +747,72 @@ Requested font "aett12" at 12.0pt
 ) [16]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.tex
 Chapter 5.
+Missing character: There is no Ā in font aer12!
+
+Overfull \hbox (292.65791pt too wide) in paragraph at lines 16--28
+[] 
+ []
+
 [17
 
 
 
-]
-Overfull \hbox (10.91698pt too wide) in paragraph at lines 55--55
+] [18]
+Overfull \hbox (10.91698pt too wide) in paragraph at lines 66--66
 []\T1/aett/m/n/12 "\ \varphi\ are\ shown,\ as\ well\ as\ the\ weight\ and\ tens
 ion"[] 
  []
 
 Missing character: There is no φ in font aett12!
 
-Overfull \hbox (10.91698pt too wide) in paragraph at lines 59--59
+Overfull \hbox (10.91698pt too wide) in paragraph at lines 70--70
 []\T1/aett/m/n/12 <math><mrow><mi></mi><mo></mo><mrow><mi>a</mi><mo></mo><mi>r<
 /mi>[] 
  []
 
-[18]
-Overfull \hbox (23.25288pt too wide) in paragraph at lines 61--61
+
+Overfull \hbox (23.25288pt too wide) in paragraph at lines 72--72
 []\T1/aett/m/n/12 <mi>h</mi><mo></mo><mi>o</mi><mo></mo><mi>w</mi><mo></mo><mi>
 n</mi>[] 
  []
 
-) [19]
-No file chap-evaluation.tex.
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.bbl [20
-
+) [19] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex
+[20
 
 
 
 ]
+Chapter 6.
+
+LaTeX Warning: Reference `index_experiments_table' on page 21 undefined on inpu
+t line 17.
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+\T1/aer/m/n/12 per equa-
+ []
+
+
+Overfull \hbox (1.46404pt too wide) in paragraph at lines 19--32
+[][] 
+ []
+
+) [22] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.bbl
 Requested font "aeti12" at 12.0pt
  -> aeti12
 Missing character: There is no � in font aeti12!
 Missing character: There is no � in font aeti12!
- [21])
+ [23
+
+
+])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
 
-[22]
+[24]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
  (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\rapport.aux
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\titre.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap1-introduction.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-introduction.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-theoretical_background.a
 ux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-technical_considerations
@@ -796,12 +831,12 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 119.
  ) 
 Here is how much of TeX's memory you used:
- 10302 strings out of 429035
- 140894 string characters out of 3166907
- 206226 words of memory out of 3000000
- 13375 multiletter control sequences out of 15000+200000
+ 10349 strings out of 429035
+ 141468 string characters out of 3166907
+ 208444 words of memory out of 3000000
+ 13417 multiletter control sequences out of 15000+200000
  35914 words of font info for 59 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 35i,13n,47p,713b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,13n,47p,713b,453s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on rapport.pdf (24 pages).
+Output written on rapport.pdf (26 pages).
