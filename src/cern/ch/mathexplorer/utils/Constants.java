@@ -91,6 +91,7 @@ public final class Constants implements Serializable {
 			+ "<mn>2</mn></msup></math>";
 	public final static String SAMPLE_HEP_PROCESS = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>H</mi><mo>→</mo><msup><mi>W</mi><mo>+</mo>"
 			+ "</msup><msup><mi>W</mi><mo>-</mo></msup></math>";
+	public final static String SAMPLE_NUMERIC_ADDITION = "<math><mn>9</mn><mo>+</mo><mn>8</mn></math>";
 	public final static String SAMPLE_EQ_TIMEOUT = "<math alttext=\"{}^{(b)}High\\ Energy\\ Accelerator\\ Research\\ Organization\\ (KEK),\\ Tsukuba,\\ %Ibaraki,"
 			+ "\\ Japan\"><mrow><mrow><mmultiscripts><mi>H</mi><mprescripts/><none/><mrow><mo>(</mo><mi>b</mi><mo>)</mo></mrow></mmultiscripts><mo>⁢</mo><mi>i</mi>"
 			+ "<mo>⁢</mo><mi>g</mi><mo>⁢</mo><mi>h</mi></mrow><mo></mo><mrow><mi>E</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>g</mi><mo>"

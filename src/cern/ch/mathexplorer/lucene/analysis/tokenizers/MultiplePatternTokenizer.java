@@ -82,13 +82,13 @@ public final class MultiplePatternTokenizer extends MathTokenizer {
 			int group) {
 		this(AttributeFactory.DEFAULT_ATTRIBUTE_FACTORY, input, patterns, group);
 	}
-	
+
 	public MultiplePatternTokenizer(Reader input, List<Pattern> patterns,
 			int group, NORMALIZATION_MODES normalizationMode) {
 		this(AttributeFactory.DEFAULT_ATTRIBUTE_FACTORY, input, patterns, group);
-		this.normalizationMode = normalizationMode; 
+		this.normalizationMode = normalizationMode;
 	}
-	
+
 	/**
 	 * creates a new PatternTokenizer returning tokens from group (-1 for split
 	 * functionality)
@@ -100,7 +100,7 @@ public final class MultiplePatternTokenizer extends MathTokenizer {
 		init(patterns);
 
 	}
-	
+
 	private void init(List<Pattern> patterns) {
 		// Use "" instead of str so don't consume chars
 		// (fillBuffer) from the input on throwing IAE below:
@@ -120,13 +120,13 @@ public final class MultiplePatternTokenizer extends MathTokenizer {
 	}
 
 	int matchIndex = 0;
-	
-	class Match{
+
+	class Match {
 		int startIndex;
 		int endIndex;
 		String match;
 	}
-	
+
 	@Override
 	public boolean incrementToken() {
 		// Console.print("Incrementing token");
@@ -140,15 +140,15 @@ public final class MultiplePatternTokenizer extends MathTokenizer {
 			offsetAtt.setOffset(correctOffset(m.startIndex),
 					correctOffset(m.endIndex));
 
-			//stringIndex = minStartIndex + 1;
-			//Console.print("Index:" + stringIndex);
-			//firstTimeToken = true;
+			// stringIndex = minStartIndex + 1;
+			// Console.print("Index:" + stringIndex);
+			// firstTimeToken = true;
 			return true;
 		} else {
 			throw new UnsupportedOperationException();
 		}
 	}
-	
+
 	@Override
 	public void end() throws IOException {
 		super.end();
@@ -165,12 +165,11 @@ public final class MultiplePatternTokenizer extends MathTokenizer {
 		}
 		getAllMatches();
 	}
-	
-	private void getAllMatches() {
+
+	private void getAllMatches3() {
 		matches = new LinkedList<>();
 		for (Matcher m : matchers) {
-			while (m.find())
-			{
+			while (m.find()) {
 				int start = m.start(group);
 				int end = m.end(group);
 				Match toAdd = new Match();
@@ -182,5 +181,28 @@ public final class MultiplePatternTokenizer extends MathTokenizer {
 		}
 	}
 
-	
+	private void getAllMatches() {
+		matches = new LinkedList<>();
+		for (Matcher matcher : matchers) {
+			for (int i = 0; i < str.length(); i++) {
+				if (matcher.find(i)) {
+					i = matcher.start() + 1;
+					int start = matcher.start(group);
+					int end = matcher.end(group);
+					Match toAdd = new Match();
+					toAdd.startIndex = start;
+					toAdd.endIndex = end;
+					toAdd.match = str.substring(start, end);
+					matches.add(toAdd);
+				}
+			}
+		}
+	}
+	/**
+	 * 
+	 for (Pattern p: PATTERNS) { Matcher matcher = p.matcher(expression);
+	 * for(int i = 0; i< expression.length(); i++) { if (matcher.find(i)) { i =
+	 * matcher.start()+1; result.add(matcher.group(GROUP)); } } }
+	 */
+
 }

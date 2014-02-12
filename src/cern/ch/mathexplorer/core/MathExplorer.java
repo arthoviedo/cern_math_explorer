@@ -267,7 +267,7 @@ public class MathExplorer {
 	public static void main(String[] args) throws Exception {
 		
 		MathExplorer m = new MathExplorer(null, false);
-		m.testAnalyzer("<math><mn>2</mn><mo>+</mo><mn>3</mn></math>");
+		m.testAnalyzer(Constants.SAMPLE_EQ_1);
 		System.out.println("Finished");
 		//m.search(Constants.SAMPLE_EQUATION_2, true, INDEX_WHOLE_ARTICLE);
 		//testUnicodeNormalization();

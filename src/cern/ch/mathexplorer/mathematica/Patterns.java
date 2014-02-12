@@ -12,31 +12,60 @@ public class Patterns {
 	}
 	
 	static 	private void loadPatterns() {
-		patterns.add(new StructuralPattern("x_+y_"));
-		patterns.add(new StructuralPattern("x_-y_"));
-		patterns.add(new StructuralPattern("x_*y_"));
-		patterns.add(new StructuralPattern("x_/y_"));
 		
-		patterns.add(new StructuralPattern("x_+y_+z_"));
-		patterns.add(new StructuralPattern("x_*y_*z_"));
+		patterns.add(new StructuralPattern("x_^2"));
+		patterns.add(new StructuralPattern("x_^3"));
+		patterns.add(new StructuralPattern("x_^4"));
+		patterns.add(new StructuralPattern("x_^5"));
+		patterns.add(new StructuralPattern("x_^n_Integer"));
+		patterns.add(new StructuralPattern("1/x_"));
+		patterns.add(new StructuralPattern("y_/(a_.*x_^2  + b_.)"));
+		patterns.add(new StructuralPattern("y_/(a_.*x_^3  + b_.)"));
+		patterns.add(new StructuralPattern("y_/(a_.*x_^4  + b_.)"));
+		patterns.add(new StructuralPattern("y_/(a_.*x_^5  + b_.)"));
+		patterns.add(new StructuralPattern("(x_ + y_)/(a_.*(x_)^2  + b_.)"));
+		patterns.add(new StructuralPattern("(x_ + y_)/(a_.*(x_)^3  + b_.)"));
+		patterns.add(new StructuralPattern("(x_ + y_)/(a_.*(x_)^4  + b_.)"));
+		patterns.add(new StructuralPattern("(x_ + y_)/(a_.*(x_+c_.)^2  + b_.)"));
+		patterns.add(new StructuralPattern("(x_ + y_)/(a_.*(x_+c_.)^3  + b_.)"));
+		patterns.add(new StructuralPattern("(x_ + y_)/(a_.*(x_+c_.)^4  + b_.)"));
+		patterns.add(new StructuralPattern("a_. x_^2 + b_. x_ + c_."));
+		patterns.add(new StructuralPattern("a_. x_^3 + b_. x_^2 + c_. x_ + d_."));
+		patterns.add(new StructuralPattern("(x_ + a_.) (x_ + b_.)"));
+		patterns.add(new StructuralPattern("(x_ + a_.) (x_ + b_.) (x_ + c_.)"));
 		
-		patterns.add(new StructuralPattern("a_.x_^2+b_.y_^2"));
-		patterns.add(new StructuralPattern("a_.x_^3+b_.y_^3"));
-		patterns.add(new StructuralPattern("a_.x_^n_+b_.y_^n_"));
-		patterns.add(new StructuralPattern("a_.x_^n_+b_.y_^n_"));
-		patterns.add(new StructuralPattern("a_.+b_.x_+c_.x_^2"));
+		patterns.add(new StructuralPattern("x_ Sqrt[a_. x_ + b_.]"));
+		patterns.add(new StructuralPattern("x_ Power[a_. x_ + b_., 3]"));
+		patterns.add(new StructuralPattern("x_ Power[a_. x_ + b_., n_.]"));
+		patterns.add(new StructuralPattern("(a_. x_ + b_.) ( Power[d_. x_ + e_., n_Integer])"));
+		patterns.add(new StructuralPattern("(a_. x_ + b_.) ( Power[d_. x_ + e_., n_Rational])"));
 		
-		patterns.add(new StructuralPattern("(x_+y_)^2"));
-		patterns.add(new StructuralPattern("(x_-y_)^2"));
-		patterns.add(new StructuralPattern("(x_+y_)^3"));
-		patterns.add(new StructuralPattern("(x_-y_)^3"));
+		patterns.add(new StructuralPattern("(a_. x_ + b_.) Log[(c_. x_) + d_. ]"));
+		patterns.add(new StructuralPattern("((a_. x_^2) + b_.) Log[(c_. x_) + d_. ]"));
+		patterns.add(new StructuralPattern("((a_. x_^n_Integer) + b_.) Log[(c_. x_) + d_. ]"));
+		patterns.add(new StructuralPattern("Power[(c_. x_) + d_., -1]*Log[(a_. x_) + b_.]"));
+		patterns.add(new StructuralPattern("Power[(c_. x_^2) + d_., -1]*Log[(a_. x_) + b_.]"));
+		patterns.add(new StructuralPattern("Power[(c_. x_^3) + d_., -1]*Log[(a_. x_) + b_.]"));
 		
-		patterns.add(new StructuralPattern("x_Integer/y_Integer"));
-		patterns.add(new StructuralPattern("1/x_Integer"));
-		patterns.add(new StructuralPattern("a_.*Cos[x_] + b_.*Sin[x_]"));
-		patterns.add(new StructuralPattern("a_.*Cos[x_] * b_.*Sin[x_]"));
-		patterns.add(new StructuralPattern("a_.*Cosh[x_] + b_.*Sinh[x_]"));
-		patterns.add(new StructuralPattern("a_.*Cosh[x_] * b_.*Sinh[x_]"));
+		patterns.add(new StructuralPattern("((a_.*x_) + b_.) Exp[c_. + d_. x_]"));
+		patterns.add(new StructuralPattern("((a_.*x_^2) + b_.) Exp[c_. + d_. x_]"));
+		patterns.add(new StructuralPattern("Sqrt[((a_.*x_^2) + b_.)] Exp[c_. + d_. x_]"));
+		patterns.add(new StructuralPattern("((a_.*x_^n) + b_.) Exp[c_. + d_. x_]"));
+
+		patterns.add(new StructuralPattern("Cos[a_. + b_. x_] Sin[c_. + d_. x_] * e_."));
+		patterns.add(new StructuralPattern("Cos[a_. + b_. x_] (Sin[c_. + d_. x_]^2) * e_."));
+		patterns.add(new StructuralPattern("(Cos[a_. + b_. x_]^2) Sin[c_. + d_. x_] * e_."));
+		
+		patterns.add(new StructuralPattern(" a_.*(b_. + (c_. x_) Cos[d_. + e_. x_])"));
+		patterns.add(new StructuralPattern(" a_.*(b_. + (c_. x_^2) Cos[d_. + e_. x_])"));
+		patterns.add(new StructuralPattern(" a_.*(b_. + (c_. x_^n) Cos[d_. + e_. x_])"));
+		patterns.add(new StructuralPattern(" a_.*(b_. + (c_. x_) Sin[d_. + e_. x_])"));
+		patterns.add(new StructuralPattern(" a_.*(b_. + (c_. x_^2) Sin[d_. + e_. x_])"));
+		patterns.add(new StructuralPattern(" a_.*(b_. + (c_. x_^n) Sin[d_. + e_. x_])"));
+		
+		
+		
+		// Pseudo domain specific knowledge
 		patterns.add(new StructuralPattern("_.*e^x_"));
 		patterns.add(new StructuralPattern("a_.* Subscript[x_, y_] + b_.* Subscript[x_, z_]"));
 		patterns.add(new StructuralPattern("a_.* Subscript[x_, y_] * b_.* Subscript[x_, z_]"));

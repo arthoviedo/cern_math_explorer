@@ -150,7 +150,7 @@ public class MathematicaEngine {
 	}
 
 	public String simplyExpressionWithTimeout(String mathMLExpression){
-		if (MathematicaConfig.NROMALIZATION_MODE.equals(MathematicaConfig.NORMALIZATION_MODES.FULL_SIMPLIFICATION)) {
+		if (MathematicaConfig.NORMALIZATION_MODE.equals(MathematicaConfig.NORMALIZATION_MODES.FULL_SIMPLIFICATION)) {
 			return simplyExpressionWithTimeout(mathMLExpression, true);
 		} else {
 			return simplyExpressionWithTimeout(mathMLExpression, false);

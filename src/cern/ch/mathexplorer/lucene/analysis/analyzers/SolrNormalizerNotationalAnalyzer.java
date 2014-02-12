@@ -31,7 +31,7 @@ public final class SolrNormalizerNotationalAnalyzer extends SolrAnalyzer {
   protected TokenStreamComponents createComponents(final String fieldName,
       final Reader reader) {
 	  Tokenizer source2 = new MultiplePatternTokenizer(reader, Regex.PATTERNS, Regex.GROUP,
-			  MathematicaConfig.NROMALIZATION_MODE);
+			  MathematicaConfig.NORMALIZATION_MODE);
 	  TokenStream unicodeNormalizer = new UnicodeNormalizingFilter(source2);
 	  TokenStream numericRounder 	= new NumericRoundFilter(unicodeNormalizer);
 	  TokenStream relatedOperators 	= new RelatedOperatorsFilter(numericRounder);
