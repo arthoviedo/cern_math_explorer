@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -50,7 +51,7 @@ public class MathematicaEngine {
 
 	private MathematicaEngine() {
 		try {
-			ml = MathematicaUtils.initLink();
+			ml = MathematicaUtils.getNewLink();
 		} catch (MathLinkException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,14 +75,7 @@ public class MathematicaEngine {
         } catch (TimeoutException te) {
         	ml.abortEvaluation();
         } catch (Exception e) {
-        	try {
-				MathematicaUtils.killMathKernel(ml);
-				MathematicaUtils.initLink();
-
-			} catch (Exception e1) {
-				Console.print("Error while cleaning up");
-				e1.printStackTrace();
-			}
+        	e.printStackTrace();
         }
 		return result;
 	}
@@ -97,7 +91,7 @@ public class MathematicaEngine {
 			throws MathLinkException {
 		if (ml == null) {
 			try {
-				MathematicaUtils.initLink();
+				ml = MathematicaUtils.getNewLink();
 			} catch (Exception e) {
 				return new ArrayList<>();
 			}
@@ -149,13 +143,7 @@ public class MathematicaEngine {
 			// TODO: Solve better
 			// Just in case, we restart our link
 			// Cleanup operation can still fail
-			try {
-				MathematicaUtils.killMathKernel(ml);
-				MathematicaUtils.initLink();
-			} catch (Exception e1) {
-				Console.print("Error while cleaning up");
-				e1.printStackTrace();
-			}
+			cleanLink();
 			return new ArrayList<>();
 		}
 	
@@ -182,15 +170,19 @@ public class MathematicaEngine {
         } catch (TimeoutException te) {
         	ml.abortEvaluation();
         } catch (Exception e) {
-        	try {
-				MathematicaUtils.killMathKernel(ml);
-				MathematicaUtils.initLink();
-			} catch (Exception e1) {
-				Console.print("Error while cleaning up");
-				e1.printStackTrace();
-			}
+        	e.printStackTrace();
         }
 		return mathMLExpression;
+	}
+	
+	private void cleanLink(){
+		try {
+			MathematicaUtils.killMathKernel(ml);
+			ml = MathematicaUtils.getNewLink();
+		} catch (Exception e1) {
+			Console.print("Error while cleaning up");
+			e1.printStackTrace();
+		}
 	}
 	
 	/**
@@ -219,13 +211,7 @@ public class MathematicaEngine {
 			// TODO: Solve better
 			// Just in case, we restart our link
 			// Cleanup operation can still fail
-			try {
-				MathematicaUtils.killMathKernel(ml);
-				MathematicaUtils.initLink();
-			} catch (Exception e1) {
-				Console.print("Error while cleaning up");
-				e1.printStackTrace();
-			}
+			cleanLink();
 			return mathMLExpression;
 		}
 	}

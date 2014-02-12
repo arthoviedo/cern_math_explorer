@@ -10,7 +10,8 @@ import com.wolfram.jlink.MathLinkException;
 import com.wolfram.jlink.MathLinkFactory;
 
 public class MathematicaUtils {
-	public static KernelLink initLink() throws MathLinkException {
+	public static KernelLink getNewLink() throws MathLinkException {
+		
 		String command = "";
 		command = Constants.getMathematicaCommand();
 		String[] extraArgs = { "-linkmode", "launch", "-linkname",
@@ -40,7 +41,6 @@ public class MathematicaUtils {
 		try {
 			if (OSUtils.getOS().equals(OSUtils.OS.LINUX) ||
 					OSUtils.getOS().equals(OSUtils.OS.MAC)) {
-				Console.print("Killing processes in linux!!!!!!!");
 				String command1 = "killall -s 9 Mathematica";
 				String command2 = "killall -s 9 MathKernel";
 				Runtime.getRuntime().exec(command1);
