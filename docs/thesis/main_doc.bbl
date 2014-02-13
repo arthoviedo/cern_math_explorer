@@ -1,0 +1,58 @@
+\begin{thebibliography}{1}
+
+\bibitem{probabilistic_relevance_model}
+Stephen~E. Robertson and Karen Sparck~Jones.
+\newblock Document retrieval systems.
+\newblock chapter Relevance Weighting of Search Terms, pages 143--160. Taylor
+  Graham Publishing, London, UK, UK, 1988.
+
+\bibitem{okapibm25}
+Stephen Robertson and Hugo Zaragoza.
+\newblock The probabilistic relevance framework: Bm25 and beyond.
+\newblock {\em Found. Trends Inf. Retr.}, 3(4):333--389, April 2009.
+
+\bibitem{zhang_shasha}
+Kaizhong Zhang and Dennis Shasha.
+\newblock {Simple Fast Algorithms for the Editing Distance Between Trees and
+  Related Problems}.
+\newblock {\em Siam Journal on Computing}, 18:1245--1262, 1989.
+
+\bibitem{klein}
+Philip~N. Klein.
+\newblock Computing the edit-distance between unrooted ordered trees.
+\newblock In {\em Proceedings of the 6th Annual European Symposium on
+  Algorithms}, ESA '98, pages 91--102, London, UK, UK, 1998. Springer-Verlag.
+
+\bibitem{demaine}
+Erik~D. Demaine, Shay Mozes, Benjamin Rossman, and Oren Weimann.
+\newblock {An Optimal Decomposition Algorithm for Tree Edit Distance}.
+\newblock {\em ACM Transactions on Algorithms}, 6:146--157, 2007.
+
+\bibitem{mias_1}
+Petr Sojka and Martin L\'{i}\v{s}ka.
+\newblock Indexing and searching mathematics in digital libraries.
+\newblock In JamesH. Davenport, WilliamM. Farmer, Josef Urban, and Florian
+  Rabe, editors, {\em Intelligent Computer Mathematics}, volume 6824 of {\em
+  Lecture Notes in Computer Science}, pages 228--243. Springer Berlin
+  Heidelberg, 2011.
+
+\bibitem{egomath1}
+Jozef Mi\v{s}utka and Leo Galambo\v{s}.
+\newblock Extending full text search engine for mathematical content.
+\newblock {\em Towards Digital Mathematics Library}, pages 55--67, 2008.
+
+\bibitem{egomath2}
+Jozef Mi\v{s}utka and Leo Galambo\v{s}.
+\newblock System description: Egomath2 as a tool for mathematical searching on
+  wikipedia.org.
+\newblock In {\em Proceedings of the 18th Calculemus and 10th International
+  Conference on Intelligent Computer Mathematics}, MKM'11, pages 307--309,
+  Berlin, Heidelberg, 2011. Springer-Verlag.
+
+\bibitem{math_groups}
+Xah Lee.
+\newblock Unicode: Math symbols, 2010.
+\newblock
+  \url{http://web.archive.org/web/20131223003502/http://xahlee.info/comp/unicode_math_operators.html}.
+
+\end{thebibliography}

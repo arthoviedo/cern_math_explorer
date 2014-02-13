@@ -1,16 +1,16 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  11 FEB 2014 00:02
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  13 FEB 2014 14:56
 entering extended mode
-**bibliographie.tex
+**bibliography.tex
 
 ! Emergency stop.
-<*> bibliographie.tex
-                     
+<*> bibliography.tex
+                    
 *** (job aborted, file error in nonstop mode)
 
  
 Here is how much of TeX's memory you used:
- 2 strings out of 429035
- 23 string characters out of 3166907
+ 1 string out of 429035
+ 10 string characters out of 3166907
  47509 words of memory out of 3000000
  3355 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000

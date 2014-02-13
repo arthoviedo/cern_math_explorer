@@ -368,15 +368,15 @@ public class MathematicaEngine {
 	
 	public static void test() throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"/share/math/arxiv_cds/arx1312.6708.eq")));
+				"./data/arxiv_cds/arx1312.6708.eq")));
 		String line = "";
 		MathematicaEngine instance = getInstance("TESTING");
 		int count = 0;
 		while ((line = br.readLine()) != null) {
-			//instance.simplyExpressionWithTimeout(line);
-			//instance.getPatternsWithTimeout(line);
-			instance.getPatterns(line);
-			instance.simplifyExpression(line, true);
+			instance.simplyExpressionWithTimeout(line);
+			instance.getPatternsWithTimeout(line);
+			//instance.getPatterns(line);
+			//instance.simplifyExpression(line, true);
 			
 			Console.print(count++);
 		}

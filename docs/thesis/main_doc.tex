@@ -1,44 +1,77 @@
-%\documentclass[12pt, a4paper, oneside]{book}
 \documentclass[12pt, a4paper, titlepage, twoside]{book}
+%\documentclass[12pt, a4paper, oneside]{book}
 %\documentclass[a4paper,11pt,twoside]{report}
 
-\usepackage[latin1]{inputenc}
+\usepackage[mathletters]{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{amssymb}
 \usepackage[cyr]{aeguill}
 \usepackage[english]{babel}
 \usepackage{fancyhdr, ifpdf}
 \usepackage{array}
 \usepackage{multirow}
-\usepackage[latin1]{inputenc}
-%\def\pgfsysdriver{pgfsys-dvipdfm.def}
-%\usepackage{tikz}
 \usepackage{textcomp}
 \usepackage{verbatim} 
-
+\usepackage{listings}
 \usepackage{hyperref}
+\usepackage{dsfont}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb,amstext,mathtext}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{url}
 
+%% Define a new 'leo' style for the package that will use a smaller font.
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{leo}
+%\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage{tikz}
 % Uncomment to show frames
 %\usepackage{showframe}
-
+%Pour montrer les label
+%\usepackage{showkeys}
+%\usepackage{showlabels}
+% Uncomment one of these line depending whether you want to see the draft or the final version.
+%\usepackage[draft]{graphicx}
+%\usepackage{graphicx}
+%\usepackage{varioref}
+%\usepackage[french]{varioref} 
 %\setlength{\hoffset}{0.5cm}
 \setlength{\oddsidemargin}{1.3cm}
 \setlength{\evensidemargin}{0.8cm}
 
+\newcommand{\loadencoding}[1]{%
+  \begingroup
+  \def\DeclareUnicodeCharacter##1##2{%
+    \expandafter\gdef\csname uni\number"##1\endcsname
+      {{\fontencoding{#1}\selectfont##2}}}
+  \makeatletter
+  \lowercase{\input{#1enc.dfu}}%
+  \endgroup}
+\newcommand\unisymbol[1]{\csname uni\number#1\endcsname}
+\loadencoding{T1}
+\loadencoding{T2A}
+
 %\setlength{\marginparwidth}{2cm}
-  
-%Pour montrer les label
-%\usepackage{showkeys}
-%\usepackage{showlabels}
+%\setmainfont{TeX Gyre Termes}
+%\setmainfont{Arial Unicode MS}
+%\setmainfont{Code2000}
 
-%\usepackage{varioref}
-%\usepackage[french]{varioref} 
-\usepackage{booktabs}
+\newfontfamily\unicodefont{Arial Unicode MS}
+
+
 \newcommand{\otoprule}{\midrule[\heavyrulewidth]}
-\usepackage{amsmath,amssymb,amstext,mathtext}
-\usepackage{tabularx}
 
-% Uncomment one of these line depending whether you want to see the draft or the final version.
-%\usepackage[draft]{graphicx}
-%\usepackage{graphicx}
+
+
+
 \ifpdf
    \usepackage[pdftex]{graphicx}
 %   \pdfinfo {
@@ -51,6 +84,8 @@
    \usepackage{graphicx}
 \fi
 \graphicspath{{./figures/}{./logo/}}
+
+%\def\pgfsysdriver{pgfsys-dvipdfm.def}
 
 \makeatletter
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
@@ -78,27 +113,19 @@
 \cfoot{}
 \sloppy
 
+
 \begin{document}
-
-
 %\include{title}
 %\maketitle
-
 %\begin{titlepage}
 %\fancyhf{}
-
-
 \include{titre}
 %\end{titlepage}
-
 %% start the show...
-
 \pagenumbering{roman}
 \setcounter{page}{1}
 \pagenumbering{arabic}
-
 \tableofcontents
-
 \listoffigures
 \listoftables
 \include{chap-introduction}
@@ -111,15 +138,9 @@
 \addcontentsline{toc}{chapter}{Bibliographie}
 \nocite{*}
 \thispagestyle{empty}
-\bibliography{bibliographie}
+\bibliography{bibliography}
 \begin{appendix}
 \appendix
 %\include{annexes}
 \end{appendix}
 \end{document}
-
-
-
-
-
-

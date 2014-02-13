@@ -1,3 +1,4 @@
+
 \chapter{CERN Math Explorer}
 \label{chapter-cern_math_explorer}
 In this chapter we propose our solution for a scalable math based oriented search engine. We present the key points of our system, and how they are related to previous built systems.
@@ -12,28 +13,104 @@ We also extract bi-grams and tri-grams as analogue to that is done for text inde
 
 After examining a set of relevant documents from our dataset, we identified some heuristics that could be applied to improve the recall of our system:
 
-\begin{itemize}
-  \item Unicode Normalizing: The first issue we discovered is that because of the big wide of different characters to represent the possible mathematical symbols, there is needed for an automatic way to match different possible variations of a single character. Some simple examples of this can be: $A$ and its compliment $\bar{A}$ in the case of set theory or ...
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline 
-Character Rendering & Character Name & Latex Command & NFC & NFD & NFKC & NFKD \\ 
-\hline 
-A & LATIN CAPITAL LETTER  & A & 0x41 & 0x41 & 0x41 & 0x41 \\ 
-Ā & LATIN CAPITAL LETTER A WITH MACRON  & \={A} & 0x41 & 0x41 & 0x41 & 0x41 \\ 
-Å & LATIN CAPITAL LETTER A WITH RING  & \r{A} & 0x41 & 0x41 & 0x41 & 0x41 \\ 
 
 
+\subsubsection{Unicode Normalizing} 
+The first issue we discovered is that because of the big wide of different characters to represent the possible mathematical symbols, there is need for an automatic way to match different possible variations of a single character. An example of this situation is specification of an natural number, sometimes denoted by the letter N. In this case, at least three different common representations were identified: $ N = 1 $ (Using character with unicode code point 0x004e), $\mathcal{N} = 1$ (0xd835 0xdc41 or in latex expressed as \lstinline|\mathcal{N}|) and $\mathbb{N} = 1$ (0x2115 or in latex expressed as \lstinline|\mathbb{N}|). \\
+  For addressing this situation, we rely on the Unicode equivalence framework. In the unicode specification, sometimes the same character have two or more different code-points because of backwards compatibility with other encoding standards or because the same character has different essential meanings. Another group of equal characters with different code-points are pre-combined characters such as the Latin letter \~{N} which has Unicode point 0x00D1 and also is the sequence of code-points  0x004E (Latin letter N) and 0x0303 (the combining character tilde). Taking this sample into account, Unicode defines the character composition and decomposition operations as replacing the decomposed representation with the pre-composed one and vice-versa. Finally, Unicode defines two types of equivalences between characters: Canonical and compatible. Canonical equivalent characters are assumed to have the same appearance and meaning. Compatible ones are allowed to have slightly different graphical representations but the same meaning in some contexts. One example of compatible equivalent characters is the Roman number 12 {\unicodefontⅫ} with code-point 0x216b and the sequence of characters XII with codepoints 0x0058 0x0049 0x0049. Taking into account the composition or decomposition of characters and the canonical or compatible equivalences, Unicode specifies 4 different forms of a given character:
+  \begin{itemize}
+  \item NFD: Normalization Form Canonical Decomposition
+  \item NFC: Normalization Form Canonical Composition
+  \item NFKD: Normalization Form Compatibility Decomposition
+  \item NFKC: Normalization Form Compatibility Composition
+  \end{itemize}
+  
+Table \ref{unicode_characters} presents a small list of troubling characters classes that were identified in our datasets.
+
+\begin{longtable}{|m{4cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{1.65cm}|>{\centering\arraybackslash}m{1.65cm}|>{\centering\arraybackslash}m{1.65cm}|>{\centering\arraybackslash}m{1.65cm}|}
 \hline 
-\end{tabular} 
-  \item Numeric Approximation: Some equations relate specific numeric quantities. While most of the previously explorer systems, handled <mn> tags by only representing them as a constant identifier, this approach is not suitable. A lot of articles in CDS relate to specific experiments under certain conditions, and require a high level of precision in the measurements. 
-  \item Grouping of similar operators:
-\end{itemize}
+Character Unicode Name & Visual Rendering & NFC & NFD & NFKC & NFKD \\ 
+\hline 
+LATIN CAPITAL LETTER A & A & 0x41 & 0x41 & 0x41 & 0x41 \\ 
+\hline 
+LATIN CAPITAL LETTER A WITH MACRON & \={A} & 0x100 & 0x41 0x304 & 0x100 & 0x41 0x304 \\
+\hline 
+LATIN CAPITAL LETTER A WITH RING ABOVE & \r{A} & 0xc5 & 0x41 0x30a & 0xc5 & 0x41 0x30a \\
+\hline 
+ANGSTROM SIGN (0x212b) &	\r{A} &	0xc5 &	0x41 0x30a &	0xc5 &	0x41 0x30a \\
+\hline
+LATIN CAPITAL LIGATURE IJ &	Ĳ &	0x132 &	0x132 &	0x49(I) 0x4a(J) &	0x49 0x4a \\
+\hline
+CYRILLIC CAPITAL LIGATURE A IE & {\unicodefont Ӕ} &	0x4d4 &	0x4d4 &	0x4d4 &	0x4d4 \\
+\hline
+LATIN CAPITAL LETTER AE	& {\unicodefont Ӕ}	& 0xc6	& 0xc6	& 0xc6	& 0xc6 \\
+\hline
+DOUBLE-STRUCK CAPITAL N	& {\unicodefont ℕ}	& 0x2115 & 0x2115 & 0x2115 & 0x4e \\
+\hline
+LATIN CAPITAL LETTER N	& N & 0x4e	& 0x4e & 	0x4e	& 0x4e \\
+\hline 
+MATHEMATICAL ITALIC CAPITAL N & $\mathcal{N}$	& 0xd835  0xdc41 &	0xd835  0xdc41 &	0x4e	 & 0x4e \\
+\hline 
+ROMAN NUMERAL TWELVE	& {\unicodefont Ⅻ}	&0x216b &	0x216b	& 0x58 0x49 0x49 &	0x58 0x49 0x49 \\
+\hline
+LATIN CAPITAL LETTER X - LATIN CAPITAL LETTER I - LATIN CAPITAL LETTER I &	XII &	0x58 0x49 0x49 &	0x58 0x49 0x49&	0x58(X) 0x49(I) 0x49(I) &	0x58 0x49 0x49 \\
+\hline
+VULGAR FRACTION ONE QUARTER	& \char"00BC &	0xbc &	0xbc &	0x31(1) 0x2044(/) 0x34(4) &	0x31 0x2044 0x34 \\
+\hline
+DIGIT ONE - SOLIDUS - DIGIT 4 &	1⁄4 &	0x31  0x2f 0x34 &	0x31 0x2f 0x34	& 0x31 0x2f 0x34 &	0x31 0x2f 0x34\\
+\hline
+DIGIT ONE - SOLIDUS - DIGIT 4 &	1⁄4 &	0x31  0x2f 0x34 &	0x31 0x2f 0x34	& 0x31 0x2f 0x34 &	0x31 0x2f 0x34\\
+\hline
+DIGIT ONE - FRACTION SLASH - DIGIT 4 & 1⁄4 &	0x31 0x2044 0x34 &	0x31 0x2044 0x34 &	0x31 0x2044 0x34 &	0x31 0x2044 0x34 \\
+\hline
+THERE EXISTS	& {\unicodefont ∃}&	0x2203 &	0x2203 &	0x2203 &	0x2203 \\
+\hline
+THERE DOES NOT EXIST	& {\unicodefont ∄} & 	0x2204	& 0x2203 0x338& 	0x2204 &	0x2203 0x338\\
+\hline
+LATIN CAPITAL LETTER OPEN E	& {\unicodefont Ɛ} &	0x190 &	0x190 &	0x190 &	0x190 \\
+\hline
+EULER CONSTANT	& {\unicodefont ℇ} & 0x2107 & 0x2107 & 0x190 & 0x190 \\
+\hline
+PLANCK CONSTANT	& {\unicodefont ℎ} &	0x210e &	0x210e &	0x68 &	0x68 \\
+\hline
+LATIN SMALL LETTER H &	h &	0x68 &	0x68 &	0x68 &	0x68 \\
+\hline
+PLANCK CONSTANT OVER TWO PI	& {\unicodefont ℏ} &	0x210f &	0x210f	& 0x127 &	0x127 \\
+\hline
+LATIN SMALL LETTER H WITH STROKE & ħ &	0x127	& 0x127	& 0x127	& 0x127 \\
+\hline
+GREEK CAPITAL LETTER OMEGA	& Ω &	0x3a9 &	0x3a9 &	0x3a9 &	0x3a9 \\
+\hline
+OHM SIGN & Ω &	0x2126 &	0x2126 &	0x3a9 &	0x3a9 \\
+\hline
+INTEGRAL & {\unicodefont ∫} &	0x222b &	0x222b &	0x222b &	0x222b \\
+\hline
+DOUBLE INTEGRAL	& {\unicodefont ∬} & 	0x222c &	0x222c &	0x222b 0x222b &	0x222b 0x222b \\
+\hline
+CONTOUR INTEGRAL	& {\unicodefont ∮} &	0x222e	 &0x222e &	0x222e &	0x222e \\
+\hline
+\caption{Characters with similar glyphs and/or semantics}
+\label{unicode_characters}
+\end{longtable}
+
+
+Since our goal is to match as much as possible similar characters, our system employs the NFKD representation of a character. For a given token, we test whether if it is already equal to its NFKD. If not, for all the characters that are not combining nor control characters, we add the token into the same position as the original one.
+For example, given the token <mi>\r{A}</mi>, this will lead to the sequence <mi>\r{A}</mi><mi>A</mi> and the token <mi>{\unicodefontⅫ}</mi> will produce <mi>{\unicodefontⅫ}</mi><mi>X</mi><mi>I</mi><mi>I</mi>.
+
+\subsubsection{Synonym Expansion}
+Even though the Unicode normalization step work for a big part of the cases presented in table \ref{unicode_characters}, there are still some groups of characters which would not be matched (Even partially), such as some types of integrals. For addressing these groups, a precomputed table was created for some general groups of characters which have some similar meaning. For each token that belongs to some of this predefined groups, a second token is created identifying the group.
+For example the token <mo>{\unicodefont ∮}</mo> is expanded into <mo>{\unicodefont ∮}</mo><mo>INTEGRALS</mo>, similarly the token token <mo>{\unicodefont ∫}</mo> is expanded into <mo>{\unicodefont ∫}</mo><mo>INTEGRALS</mo> and then both will have a partial match in the INTEGRALS token. 
+Unicode specification does not define a strict rule to group similar characters based on their semantics. For general operators, we used the grouping provided by Xah Lee in his website\cite{math_groups}.
+
+\subsubsection{Numeric Approximation} 
+Some equations relate specific numeric quantities. While most of the previously explorer systems, handled <mn> tags by only representing them as a constant identifier, this approach is not suitable. A lot of articles in CDS relate to specific experiments under certain conditions, and require a high level of precision in the measurements. 
+
 
 \subsection{Structural Features}
 
 
 \subsection{Development with Lucene/Solr}
-
+This section explains how the described features were implemented in the Apache Solr/Lucene framework.
 \subsection{Integration with Mathematica}
 This section describes some aspects that should be considered while implementing the integration with the Mathematica CAS. 
 
