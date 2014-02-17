@@ -27,6 +27,39 @@ Python & 2.7.5+ \\ \hline
 \label{sw_used}
 \end{longtable}
 
+\section{Results quality}
+In this section we are interested in evaluating the quality of the results provided by our system.
+The type of queries that MASE was designed for, are typical equations that can be found in a scientific publication. 
+Out main user case is that a user of CDS is interested in finding documents inside the collection whose equations are related to the one that is provided.
+
+\subsection{Equations}
+The evaluated queries were provided by physics experts working at CERN from their own research topics. The queries were provided in \LaTeX format as the users used them in their own publications.
+Table \ref{equations_table} presents the set of queries that were evaluated, and a simple explanation about it. 
+
+
+\begin{longtable}{|m{1cm}|>
+{\centering\arraybackslash}m{3cm}|>
+{\centering\arraybackslash}m{5cm}|>
+{\centering\arraybackslash}m{5cm}|
+}
+\hline 
+\textbf{Id} & 
+\textbf{Description} &
+\textbf{MathML code} &
+\textbf{Visual Rendering}
+
+
+\\
+\hline
+Eq1 & Time-independent Schr\char"00F6dinger equation & \scriptsize {\codefont <math><mfenced close=")" open="("> <mrow> <mo>-</mo> <mfrac> <msup> <mi>ℏ</mi> <mn>2</mn> </msup> <mrow> <mn>2</mn> <msub> <mi>m</mi> <mi>e</mi> </msub> </mrow> </mfrac> <msup> <mo>∇</mo> <mn>2</mn> </msup> <mo>+</mo> <mi>V</mi> <mfenced close=")" open="("> <mi>r</mi> </mfenced> </mrow> </mfenced> <mi>ψ</mi> <mfenced close=")" open="("> <mi>r</mi> </mfenced> <mo>==</mo> <mi>E</mi> <mi>ψ</mi> <mfenced close=")" open="("> <mi>r</mi> </mfenced> </math>} & $\left (-\frac{\hbar^{2}}{2m_e}\nabla^{2} + V(\mathbf{r})\right )\psi(\mathbf{r}) = E\psi(\mathbf{r})$ \\ \hline
+
+\caption{Software used during evaluations}
+\label{equations_table}
+\end{longtable}
+
+
+\section{Querying Performance}
+
 \section{Indexing Performance}
 For this set of evaluations, we were only interested in observing how the performance of the indexing stage is affected by the different types of features that are employed. We selected the first 100 records from our dataset and measured the total time it required to index all the elements in Solr using a python script and the solrpy library to do the communication. The default similarity in Solr was used. We also measured the index size at the end of each experiment.
 Our four scenarios were organized as follows:

@@ -26,8 +26,8 @@
 \BOOKMARK [2][-]{subsection.4.2.5}{LaTEXSearch}{section.4.2}% 26
 \BOOKMARK [1][-]{section.4.3}{Other\040related\040projects\040and\040initiatives}{chapter.4}% 27
 \BOOKMARK [2][-]{subsection.4.3.1}{arXMLiv}{section.4.3}% 28
-\BOOKMARK [0][-]{chapter.5}{CERN\040Math\040Explorer}{}% 29
-\BOOKMARK [1][-]{section.5.1}{Information\040Retrieval\040Model}{chapter.5}% 30
+\BOOKMARK [0][-]{chapter.5}{MASE\(CDS\)}{}% 29
+\BOOKMARK [1][-]{section.5.1}{Features\040Extraction}{chapter.5}% 30
 \BOOKMARK [2][-]{subsection.5.1.1}{Notational\040Features}{section.5.1}% 31
 \BOOKMARK [2][-]{subsection.5.1.2}{Structural\040Features}{section.5.1}% 32
 \BOOKMARK [2][-]{subsection.5.1.3}{Development\040with\040Lucene/Solr}{section.5.1}% 33
@@ -36,8 +36,11 @@
 \BOOKMARK [0][-]{chapter.6}{Evaluation}{}% 36
 \BOOKMARK [1][-]{section.6.1}{Dataset}{chapter.6}% 37
 \BOOKMARK [1][-]{section.6.2}{Setup}{chapter.6}% 38
-\BOOKMARK [1][-]{section.6.3}{Indexing\040Performance}{chapter.6}% 39
-\BOOKMARK [0][-]{table.6.2}{Bibliographie}{}% 40
-\BOOKMARK [0][-]{appendix.A}{Configuration\040files}{}% 41
-\BOOKMARK [1][-]{section.A.1}{Solr\040Schema}{appendix.A}% 42
-\BOOKMARK [1][-]{section.A.2}{Solr\040configuration\040file}{appendix.A}% 43
+\BOOKMARK [1][-]{section.6.3}{Results\040quality}{chapter.6}% 39
+\BOOKMARK [2][-]{subsection.6.3.1}{Equations}{section.6.3}% 40
+\BOOKMARK [1][-]{section.6.4}{Querying\040Performance}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.5}{Indexing\040Performance}{chapter.6}% 42
+\BOOKMARK [0][-]{table.6.3}{Bibliographie}{}% 43
+\BOOKMARK [0][-]{appendix.A}{Configuration\040files}{}% 44
+\BOOKMARK [1][-]{section.A.1}{Solr\040Schema}{appendix.A}% 45
+\BOOKMARK [1][-]{section.A.2}{Solr\040configuration\040file}{appendix.A}% 46

@@ -15,20 +15,32 @@ The main disadvantage of  BIR are the fact that all terms are given the same imp
 One of the key data structures for an efficient implementation of this model is the inverted index where for a given term, the index stores which documents contain it. This structure is used to efficiently solve queries by only scanning document that contain at least one of the terms in the query. Scanning a document can be done by using a standard (Also called forward) index, where for a given document, the index stores the terms associated with it. Both indexes can be implemented using hash tables.
 
 \section{Vector Space Model}
+The vector space model\cite{vector_space_model} which was developed between the 1960s and 1970s alongside the SMART Information Retrieval System. In this model, documents (from a collection $D$) and queries are represented as vectors $d$ and $q$ in a vector space where each index term corresponds to a dimension. If a term $t_i$ occurs in a given query or document, its i-th  coordinate will have a non zero value. Index terms can be keywords or phrases in the context of textual search or any other type of feature that can be extracted from the elements in a given specific context.
+The scoring of a document for a given query is computed as the cosine of the angle between both vectors which can be expressed as: 
+$$score(d, q) = cos\theta = \frac{d \cdot q}{\parallel d \parallel \parallel q \parallel}  = \frac{\sum_{i=1}^{n}weight(d_i, d)*weight(q_i, q)}{\sqrt{\sum_{i=1}^{n}weight^2(d_i, d)}\sqrt{\sum_{i=1}^{n}weight^2(q_i, q)}} $$
+
+Different weighting schemes can be employed, and the most standard one is called tf-idf (Term frequency - Inverse document frequency) where terms that appear less frequently in the corpus, are assigned higher values (Intuitively the term "the" will be less useful for identifying a relevant document than the term "Shakespeare" in the context of an English word based search engine). Therefore:
+
+$$weight(t, d) = tf(t,d) idf(t)$$
+
+There are several variations for each of the two components. Some approaches for $tf$ include the raw frequency; Boolean frequency: $tf(t,d) = 1$ if $t$ occurs in $d$ or 0 if not; logarithmically scaled: $tf(t,d) = 	\log(frequency(t,d) +1)$
+and the augmented frequency: $tf(t,d) = 0.5 + \frac{0.5*frequency(t,d)}{ \max\{frequency(t^\prime,d) | t^\prime \in d\} }$. For computing the inverse document frequency the standard approach follows $idf = \log \frac{|D|}{1+\{d \in D: t \in d \}} $
+
+The main drawbacks of this approach reside in the assumption that the terms are independent.
 
 \section{Probabilistic Relevance Model}
-The probabilistic relevance model was developed in 1976 by Robertson and Jones\cite{probabilistic_relevance_model}. The similarity of a document $d_{j}$ to a query $q$ is given by the probability of $d_{j}$ being relevant to $q$. It assumes there is a set $R$ that is preferred to be the answer set for $q$. The model assumes that the document in $R$ are relevant to $q$ and the documents in $\bar{R}$ are not relevant. $R$ then is the set that maximizes:
+The probabilistic relevance model was developed in 1976 by Robertson and Jones\cite{probabilistic_relevance_model}. The similarity of a document $d$ to a query $q$ is given by the probability of $d$ being relevant to $q$. It assumes there is a set $R$ that is preferred to be the answer set for $q$. The model assumes that the document in $R$ are relevant to $q$ and the documents in $\bar{R}$ are not relevant. $R$ then is the set that maximizes:
 
-$$sim(d_{j},q) = \frac{ P(R|d_{j})} {P(\bar{R} |d_{j})} $$
+$$sim(d,q) = \frac{ P(R|d)} {P(\bar{R} |d)} $$
 
 The importance of this model is that it serves as a solid base for state of the art information retrieval models.
 
 \section{Okapi BM25}
 
 The Okapi BM25 ranking function is one of the current state-of-the-art models in information retrieval\cite{okapibm25}. The actual scoring function is called BM25 and Okapi refers to the first system implementing this function in the 1980s. 
-Given a query $Q$ as a vector of keywords $q_{1}, q_{2}, ... , q_{n}$ then the score for a document $d$ is:
+Given a query $q$ as a vector of keywords $q_{1}, q_{2}, ... , q_{n}$ then the score for a document $d$ is:
 
-$$score(d, Q) = \sum_{i=1}^{n}IDF{(q_i)}*\frac{ frec(q_i, D)}{frec(q_i, D)+k_1*((1-b)+b*\frac{|D|}{avgdl})} $$
+$$score(d, q) = \sum_{i=1}^{n}IDF{(q_i)}*\frac{ frec(q_i, D)}{frec(q_i, D)+k_1*((1-b)+b*\frac{|D|}{avgdl})} $$
 and $$IDF(q_i) = \log{\frac{N - df(q_i)+0.5}{df(q_i)+0.5}} $$
 
 where $frec(q_i, D)$ is the number of occurrences of keyword $q_i$ in $D$, $avgdl$ is the average length (In keywords) of a document, and $k_1$ and $b$ are free parameters. Usually $k_1 = 2$ and $b \in [0, 1]$ controls how important is the length normalization, being set normally to $0.75$. $N$ is the size of the collection, $df(q_i)$ is the number of documents that contain term $q_i$ 
@@ -36,7 +48,7 @@ where $frec(q_i, D)$ is the number of occurrences of keyword $q_i$ in $D$, $avgd
 A further variation that takes into account structure in the form of a document containing different fields and each of them having its own length and importance (boost) can be formulated as follows, known as BM25F can be expressed as follows:
 
 
-$$score(d, Q) = \sum_{i=1}^{n} \frac{weigth(q_i, d)}{k+ weigth(q_i, d)} * IDF(q_i)$$
+$$score(d, q) = \sum_{i=1}^{n} \frac{weigth(q_i, d)}{k+ weigth(q_i, d)} * IDF(q_i)$$
 and 
 $$weight(q_i, d) = \sum_{j=1}^m \frac{frec(q_i, D, field_j)*boost_j)}{((1-b_j) + b_j*\frac{|l_j|}{avgfl_j})} $$
 where $m$ is the number of different fields, $boost_j$ is the relative importance for each field, $b_j$ is analogous to the $b$ constant in the BM25 group of equations, $|l_j|$ is the length of the $field_j$ and $avgfl_j$ is the average length of the $field_j$.

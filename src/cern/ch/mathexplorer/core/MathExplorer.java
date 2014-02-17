@@ -91,7 +91,10 @@ public class MathExplorer {
 
 	public static final boolean INDEX_WHOLE_ARTICLE = false;
 	
-	private MathExplorer(ServletContext context, boolean forceRebuild) {
+	private MathExplorer(ServletContext context, boolean forceRebuild, boolean forceSkip) {
+		if (forceSkip){
+			return;
+		}
 		try {
 			working_dir = (context == null) ? LOCAL_PATH : context
 					.getRealPath("/data");
@@ -115,7 +118,7 @@ public class MathExplorer {
 	public static MathExplorer getInstance(ServletContext context) {
 		try {
 			if (singleton == null) {
-				singleton = new MathExplorer(context, true);
+				singleton = new MathExplorer(context, true, false);
 			}
 			return singleton;
 		} catch (Exception e) {
@@ -266,8 +269,8 @@ public class MathExplorer {
 
 	public static void main(String[] args) throws Exception {
 		
-		MathExplorer m = new MathExplorer(null, false);
-		m.testAnalyzer(Constants.SAMPLE_EQ_1);
+		MathExplorer m = new MathExplorer(null, false, true);
+		m.testAnalyzer(Constants.SAMPLE_EQ_1_N);
 		System.out.println("Finished");
 		//m.search(Constants.SAMPLE_EQUATION_2, true, INDEX_WHOLE_ARTICLE);
 		//testUnicodeNormalization();

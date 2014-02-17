@@ -148,7 +148,7 @@ public class MathQueryParser extends QParser {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String query = Regex.cleanQuery(texToMathML(" \\Gamma(x) \\Gamma(1-x) "));
+		String query = Regex.cleanQuery(texToMathML("\\left (-\\frac{\\hbar^{2}}{2m_e}\\nabla^{2} + V(\\mathbf{r})\\right )\\psi(\\mathbf{r}) = E\\psi(\\mathbf{r})"));
 		MathQueryParser mqp = new MathQueryParser(query, null, null, null);
 		mqp.parse();
 	}
