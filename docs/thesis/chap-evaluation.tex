@@ -1,8 +1,31 @@
 \chapter{Evaluation}
 ...
-The machine used for experiments has a Intel Core i7 processor running at 3.4Ghz with 4 cores. The available RAM is 8Gb, and the Java Virtual Machine used for running Solr was run with the $-Xms2G -Xmx5G$ parameters. The OS was Linux Mint 16 Petra, which is a fork based on Ubuntu, running on kernel 3.11.0-15.
 
 \section{Dataset}
+Our dataset consists on 12234 latex documents fetched from ArXiV. This documents correspond to the latest records harvested for CDS. The documents were processed using LateXML as described in the extraction process. From the given dataset, the simpler equations were filtered out (The ones containing one or two elements).
+
+
+\section{Setup}
+
+The machine used for experiments has a Intel Core i7 processor running at 3.4Ghz with 4 cores. The available RAM is 8Gb, and the Java Virtual Machine used for running Solr was run with the $-Xms2G -Xmx5G$ parameters. The complete specifications of the used software is presented in table \ref{sw_used}
+
+\begin{longtable}{|m{2cm}|>
+{\centering\arraybackslash}m{4cm}|>
+{\centering\arraybackslash}m{4cm}|
+}
+\hline 
+\textbf{Software} & 
+\textbf{Version} 
+\\
+\hline
+Operative System & Linux Mint 16 Petra (Ubuntu based) \\ \hline
+Linux Kernel & 3.11.0-15 \\ \hline
+Java Virtual Machine & 1.7.0-45 \\ \hline
+Apache Solr & 4.6 \\ \hline
+Python & 2.7.5+ \\ \hline
+\caption{Software used during evaluations}
+\label{sw_used}
+\end{longtable}
 
 \section{Indexing Performance}
 For this set of evaluations, we were only interested in observing how the performance of the indexing stage is affected by the different types of features that are employed. We selected the first 100 records from our dataset and measured the total time it required to index all the elements in Solr using a python script and the solrpy library to do the communication. The default similarity in Solr was used. We also measured the index size at the end of each experiment.
@@ -14,13 +37,13 @@ Our four scenarios were organized as follows:
 \item N+S+FN : Notational and structural features over the original expression and notational features over the normalized string using Mathematica's Full Simplify function
 \end{itemize}
 
-Table \ref{index_experiments_table} summarizes the results of this set of experiments. The first result is the significant increase in processing time when using Mathematica. Going from the N scenario to N+S represent an increase of almost 15x in the indexing time. Adding standard normalization increases the indexing time by a factor near to 1.44x and full normalization by a factor of 1.55x.
+Table \ref{indexing_performance} summarizes the results of this set of experiments. The first result is the significant increase in processing time when using Mathematica. Going from the N scenario to N+S represent an increase of almost 15x in the indexing time. Adding standard normalization increases the indexing time by a factor near to 1.44x and full normalization by a factor of 1.55x.
 
 With respect to storage size, we see a small footprint (Less than 5\%)in the total size by going from N to N+S. Adding normalization represents an increase by a factor of 1.78x and the size of the fully normalized index represents a smaller increase (1.76x)
 
 We can observe that there is a small trade-off between time and storage size depending on which normalization mode is employed.
 
-\begin{tabular}{|c|c|p{2cm}|p{2cm}|p{2cm}|}
+\begin{longtable}{|c|c|p{2cm}|p{2cm}|p{2cm}|}
 \hline 
 Feature Set & Total time (sec) & Index Size (kb) & Avg. time per equation & Avg. size of equation (kb) \\ 
 \hline 
@@ -31,8 +54,10 @@ N+S & 884 & 14438 & 0.0785 & 1.282 \\
 N+S+NN & 1273 & 25780 & 0.113 & 2.345 \\ 
 \hline 
 N+S+FN & 1377 & 25548 & 0.122 & 2.269 \\ 
-\hline 
-\end{tabular} 
+\hline
+\caption{Indexing performance}
+\label{indexing_performance}
+\end{longtable} 
 
 
 

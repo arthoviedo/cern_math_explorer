@@ -27,9 +27,9 @@ The first issue we discovered is that because of the big wide of different chara
   
 Table \ref{unicode_characters} presents a small list of troubling characters classes that were identified in our datasets.
 
-\begin{longtable}{|m{4cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{1.65cm}|>{\centering\arraybackslash}m{1.65cm}|>{\centering\arraybackslash}m{1.65cm}|>{\centering\arraybackslash}m{1.65cm}|}
+\begin{longtable}{|m{4cm}|>{\centering\arraybackslash}m{2.15cm}|>{\centering\arraybackslash}m{1.65cm}|>{\centering\arraybackslash}m{1.65cm}|>{\centering\arraybackslash}m{1.65cm}|>{\centering\arraybackslash}m{1.65cm}|}
 \hline 
-Character Unicode Name & Visual Rendering & NFC & NFD & NFKC & NFKD \\ 
+\textbf{Character Name} & \textbf{Visual Rendering} & \textbf{NFC} & \textbf{NFD} & \textbf{NFKC} & \textbf{NFKD} \\ 
 \hline 
 LATIN CAPITAL LETTER A & A & 0x41 & 0x41 & 0x41 & 0x41 \\ 
 \hline 
@@ -107,17 +107,26 @@ Some equations relate specific numeric quantities. While most of the previously 
 
 
 \subsection{Structural Features}
+\subsubsection{}
+\subsubsection{Algebraic structures}
+This set of structures consist on purely algebraic relationships between the expressions.
+Inspired by predefined integral tables for different kinds of expressions, we decided to extract from a given equation, whether it has the occurrence of these kind of patterns.
+An example of this type of structures would be: $X\textunderscore*(X\textunderscore + A\textunderscore)$ where $X\textunderscore$ and $A\textunderscore$ can be any type of expression. Sample equations matching this pattern can be $C (C+1)$ or $\frac{(\sin{\theta}\cos{\theta})^2}{2a} (\frac{(\sin{\theta}\cos{\theta})^2}{2a} + \tan{\frac{\theta+\phi}{2}})$. This structural analysis of equations is more powerful than the unification of variables and constants proposed in previously discussed projects because these patterns, as shown in the second example, can match an arbitrary complex expression. The drawback of our solution is the need to manually select representative and useful patterns. This selection was done based on standard based tables of integrals similar to the ones that Computational Algebraic Systems employ to compute them.
 
+\subsubsection{Specific domain structures}
+Additionally, we identified patterns that are relevant and frequent in specific domains of the high energy physics. 
 
 \subsection{Development with Lucene/Solr}
-This section explains how the described features were implemented in the Apache Solr/Lucene framework.
+This section explains how the described features were implemented in the \verb|Apache Solr/Lucene| framework.
 \subsection{Integration with Mathematica}
-This section describes some aspects that should be considered while implementing the integration with the Mathematica CAS. 
+This section describes some aspects that should be had to be considered while implementing the integration with the Mathematica CAS. Our system uses the provided \verb|JLink| library to create a connection with the underlying process \verb|MathKernel|. The main class for communicating java code and \verb|Mathematica| is \verb|KernelLink| and the main used method was \verb|evaluateToOutputForm(String expr, int pageWidth)| where \verb|expr| is the expression to be evaluated and \verb|pageWidth| affects the formatting of the result.
+
+\subsubsection{Pattern Extraction}
 
 \subsubsection{Recursive interpretation}
 
 \subsubsection{Error handling}
-Sometimes after certain time Mathematica will crash, launch an exception and following invocations would fails as well.
+Sometimes, after certain time, the connection between \verb|KernelLink| and \verb|Mathematica| will be lost launch an exception and following invocations would fails as well.
 Also, re-instantiating a KernelLink will yield an Exception. For this scenario, killing the associated processes to Mathematica was necessary:
 
 \begin{verbatim}
@@ -144,23 +153,19 @@ One example we found during our work is the following TeX snippet:
 \end{verbatim}
 A human can easily identify that this corresponds to text and that should be inserted into a proper "mbox" or "text" tag. In this case, the snippet produced the following MathML code
 \begin{verbatim}
-<math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo></mo><mi>r</mi>
+<math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo></mo><mi>r</mi>   
 <mo></mo><mi>e</mi></mrow><mo></mo><mrow><mi>s</mi><mo></mo>
 <mi>h</mi><mo></mo><mi>o</mi><mo></mo><mi>w</mi><mo></mo><mi>n</mi>
-</mrow><mo>,</mo><mrow><mi>a</mi><mo></mo>
-<mi>s</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo>
-<mi>e</mi><mo></mo><mi>l</mi><mo></mo><mi>l</mi>
-</mrow><mo></mo><mrow><mi>a</mi><mo></mo>
-<mi>s</mi></mrow><mo></mo><mrow><mi>t</mi><mo></mo>
-<mi>h</mi><mo></mo><mi>e</mi></mrow><mo></mo>
-<mrow><mi>w</mi><mo></mo><mi>e</mi><mo></mo>
-<mi>i</mi><mo></mo><mi>g</mi><mo></mo><mi>h</mi>
-<mo></mo><mi>t</mi></mrow><mo></mo><mrow>
-<mi>a</mi><mo></mo><mi>n</mi><mo></mo><mi>d</mi>
-</mrow><mo></mo><mrow><mi>t</mi><mo></mo><mi>e</mi>
-<mo></mo><mi>n</mi><mo></mo><mi>s</mi><mo></mo>
-<mi>i</mi><mo></mo><mi>o</mi><mo></mo><mi>n</mi>
-</mrow></mrow></math>
+</mrow><mo>,</mo><mrow><mi>a</mi><mo></mo><mi>s</mi></mrow><mo></mo>
+<mrow><mi>w</mi><mo></mo><mi>e</mi><mo></mo><mi>l</mi><mo></mo>
+<mi>l</mi></mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>s</mi>
+</mrow><mo></mo><mrow><mi>t</mi><mo></mo><mi>h</mi><mo></mo>
+<mi>e</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo><mi>e</mi><mo>
+</mo><mi>i</mi><mo></mo><mi>g</mi><mo></mo><mi>h</mi><mo></mo>
+<mi>t</mi></mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>n</mi><mo>
+</mo><mi>d</mi></mrow><mo></mo><mrow><mi>t</mi><mo></mo><mi>e</mi>
+<mo></mo><mi>n</mi><mo></mo><mi>s</mi><mo></mo><mi>i</mi>
+<mo></mo><mi>o</mi><mo></mo><mi>n</mi></mrow></mrow></math>
 \end{verbatim}
 
 Mathematica took around 10 minutes to interpret it.

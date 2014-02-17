@@ -4,7 +4,15 @@ Information Retrieval (IR) consists on the activity of identifying relevant docu
 Different models have been developed through the evolution of the field. In the subsequent sections, the most relevant to this work are presented.
 
 \section{Boolean Model}
-This model was the first one to be developed and is currently one of the most used in the current implementation of IR systems because of its simplicity.
+The Boolean model of Information Retrieval (BIR) was the first one to be developed and is currently one of the most used in the current implementation of IR systems because of its simplicity. It is based on the mathematical concepts of Boolean Logic and Set Theory. A formalization of this framework can be stated as follows: 
+
+Given a set of terms $T = {t_1, t_2, ... , t_n}$ which are the terms that will be indexed (In a standard search engine this can be the set of words in a language after some normalization steps), a set of documents $D = {d_1, d_2, ... , d_n} $ where $d_i \in \mathcal{P}(T) $ that the user will search for. 
+A query element $q$ is a Boolean expression over the index terms and the operators $AND$ , $OR$ and $NOT$. We define the predicate $ Relevant(q, d_i) $ if a document $d_i$ satisfies the query expression $q$.
+Finally the result for query over a collection of documents can now be written as $Result(q, D) = \{d | Relevant(q, d)\}$
+The benefits of this model are its simplicity, both in its formalism and in its implementation. 
+The main disadvantage of  BIR are the fact that all terms are given the same importance which makes it difficult to rank results. Since all results have same importance, it is difficult also to limit the number of retrieved documents and therefore the output set can be difficult to process for the final user.
+
+One of the key data structures for an efficient implementation of this model is the inverted index where for a given term, the index stores which documents contain it. This structure is used to efficiently solve queries by only scanning document that contain at least one of the terms in the query. Scanning a document can be done by using a standard (Also called forward) index, where for a given document, the index stores the terms associated with it. Both indexes can be implemented using hash tables.
 
 \section{Vector Space Model}
 
@@ -26,6 +34,7 @@ and $$IDF(q_i) = \log{\frac{N - df(q_i)+0.5}{df(q_i)+0.5}} $$
 where $frec(q_i, D)$ is the number of occurrences of keyword $q_i$ in $D$, $avgdl$ is the average length (In keywords) of a document, and $k_1$ and $b$ are free parameters. Usually $k_1 = 2$ and $b \in [0, 1]$ controls how important is the length normalization, being set normally to $0.75$. $N$ is the size of the collection, $df(q_i)$ is the number of documents that contain term $q_i$ 
 
 A further variation that takes into account structure in the form of a document containing different fields and each of them having its own length and importance (boost) can be formulated as follows, known as BM25F can be expressed as follows:
+
 
 $$score(d, Q) = \sum_{i=1}^{n} \frac{weigth(q_i, d)}{k+ weigth(q_i, d)} * IDF(q_i)$$
 and 

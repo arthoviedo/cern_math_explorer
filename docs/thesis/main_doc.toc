@@ -2,56 +2,53 @@
 \contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
 \contentsline {chapter}{\numberline {2}Theoretical Background}{9}{chapter.2}
 \contentsline {section}{\numberline {2.1}Boolean Model}{9}{section.2.1}
-\contentsline {section}{\numberline {2.2}Vector Space Model}{9}{section.2.2}
-\contentsline {section}{\numberline {2.3}Probabilistic Relevance Model}{9}{section.2.3}
+\contentsline {section}{\numberline {2.2}Vector Space Model}{10}{section.2.2}
+\contentsline {section}{\numberline {2.3}Probabilistic Relevance Model}{10}{section.2.3}
 \contentsline {section}{\numberline {2.4}Okapi BM25}{10}{section.2.4}
-\contentsline {section}{\numberline {2.5}Tree Edit Distance}{10}{section.2.5}
+\contentsline {section}{\numberline {2.5}Tree Edit Distance}{11}{section.2.5}
 \contentsline {chapter}{\numberline {3}Technical Considerations}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Digital Representations of Mathematics}{14}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}MathML}{14}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}OpenMath}{14}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}LaTeX}{14}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Math Extraction Tools}{14}{section.3.2}
-\contentsline {section}{\numberline {3.3}From LaTeX to MathML}{14}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}From PDF to MathML}{14}{subsection.3.3.1}
-\contentsline {subsubsection}{Maxtract}{14}{section*.4}
-\contentsline {subsubsection}{InftyReader}{14}{section*.5}
-\contentsline {subsubsection}{OCR analysis}{14}{section*.6}
-\contentsline {subsection}{\numberline {3.3.2}Other projects}{14}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Computational Algebraic Systems}{14}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Mathematica}{14}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Mapple}{14}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Matlab}{14}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Octane}{14}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}SAGE}{14}{subsection.3.4.5}
-\contentsline {chapter}{\numberline {4}Related Work}{15}{chapter.4}
-\contentsline {section}{\numberline {4.1}Status of MIR}{15}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}TREC}{15}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}TREC}{15}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}CLEF}{15}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}NTCIR}{15}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}Mathematical based search projects}{15}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}MIaS}{15}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}EgoMath}{16}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}DLMFSearch}{16}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}MathWebSearch}{16}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}LaTEXSearch}{16}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Other related projects and initiatives}{16}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}arXMLiv}{16}{subsection.4.3.1}
-\contentsline {chapter}{\numberline {5}CERN Math Explorer}{17}{chapter.5}
-\contentsline {section}{\numberline {5.1}Information Retrieval Model}{17}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Notational Features}{17}{subsection.5.1.1}
-\contentsline {subsubsection}{Unicode Normalizing}{17}{section*.7}
-\contentsline {subsubsection}{Synonym Expansion}{20}{section*.8}
-\contentsline {subsubsection}{Numeric Approximation}{21}{section*.9}
-\contentsline {subsection}{\numberline {5.1.2}Structural Features}{21}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Development with Lucene/Solr}{21}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Integration with Mathematica}{21}{subsection.5.1.4}
-\contentsline {subsubsection}{Recursive interpretation}{21}{section*.10}
-\contentsline {subsubsection}{Error handling}{21}{section*.11}
-\contentsline {subsubsection}{Timeout Handling}{22}{section*.12}
-\contentsline {subsection}{\numberline {5.1.5}Integration with CDS}{23}{subsection.5.1.5}
-\contentsline {chapter}{\numberline {6}Evaluation}{25}{chapter.6}
-\contentsline {section}{\numberline {6.1}Dataset}{25}{section.6.1}
-\contentsline {section}{\numberline {6.2}Indexing Performance}{25}{section.6.2}
-\contentsline {chapter}{Bibliographie}{27}{section.6.2}
+\contentsline {section}{\numberline {3.1}Digital Representations of Mathematics}{13}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}MathML}{13}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}OpenMath}{13}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}LaTeX}{13}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Math Extraction Tools}{13}{section.3.2}
+\contentsline {section}{\numberline {3.3}Computer Algebra Systems}{15}{section.3.3}
+\contentsline {chapter}{\numberline {4}Related Work}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}Status of MIR}{17}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}TREC}{17}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}TREC}{17}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}CLEF}{17}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}NTCIR}{17}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Mathematical based search projects}{17}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}MIaS}{17}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}EgoMath}{18}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}DLMFSearch}{18}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}MathWebSearch}{18}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}LaTEXSearch}{18}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}Other related projects and initiatives}{18}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}arXMLiv}{18}{subsection.4.3.1}
+\contentsline {chapter}{\numberline {5}CERN Math Explorer}{19}{chapter.5}
+\contentsline {section}{\numberline {5.1}Information Retrieval Model}{19}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Notational Features}{19}{subsection.5.1.1}
+\contentsline {subsubsection}{Unicode Normalizing}{19}{section*.4}
+\contentsline {subsubsection}{Synonym Expansion}{22}{section*.5}
+\contentsline {subsubsection}{Numeric Approximation}{23}{section*.6}
+\contentsline {subsection}{\numberline {5.1.2}Structural Features}{23}{subsection.5.1.2}
+\contentsline {subsubsection}{}{23}{section*.7}
+\contentsline {subsubsection}{Algebraic structures}{23}{section*.8}
+\contentsline {subsubsection}{Specific domain structures}{24}{section*.9}
+\contentsline {subsection}{\numberline {5.1.3}Development with Lucene/Solr}{24}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Integration with Mathematica}{24}{subsection.5.1.4}
+\contentsline {subsubsection}{Pattern Extraction}{24}{section*.10}
+\contentsline {subsubsection}{Recursive interpretation}{24}{section*.11}
+\contentsline {subsubsection}{Error handling}{24}{section*.12}
+\contentsline {subsubsection}{Timeout Handling}{25}{section*.13}
+\contentsline {subsection}{\numberline {5.1.5}Integration with CDS}{25}{subsection.5.1.5}
+\contentsline {chapter}{\numberline {6}Evaluation}{27}{chapter.6}
+\contentsline {section}{\numberline {6.1}Dataset}{27}{section.6.1}
+\contentsline {section}{\numberline {6.2}Setup}{27}{section.6.2}
+\contentsline {section}{\numberline {6.3}Indexing Performance}{28}{section.6.3}
+\contentsline {chapter}{Bibliographie}{30}{table.6.2}
+\contentsline {chapter}{\numberline {A}Configuration files}{33}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Schema}{33}{section.A.1}
+\contentsline {section}{\numberline {A.2}Solr configuration file}{34}{section.A.2}

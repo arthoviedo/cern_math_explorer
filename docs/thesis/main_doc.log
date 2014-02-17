@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  13 FEB 2014 15:27
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  17 FEB 2014 14:15
 entering extended mode
 **main_doc.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
@@ -942,7 +942,8 @@ ux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-technical_considerations
 .aux) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux))
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
 LaTeX Font Info:    ... okay on input line 117.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
@@ -1240,17 +1241,17 @@ ex [8
 
 ]
 Chapter 2.
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 36--43
+[9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 45--52
 
  []
 
-[10]
-Overfull \hbox (35.58633pt too wide) in paragraph at lines 61--61
+[11]
+Overfull \hbox (35.58633pt too wide) in paragraph at lines 70--70
 [] 
  []
 
-[11]) [12]
+) [12]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-technical_considerations
 .tex
 Chapter 3.
@@ -1260,17 +1261,134 @@ r.otf
 Requested font "[lmroman12-bold]:mapping=tex-text" at 14.4pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-bold.o
 tf
+[13
+
+
+
+]
+
+LaTeX Warning: Citation `latexml' on page 14 undefined on input line 33.
+
+
+Overfull \hbox (5.30113pt too wide) in paragraph at lines 33--33
+ []|\EU1/lmr/m/n/12 0.7.9alpha| 
+ []
+
+
+LaTeX Warning: Citation `tex4ht1' on page 14 undefined on input line 35.
+
+
+LaTeX Warning: Citation `tex4ht2' on page 14 undefined on input line 35.
+
+
+LaTeX Warning: Citation `latexmathml' on page 14 undefined on input line 37.
+
+
+Overfull \hbox (12.86421pt too wide) in paragraph at lines 37--37
+[]|\EU1/lmr/m/n/12 LaTeXmathML[[]]| 
+ []
+
+
+LaTeX Warning: Citation `maxtract1' on page 14 undefined on input line 39.
+
+
+LaTeX Warning: Citation `maxtract2' on page 14 undefined on input line 39.
+
+
+LaTeX Warning: Citation `infty1' on page 14 undefined on input line 41.
+
+
+LaTeX Warning: Citation `infty2' on page 14 undefined on input line 41.
+
+
+Overfull \hbox (7.0082pt too wide) in paragraph at lines 41--41
+[]|\EU1/lmr/m/n/12 InftyReader[[]][[]]| 
+ []
+
+
+Overfull \hbox (5.88522pt too wide) in paragraph at lines 41--41
+ []|\EU1/lmr/m/n/12 Commercial| 
+ []
+
+
+Overfull \hbox (77.0435pt too wide) in alignment at lines 29--46
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 46
+ []
+
+
+LaTeX Warning: Citation `latexcomparison' on page 14 undefined on input line 48
+.
+
+[14]
+Overfull \hbox (16.88113pt too wide) in paragraph at lines 68--68
+ []|\EU1/lmr/bx/n/12 Expression 
+ []
+
+
+Overfull \hbox (6.07724pt too wide) in paragraph at lines 71--73
+ []|\EU1/lmr/bx/n/12 Supported 
+ []
+
+
+Overfull \hbox (14.42113pt too wide) in paragraph at lines 74--74
+ []|\EU1/lmr/m/n/12 Commercial| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
+[]|\EU1/lmr/m/n/12 MatLab
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
+\EU1/lmr/m/n/12 (Symbolic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
+\EU1/lmr/m/n/12 Math
+ []
+
+
+Overfull \hbox (12.1305pt too wide) in paragraph at lines 75--75
+ []|\EU1/lmr/m/n/12 Experimental| 
+ []
+
+
+Overfull \hbox (14.42113pt too wide) in paragraph at lines 75--75
+ []|\EU1/lmr/m/n/12 Commercial| 
+ []
+
+
+Overfull \hbox (10.6665pt too wide) in paragraph at lines 76--76
+[]|\EU1/lmr/m/n/12 Mathematica| 
+ []
+
+
+Overfull \hbox (14.42113pt too wide) in paragraph at lines 76--76
+ []|\EU1/lmr/m/n/12 Commercial| 
+ []
+
+
+Overfull \hbox (12.1305pt too wide) in paragraph at lines 77--77
+ []|\EU1/lmr/m/n/12 Experimental| 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 82
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13
-
-
-
-])
-[14] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.tex
+ [15])
+[16] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.tex
 Chapter 4.
-[15
+[17
 
 
 
@@ -1298,23 +1416,28 @@ Requested font "msbm10" at 10.95pt
  -> msbm10
 Requested font "cmr10" at 10.95pt
  -> cmr10
-) [16]
+) [18]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.tex
 Chapter 5.
 Requested font "Arial Unicode MS/ICU:" at 12.0pt
  -> C:/Windows/Fonts/ARIALUNI.TTF
-[17
+[19
 
 
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 34--34
-[]|\EU1/lmr/m/n/12 Character Unicode
+[]|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 36--36
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
+ []
+
+
+Underfull \hbox (badness 5231) in paragraph at lines 36--36
+\EU1/lmr/m/n/12 LETTER A WITH
  []
 
 
@@ -1329,67 +1452,62 @@ Underfull \hbox (badness 5231) in paragraph at lines 38--38
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 40--40
-[]|\EU1/lmr/m/n/12 LATIN CAPITAL
- []
-
-
-Underfull \hbox (badness 5231) in paragraph at lines 40--40
-\EU1/lmr/m/n/12 LETTER A WITH
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
 []|\EU1/lmr/m/n/12 ANGSTROM SIGN
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
+Underfull \hbox (badness 10000) in paragraph at lines 42--42
+[]|\EU1/lmr/m/n/12 LATIN CAPITAL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 48--48
-[]|\EU1/lmr/m/n/12 LATIN CAPITAL
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
 []|\EU1/lmr/m/n/12 DOUBLE-STRUCK
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
 []|\EU1/lmr/m/n/12 MATHEMATICAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 6300) in paragraph at lines 58--58
+Underfull \hbox (badness 6300) in paragraph at lines 56--56
 \EU1/lmr/m/n/12 CAPITAL LETTER
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
 []|\EU1/lmr/m/n/12 VULGAR FRAC-
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 60--60
+Underfull \hbox (badness 1694) in paragraph at lines 58--58
 \EU1/lmr/m/n/12 TION ONE QUAR-
  []
 
 
-Overfull \hbox (3.68114pt too wide) in paragraph at lines 60--60
+Overfull \hbox (3.68114pt too wide) in paragraph at lines 58--58
  \EU1/lmr/m/n/12 0x2044(/) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+[]|\EU1/lmr/m/n/12 DIGIT ONE -
  []
 
 
@@ -1399,136 +1517,232 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--62
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 64--64
-[]|\EU1/lmr/m/n/12 DIGIT ONE -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--66
 \EU1/lmr/m/n/12 TION SLASH -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
+Underfull \hbox (badness 10000) in paragraph at lines 70--70
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--76
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+[]|\EU1/lmr/m/n/12 PLANCK CON-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 []|\EU1/lmr/m/n/12 PLANCK CON-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 80--80
-[]|\EU1/lmr/m/n/12 PLANCK CON-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--82
 []|\EU1/lmr/m/n/12 LATIN SMALL
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 82--82
+Underfull \hbox (badness 5231) in paragraph at lines 80--80
 \EU1/lmr/m/n/12 LETTER H WITH
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--84
+Underfull \hbox (badness 10000) in paragraph at lines 82--82
 []|\EU1/lmr/m/n/12 GREEK CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
 []|\EU1/lmr/m/n/12 DOUBLE INTE-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--92
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
 []|\EU1/lmr/m/n/12 CONTOUR INTE-
  []
 
 
-Overfull \hbox (43.30396pt too wide) in alignment at lines 32--96
+Overfull \hbox (47.5717pt too wide) in alignment at lines 30--94
  [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 96
+Underfull \vbox (badness 10000) detected at line 94
  []
 
-[18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 103--106
+[20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
 \EU1/lmr/m/n/12 is expanded into <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∮\EU1/lmr/
 m/n/12 </mo><mo>INTEGRALS</mo>,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--106
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
 \EU1/lmr/m/n/12 similarly the token token <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∫
 \EU1/lmr/m/n/12 </mo> is expanded into
  []
 
 
-Underfull \hbox (badness 1635) in paragraph at lines 103--106
+Underfull \hbox (badness 1635) in paragraph at lines 101--104
 \EU1/lmr/m/n/12 <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∫\EU1/lmr/m/n/12 </mo><mo>I
 NTEGRALS</mo> and then both will have a
  []
 
-[20]
+[22]
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 114.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 114.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 114.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 114.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 114.
+
+[23]
 Requested font "[lmmono12-regular]" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmmono12-regular
 .otf
- [21]
+ [24]
 Missing character: There is no φ in font [lmmono12-regular]!
 
-Overfull \hbox (15.05988pt too wide) in paragraph at lines 151--151
+Overfull \hbox (15.05988pt too wide) in paragraph at lines 156--156
 []\EU1/lmtt/m/n/12 <math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo></mo><mi
 >r</mi> 
  []
 
 
-Overfull \hbox (24.05989pt too wide) in paragraph at lines 153--153
+Overfull \hbox (24.05989pt too wide) in paragraph at lines 158--158
 []\EU1/lmtt/m/n/12 <mi>h</mi><mo></mo><mi>o</mi><mo></mo><mi>w</mi><mo></mo><mi
 >n</mi>[] 
  []
 
-) [22] [23]
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex [24
+
+Overfull \hbox (30.23988pt too wide) in paragraph at lines 159--159
+[]\EU1/lmtt/m/n/12 </mrow><mo>,</mo><mrow><mi>a</mi><mo></mo><mi>s</mi></mrow><
+mo></mo>[] 
+ []
+
+
+Overfull \hbox (11.69989pt too wide) in paragraph at lines 163--163
+[]\EU1/lmtt/m/n/12 <mi>e</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo><mi>e</mi
+><mo>[] 
+ []
+
+
+Overfull \hbox (11.69989pt too wide) in paragraph at lines 165--165
+[]\EU1/lmtt/m/n/12 <mi>t</mi></mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>n</mi
+><mo>[] 
+ []
+
+
+Overfull \hbox (17.8799pt too wide) in paragraph at lines 166--166
+[]\EU1/lmtt/m/n/12 </mo><mi>d</mi></mrow><mo></mo><mrow><mi>t</mi><mo></mo><mi>
+e</mi>[] 
+ []
+
+) [25] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex
+[26
 
 
 
 ]
 Chapter 6.
 
-LaTeX Warning: Reference `index_experiments_table' on page 25 undefined on inpu
-t line 17.
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]|\EU1/lmr/m/n/12 Operative
+ []
 
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\EU1/lmr/m/n/12 Java
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\EU1/lmr/m/n/12 Virtual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\EU1/lmr/m/n/12 Apache
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 28
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
 \EU1/lmr/m/n/12 per equa-
  []
 
 
-Overfull \hbox (1.63333pt too wide) in paragraph at lines 23--36
-[][] 
+Underfull \vbox (badness 10000) detected at line 60
  []
 
-) [26] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl
-Requested font "[lmroman12-italic]:mapping=tex-text" at 12.0pt
- -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-italic
-.otf
- [27
+[28]) [29] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl
+[30
 
 
 ]
+Requested font "[lmroman12-italic]:mapping=tex-text" at 12.0pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-italic
+.otf
+ [31]
 Underfull \hbox (badness 10000) in paragraph at lines 53--57
 [][][][][][][][][][][][][][] [] [][][][] [] [] [] [][][][][][] [] [][][][] [] [
 ][][][] [] [][][][][][][] [] [][][][] [] [][][][][][][][][] []
  []
 
-)
+) [32]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.tex
+Appendix A.
+[33
+
+
+]
+Overfull \hbox (3.45975pt too wide) in paragraph at lines 35--35
+[]\EU1/lmtt/m/n/12 <analyzer class="cern.ch.mathexplorer.lucene.analysis.analyz
+ers.[] 
+ []
+
+
+Overfull \hbox (5.51994pt too wide) in paragraph at lines 41--41
+[]\EU1/lmtt/m/n/12 over the normalized/simplified string using Full simplificat
+ion-->[] 
+ []
+
+
+Overfull \hbox (3.45975pt too wide) in paragraph at lines 49--49
+[]\EU1/lmtt/m/n/12 <analyzer class="cern.ch.mathexplorer.lucene.analysis.analyz
+ers.[] 
+ []
+
+
+Overfull \hbox (28.1799pt too wide) in paragraph at lines 53--53
+[]\EU1/lmtt/m/n/12 <!-- Field type for  structural features extracted from the 
+equation-->[] 
+ []
+
+
+Overfull \hbox (3.45975pt too wide) in paragraph at lines 61--61
+[]\EU1/lmtt/m/n/12 <analyzer class="cern.ch.mathexplorer.lucene.analysis.analyz
+ers.[] 
+ []
+
+[34]
+Overfull \hbox (24.05966pt too wide) in paragraph at lines 72--72
+[]  \EU1/lmtt/m/n/12 class="cern.ch.mathexplorer.lucene.query.MathQueryParserPl
+ugin" />[] 
+ []
+
+) [35]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 146.
- [28]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 146.
  (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.aux
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\titre.aux)
@@ -1538,7 +1752,8 @@ ux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-technical_considerations
 .aux) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux))
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 146.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 146.
 
@@ -1548,12 +1763,12 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 146.
  ) 
 Here is how much of TeX's memory you used:
- 24138 strings out of 429035
- 423694 string characters out of 3166907
- 538042 words of memory out of 3000000
- 27026 multiletter control sequences out of 15000+200000
+ 24161 strings out of 429035
+ 424166 string characters out of 3166907
+ 538756 words of memory out of 3000000
+ 27042 multiletter control sequences out of 15000+200000
  13605 words of font info for 75 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  46i,13n,47p,10405b,978s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main_doc.pdf (30 pages).
+Output written on main_doc.pdf (37 pages).

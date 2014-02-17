@@ -9,20 +9,80 @@ In this section, we present different aspects that need to be considered when ma
 \subsection{LaTeX}
 
 \section{Math Extraction Tools}
-\section{From LaTeX to MathML}
-\subsection{From PDF to MathML}
-\subsubsection{Maxtract}
-\subsubsection{InftyReader}
-\subsubsection{OCR analysis}
-\subsection{Other projects}
+One of the main steps in any information retrieval task is the extraction of the searchable content from the collection of documents. At CDS the most common storage format for publications is PDF. A big part of the harvested documents in CDS comes from the ArXiv pre-prints service and from here, the source code (\LaTeX) of the submissions is available for download. Smaller portions of other documents are stored in other formats like Microsoft Word, OpenOffice Documents.
+In practice, the main options from where to do the extraction from, are PDFs and \LaTeX  files. Also taking into account the previous discussion on the available format for representing mathematics, we focused our attention in tools that output MathML.  \\
+A conscious exploration of available software for extracting mathematical content from this two types of documents allowed us to identify different tools with different approaches. 
+\LaTeX  files are easier to process and all of the tools implement their own compiler that XML + MathML outputs instead of the typical. Since the original math equation is provided in the document, there is relatively little ambiguity in the equation, and the major issues that the systems struggle with is in the coverage of all the possible commands and packages that are available. \\
+For extracting equations from PDF files, the process turns into an Optical Character Recognition (OCR). The reconstruction of the equation has to infer the mathematical structure based on physical positioning and size of the symbols, the length of the lines and so on.
 
-\section{Computational Algebraic Systems}
-In the previous section we discussed about algorithmical ways to tranform, simplify and detect patterns in mathematical equations. Here, we explore what tools are available for performing this type of operations and how they are suitable for our system.
+Table \ref{math_extraction_tools} presents the main features of the reviewed software. 
 
-\subsection{Mathematica}
-\subsection{Mapple}
-\subsection{Matlab}
-\subsection{Octane}
-\subsection{SAGE}
+\begin{longtable}{|
+m{2.8cm}|>{\centering\arraybackslash}
+m{2cm}|>{\centering\arraybackslash}
+m{1.65cm}|>{\centering\arraybackslash}
+m{1.65cm}|>{\centering\arraybackslash}
+m{1.65cm}|>{\centering\arraybackslash}
+m{1.95cm}|>{\centering\arraybackslash}
+m{1.65cm}|>{\centering\arraybackslash}
+m{1.65cm}|
+}
+\hline 
+\textbf{Software} & \textbf{Type} & \textbf{Tested version} & \textbf{Input Format(s)} & \textbf{Output Format(s)} & \textbf{Licence Type} & \textbf{Latest Update}  \\
+\hline
+LaTeXML\cite{latexml} & Standalone Executable &0.7.9alpha & \LaTeX & XML + MathML & Open Source & 13 Feb 2014  \\
+\hline
+TeX4ht\cite{tex4ht1}\cite{tex4ht2} & Standalone Executable & 2009-01-31-07 & \LaTeX & XML + MathML & Open Source & 11 Jun 2009  \\
+\hline
+LaTeXmathML\cite{latexmathml} & Javascript Library & 30-October-2007 & \LaTeX & XML + MathML & Open Source & 30 Oct 2007  \\
+\hline
+Maxtract\cite{maxtract1}\cite{maxtract2} & Standalone Executable & v.1752 & PDF & \LaTeX / Annotated PDF & Free to download & 15 Nov 2012  \\
+\hline
+InftyReader\cite{infty1}\cite{infty2} & Standalone Executable (On Windows) & 2.9.6.2 & PDF, TIFF, BMP, GIF, PNG & \LaTeX, XML + MathML & Commercial & 22 Dec 2013  \\
+
+\hline
+\caption{Comparison of available Mathematical extraction tools}
+\label{math_extraction_tools}
+\end{longtable}
+
+For extraction from \LaTeX  files we concluded that the best option is LaTeXML. The tool is still in current development and has lot of support from the academic community. The performance on a small dataset also showed that the results are consistently better than from the other tools. A more thorough test\cite{latexcomparison} also confirms that LaTeXML provides the best results. For PDF files, the trial version of InftyReader worked very well giving better results and processing successfully more files than Maxtract. As said previously, a big portion of the documents stored in CDS, come from pre-printing services like ArXiV were fortunately the source code of an article is available and because of this reason, our base set for this work will consist on extracting equations from \LaTeX files. For licensing reasons, for this project we will not integrate our system with InftyReader for the moment and will proceed with LaTeXML as our extraction tool.
+
+
+
+\section{Computer Algebra Systems}
+Computer Algebra Systems (CASs) are software packages that allow performing symbolic transformations on mathematical objects. They allow to manipulate, simplify and analyse mathematical equations and offer interesting functionalities for a mathematical based search engine. The most important functionalities that we are looking for in such system are simplification and normalization of mathematical expressions and pattern matching. As discussed previously, the language for representing expressions will be MathML, so we also require that such system is able to import this format. Finally, we are also interested in integrating these functionalities in a bigger system, so integration trough APIs was also considered.
+
+
+\begin{longtable}{|m{2cm}|>
+{\centering\arraybackslash}m{2cm}|>
+{\centering\arraybackslash}m{1.65cm}|>
+{\centering\arraybackslash}m{1.65cm}|>
+{\centering\arraybackslash}m{1.65cm}|>
+{\centering\arraybackslash}m{1.95cm}|>
+{\centering\arraybackslash}m{1.65cm}|>
+{\centering\arraybackslash}m{1.65cm}|
+}
+\hline 
+\textbf{CAS} & 
+\textbf{Imports MathML} & 
+\textbf{Expression normalization} & 
+\textbf{Pattern Matching}  &
+\textbf{License Type}  &
+\textbf{Supported APIs}
+\\
+\hline
+Maple &  Yes & Yes & Yes & Commercial & C, Java, VB \\ \hline
+MatLab (Symbolic Math Toolbox) & Experimental & Yes & Yes & Commercial & C/C++, Fortran \\ \hline
+Mathematica &  Yes & Yes & Yes & Commercial & C, Java, .NET \\ \hline 
+Maxima &  Experimental & Yes & Yes & Open Source  & C++, Java (External Project) \\ \hline
+SymPy & No & Yes & Yes & Open Source & Python \\ \hline
+
+\caption{Comparison of main CAS}
+\label{CAS_comparison}
+\end{longtable}
+
+Table \ref{CAS_comparison} presents a comparison of the desired features in the main CASs. The systems that better fit our requirements are Maple and Mathematica. For licensing reasons, we will continue our project using Mathematica.
+
+
 
 
