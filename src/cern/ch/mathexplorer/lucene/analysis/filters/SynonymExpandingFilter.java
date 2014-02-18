@@ -39,11 +39,11 @@ import cern.ch.mathexplorer.utils.Constants.CHARACTER_CATEGORIES;
  * Integrals, Set theory.
  * http://symbolcodes.tlt.psu.edu/bylanguage/mathchart.html#fractions
  */
-public final class RelatedOperatorsFilter extends TokenFilter {
+public final class SynonymExpandingFilter extends TokenFilter {
 
 	private final CharTermAttribute termAtt = addAttribute(CharTermAttribute.class);
 
-	public RelatedOperatorsFilter(TokenStream input) {
+	public SynonymExpandingFilter(TokenStream input) {
 		super(input);
 	}
 		
@@ -62,7 +62,7 @@ public final class RelatedOperatorsFilter extends TokenFilter {
 			boolean foundMatch = false;
 			
 			CHARACTER_CATEGORIES category = null;
-			if ( (category = (Constants.characterToCategoryMap.get(operator))) != null) {
+			if ( (category = (Constants.CHARACTERS_TO_CATEGORY.get(operator))) != null) {
 				termAtt.setEmpty().append("<mo>"+category.name()+"</mo>");
 				foundMatch = true;
 			}

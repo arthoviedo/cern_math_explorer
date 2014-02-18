@@ -2,12 +2,8 @@ package cern.ch.mathexplorer.lucene.query;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
 import java.util.logging.Logger;
 
 import org.apache.lucene.index.Term;
@@ -16,7 +12,6 @@ import org.apache.lucene.search.BooleanClause.Occur;
 import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TermQuery;
-import org.apache.lucene.util.UnicodeUtil;
 import org.apache.solr.common.params.SolrParams;
 import org.apache.solr.request.SolrQueryRequest;
 import org.apache.solr.search.QParser;
@@ -25,7 +20,6 @@ import org.apache.solr.search.SyntaxError;
 import uk.ac.ed.ph.snuggletex.SnuggleEngine;
 import uk.ac.ed.ph.snuggletex.SnuggleInput;
 import uk.ac.ed.ph.snuggletex.SnuggleSession;
-import cern.ch.mathexplorer.lucene.analysis.filters.RelatedOperatorsFilter;
 import cern.ch.mathexplorer.mathematica.MathematicaConfig;
 import cern.ch.mathexplorer.mathematica.MathematicaEngine;
 import cern.ch.mathexplorer.mathematica.StructuralPattern;
@@ -52,16 +46,16 @@ public class MathQueryParser extends QParser {
 			query.add(new BooleanClause(new TermQuery(new Term(
 					field.getName(), mathMLToken)),
 					Occur.SHOULD));
-			addOperatorsCategory(mathMLToken, query, field);
+			addSynonyms(mathMLToken, query, field);
 			Console.print(mathMLToken);
 		}
 	}
 
-	void addOperatorsCategory(String mathMLToken, BooleanQuery query, MATH_FIELD field) {
+	void addSynonyms(String mathMLToken, BooleanQuery query, MATH_FIELD field) {
 		if (mathMLToken.startsWith("<mo>") && mathMLToken.endsWith("</mo>")) { // OPERATOR CATEGORY TOKEN
 			String operator = mathMLToken.replace("<mo>", "").replace("</mo>", "");
 			CHARACTER_CATEGORIES category = null;
-			if ((category = (Constants.characterToCategoryMap.get(operator))) != null) {
+			if ((category = (Constants.CHARACTERS_TO_CATEGORY.get(operator))) != null) {
 				query.add(new BooleanClause(new TermQuery(new Term(
 						field.getName(), category.name())),
 						Occur.SHOULD));

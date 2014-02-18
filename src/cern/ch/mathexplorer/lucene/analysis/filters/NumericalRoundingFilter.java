@@ -42,11 +42,11 @@ import cern.ch.mathexplorer.utils.Regex;
  * @author Arthur Oviedo (arthoviedo@gmail.com)
  * 
  */
-public final class NumericRoundFilter extends TokenFilter {
+public final class NumericalRoundingFilter extends TokenFilter {
 
 	private final CharTermAttribute termAtt = addAttribute(CharTermAttribute.class);
 
-	public NumericRoundFilter(TokenStream input) {
+	public NumericalRoundingFilter(TokenStream input) {
 		super(input);
 	}
 

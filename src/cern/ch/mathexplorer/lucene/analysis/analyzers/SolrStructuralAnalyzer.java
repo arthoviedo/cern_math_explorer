@@ -21,7 +21,6 @@ public final class SolrStructuralAnalyzer extends SolrAnalyzer {
   @Override
   protected TokenStreamComponents createComponents(final String fieldName,
       final Reader reader) {
-	  
 	  Tokenizer source2 = new StructuralPatternsTokenizer(reader);
 	  return new TokenStreamComponents(source2, source2);
   }

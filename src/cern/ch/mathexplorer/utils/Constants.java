@@ -562,7 +562,7 @@ public final class Constants implements Serializable {
 		}
 	}
 
-	public static final Map<String, CHARACTER_CATEGORIES> characterToCategoryMap = initCharactersMap();
+	public static final Map<String, CHARACTER_CATEGORIES> CHARACTERS_TO_CATEGORY = initCharactersMap();
 
 	private static Map<String, CHARACTER_CATEGORIES> initCharactersMap() {
 		Map<String, CHARACTER_CATEGORIES> map = new HashMap<>();

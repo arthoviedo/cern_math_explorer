@@ -36,7 +36,7 @@ import cern.ch.mathexplorer.utils.Regex;
 public final class StructuralPatternsTokenizer extends MathTokenizer {
 
 	private final CharTermAttribute featuresAtt = addAttribute(CharTermAttribute.class);
-	private MathematicaEngine mi = MathematicaEngine.getInstance("INDEXING");
+	private MathematicaEngine mathEngine = MathematicaEngine.getInstance("INDEXING");
 	private List<StructuralPattern> features;
 	int currentFeature = 0;
 
@@ -78,10 +78,10 @@ public final class StructuralPatternsTokenizer extends MathTokenizer {
 		fillBuffer(str, input);
 		currentFeature = 0;
 		try {
-			if (mi == null) {
-				mi = MathematicaEngine.getInstance("INDEXING");
+			if (mathEngine == null) {
+				mathEngine = MathematicaEngine.getInstance("INDEXING");
 			}
-			features = mi.getPatternsWithTimeout(str.toString());
+			features = mathEngine.getPatternsWithTimeout(str.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new IOException("Problem while processing with Mathematica: "
