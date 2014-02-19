@@ -89,6 +89,11 @@ DOUBLE INTEGRAL	& {\unicodefont ∬} & 	0x222c &	0x222c &	0x222b 0x222b &	0x222b
 \hline
 CONTOUR INTEGRAL	& {\unicodefont ∮} &	0x222e	 &0x222e &	0x222e &	0x222e \\
 \hline
+NABLA	& {\unicodefont ∇} &	0x2207	 &0x2207 &	0x2207 &	0x2207 \\
+\hline
+WHITE DOWN-POINTING TRIANGLE	& {\unicodefont ▽} &	0x25bd	 &0x25bd &	0x25bd &	0x25bd \\
+\hline
+
 \caption{Characters with similar glyphs and/or semantics}
 \label{unicode_characters}
 \end{longtable}
@@ -122,31 +127,18 @@ Additionally, we identified patterns that are relevant and frequent in specific 
 
 
 \subsection{Development with Lucene/Solr}
-This section explains how the described features were implemented in the \verb|Apache Solr/Lucene| framework.
+This section explains how the described features were implemented in the {\codefont Apache Solr/Lucene} framework.
 \subsection{Integration with Mathematica}
-This section describes some aspects that should be had to be considered while implementing the integration with the Mathematica CAS. Our system uses the provided \verb|JLink| library to create a connection with the underlying process \verb|MathKernel|. The main class for communicating java code and \verb|Mathematica| is \verb|KernelLink| and the main used method was \verb|evaluateToOutputForm(String expr, int pageWidth)| where \verb|expr| is the expression to be evaluated and \verb|pageWidth| affects the formatting of the result.
+This section describes some aspects that should be had to be considered while implementing the integration with the Mathematica CAS. Our system uses the provided {\codefont JLink} library to create a connection with the underlying process {\codefont MathKernel}. The main class for communicating java code and {\codefont Mathematica} is {\codefont KernelLink} and the main used method was {\codefont evaluateToOutputForm(String expr, int pageWidth)} where {\codefont expr} is the expression to be evaluated and {\codefont pageWidth} affects the formatting of the result.
 
 \subsubsection{Pattern Extraction}
 
 \subsubsection{Recursive interpretation}
 
 \subsubsection{Error handling}
-Sometimes, after certain time, the connection between \verb|KernelLink| and \verb|Mathematica| will be lost launch an exception and following invocations would fails as well.
-Also, re-instantiating a KernelLink will yield an Exception. For this scenario, killing the associated processes to Mathematica was necessary:
-
-\begin{verbatim}
-killall -s 9 Mathematica
-killall -s 9 MathKernel
-\end{verbatim} 
-
-or 
-
-\begin{verbatim}
-taskkill /im Mathematica.exe
-taskkill /im MathKernel.exe
-\end{verbatim} 
-
-Depending on the OS the system is running on.
+Sometimes, after certain time, the connection between {\codefont KernelLink} and {\codefont Mathematica} will be lost launch an exception and following invocations would fails as well.
+Also, re-instantiating a KernelLink will yield an Exception. For this scenario, killing the associated processes to Mathematica was necessary with {\codefont killall -s 9 Mathematica; killall -s 9 MathKernel
+} or {\codefont taskkill /im Mathematica.exe; taskkill /im MathKernel.exe} depending on the OS the system is running on.
 
 With this, the next creation of a new KernelLink works properly and the subsequent invocations work as expected.
 
@@ -156,22 +148,23 @@ One example we found during our work is the following TeX snippet:
 \begin{verbatim}
 	"\ \varphi\ are\ shown,\ as\ well\ as\ the\ weight\ and\ tension"
 \end{verbatim}
-A human can easily identify that this corresponds to text and that should be inserted into a proper "mbox" or "text" tag. In this case, the snippet produced the following MathML code
-\begin{verbatim}
-<math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo></mo><mi>r</mi>   
-<mo></mo><mi>e</mi></mrow><mo></mo><mrow><mi>s</mi><mo></mo>
-<mi>h</mi><mo></mo><mi>o</mi><mo></mo><mi>w</mi><mo></mo><mi>n</mi>
-</mrow><mo>,</mo><mrow><mi>a</mi><mo></mo><mi>s</mi></mrow><mo></mo>
-<mrow><mi>w</mi><mo></mo><mi>e</mi><mo></mo><mi>l</mi><mo></mo>
-<mi>l</mi></mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>s</mi>
-</mrow><mo></mo><mrow><mi>t</mi><mo></mo><mi>h</mi><mo></mo>
-<mi>e</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo><mi>e</mi><mo>
-</mo><mi>i</mi><mo></mo><mi>g</mi><mo></mo><mi>h</mi><mo></mo>
-<mi>t</mi></mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>n</mi><mo>
-</mo><mi>d</mi></mrow><mo></mo><mrow><mi>t</mi><mo></mo><mi>e</mi>
-<mo></mo><mi>n</mi><mo></mo><mi>s</mi><mo></mo><mi>i</mi>
-<mo></mo><mi>o</mi><mo></mo><mi>n</mi></mrow></mrow></math>
-\end{verbatim}
+A human can easily identify that this corresponds to text and that should be inserted into a proper "mbox" or "text" tag. In this case, the snippet produced the following MathML code:
+\small{\codefont <math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo></mo>
+<mi>r</mi><mo></mo><mi>e</mi></mrow><mo></mo><mrow><mi>s
+</mi><mo></mo><mi>h</mi><mo></mo><mi>o</mi><mo></mo><mi>
+w</mi><mo></mo><mi>n</mi></mrow><mo>,</mo><mrow><mi>a</m
+i><mo></mo><mi>s</mi></mrow><mo></mo><mrow><mi>w</mi><mo
+></mo><mi>e</mi><mo></mo><mi>l</mi><mo></mo><mi>l</mi></
+mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>s</mi></mrow>
+<mo></mo><mrow><mi>t</mi><mo></mo><mi>h</mi><mo></mo><mi
+>e</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo><mi>e</m
+i><mo></mo><mi>i</mi><mo></mo><mi>g</mi><mo></mo><mi>h</
+mi><mo></mo><mi>t</mi></mrow><mo></mo><mrow><mi>a</mi><m
+o></mo><mi>n</mi><mo></mo><mi>d</mi></mrow><mo></mo><mro
+w><mi>t</mi><mo></mo><mi>e</mi><mo></mo><mi>n</mi><mo></
+mo><mi>s</mi><mo></mo><mi>i</mi><mo></mo><mi>o</mi><mo><
+/mo><mi>n</mi></mrow></mrow></math>
+}
 
 Mathematica took around 10 minutes to interpret it.
 In the ideal case we would be able to identify the malformed expressions and pass to Mathematica only well-formed equations to be processed but as this simple example shows, that is a very challenging task and may require more work.

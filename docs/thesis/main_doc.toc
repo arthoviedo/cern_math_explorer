@@ -49,9 +49,10 @@
 \contentsline {section}{\numberline {6.2}Setup}{31}{section.6.2}
 \contentsline {section}{\numberline {6.3}Results quality}{32}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Equations}{32}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Querying Performance}{33}{section.6.4}
-\contentsline {section}{\numberline {6.5}Indexing Performance}{33}{section.6.5}
-\contentsline {chapter}{\numberline {A}Configuration files}{35}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Schema}{35}{section.A.1}
-\contentsline {section}{\numberline {A.2}Solr configuration file}{36}{section.A.2}
-\contentsline {chapter}{Bibliographie}{35}{table.6.3}
+\contentsline {section}{\numberline {6.4}Comparison against other systems}{33}{section.6.4}
+\contentsline {section}{\numberline {6.5}Querying Performance}{35}{section.6.5}
+\contentsline {section}{\numberline {6.6}Indexing Performance}{35}{section.6.6}
+\contentsline {chapter}{\numberline {A}Configuration files}{37}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Schema}{37}{section.A.1}
+\contentsline {section}{\numberline {A.2}Solr configuration file}{38}{section.A.2}
+\contentsline {chapter}{Bibliographie}{36}{table.6.3}

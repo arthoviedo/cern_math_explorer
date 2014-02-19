@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  17 FEB 2014 19:33
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  19 FEB 2014 12:55
 entering extended mode
 **main_doc.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
@@ -1193,6 +1193,28 @@ r.otf
 Requested font "[lmroman12-bold]:mapping=tex-text" at 17.28pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-bold.o
 tf
+Requested font "cmmi12" at 17.28pt
+ -> cmmi12
+Requested font "cmmi12" at 12.0pt
+ -> cmmi12
+Requested font "cmsy10" at 17.28pt
+ -> cmsy10
+Requested font "cmsy10" at 12.0pt
+ -> cmsy10
+Requested font "cmex10" at 17.28pt
+ -> cmex10
+Requested font "cmex10" at 12.0pt
+ -> cmex10
+Requested font "msam10" at 17.28pt
+ -> msam10
+Requested font "msam10" at 12.0pt
+ -> msam10
+Requested font "msbm10" at 17.28pt
+ -> msbm10
+Requested font "msbm10" at 12.0pt
+ -> msbm10
+Requested font "cmr17" at 17.28pt
+ -> cmr17
 Requested font "[lmromancaps10-regular]:mapping=tex-text" at 24.88pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmromancaps10-re
 gular.otf
@@ -1223,32 +1245,22 @@ Requested font "[lmroman8-regular]:mapping=tex-text" at 8.0pt
 Requested font "[lmroman6-regular]:mapping=tex-text" at 6.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman6-regular
 .otf
-Requested font "cmmi12" at 12.0pt
- -> cmmi12
 Requested font "cmmi8" at 8.0pt
  -> cmmi8
 Requested font "cmmi6" at 6.0pt
  -> cmmi6
-Requested font "cmsy10" at 12.0pt
- -> cmsy10
 Requested font "cmsy8" at 8.0pt
  -> cmsy8
 Requested font "cmsy6" at 6.0pt
  -> cmsy6
-Requested font "cmex10" at 12.0pt
- -> cmex10
 Requested font "cmex8" at 8.0pt
  -> cmex8
 Requested font "cmex7" at 6.0pt
  -> cmex7
-Requested font "msam10" at 12.0pt
- -> msam10
 Requested font "msam10" at 8.0pt
  -> msam10
 Requested font "msam7" at 6.0pt
  -> msam7
-Requested font "msbm10" at 12.0pt
- -> msbm10
 Requested font "msbm10" at 8.0pt
  -> msbm10
 Requested font "msbm7" at 6.0pt
@@ -1660,135 +1672,218 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--90
  []
 
 
-Overfull \hbox (47.5717pt too wide) in alignment at lines 30--94
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
+[]|\EU1/lmr/m/n/12 WHITE DOWN-
+ []
+
+
+Underfull \hbox (badness 3000) in paragraph at lines 94--94
+\EU1/lmr/m/n/12 POINTING TRIAN-
+ []
+
+
+Overfull \hbox (47.5717pt too wide) in alignment at lines 30--99
  [] [] [] [] [] [] 
  []
 
 [24]
-Underfull \vbox (badness 10000) detected at line 94
+Underfull \vbox (badness 10000) detected at line 99
  []
 
-[25] [26]
+[25]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Citation `math_groups' on page 27 undefined on input line 103.
+ [26]
+
+LaTeX Warning: Citation `math_groups' on page 27 undefined on input line 108.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--104
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
 \EU1/lmr/m/n/12 is expanded into <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∮\EU1/lmr/
 m/n/12 </mo><mo>INTEGRALS</mo>,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--104
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
 \EU1/lmr/m/n/12 similarly the token token <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∫
 \EU1/lmr/m/n/12 </mo> is expanded into
  []
 
 
-Underfull \hbox (badness 1635) in paragraph at lines 101--104
+Underfull \hbox (badness 1635) in paragraph at lines 106--109
 \EU1/lmr/m/n/12 <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∫\EU1/lmr/m/n/12 </mo><mo>I
 NTEGRALS</mo> and then both will have a
  []
 
 
-Underfull \hbox (badness 1270) in paragraph at lines 106--107
+Underfull \hbox (badness 1270) in paragraph at lines 111--112
 \EU1/lmr/m/n/12 measurements and we wanted to include this variability in our s
 ys-
  []
 
 
-Overfull \hbox (9.02411pt too wide) in paragraph at lines 106--107
+Overfull \hbox (9.02411pt too wide) in paragraph at lines 111--112
 \EU1/lmr/m/n/12 <mn>2.0135</mn><mn>2.014</mn><mn>2.01</mn><mn>2.0</mn>. 
  []
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 115.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 115.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 115.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 115.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 115.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
 
-
-Underfull \vbox (badness 4779) has occurred while \output is active []
-
- [27]
+[27]
+Requested font "Courier/ICU:" at 12.0pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
+ [28]
 Requested font "[lmmono12-regular]" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmmono12-regular
 .otf
+Requested font "Courier/ICU:" at 10.95pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
 
-[28]
-Missing character: There is no φ in font [lmmono12-regular]!
-
-Overfull \hbox (15.05988pt too wide) in paragraph at lines 161--161
-[]\EU1/lmtt/m/n/12 <math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo></mo><mi
->r</mi> 
- []
-
-[29]
-Overfull \hbox (24.05989pt too wide) in paragraph at lines 163--163
-[]\EU1/lmtt/m/n/12 <mi>h</mi><mo></mo><mi>o</mi><mo></mo><mi>w</mi><mo></mo><mi
->n</mi>[] 
+Underfull \hbox (badness 4805) in paragraph at lines 151--168
+\EU1/lmr/m/n/12 A human can easily identify that this corresponds to text and
  []
 
 
-Overfull \hbox (30.23988pt too wide) in paragraph at lines 164--164
-[]\EU1/lmtt/m/n/12 </mrow><mo>,</mo><mrow><mi>a</mi><mo></mo><mi>s</mi></mrow><
-mo></mo>[] 
+Underfull \hbox (badness 7649) in paragraph at lines 151--168
+\EU1/lmr/m/n/12 that should be inserted into a proper ”mbox” or ”text” 
+tag.
  []
 
 
-Overfull \hbox (11.69989pt too wide) in paragraph at lines 168--168
-[]\EU1/lmtt/m/n/12 <mi>e</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo><mi>e</mi
-><mo>[] 
+Underfull \hbox (badness 4686) in paragraph at lines 151--168
+\EU1/lmr/m/n/12 In this case, the snippet produced the following MathML code:
  []
 
 
-Overfull \hbox (11.69989pt too wide) in paragraph at lines 170--170
-[]\EU1/lmtt/m/n/12 <mi>t</mi></mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>n</mi
-><mo>[] 
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 <math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo><
+/mo>
  []
 
 
-Overfull \hbox (17.8799pt too wide) in paragraph at lines 171--171
-[]\EU1/lmtt/m/n/12 </mo><mi>d</mi></mrow><mo></mo><mrow><mi>t</mi><mo></mo><mi>
-e</mi>[] 
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 <mi>r</mi><mo></mo><mi>e</mi></mrow><mo></mo><mrow><m
+i>s
  []
 
-) [30] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 </mi><mo></mo><mi>h</mi><mo></mo><mi>o</mi><mo></mo><
+mi>
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 w</mi><mo></mo><mi>n</mi></mrow><mo>,</mo><mrow><mi>a
+</m
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 i><mo></mo><mi>s</mi></mrow><mo></mo><mrow><mi>w</mi>
+<mo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 ></mo><mi>e</mi><mo></mo><mi>l</mi><mo></mo><mi>l</mi
+></
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>s</mi></mr
+ow>
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 <mo></mo><mrow><mi>t</mi><mo></mo><mi>h</mi><mo></mo>
+<mi
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 >e</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo><mi>e
+</m
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 i><mo></mo><mi>i</mi><mo></mo><mi>g</mi><mo></mo><mi>
+h</
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 mi><mo></mo><mi>t</mi></mrow><mo></mo><mrow><mi>a</mi
+><m
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 o></mo><mi>n</mi><mo></mo><mi>d</mi></mrow><mo></mo><
+mro
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 w><mi>t</mi><mo></mo><mi>e</mi><mo></mo><mi>n</mi><mo
+></
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--168
+\EU1/Courier(0)/m/n/10.95 mo><mi>s</mi><mo></mo><mi>i</mi><mo></mo><mi>o</mi><m
+o><
+ []
+
+[29]) [30]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex
 Chapter 6.
+Requested font "[lmroman10-bold]:mapping=tex-text" at 10.95pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-bold.o
+tf
 
 Underfull \hbox (badness 10000) in paragraph at lines 21--21
-[]|\EU1/lmr/m/n/12 Operative
+[]|\EU1/lmr/m/n/10.95 Operative
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 22--22
+[]|\EU1/lmr/m/n/10.95 Linux Ker-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-[]|\EU1/lmr/m/n/12 Java
+[]|\EU1/lmr/m/n/10.95 Java Vir-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-\EU1/lmr/m/n/12 Virtual
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--24
-[]|\EU1/lmr/m/n/12 Apache
+\EU1/lmr/m/n/10.95 tual Ma-
  []
 
 
 Underfull \vbox (badness 10000) detected at line 28
  []
 
-[31
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31
 
 
 
@@ -1796,7 +1891,6 @@ Underfull \vbox (badness 10000) detected at line 28
 Requested font "Courier/ICU:" at 8.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
 Missing character: There is no ℏ in font Courier Regular/ICU!
-Missing character: There is no ∇ in font Courier Regular/ICU!
 Missing character: There is no ψ in font Courier Regular/ICU!
 Missing character: There is no ψ in font Courier Regular/ICU!
 Requested font "[lmroman8-bold]:mapping=tex-text" at 8.0pt
@@ -1805,72 +1899,63 @@ f
 Requested font "[lmroman6-bold]:mapping=tex-text" at 6.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman6-bold.ot
 f
+Requested font "[lmroman5-bold]:mapping=tex-text" at 5.0pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman5-bold.ot
+f
+Missing character: There is no ℏ in font Courier Regular/ICU!
+Missing character: There is no κ in font Courier Regular/ICU!
 
-Overfull \hbox (58.33853pt too wide) in alignment at lines 44--58
+Overfull \hbox (85.36855pt too wide) in alignment at lines 44--71
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 58
+Underfull \vbox (badness 10000) detected at line 71
+ []
+
+[32]
+File: figures/comparison_table.png Graphic file (type QTm)
+ <use  "figures/comparison_table.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
+[][]
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]
-Underfull \hbox (badness 10000) in paragraph at lines 81--81
-\EU1/lmr/m/n/12 per equa-
+ [33]
+[34]
+Underfull \hbox (badness 7326) in paragraph at lines 106--106
+[]|\EU1/lmr/m/n/10.95 Index Size
  []
 
 
-Underfull \vbox (badness 10000) detected at line 93
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
+\EU1/lmr/m/n/10.95 per equa-
  []
 
-[33]) [34]
+
+Underfull \hbox (badness 1552) in paragraph at lines 106--107
+[]|\EU1/lmr/m/n/10.95 Avg. size
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 118
+ []
+
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
 No file main_doc.bbl.
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.tex
-Appendix A.
-[35
+[36
 
 
 
 ]
-Overfull \hbox (3.45975pt too wide) in paragraph at lines 35--35
-[]\EU1/lmtt/m/n/12 <analyzer class="cern.ch.mathexplorer.lucene.analysis.analyz
-ers.[] 
- []
-
-
-Overfull \hbox (5.51994pt too wide) in paragraph at lines 41--41
-[]\EU1/lmtt/m/n/12 over the normalized/simplified string using Full simplificat
-ion-->[] 
- []
-
-
-Overfull \hbox (3.45975pt too wide) in paragraph at lines 49--49
-[]\EU1/lmtt/m/n/12 <analyzer class="cern.ch.mathexplorer.lucene.analysis.analyz
-ers.[] 
- []
-
-
-Overfull \hbox (28.1799pt too wide) in paragraph at lines 53--53
-[]\EU1/lmtt/m/n/12 <!-- Field type for  structural features extracted from the 
-equation-->[] 
- []
-
-
-Overfull \hbox (3.45975pt too wide) in paragraph at lines 61--61
-[]\EU1/lmtt/m/n/12 <analyzer class="cern.ch.mathexplorer.lucene.analysis.analyz
-ers.[] 
- []
-
-[36]
-Overfull \hbox (24.05966pt too wide) in paragraph at lines 72--72
-[]  \EU1/lmtt/m/n/12 class="cern.ch.mathexplorer.lucene.query.MathQueryParserPl
-ugin" />[] 
- []
-
-) [37]
+Appendix A.
+[37]) [38]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
  (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.aux
@@ -1892,12 +1977,12 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 147.
  ) 
 Here is how much of TeX's memory you used:
- 24218 strings out of 429035
- 425208 string characters out of 3166907
- 535767 words of memory out of 3000000
- 27079 multiletter control sequences out of 15000+200000
- 13661 words of font info for 82 fonts, out of 3000000 for 9000
+ 24242 strings out of 429035
+ 425651 string characters out of 3166907
+ 539929 words of memory out of 3000000
+ 27092 multiletter control sequences out of 15000+200000
+ 15239 words of font info for 92 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  46i,13n,47p,10405b,978s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main_doc.pdf (39 pages).
+Output written on main_doc.pdf (40 pages).

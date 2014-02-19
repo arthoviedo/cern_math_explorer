@@ -142,7 +142,8 @@ public class MathQueryParser extends QParser {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String query = Regex.cleanQuery(texToMathML("\\left (-\\frac{\\hbar^{2}}{2m_e}\\nabla^{2} + V(\\mathbf{r})\\right )\\psi(\\mathbf{r}) = E\\psi(\\mathbf{r})"));
+		String query = Regex.cleanQuery(texToMathML(""
+				+ "$E_F = \\frac{E_C + E_V}{2} + \\frac{\\kappa_{B}T}{2} \\ln \\left(\\frac{N_V}{N_C}\\right)$"));
 		MathQueryParser mqp = new MathQueryParser(query, null, null, null);
 		mqp.parse();
 	}

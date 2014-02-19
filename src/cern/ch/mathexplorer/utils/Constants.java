@@ -200,7 +200,12 @@ public final class Constants implements Serializable {
 				"✕",
 				"✖",
 				"·")))
-		, ARROWS(new HashSet<>(Arrays.asList("←" //
+		,
+		GRADIENT(new HashSet<>(Arrays.asList(
+				"▽",		//WHITE DOWN-POINTING TRIANGLE
+				"∇")))		//NABLA
+		,
+		ARROWS(new HashSet<>(Arrays.asList("←" //
 				, "→" //
 				, "↑" //
 				, "↓" //
