@@ -192,7 +192,16 @@ public final class Constants implements Serializable {
 				, "\u2A1B" // Integral with overbar
 				, "\u2A14" // Line integration not including pole
 				, "\u2A1C" // Integral with underbar
-		))), 
+		))),
+		GRADIENT(new HashSet<>(Arrays.asList(
+				"∇",	//NABLA	
+				"▽"	//WHITE DOWN POINTING TRIANGLE
+				))),
+		EQUALS(new HashSet<>(Arrays.asList(
+				"=",	
+				"==",
+				"≡"
+				))),
 		MULTIPLICATION(new HashSet<>(Arrays.asList(
 				"\u2062",	//Invisible times
 				//"*",		Needs to be considered in context

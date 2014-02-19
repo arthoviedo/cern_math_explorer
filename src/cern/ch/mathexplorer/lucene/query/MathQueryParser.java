@@ -40,45 +40,46 @@ public class MathQueryParser extends QParser {
 
 	private static SnuggleEngine engine = new SnuggleEngine();
 
-	public void addNotationalTokens(BooleanQuery query, String mathML, MATH_FIELD field) {
+	public void addNotationalTokens(BooleanQuery query, String mathML,
+			MATH_FIELD field) {
 		Collection<String> tokenInQuery = Regex.extractElements(mathML);
 		for (String mathMLToken : tokenInQuery) {
-			query.add(new BooleanClause(new TermQuery(new Term(
-					field.getName(), mathMLToken)),
-					Occur.SHOULD));
+			query.add(new BooleanClause(new TermQuery(new Term(field.getName(),
+					mathMLToken)), Occur.SHOULD));
 			addSynonyms(mathMLToken, query, field);
 			Console.print(mathMLToken);
 		}
 	}
 
 	void addSynonyms(String mathMLToken, BooleanQuery query, MATH_FIELD field) {
-		if (mathMLToken.startsWith("<mo>") && mathMLToken.endsWith("</mo>")) { // OPERATOR CATEGORY TOKEN
-			String operator = mathMLToken.replace("<mo>", "").replace("</mo>", "");
+		if (mathMLToken.startsWith("<mo>") && mathMLToken.endsWith("</mo>")) { // OPERATOR
+																				// CATEGORY
+																				// TOKEN
+			String operator = mathMLToken.replace("<mo>", "").replace("</mo>",
+					"");
 			CHARACTER_CATEGORIES category = null;
 			if ((category = (Constants.CHARACTERS_TO_CATEGORY.get(operator))) != null) {
-				query.add(new BooleanClause(new TermQuery(new Term(
-						field.getName(), category.name())),
-						Occur.SHOULD));
+				query.add(new BooleanClause(new TermQuery(new Term(field
+						.getName(), category.name())), Occur.SHOULD));
 			}
 		}
 	}
 
-	void addStructuralPatterns(BooleanQuery query, String mathML){
+	void addStructuralPatterns(BooleanQuery query, String mathML) {
 		List<StructuralPattern> patterns = new ArrayList<>();
 		try {
 			patterns = MathematicaEngine.getInstance("QUERY")
 					.getPatternsWithTimeout(mathML);
 			for (StructuralPattern pattern : patterns) {
-				query.add(new BooleanClause(
-						new TermQuery(new Term(
-								MATH_FIELD.MATH_STRUCTURAL_FIELD.getName(), pattern
-										.getPattern())), Occur.SHOULD));
+				query.add(new BooleanClause(new TermQuery(new Term(
+						MATH_FIELD.MATH_STRUCTURAL_FIELD.getName(), pattern
+								.getPattern())), Occur.SHOULD));
 			}
 		} catch (Exception e) {
 		}
 
 	}
-	
+
 	private String fromLatexToMathML() throws SyntaxError {
 		qstr = qstr.replace("FORMAT(latex)", "");
 		if (engine == null) {
@@ -91,7 +92,7 @@ public class MathQueryParser extends QParser {
 			e.printStackTrace();
 			throw new SyntaxError("Error parsing LaTeX: " + e.getMessage());
 		}
-	} 
+	}
 
 	@Override
 	public Query parse() throws SyntaxError {
@@ -100,27 +101,52 @@ public class MathQueryParser extends QParser {
 
 		if (qstr.contains("FORMAT(latex)")) {
 			qstr = fromLatexToMathML();
-		}
-		else {
+		} else {
 			qstr = qstr.replace("FORMAT(mathml)", "");
 		}
 
+
+		// remove after testing:
+		boolean onlyNotational = qstr.contains("MODE(N)");
+		// remove after testing:
+		boolean notAndStruc = qstr.contains("MODE(N+S)");
+		// remove after testing:
+		boolean withStandNorm = qstr.contains("MODE(N+S+NN)");
+		// remove after testing:
+		boolean withFullNorm = qstr.contains("MODE(N+S+FN)");
+
+		qstr = qstr.replaceAll("MODE\\(.*?\\)", "");
 		aLogger.info("Query after: " + qstr);
 
 		BooleanQuery query = new BooleanQuery();
 		addNotationalTokens(query, qstr, MATH_FIELD.MATH_NOTATIONAL_FIELD);
-		if (MathematicaConfig.USE_MATHEMATICA) {
-			String normalizedStr = MathematicaEngine.getInstance("QUERY")
-					.simplifyExpressionWithTimeout(qstr);
-			addStructuralPatterns(query, qstr);
-			addNotationalTokens(query, normalizedStr, MATH_FIELD.MATH_NORMALIZED_NOTATIONAL_FIELD);
+		if (onlyNotational) {
+			return returnQuery(query);
 		}
-		for (BooleanClause a : query.getClauses()) {
-			Console.print(a);
+
+		if (MathematicaConfig.USE_MATHEMATICA) {
+			addStructuralPatterns(query, qstr);
+			if (notAndStruc) {
+				return returnQuery(query);
+			}
+
+			String normalizedStr = MathematicaEngine.getInstance("QUERY")
+					.simplifyExpressionWithTimeout(qstr, withFullNorm);
+			addNotationalTokens(query, normalizedStr,
+					MATH_FIELD.MATH_NORMALIZED_NOTATIONAL_FIELD);
+
 		}
 		query.setMinimumNumberShouldMatch(1);
 
-		return query;
+		return returnQuery(query);
+	}
+
+	private Query returnQuery(BooleanQuery q) {
+		for (BooleanClause a : q.getClauses()) {
+			Console.print(a);
+		}
+
+		return q;
 	}
 
 	public static String texToMathML(String texText) throws IOException {
@@ -142,7 +168,8 @@ public class MathQueryParser extends QParser {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String query = Regex.cleanQuery(texToMathML("\\left (-\\frac{\\hbar^{2}}{2m_e}\\nabla^{2} + V(\\mathbf{r})\\right )\\psi(\\mathbf{r}) = E\\psi(\\mathbf{r})"));
+		String query = Regex
+				.cleanQuery(texToMathML("\\left (-\\frac{\\hbar^{2}}{2m_e}\\nabla^{2} + V(\\mathbf{r})\\right )\\psi(\\mathbf{r}) = E\\psi(\\mathbf{r})"));
 		MathQueryParser mqp = new MathQueryParser(query, null, null, null);
 		mqp.parse();
 	}
