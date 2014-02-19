@@ -38,10 +38,10 @@ public abstract class MathTokenizer extends Tokenizer {
 			
 		}
 		if (normalizationMode.equals(MathematicaConfig.NORMALIZATION_MODES.STANDARD_SIMPLIFICATION)){
-			tmp = MathematicaEngine.getInstance("INDEXING").simplyExpressionWithTimeout(tmp, false);
+			tmp = MathematicaEngine.getInstance("INDEXING").simplifyExpressionWithTimeout(tmp, false);
 		}
 		if (normalizationMode.equals(MathematicaConfig.NORMALIZATION_MODES.FULL_SIMPLIFICATION)){
-			tmp = MathematicaEngine.getInstance("INDEXING").simplyExpressionWithTimeout(tmp, true);
+			tmp = MathematicaEngine.getInstance("INDEXING").simplifyExpressionWithTimeout(tmp, true);
 		}
 		str = new StringBuilder(Regex.cleanQuery(tmp));
 
