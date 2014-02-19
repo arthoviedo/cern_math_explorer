@@ -81,6 +81,8 @@ public class Regex {
 		queryString = queryString.replaceAll("</mspace>", "");
 		queryString = queryString.replaceAll("<mo>.</mo></math>", "</math>");
 		queryString = queryString.replaceAll("<mo>,</mo></math>", "</math>");
+		queryString = queryString.replaceAll("> <", "><");
+
 		
 		//queryString = queryString.replaceAll("&theta;", "θ");
 		queryString = StringEscapeUtils.unescapeHtml4(queryString);
