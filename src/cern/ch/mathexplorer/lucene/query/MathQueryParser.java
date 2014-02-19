@@ -111,7 +111,7 @@ public class MathQueryParser extends QParser {
 		addNotationalTokens(query, qstr, MATH_FIELD.MATH_NOTATIONAL_FIELD);
 		if (MathematicaConfig.USE_MATHEMATICA) {
 			String normalizedStr = MathematicaEngine.getInstance("QUERY")
-					.simplyExpressionWithTimeout(qstr);
+					.simplifyExpressionWithTimeout(qstr);
 			addStructuralPatterns(query, qstr);
 			addNotationalTokens(query, normalizedStr, MATH_FIELD.MATH_NORMALIZED_NOTATIONAL_FIELD);
 		}

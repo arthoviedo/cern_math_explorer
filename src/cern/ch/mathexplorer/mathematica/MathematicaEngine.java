@@ -149,11 +149,11 @@ public class MathematicaEngine {
 	
 	}
 
-	public String simplyExpressionWithTimeout(String mathMLExpression){
+	public String simplifyExpressionWithTimeout(String mathMLExpression){
 		if (MathematicaConfig.NORMALIZATION_MODE.equals(MathematicaConfig.NORMALIZATION_MODES.FULL_SIMPLIFICATION)) {
-			return simplyExpressionWithTimeout(mathMLExpression, true);
+			return simplifyExpressionWithTimeout(mathMLExpression, true);
 		} else {
-			return simplyExpressionWithTimeout(mathMLExpression, false);
+			return simplifyExpressionWithTimeout(mathMLExpression, false);
 		}
 	}
 
@@ -162,7 +162,7 @@ public class MathematicaEngine {
 	 * Calls the method for simplifyin a given string.
 	 * If the method takes more than the defined timeout, the original string is returned 
 	 */
-	public String simplyExpressionWithTimeout(String mathMLExpression, boolean full){
+	public String simplifyExpressionWithTimeout(String mathMLExpression, boolean full){
 		ExecutorService executor = Executors.newSingleThreadExecutor();
         Future future = executor.submit(new MathematicaTask(mathMLExpression, TASK.SIMPLIFY_EXPRESSION, full));
         try {
@@ -373,7 +373,7 @@ public class MathematicaEngine {
 		MathematicaEngine instance = getInstance("TESTING");
 		int count = 0;
 		while ((line = br.readLine()) != null) {
-			instance.simplyExpressionWithTimeout(line);
+			instance.simplifyExpressionWithTimeout(line);
 			instance.getPatternsWithTimeout(line);
 			//instance.getPatterns(line);
 			//instance.simplifyExpression(line, true);
