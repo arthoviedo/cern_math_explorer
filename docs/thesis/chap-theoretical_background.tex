@@ -17,7 +17,7 @@ One of the key data structures for an efficient implementation of this model is 
 \section{Vector Space Model}
 The vector space model\cite{vector_space_model} which was developed between the 1960s and 1970s alongside the SMART Information Retrieval System. In this model, documents (from a collection $D$) and queries are represented as vectors $d$ and $q$ in a vector space where each index term corresponds to a dimension. If a term $t_i$ occurs in a given query or document, its i-th  coordinate will have a non zero value. Index terms can be keywords or phrases in the context of textual search or any other type of feature that can be extracted from the elements in a given specific context.
 The scoring of a document for a given query is computed as the cosine of the angle between both vectors which can be expressed as: 
-$$score(d, q) = cos\theta = \frac{d \cdot q}{\parallel d \parallel \parallel q \parallel}  = \frac{\sum_{i=1}^{n}weight(d_i, d)*weight(q_i, q)}{\sqrt{\sum_{i=1}^{n}weight^2(d_i, d)}\sqrt{\sum_{i=1}^{n}weight^2(q_i, q)}} $$
+$$score(d, q) = cos\theta(d, q) = \frac{d \cdot q}{\parallel d \parallel \parallel q \parallel}  = \frac{\sum_{i=1}^{n}weight(d_i, d)*weight(q_i, q)}{\sqrt{\sum_{i=1}^{n}weight^2(d_i, d)}\sqrt{\sum_{i=1}^{n}weight^2(q_i, q)}} $$
 
 Different weighting schemes can be employed, and the most standard one is called tf-idf (Term frequency - Inverse document frequency) where terms that appear less frequently in the corpus, are assigned higher values (Intuitively the term "the" will be less useful for identifying a relevant document than the term "Shakespeare" in the context of an English word based search engine). Therefore:
 

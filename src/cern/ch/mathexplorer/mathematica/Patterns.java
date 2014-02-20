@@ -123,6 +123,8 @@ public class Patterns {
 				String.format("Superscript[X_,%s]",secondArg), 
 				String.format("Superscript[X_,%s]",secondArg),
 				String.format("Power[X_,%s]",secondArg),
+				String.format("Overscript[X_, %s]",secondArg), 
+				String.format("Underscript[X_,%s]",secondArg));
 				//"SubPlus[X_]", 
 				//"SubMinus[X_]", 
 				//"SubStar[X_]", 
@@ -130,8 +132,6 @@ public class Patterns {
 				//"SuperMinus[X_]", 
 				//"SuperStar[X_]", 
 				//"SuperDagger[X_]", 
-				String.format("Overscript[X_, %s]",secondArg), 
-				String.format("Underscript[X_,%s]",secondArg));
 				//"OverBar[X_]", 
 				//"OverVector[X_]", 
 				//"OverHat[X_]", 
