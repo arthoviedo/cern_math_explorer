@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  19 FEB 2014 18:28
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  20 FEB 2014 10:26
 entering extended mode
 **main_doc.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
@@ -995,7 +995,8 @@ ux)
 .aux) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux))
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 118.
 LaTeX Font Info:    ... okay on input line 118.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 118.
@@ -1010,7 +1011,6 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 118.
 LaTeX Font Info:    ... okay on input line 118.
 LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 118.
 LaTeX Font Info:    Try loading font information for OT2+cmr on input line 118.
-
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cyrillic\ot2cmr.fd"
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
@@ -1306,43 +1306,20 @@ ex [8
 ]
 Chapter 2.
 [9]
-
-LaTeX Warning: Citation `vector_space_model' on page 10 undefined on input line
- 18.
-
-
 Overfull \hbox (7.27084pt too wide) detected at line 20
 \OML/cmm/m/it/12 score\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 d; q\OT1/cmr/m/n/12 ) =
  \OML/cmm/m/it/12 cos^^R \OT1/cmr/m/n/12 = [] = []
  []
 
+[10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 59--66
 
-LaTeX Warning: Citation `probabilistic_relevance_model' on page 10 undefined on
- input line 32.
-
-[10]
-
-LaTeX Warning: Citation `okapibm25' on page 11 undefined on input line 40.
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 57--64
-
- []
-
-
-Overfull \hbox (35.58633pt too wide) in paragraph at lines 82--82
-[] 
  []
 
 [12]
-
-LaTeX Warning: Citation `zhang_shasha' on page 13 undefined on input line 85.
-
-
-LaTeX Warning: Citation `klein' on page 13 undefined on input line 85.
-
-
-LaTeX Warning: Citation `demaine' on page 13 undefined on input line 85.
+Overfull \hbox (35.58633pt too wide) in paragraph at lines 84--84
+[] 
+ []
 
 ) [13]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-technical_considerations
@@ -1359,10 +1336,6 @@ Requested font "[lmroman12-bold]:mapping=tex-text" at 14.4pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-bold.o
 tf
 [15]
-
-LaTeX Warning: Citation `latexml' on page 16 undefined on input line 33.
-
-
 Overfull \hbox (5.30113pt too wide) in paragraph at lines 33--33
  []|\EU1/lmr/m/n/12 0.7.9alpha| 
  []
@@ -1371,30 +1344,17 @@ Overfull \hbox (5.30113pt too wide) in paragraph at lines 33--33
 LaTeX Warning: Citation `tex4ht1' on page 16 undefined on input line 35.
 
 
-LaTeX Warning: Citation `tex4ht2' on page 16 undefined on input line 35.
-
-
-LaTeX Warning: Citation `latexmathml' on page 16 undefined on input line 37.
-
-
-Overfull \hbox (12.86421pt too wide) in paragraph at lines 37--37
+Overfull \hbox (12.37222pt too wide) in paragraph at lines 37--37
 []|\EU1/lmr/m/n/12 LaTeXmathML[[]]| 
  []
 
 
-LaTeX Warning: Citation `maxtract1' on page 16 undefined on input line 39.
+Overfull \hbox (4.5722pt too wide) in paragraph at lines 39--39
+[]|\EU1/lmr/m/n/12 Maxtract[[]][[]]| 
+ []
 
 
-LaTeX Warning: Citation `maxtract2' on page 16 undefined on input line 39.
-
-
-LaTeX Warning: Citation `infty1' on page 16 undefined on input line 41.
-
-
-LaTeX Warning: Citation `infty2' on page 16 undefined on input line 41.
-
-
-Overfull \hbox (7.0082pt too wide) in paragraph at lines 41--41
+Overfull \hbox (17.7842pt too wide) in paragraph at lines 41--41
 []|\EU1/lmr/m/n/12 InftyReader[[]][[]]| 
  []
 
@@ -1411,10 +1371,6 @@ Overfull \hbox (77.0435pt too wide) in alignment at lines 29--46
 
 Underfull \vbox (badness 10000) detected at line 46
  []
-
-
-LaTeX Warning: Citation `latexcomparison' on page 16 undefined on input line 48
-.
 
 [16]
 Overfull \hbox (16.88113pt too wide) in paragraph at lines 68--68
@@ -1481,33 +1437,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [17])
 [18] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.tex
 Chapter 4.
-
-LaTeX Warning: Citation `mias_1' on page 19 undefined on input line 10.
-
 [19
 
 
 
 ]
-
-LaTeX Warning: Citation `egomath1' on page 20 undefined on input line 19.
-
-
-LaTeX Warning: Citation `egomath2' on page 20 undefined on input line 19.
-
-
-LaTeX Warning: Citation `mathwebsearch' on page 20 undefined on input line 24.
-
-
-LaTeX Warning: Citation `substitution_tree_indexing' on page 20 undefined on in
-put line 24.
-
 Requested font "[lmroman10-regular]:mapping=tex-text" at 10.95pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-regula
 r.otf
 LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 27.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\euenc\eu1lmtt.fd"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\euenc\eu1lmtt.fd"
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Requested font "[lmmono10-regular]" at 10.95pt
@@ -1525,7 +1465,8 @@ Requested font "msbm10" at 10.95pt
  -> msbm10
 Requested font "cmr10" at 10.95pt
  -> cmr10
- [20]) [21]
+ [20])
+[21]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.tex
 [22
 
@@ -1533,6 +1474,45 @@ Requested font "cmr10" at 10.95pt
 
 ]
 Chapter 5.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2.
+
+Requested font "[lmroman17-regular]:mapping=tex-text" at 20.74pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman17-regula
+r.otf
+Requested font "cmmi12" at 24.88pt
+ -> cmmi12
+Requested font "cmmi12" at 20.74pt
+ -> cmmi12
+Requested font "cmsy10" at 24.88pt
+ -> cmsy10
+Requested font "cmsy10" at 20.74pt
+ -> cmsy10
+Requested font "cmex10" at 24.88pt
+ -> cmex10
+Requested font "cmex10" at 20.74pt
+ -> cmex10
+Requested font "msam10" at 24.88pt
+ -> msam10
+Requested font "msam10" at 20.74pt
+ -> msam10
+Requested font "msbm10" at 24.88pt
+ -> msbm10
+Requested font "msbm10" at 20.74pt
+ -> msbm10
+Requested font "cmr17" at 24.88pt
+ -> cmr17
+Requested font "cmr17" at 20.74pt
+ -> cmr17
 [23]
 Requested font "Arial Unicode MS/ICU:" at 12.0pt
  -> C:/Windows/Fonts/ARIALUNI.TTF
@@ -1686,18 +1666,11 @@ Overfull \hbox (47.5717pt too wide) in alignment at lines 30--99
  [] [] [] [] [] [] 
  []
 
-[24]
+
 Underfull \vbox (badness 10000) detected at line 99
  []
 
-[25]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26]
-
-LaTeX Warning: Citation `math_groups' on page 27 undefined on input line 108.
-
-
+[24] [25] [26] [27]
 Underfull \hbox (badness 10000) in paragraph at lines 106--109
 \EU1/lmr/m/n/12 is expanded into <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∮\EU1/lmr/
 m/n/12 </mo><mo>INTEGRALS</mo>,
@@ -1741,10 +1714,16 @@ LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
 
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
 
-[27]
+
+Underfull \vbox (badness 2065) has occurred while \output is active []
+
+ [28]
 Requested font "Courier/ICU:" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
- [28]
+
+Underfull \vbox (badness 3039) has occurred while \output is active []
+
+ [29]
 Requested font "[lmmono12-regular]" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmmono12-regular
 .otf
@@ -1850,8 +1829,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--168
 o><
  []
 
-[29]) [30]
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex
+[30]) [31]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex [32
+
+
+
+]
 Chapter 6.
 Requested font "[lmroman10-bold]:mapping=tex-text" at 10.95pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-bold.o
@@ -1883,11 +1866,61 @@ Underfull \vbox (badness 10000) detected at line 28
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31
+ [33]
+File: figures/comparison_table.png Graphic file (type QTm)
 
+<use  "figures/comparison_table.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 46--48
+[][]
+ []
+
+[34] [35]
+Underfull \hbox (badness 7326) in paragraph at lines 74--74
+[]|\EU1/lmr/m/n/10.95 Index Size
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+\EU1/lmr/m/n/10.95 per equa-
+ []
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 74--75
+[]|\EU1/lmr/m/n/10.95 Avg. size
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 86
+ []
+
+) [36] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl
+Requested font "[lmroman10-italic]:mapping=tex-text" at 10.95pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-italic
+.otf
+
+Underfull \hbox (badness 2460) in paragraph at lines 48--50
+[]\EU1/lmr/m/n/10.95 A brief description of latexmathml, 2007.  []$[][][][] [] 
+[] [] [][][][] [] [][][][] [] [][][] []
+ []
+
+[37
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 117--121
+[][][][][][][][][][][][][][] [] [][][][] [] [] [] [][][][][][] [] [][][][] [] [
+][][][] [] [][][][][][][] [] [][][][] [] [][][][][][][][][] []
+ []
+
+) [38]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.tex
+Appendix A.
+[39
+
+
+]) [40]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.tex
+Appendix B.
 Requested font "Courier/ICU:" at 8.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
 Missing character: There is no ℏ in font Courier Regular/ICU!
@@ -1907,56 +1940,28 @@ Missing character: There is no ν in font Courier Regular/ICU!
 Missing character: There is no ν in font Courier Regular/ICU!
 Missing character: There is no ν in font Courier Regular/ICU!
 
-
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 65.
+(amsmath)                 on input line 28.
 
 Missing character: There is no κ in font Courier Regular/ICU!
 
-Overfull \hbox (85.36855pt too wide) in alignment at lines 44--72
+Overfull \hbox (85.36855pt too wide) in alignment at lines 7--35
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 72
+Underfull \vbox (badness 10000) detected at line 35
  []
 
-[32]
-File: figures/comparison_table.png Graphic file (type QTm)
- <use  "figures/comparison_table.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 79--81
-[][]
- []
-
-[33] [34]
-Underfull \hbox (badness 7326) in paragraph at lines 107--107
-[]|\EU1/lmr/m/n/10.95 Index Size
- []
+[41
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--107
-\EU1/lmr/m/n/10.95 per equa-
- []
 
-
-Underfull \hbox (badness 1552) in paragraph at lines 107--108
-[]|\EU1/lmr/m/n/10.95 Avg. size
- []
-
-
-Underfull \vbox (badness 10000) detected at line 119
- []
-
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
-No file main_doc.bbl.
-No file appendix-conf_files.tex.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.aux
+]) [42]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
+ (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.aux
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\titre.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-introduction.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-theoretical_background.a
@@ -1965,22 +1970,22 @@ ux)
 .aux) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 147.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 147.
-
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 149.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 149.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 147.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
  ) 
 Here is how much of TeX's memory you used:
- 24239 strings out of 429035
- 425544 string characters out of 3166907
- 538619 words of memory out of 3000000
- 27091 multiletter control sequences out of 15000+200000
- 15239 words of font info for 92 fonts, out of 3000000 for 9000
+ 24272 strings out of 429035
+ 426436 string characters out of 3166907
+ 546115 words of memory out of 3000000
+ 27111 multiletter control sequences out of 15000+200000
+ 18347 words of font info for 106 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  46i,13n,47p,10405b,978s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main_doc.pdf (37 pages).
+Output written on main_doc.pdf (44 pages).

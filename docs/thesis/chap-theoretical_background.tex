@@ -53,6 +53,8 @@ and
 $$weight(q_i, d) = \sum_{j=1}^m \frac{frec(q_i, D, field_j)*boost_j)}{((1-b_j) + b_j*\frac{|l_j|}{avgfl_j})} $$
 where $m$ is the number of different fields, $boost_j$ is the relative importance for each field, $b_j$ is analogous to the $b$ constant in the BM25 group of equations, $|l_j|$ is the length of the $field_j$ and $avgfl_j$ is the average length of the $field_j$.
 
+\section{Latent Semantic Indexing}
+
 \section{Tree Edit Distance}
 As it will be discussed, one of the most common formats to represent mathematical equations, MathML, is a XML based format, and whose structure represents a rooted tree. Because of this, it makes sense to consider some models to compare and analyse mathematical expressions taking into account their natural tree structure. The most natural way of addressing this, is through the well studied abstract problem of Tree Edit Distance problem, where the idea is to compute a distance between a pair of trees. It should be noted that the development of this problem is very similar to the String Edit Distance problem.
 The Tree Edit Distance problem can be formulated as follows:
