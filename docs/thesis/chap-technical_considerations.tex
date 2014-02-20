@@ -4,9 +4,33 @@ In the previos chapter we presented different abstract models which can be suita
 In this section, we present different aspects that need to be considered when mapping from these theoretical models to a concrete implementation.
 
 \section{Digital Representations of Mathematics}
-\subsection{MathML}
-\subsection{OpenMath}
-\subsection{LaTeX}
+When building any kind of information retrieval system, selecting the right representations of the data can affect the type of algorithms that one can use, the amount of storage, the quality of the data among other factors. Mathematical content is not an exception, and there are available different formats to encode a mathematical expression. One of the most common ways to represent mathematics in scientific documents, which suits CDS's domain, is \LaTeX. Another  important standard for the representation of mathematics is MathML, which was first proposed by the World Wide Web Consortium in 1998 as the recommended language to be used in web documents. One of the advantages of MathML over LaTeX, is the fact that it is an application of XML, which makes it very easy process algorithmically. There two different variations of MathML, presentation and content. The first one is oriented to the visual representation of the expression and the second one is more oriented to the semantics of the expression. OpenMath is another markup language to represent mathematics and can be used to compliment presentation MathML to add more semantic information.
+
+Table \ref{math_languages} presents a comparison on how different languages can express the expression $x^2 + y^2 = z^2$
+
+
+\begin{longtable}{|m{3.5cm}|>
+{\centering\arraybackslash}m{3cm}|>
+{\centering\arraybackslash}m{3cm}|>
+{\centering\arraybackslash}m{3cm}|
+}
+\hline 
+\textbf{\LaTeX} & 
+\textbf{Presentation MathML} & 
+\textbf{Content MathML} & 
+\textbf{OpenMath}  \\ \hline
+
+\verb|$x^2 + y^2 = z^2$|&&&
+\\
+\hline
+
+\caption{Comparison of the different languages for expressing mathematical content} 
+\label{math_languages}
+\end{longtable}
+
+
+
+Because
 
 \section{Math Extraction Tools}
 One of the main steps in any information retrieval task is the extraction of the searchable content from the collection of documents. At CDS the most common storage format for publications is PDF. A big part of the harvested documents in CDS comes from the ArXiv pre-prints service and from here, the source code (\LaTeX) of the submissions is available for download. Smaller portions of other documents are stored in other formats like Microsoft Word, OpenOffice Documents.
