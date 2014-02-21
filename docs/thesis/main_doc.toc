@@ -1,7 +1,9 @@
 \select@language {english}
 \contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
-\contentsline {section}{\numberline {1.1}CERN Document Server}{7}{section.1.1}
-\contentsline {section}{\numberline {1.2}Invenio}{7}{section.1.2}
+\contentsline {section}{\numberline {1.1}Context}{7}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Invenio}{7}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}CDS}{7}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Goals}{7}{section.1.2}
 \contentsline {chapter}{\numberline {2}Theoretical Background}{9}{chapter.2}
 \contentsline {section}{\numberline {2.1}Boolean Model}{9}{section.2.1}
 \contentsline {section}{\numberline {2.2}Vector Space Model}{10}{section.2.2}
@@ -23,8 +25,8 @@
 \contentsline {subsection}{\numberline {4.2.1}MIaS}{21}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}EgoMath}{22}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}DLMFSearch}{22}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}MathWebSearch}{22}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}LaTEXSearch}{22}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.4}MathWebSearch}{23}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}LaTEXSearch}{23}{subsection.4.2.5}
 \contentsline {section}{\numberline {4.3}Other related projects and initiatives}{23}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}arXMLiv}{23}{subsection.4.3.1}
 \contentsline {chapter}{\numberline {5}$5e^{x+y}$(CDS)}{25}{chapter.5}
@@ -52,12 +54,14 @@
 \contentsline {section}{\numberline {6.4}Comparison against other systems}{38}{section.6.4}
 \contentsline {section}{\numberline {6.5}Querying Performance}{38}{section.6.5}
 \contentsline {section}{\numberline {6.6}Indexing Performance}{38}{section.6.6}
-\contentsline {chapter}{Bibliographie}{41}{table.6.2}
-\contentsline {chapter}{\numberline {A}Configuration files}{43}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Schema}{43}{section.A.1}
-\contentsline {section}{\numberline {A.2}Solr configuration file}{44}{section.A.2}
-\contentsline {chapter}{\numberline {B}Test equations}{45}{appendix.B}
-\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{47}{appendix.C}
-\contentsline {section}{\numberline {C.1}Analyzers}{47}{section.C.1}
-\contentsline {section}{\numberline {C.2}Tokenizers}{47}{section.C.2}
-\contentsline {section}{\numberline {C.3}Filters}{47}{section.C.3}
+\contentsline {chapter}{\numberline {7}Conclusions}{41}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusions}{43}{chapter.8}
+\contentsline {chapter}{Bibliographie}{44}{chapter.8}
+\contentsline {chapter}{\numberline {A}Configuration files}{47}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Schema}{47}{section.A.1}
+\contentsline {section}{\numberline {A.2}Solr configuration file}{48}{section.A.2}
+\contentsline {chapter}{\numberline {B}Test equations}{49}{appendix.B}
+\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{51}{appendix.C}
+\contentsline {section}{\numberline {C.1}Analyzers}{51}{section.C.1}
+\contentsline {section}{\numberline {C.2}Tokenizers}{51}{section.C.2}
+\contentsline {section}{\numberline {C.3}Filters}{51}{section.C.3}

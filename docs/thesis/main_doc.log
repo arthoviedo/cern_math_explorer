@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  21 FEB 2014 15:29
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  21 FEB 2014 17:06
 entering extended mode
 **main_doc.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
@@ -995,7 +995,12 @@ ux)
 .aux) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.aux
+
+LaTeX Warning: Label `chapter-conclusions' multiply defined.
+
+) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
@@ -1228,6 +1233,9 @@ File: cern_logo1.jpg Graphic file (type QTm)
 Requested font "[lmroman12-italic]:mapping=tex-text" at 24.88pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-italic
 .otf
+Requested font "[lmroman12-regular]:mapping=tex-text" at 14.4pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-regula
+r.otf
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\se-ascii-print.def"
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
@@ -1290,19 +1298,19 @@ r.otf
 Requested font "Courier/ICU:" at 10.95pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
 
-Overfull \hbox (51.09196pt too wide) in paragraph at lines 12--12
+Overfull \hbox (51.09196pt too wide) in paragraph at lines 14--14
  [][] [][]\EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.mathexp
 lorer.lucene.analysis.analyzers 
  []
 
 
-Overfull \hbox (57.66197pt too wide) in paragraph at lines 13--13
+Overfull \hbox (57.66197pt too wide) in paragraph at lines 15--15
  [][] [][]\EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.mathexp
 lorer.lucene.analysis.tokenizers 
  []
 
 
-Overfull \hbox (37.95195pt too wide) in paragraph at lines 14--14
+Overfull \hbox (37.95195pt too wide) in paragraph at lines 16--16
  [][] [][]\EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.mathexp
 lorer.lucene.analysis.filters 
  []
@@ -1322,6 +1330,9 @@ lorer.lucene.analysis.filters
 
 ]
 Chapter 1.
+Requested font "[lmroman12-bold]:mapping=tex-text" at 14.4pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-bold.o
+tf
 ) [7]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-theoretical_background.t
 ex [8
@@ -1494,13 +1505,17 @@ Underfull \vbox (badness 10000) detected at line 117
 
 ]
 Chapter 4.
-Requested font "[lmroman12-regular]:mapping=tex-text" at 14.4pt
- -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-regula
-r.otf
-Requested font "[lmroman12-bold]:mapping=tex-text" at 14.4pt
- -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-bold.o
-tf
 [21]
+
+LaTeX Warning: Citation `dlmf' on page 22 undefined on input line 23.
+
+
+LaTeX Warning: Citation `handbook' on page 22 undefined on input line 23.
+
+
+LaTeX Warning: Citation `dlmf2' on page 22 undefined on input line 23.
+
+[22]
 Requested font "cmmi10" at 10.95pt
  -> cmmi10
 Requested font "cmsy10" at 10.95pt
@@ -1513,7 +1528,7 @@ Requested font "msbm10" at 10.95pt
  -> msbm10
 Requested font "cmr10" at 10.95pt
  -> cmr10
- [22]) [23]
+) [23]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.tex
 [24
 
@@ -1939,7 +1954,23 @@ Underfull \hbox (badness 1552) in paragraph at lines 78--79
 Underfull \vbox (badness 10000) detected at line 90
  []
 
-) [40] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl
+) [40] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.tex
+Chapter 7.
+) [41
+
+
+
+] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.tex
+[42
+
+
+
+]
+Chapter 8.
+) [43] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl [44
+
+
+]
 Requested font "[lmroman10-italic]:mapping=tex-text" at 10.95pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-italic
 .otf
@@ -1949,22 +1980,19 @@ Underfull \hbox (badness 2460) in paragraph at lines 48--50
 [] [] [][][][] [] [][][][] [] [][][] []
  []
 
-[41
-
-
-]
+[45]
 Underfull \hbox (badness 10000) in paragraph at lines 117--121
 [][][][][][][][][][][][][][] [] [][][][] [] [] [] [][][][][][] [] [][][][] [] [
 ][][][] [] [][][][][][][] [] [][][][] [] [][][][][][][][][] []
  []
 
-) [42]
+) [46]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.tex
 Appendix A.
-[43
+[47
 
 
-]) [44]
+]) [48]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.tex
 Appendix B.
 Missing character: There is no ℏ in font Courier Regular/ICU!
@@ -1995,11 +2023,11 @@ Overfull \hbox (85.36855pt too wide) in alignment at lines 7--35
 Underfull \vbox (badness 10000) detected at line 35
  []
 
-[45
+[49
 
 
 
-]) [46] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex
+]) [50] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex
 Appendix C.
 File: visio_drawings/analyzers.png Graphic file (type QTm)
 <use  "visio_drawings/analyzers.png" >
@@ -2022,13 +2050,13 @@ Overfull \hbox (22.94789pt too wide) in paragraph at lines 23--23
 athexplorer.lucene.analysis.filters
  []
 
-) [47
+) [51
 
 
 
-] [48]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 154.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
+] [52]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
  (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.aux
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\titre.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-introduction.aux)
@@ -2038,24 +2066,29 @@ ux)
 .aux) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 154.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 154.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 158.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 158.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 158.
  ) 
 Here is how much of TeX's memory you used:
- 24298 strings out of 429035
- 427034 string characters out of 3166907
- 548262 words of memory out of 3000000
- 27123 multiletter control sequences out of 15000+200000
+ 24319 strings out of 429035
+ 427695 string characters out of 3166907
+ 549448 words of memory out of 3000000
+ 27130 multiletter control sequences out of 15000+200000
  18355 words of font info for 107 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  46i,13n,47p,10405b,1182s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main_doc.pdf (50 pages).
+Output written on main_doc.pdf (54 pages).
