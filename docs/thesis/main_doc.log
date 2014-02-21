@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  20 FEB 2014 18:57
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  21 FEB 2014 15:29
 entering extended mode
 **main_doc.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
@@ -996,47 +996,49 @@ ux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 118.
-LaTeX Font Info:    Try loading font information for OT2+cmr on input line 118.
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 122.
+LaTeX Font Info:    Try loading font information for OT2+cmr on input line 122.
+
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cyrillic\ot2cmr.fd"
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 118.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 118.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 122.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 122.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 118.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 118.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 122.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 122.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tipa\t3cmr.fd"
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    ... okay on input line 122.
 Requested font "[lmroman12-regular]:mapping=tex-text" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-regula
 r.otf
@@ -1049,7 +1051,7 @@ fontencoding T3 patched
 )
 \c@lstlisting=\count170
 \AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring OFF on input line 118.
+Package hyperref Info: Link coloring OFF on input line 122.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1058,9 +1060,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count171
 )
-LaTeX Info: Redefining \ref on input line 118.
-LaTeX Info: Redefining \pageref on input line 118.
-LaTeX Info: Redefining \nameref on input line 118.
+LaTeX Info: Redefining \ref on input line 122.
+LaTeX Info: Redefining \pageref on input line 122.
+LaTeX Info: Redefining \nameref on input line 122.
 
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.out)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.out)
@@ -1076,61 +1078,61 @@ LaTeX Info: Redefining \nameref on input line 118.
 .................................................
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 118.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 118.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 118.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 118.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 118.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 118.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 118.
-LaTeX Font Info:    Redeclaring math accent \check on input line 118.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 118.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 118.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 118.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 118.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 122.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 122.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 122.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 122.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 122.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 122.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 122.
+LaTeX Font Info:    Redeclaring math accent \check on input line 122.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 122.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 122.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 122.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 122.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 118.
+(Font)              `operators' in the math version `normal' on input line 122.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> EU1/lmr/m/n on input line 118.
+(Font)                  OT1/cmr/m/n --> EU1/lmr/m/n on input line 122.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 118.
+(Font)              `operators' in the math version `bold' on input line 122.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> EU1/lmr/m/n on input line 118.
+(Font)                  OT1/cmr/bx/n --> EU1/lmr/m/n on input line 122.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  EU1/lmr/m/n --> EU1/lmr/m/n on input line 118.
+(Font)                  EU1/lmr/m/n --> EU1/lmr/m/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  EU1/lmr/m/n --> EU1/lmr/m/n on input line 118.
+(Font)                  EU1/lmr/m/n --> EU1/lmr/m/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> EU1/lmr/m/it on input line 118.
+(Font)                  OT1/cmr/m/it --> EU1/lmr/m/it on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> EU1/lmr/bx/n on input line 118.
+(Font)                  OT1/cmr/bx/n --> EU1/lmr/bx/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 118.
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 118.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 122.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  EU1/lmr/m/n --> EU1/lmr/bx/n on input line 118.
+(Font)                  EU1/lmr/m/n --> EU1/lmr/bx/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  EU1/lmr/m/n --> EU1/lmr/bx/n on input line 118.
+(Font)                  EU1/lmr/m/n --> EU1/lmr/bx/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> EU1/lmr/bx/it on input line 118.
+(Font)                  OT1/cmr/bx/it --> EU1/lmr/bx/it on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 118.
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 122.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 118.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 122.
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\titre.tex
 Requested font "[lmroman7-regular]:mapping=tex-text" at 7.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman7-regular
@@ -1281,10 +1283,33 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ])
 \tf@toc=\write4
- [2] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.lof)
-\tf@lof=\write5
+ [2] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.lof
+Requested font "[lmroman10-regular]:mapping=tex-text" at 10.95pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-regula
+r.otf
+Requested font "Courier/ICU:" at 10.95pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
 
-[3
+Overfull \hbox (51.09196pt too wide) in paragraph at lines 12--12
+ [][] [][]\EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.mathexp
+lorer.lucene.analysis.analyzers 
+ []
+
+
+Overfull \hbox (57.66197pt too wide) in paragraph at lines 13--13
+ [][] [][]\EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.mathexp
+lorer.lucene.analysis.tokenizers 
+ []
+
+
+Overfull \hbox (37.95195pt too wide) in paragraph at lines 14--14
+ [][] [][]\EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.mathexp
+lorer.lucene.analysis.filters 
+ []
+
+)
+\tf@lof=\write5
+ [3
 
 ] [4
 
@@ -1330,123 +1355,144 @@ Overfull \hbox (35.58633pt too wide) in paragraph at lines 84--84
 
 ]
 Chapter 3.
+[15]
 Requested font "[lmroman8-bold]:mapping=tex-text" at 8.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman8-bold.ot
 f
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 23.
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 27.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\euenc\eu1lmtt.fd"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\euenc\eu1lmtt.fd"
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Requested font "[lmmono12-regular]" at 12.0pt
- -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmmono12-regular
+Requested font "[lmmono10-regular]" at 10.95pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmmono10-regular
 .otf
 
-Overfull \hbox (15.6594pt too wide) in alignment at lines 16--29
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+[]|[][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+[][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+Requested font "Courier/ICU:" at 8.0pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
+Requested font "Arial Unicode MS/ICU:" at 8.0pt
+ -> C:/Windows/Fonts/ARIALUNI.TTF
+
+Overfull \hbox (72.56491pt too wide) in alignment at lines 20--42
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 29
+Underfull \vbox (badness 10000) detected at line 42
  []
 
-[15]
-Overfull \hbox (5.30113pt too wide) in paragraph at lines 57--57
+[16]
+Overfull \hbox (5.30113pt too wide) in paragraph at lines 68--68
  []|\EU1/lmr/m/n/12 0.7.9alpha| 
  []
 
 
-LaTeX Warning: Citation `tex4ht1' on page 16 undefined on input line 59.
+LaTeX Warning: Citation `tex4ht1' on page 17 undefined on input line 70.
 
 
-Overfull \hbox (12.37222pt too wide) in paragraph at lines 61--61
+Overfull \hbox (12.37222pt too wide) in paragraph at lines 72--72
 []|\EU1/lmr/m/n/12 LaTeXmathML[[]]| 
  []
 
 
-Overfull \hbox (4.5722pt too wide) in paragraph at lines 63--63
+Overfull \hbox (4.5722pt too wide) in paragraph at lines 74--74
 []|\EU1/lmr/m/n/12 Maxtract[[]][[]]| 
  []
 
 
-Overfull \hbox (17.7842pt too wide) in paragraph at lines 65--65
+Overfull \hbox (17.7842pt too wide) in paragraph at lines 76--76
 []|\EU1/lmr/m/n/12 InftyReader[[]][[]]| 
  []
 
 
-Overfull \hbox (5.88522pt too wide) in paragraph at lines 65--65
+Overfull \hbox (5.88522pt too wide) in paragraph at lines 76--76
  []|\EU1/lmr/m/n/12 Commercial| 
  []
 
 
-Overfull \hbox (77.0435pt too wide) in alignment at lines 53--70
+Overfull \hbox (77.0435pt too wide) in alignment at lines 64--81
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 70
+Underfull \vbox (badness 10000) detected at line 81
  []
 
-[16] [17]
-Overfull \hbox (16.88113pt too wide) in paragraph at lines 92--92
+[17]
+Overfull \hbox (16.88113pt too wide) in paragraph at lines 103--103
  []|\EU1/lmr/bx/n/12 Expression 
  []
 
 
-Overfull \hbox (6.07724pt too wide) in paragraph at lines 95--97
+Overfull \hbox (6.07724pt too wide) in paragraph at lines 106--108
  []|\EU1/lmr/bx/n/12 Supported 
  []
 
 
-Overfull \hbox (14.42113pt too wide) in paragraph at lines 98--98
+Overfull \hbox (14.42113pt too wide) in paragraph at lines 109--109
  []|\EU1/lmr/m/n/12 Commercial| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
 []|\EU1/lmr/m/n/12 MatLab
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
 \EU1/lmr/m/n/12 (Symbolic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
 \EU1/lmr/m/n/12 Math
  []
 
 
-Overfull \hbox (12.1305pt too wide) in paragraph at lines 99--99
+Overfull \hbox (12.1305pt too wide) in paragraph at lines 110--110
  []|\EU1/lmr/m/n/12 Experimental| 
  []
 
 
-Overfull \hbox (14.42113pt too wide) in paragraph at lines 99--99
+Overfull \hbox (14.42113pt too wide) in paragraph at lines 110--110
  []|\EU1/lmr/m/n/12 Commercial| 
  []
 
 
-Overfull \hbox (10.6665pt too wide) in paragraph at lines 100--100
+Overfull \hbox (10.6665pt too wide) in paragraph at lines 111--111
 []|\EU1/lmr/m/n/12 Mathematica| 
  []
 
 
-Overfull \hbox (14.42113pt too wide) in paragraph at lines 100--100
+Overfull \hbox (14.42113pt too wide) in paragraph at lines 111--111
  []|\EU1/lmr/m/n/12 Commercial| 
  []
 
 
-Overfull \hbox (12.1305pt too wide) in paragraph at lines 101--101
+Overfull \hbox (12.1305pt too wide) in paragraph at lines 112--112
  []|\EU1/lmr/m/n/12 Experimental| 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 106
+Underfull \vbox (badness 10000) detected at line 117
  []
 
-) [18] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.tex
+[18]) [19]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.tex
+[20
+
+
+
+]
 Chapter 4.
 Requested font "[lmroman12-regular]:mapping=tex-text" at 14.4pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-regula
@@ -1454,17 +1500,7 @@ r.otf
 Requested font "[lmroman12-bold]:mapping=tex-text" at 14.4pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-bold.o
 tf
-[19
-
-
-
-]
-Requested font "[lmroman10-regular]:mapping=tex-text" at 10.95pt
- -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-regula
-r.otf
-Requested font "[lmmono10-regular]" at 10.95pt
- -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmmono10-regular
-.otf
+[21]
 Requested font "cmmi10" at 10.95pt
  -> cmmi10
 Requested font "cmsy10" at 10.95pt
@@ -1477,9 +1513,9 @@ Requested font "msbm10" at 10.95pt
  -> msbm10
 Requested font "cmr10" at 10.95pt
  -> cmr10
- [20]) [21]
+ [22]) [23]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.tex
-[22
+[24
 
 
 
@@ -1487,15 +1523,15 @@ Requested font "cmr10" at 10.95pt
 Chapter 5.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2.
+(hyperref)                removing `math shift' on input line 1.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 2.
+(hyperref)                removing `superscript' on input line 1.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2.
+(hyperref)                removing `math shift' on input line 1.
 
 Requested font "[lmroman17-regular]:mapping=tex-text" at 20.74pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman17-regula
@@ -1524,329 +1560,331 @@ Requested font "cmr17" at 24.88pt
  -> cmr17
 Requested font "cmr17" at 20.74pt
  -> cmr17
-[23]
+[25]
 Requested font "Arial Unicode MS/ICU:" at 12.0pt
  -> C:/Windows/Fonts/ARIALUNI.TTF
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--36
+Underfull \hbox (badness 10000) in paragraph at lines 33--33
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 36--36
+Underfull \hbox (badness 5231) in paragraph at lines 33--33
 \EU1/lmr/m/n/12 LETTER A WITH
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--38
+Underfull \hbox (badness 10000) in paragraph at lines 35--35
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 38--38
+Underfull \hbox (badness 5231) in paragraph at lines 35--35
 \EU1/lmr/m/n/12 LETTER A WITH
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
 []|\EU1/lmr/m/n/12 ANGSTROM SIGN
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--48
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
 []|\EU1/lmr/m/n/12 DOUBLE-STRUCK
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 49--49
 []|\EU1/lmr/m/n/12 MATHEMATICAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--56
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 6300) in paragraph at lines 56--56
+Underfull \hbox (badness 6300) in paragraph at lines 53--53
 \EU1/lmr/m/n/12 CAPITAL LETTER
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
 []|\EU1/lmr/m/n/12 VULGAR FRAC-
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 58--58
+Underfull \hbox (badness 1694) in paragraph at lines 55--55
 \EU1/lmr/m/n/12 TION ONE QUAR-
  []
 
 
-Overfull \hbox (3.68114pt too wide) in paragraph at lines 58--58
+Overfull \hbox (3.68114pt too wide) in paragraph at lines 55--55
  \EU1/lmr/m/n/12 0x2044(/) 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
 []|\EU1/lmr/m/n/12 DIGIT ONE -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 []|\EU1/lmr/m/n/12 DIGIT ONE -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
+Underfull \hbox (badness 10000) in paragraph at lines 61--61
 \EU1/lmr/m/n/12 TION SLASH -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--70
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--74
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
 []|\EU1/lmr/m/n/12 PLANCK CON-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 []|\EU1/lmr/m/n/12 PLANCK CON-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
 []|\EU1/lmr/m/n/12 LATIN SMALL
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 80--80
+Underfull \hbox (badness 5231) in paragraph at lines 77--77
 \EU1/lmr/m/n/12 LETTER H WITH
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--82
+Underfull \hbox (badness 10000) in paragraph at lines 79--79
 []|\EU1/lmr/m/n/12 GREEK CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--88
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
 []|\EU1/lmr/m/n/12 DOUBLE INTE-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
 []|\EU1/lmr/m/n/12 CONTOUR INTE-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
 []|\EU1/lmr/m/n/12 WHITE DOWN-
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 94--94
+Underfull \hbox (badness 3000) in paragraph at lines 91--91
 \EU1/lmr/m/n/12 POINTING TRIAN-
  []
 
 
-Overfull \hbox (47.5717pt too wide) in alignment at lines 30--99
+Overfull \hbox (47.5717pt too wide) in alignment at lines 27--96
  [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 99
+Underfull \vbox (badness 10000) detected at line 96
  []
 
-[24] [25] [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 106--109
+[26] [27] [28] [29]
+Underfull \hbox (badness 10000) in paragraph at lines 103--106
 \EU1/lmr/m/n/12 is expanded into <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∮\EU1/lmr/
 m/n/12 </mo><mo>INTEGRALS</mo>,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--109
+Underfull \hbox (badness 10000) in paragraph at lines 103--106
 \EU1/lmr/m/n/12 similarly the token token <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∫
 \EU1/lmr/m/n/12 </mo> is expanded into
  []
 
 
-Underfull \hbox (badness 1635) in paragraph at lines 106--109
+Underfull \hbox (badness 1635) in paragraph at lines 103--106
 \EU1/lmr/m/n/12 <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∫\EU1/lmr/m/n/12 </mo><mo>I
 NTEGRALS</mo> and then both will have a
  []
 
 
-Underfull \hbox (badness 1270) in paragraph at lines 111--112
+Underfull \hbox (badness 1270) in paragraph at lines 108--109
 \EU1/lmr/m/n/12 measurements and we wanted to include this variability in our s
 ys-
  []
 
 
-Overfull \hbox (9.02411pt too wide) in paragraph at lines 111--112
+Overfull \hbox (9.02411pt too wide) in paragraph at lines 108--109
 \EU1/lmr/m/n/12 <mn>2.0135</mn><mn>2.014</mn><mn>2.01</mn><mn>2.0</mn>. 
  []
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
-
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
-
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
-
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
-
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 120.
-
-
 Underfull \vbox (badness 2065) has occurred while \output is active []
 
- [28]
+ [30]
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 117.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 117.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 117.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 117.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 117.
+
 Requested font "Courier/ICU:" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
+[31] [32] [33]
+Requested font "[lmmono12-regular]" at 12.0pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmmono12-regular
+.otf
 
-Underfull \vbox (badness 3039) has occurred while \output is active []
-
- [29]
-Requested font "Courier/ICU:" at 10.95pt
- -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
-
-Underfull \hbox (badness 4805) in paragraph at lines 151--168
+Underfull \hbox (badness 4805) in paragraph at lines 172--189
 \EU1/lmr/m/n/12 A human can easily identify that this corresponds to text and
  []
 
 
-Underfull \hbox (badness 7649) in paragraph at lines 151--168
+Underfull \hbox (badness 7649) in paragraph at lines 172--189
 \EU1/lmr/m/n/12 that should be inserted into a proper ”mbox” or ”text” 
 tag.
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 151--168
+Underfull \hbox (badness 4686) in paragraph at lines 172--189
 \EU1/lmr/m/n/12 In this case, the snippet produced the following MathML code:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 <math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo><
 /mo>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 <mi>r</mi><mo></mo><mi>e</mi></mrow><mo></mo><mrow><m
 i>s
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 </mi><mo></mo><mi>h</mi><mo></mo><mi>o</mi><mo></mo><
 mi>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 w</mi><mo></mo><mi>n</mi></mrow><mo>,</mo><mrow><mi>a
 </m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 i><mo></mo><mi>s</mi></mrow><mo></mo><mrow><mi>w</mi>
 <mo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 ></mo><mi>e</mi><mo></mo><mi>l</mi><mo></mo><mi>l</mi
 ></
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>s</mi></mr
 ow>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 <mo></mo><mrow><mi>t</mi><mo></mo><mi>h</mi><mo></mo>
 <mi
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 >e</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo><mi>e
 </m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 i><mo></mo><mi>i</mi><mo></mo><mi>g</mi><mo></mo><mi>
 h</
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 mi><mo></mo><mi>t</mi></mrow><mo></mo><mrow><mi>a</mi
 ><m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 o></mo><mi>n</mi><mo></mo><mi>d</mi></mrow><mo></mo><
 mro
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 w><mi>t</mi><mo></mo><mi>e</mi><mo></mo><mi>n</mi><mo
 ></
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--189
 \EU1/Courier(0)/m/n/10.95 mo><mi>s</mi><mo></mo><mi>i</mi><mo></mo><mi>o</mi><m
 o><
  []
 
-[30]) [31]
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex [32
+Requested font "[lmroman10-bold]:mapping=tex-text" at 10.95pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-bold.o
+tf
+
+LaTeX Warning: Reference `appendix-conf_files.' on page 34 undefined on input l
+ine 197.
+
+) [34] [35]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex [36
 
 
 
 ]
 Chapter 6.
-Requested font "[lmroman10-bold]:mapping=tex-text" at 10.95pt
- -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-bold.o
-tf
 
 Underfull \hbox (badness 10000) in paragraph at lines 21--21
 []|\EU1/lmr/m/n/10.95 Operative
@@ -1874,44 +1912,34 @@ Underfull \vbox (badness 10000) detected at line 28
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
-[]\EU1/lmr/m/n/10.95 We present results for three metrics: Partial precision (D
-oc-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
-\EU1/lmr/m/n/10.95 ument either partially relevant or completely relevant) $\OM
-L/cmm/m/it/10.95 P[] \OT1/cmr/m/n/10.95 =
- []
-
+ [37]
 File: figures/comparison_table.png Graphic file (type QTm)
+
 <use  "figures/comparison_table.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
+Underfull \hbox (badness 10000) in paragraph at lines 50--52
 [][]
  []
 
-[34] [35]
-Underfull \hbox (badness 7326) in paragraph at lines 76--76
+[38] [39]
+Underfull \hbox (badness 7326) in paragraph at lines 78--78
 []|\EU1/lmr/m/n/10.95 Index Size
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--76
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 \EU1/lmr/m/n/10.95 per equa-
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 76--77
+Underfull \hbox (badness 1552) in paragraph at lines 78--79
 []|\EU1/lmr/m/n/10.95 Avg. size
  []
 
 
-Underfull \vbox (badness 10000) detected at line 88
+Underfull \vbox (badness 10000) detected at line 90
  []
 
-) [36] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl
+) [40] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl
 Requested font "[lmroman10-italic]:mapping=tex-text" at 10.95pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-italic
 .otf
@@ -1921,7 +1949,7 @@ Underfull \hbox (badness 2460) in paragraph at lines 48--50
 [] [] [][][][] [] [][][][] [] [][][] []
  []
 
-[37
+[41
 
 
 ]
@@ -1930,17 +1958,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--121
 ][][][] [] [][][][][][][] [] [][][][] [] [][][][][][][][][] []
  []
 
-) [38]
+) [42]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.tex
 Appendix A.
-[39
+[43
 
 
-]) [40]
+]) [44]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.tex
 Appendix B.
-Requested font "Courier/ICU:" at 8.0pt
- -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
 Missing character: There is no ℏ in font Courier Regular/ICU!
 Missing character: There is no ψ in font Courier Regular/ICU!
 Missing character: There is no ψ in font Courier Regular/ICU!
@@ -1969,13 +1995,40 @@ Overfull \hbox (85.36855pt too wide) in alignment at lines 7--35
 Underfull \vbox (badness 10000) detected at line 35
  []
 
-[41
+[45
 
 
 
-]) [42]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
+]) [46] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex
+Appendix C.
+File: visio_drawings/analyzers.png Graphic file (type QTm)
+<use  "visio_drawings/analyzers.png" >
+Overfull \hbox (36.0879pt too wide) in paragraph at lines 7--7
+[]\EU1/lmr/m/n/12 Figure C.1: []Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.m
+athexplorer.lucene.analysis.analyzers
+ []
+
+File: visio_drawings/tokenizers.png Graphic file (type QTm)
+<use  "visio_drawings/tokenizers.png" >
+Overfull \hbox (42.65791pt too wide) in paragraph at lines 15--15
+[]\EU1/lmr/m/n/12 Figure C.2: []Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.m
+athexplorer.lucene.analysis.tokenizers
+ []
+
+File: visio_drawings/filters.png Graphic file (type QTm)
+<use  "visio_drawings/filters.png" >
+Overfull \hbox (22.94789pt too wide) in paragraph at lines 23--23
+[]\EU1/lmr/m/n/12 Figure C.3: []Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.m
+athexplorer.lucene.analysis.filters
+ []
+
+) [47
+
+
+
+] [48]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 154.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
  (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.aux
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\titre.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-introduction.aux)
@@ -1986,21 +2039,23 @@ ux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 149.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 149.
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 154.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 154.
+
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
  ) 
 Here is how much of TeX's memory you used:
- 24274 strings out of 429035
- 426456 string characters out of 3166907
- 546310 words of memory out of 3000000
- 27113 multiletter control sequences out of 15000+200000
- 18347 words of font info for 106 fonts, out of 3000000 for 9000
+ 24298 strings out of 429035
+ 427034 string characters out of 3166907
+ 548262 words of memory out of 3000000
+ 27123 multiletter control sequences out of 15000+200000
+ 18355 words of font info for 107 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 46i,13n,47p,10405b,978s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,13n,47p,10405b,1182s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main_doc.pdf (44 pages).
+Output written on main_doc.pdf (50 pages).

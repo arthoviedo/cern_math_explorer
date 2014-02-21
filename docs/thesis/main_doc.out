@@ -46,3 +46,7 @@
 \BOOKMARK [1][-]{section.A.1}{Solr\040Schema}{appendix.A}% 46
 \BOOKMARK [1][-]{section.A.2}{Solr\040configuration\040file}{appendix.A}% 47
 \BOOKMARK [0][-]{appendix.B}{Test\040equations}{}% 48
+\BOOKMARK [0][-]{appendix.C}{Detailed\040system\040architecture\040diagrams}{}% 49
+\BOOKMARK [1][-]{section.C.1}{Analyzers}{appendix.C}% 50
+\BOOKMARK [1][-]{section.C.2}{Tokenizers}{appendix.C}% 51
+\BOOKMARK [1][-]{section.C.3}{Filters}{appendix.C}% 52

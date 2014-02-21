@@ -4,23 +4,36 @@ In the previos chapter we presented different abstract models which can be suita
 In this section, we present different aspects that need to be considered when mapping from these theoretical models to a concrete implementation.
 
 \section{Digital Representations of Mathematics}
-When building any kind of information retrieval system, selecting the right representations of the data can affect the type of algorithms that one can use, the amount of storage, the quality of the data among other factors. Mathematical content is not an exception, and there are available different formats to encode a mathematical expression. One of the most common ways to represent mathematics in scientific documents, which suits CDS's domain, is \LaTeX. Another  important standard for the representation of mathematics is MathML, which was first proposed by the World Wide Web Consortium in 1998 as the recommended language to be used in web documents. One of the advantages of MathML over LaTeX, is the fact that it is an application of XML, which makes it very easy process algorithmically. There two different variations of MathML, presentation and content. The first one is oriented to the visual representation of the expression and the second one is more oriented to the semantics of the expression. OpenMath is another markup language to represent mathematics and can be used to compliment presentation MathML to add more semantic information.
+When building any kind of information retrieval system, selecting the right representations of the data can affect the type of algorithms that one can use, the amount of storage, the quality of the data among other factors. Mathematical content is not an exception, and there are available different formats to encode a mathematical expression. One of the most common ways to represent mathematics in scientific documents, which suits CDS's domain, is \LaTeX. 
 
-Table \ref{math_languages} presents a comparison on how different languages can express the expression $x^2 + y^2 = z^2$
+Another  important standard for the representation of mathematics is MathML, which was first proposed by the World Wide Web Consortium in 1998 as the recommended language to be used in web documents. One of the advantages of MathML over LaTeX, is the fact that it is an application of XML, which makes it very easy process algorithmically. There two different variations of MathML, presentation and content. The first one is oriented to the visual representation of the expression and the second one is more oriented to the semantics of the expression. Its main component is the <apply> tag which represents the function application . 
+
+OpenMath is yet another markup language to represent mathematics and can be used to compliment presentation MathML to add more semantic information. It is mainly used now for defining mathematical concepts into standard content dictionaries which can be imported. MathML is compatible with this dictionaries.
+
+Table \ref{math_languages} presents a comparison on how different languages can express the quadratic equation $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $
 
 
 \begin{longtable}{|m{3.5cm}|>
 {\centering\arraybackslash}m{3cm}|>
 {\centering\arraybackslash}m{3cm}|>
-{\centering\arraybackslash}m{3cm}|
+{\centering\arraybackslash}m{5cm}|
 }
 \hline 
 \textbf{\LaTeX} & 
 \textbf{Presentation MathML} & 
-\textbf{Content MathML} & 
+\textbf{Content MathML + Presentation Markups} & 
 \textbf{OpenMath}  \\ \hline
 
-\verb|$x^2 + y^2 = z^2$|&&&
+\scriptsize{\lstinline|$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $|}
+& \scriptsize{\codefont <math display="block"> <mrow>   <mi>x</mi>  <mo>=</mo>  <mfrac> <mrow> <mo>-</mo> <mi>b</mi> <mo>
+{\unicodefont \char"00B1} </mo> <msqrt> <msup> <mi>b</mi> <mn>2</mn> </msup> <mo>-</mo> <mn>4</mn> <mo></mo> <mi>a</mi> <mo></mo> <mi>c</mi> </msqrt> </mrow> <mrow> <mn>2</mn> <mo></mo> <mi>a</mi> </mrow> </mfrac> </mrow> </math>}
+&
+\scriptsize{\codefont <math> <apply> <eq/> <ci>x</ci> <csymbol> <mfrac> <apply> <minus/> <mi>b</mi> {\unicodefont \char"00B1} <mroot> <apply> <minus/> <csymbol> <msup> <mi>b</mi> <mn>2</mn> </msup> </csymbol> <csymbol> <mn>4</mn> <mo>\&times;</mo> <mi>a</mi> <mo>\&times;</mo> <mi>c</mi> </csymbol> </apply> <mrow></mrow> </mroot> </apply> <apply> <times/> <cn>2</cn> <ci>a</ci> </apply> </mfrac> </csymbol> </apply> </math> } 
+&
+\scriptsize{\codefont 
+<OMOBJ> <OMA> <OMS cd = "relation1" name="eq"/> <OMV name="x"/>
+    <OMA> <OMS cd="arith1" name="divide"/> <OMA> <OMS cd = "arith1" name="minus"/><OMA> <OMS cd = "arith1" name="times"/>
+          <OMA> <OMS cd = "arith1" name="times"/> <OMV name="b"/> <OMV name="+ALE-"/> </OMA> <OMA> <OMS cd="arith1" name="root"/> <OMA> <OMS cd = "arith1" name="minus"/> <OMA> <OMS cd="arith1" name="power"/> <OMV name="b"/> <OMI>2</OMI> </OMA> <OMA> <OMS cd = "arith1" name="times"/> <OMA> <OMS cd = "arith1" name="times"/> <OMI>4</OMI> <OMV name="a"/> </OMA> <OMV name="c"/> </OMA> </OMA> <OMA> <OMI> 2 </OMI> </OMA> </OMA> </OMA> <OMA> <OMS cd = "arith1" name="times"/> <OMI>2</OMI> <OMV name="a"/> </OMA> </OMA> </OMA> </OMOBJ>}
 \\
 \hline
 
@@ -28,9 +41,7 @@ Table \ref{math_languages} presents a comparison on how different languages can 
 \label{math_languages}
 \end{longtable}
 
-
-
-Because
+\LaTeX allows the most compact representations of the equations and it is the closest language to the community. However, its processing is not straightforward because a given equation can include multiple commands from different packages. Also there are several ways to represent the same set of symbols, either using its Unicode code-point or through embedded commands. Another difficulty are custom commands that users can define in the preamble of the document. In overall, the interpretation and processing of a mathematical expression in this language would require writing a complete compiler which is not the purpose of this work. MathML offers a better compromise between the length of the representation and the easiness to be processed.
 
 \section{Math Extraction Tools}
 One of the main steps in any information retrieval task is the extraction of the searchable content from the collection of documents. At CDS the most common storage format for publications is PDF. A big part of the harvested documents in CDS comes from the ArXiv pre-prints service and from here, the source code (\LaTeX) of the submissions is available for download. Smaller portions of other documents are stored in other formats like Microsoft Word, OpenOffice Documents.

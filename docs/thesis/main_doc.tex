@@ -70,7 +70,11 @@
 
 \newcommand{\otoprule}{\midrule[\heavyrulewidth]}
 
-
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
 
 
 \ifpdf
@@ -120,9 +124,9 @@
 %\maketitle
 %\begin{titlepage}
 %\fancyhf{}
-\include{titre}
 %\end{titlepage}
 %% start the show...
+\include{titre}
 \pagenumbering{roman}
 \setcounter{page}{1}
 \pagenumbering{arabic}
@@ -144,6 +148,7 @@
 \appendix
 \include{appendix-conf_files}
 \include{appendix-test_equations}
+\include{appendix-uml}
 
 \end{appendix}
 \end{document}

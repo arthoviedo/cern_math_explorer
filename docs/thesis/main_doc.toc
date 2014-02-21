@@ -11,49 +11,53 @@
 \contentsline {section}{\numberline {2.6}Tree Edit Distance}{12}{section.2.6}
 \contentsline {chapter}{\numberline {3}Technical Considerations}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}Digital Representations of Mathematics}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Math Extraction Tools}{16}{section.3.2}
-\contentsline {section}{\numberline {3.3}Computer Algebra Systems}{17}{section.3.3}
-\contentsline {chapter}{\numberline {4}Related Work}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}Status of MIR}{19}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}TREC}{19}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}TREC}{19}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}CLEF}{19}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}NTCIR}{19}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}Mathematical based search projects}{19}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}MIaS}{19}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}EgoMath}{20}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}DLMFSearch}{20}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}MathWebSearch}{20}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}LaTEXSearch}{20}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Other related projects and initiatives}{21}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}arXMLiv}{21}{subsection.4.3.1}
-\contentsline {chapter}{\numberline {5}$5e^{x+y}$(CDS)}{23}{chapter.5}
-\contentsline {section}{\numberline {5.1}Features Extraction}{23}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Notational Features}{23}{subsection.5.1.1}
-\contentsline {subsubsection}{Unicode Normalizing}{24}{section*.4}
-\contentsline {subsubsection}{Synonym Expansion}{28}{section*.5}
-\contentsline {subsubsection}{Numeric Approximation}{28}{section*.6}
-\contentsline {subsection}{\numberline {5.1.2}Structural Features}{29}{subsection.5.1.2}
-\contentsline {subsubsection}{Algebraic structures}{29}{section*.7}
-\contentsline {subsubsection}{Subscript/Superscript variations}{29}{section*.8}
-\contentsline {subsubsection}{Specific domain structures}{29}{section*.9}
-\contentsline {subsection}{\numberline {5.1.3}Development with Lucene/Solr}{30}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Integration with Mathematica}{30}{subsection.5.1.4}
-\contentsline {subsubsection}{Pattern Extraction}{30}{section*.10}
-\contentsline {subsubsection}{Recursive interpretation}{30}{section*.11}
-\contentsline {subsubsection}{Error handling}{30}{section*.12}
-\contentsline {subsubsection}{Timeout Handling}{30}{section*.13}
-\contentsline {subsection}{\numberline {5.1.5}Integration with CDS}{31}{subsection.5.1.5}
-\contentsline {chapter}{\numberline {6}Evaluation}{33}{chapter.6}
-\contentsline {section}{\numberline {6.1}Dataset}{33}{section.6.1}
-\contentsline {section}{\numberline {6.2}Setup}{33}{section.6.2}
-\contentsline {section}{\numberline {6.3}Results quality}{34}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Equations}{34}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Comparison against other systems}{34}{section.6.4}
-\contentsline {section}{\numberline {6.5}Querying Performance}{34}{section.6.5}
-\contentsline {section}{\numberline {6.6}Indexing Performance}{34}{section.6.6}
-\contentsline {chapter}{Bibliographie}{37}{table.6.2}
-\contentsline {chapter}{\numberline {A}Configuration files}{39}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Schema}{39}{section.A.1}
-\contentsline {section}{\numberline {A.2}Solr configuration file}{40}{section.A.2}
-\contentsline {chapter}{\numberline {B}Test equations}{41}{appendix.B}
+\contentsline {section}{\numberline {3.2}Math Extraction Tools}{17}{section.3.2}
+\contentsline {section}{\numberline {3.3}Computer Algebra Systems}{18}{section.3.3}
+\contentsline {chapter}{\numberline {4}Related Work}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Status of MIR}{21}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}TREC}{21}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}TREC}{21}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}CLEF}{21}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}NTCIR}{21}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Mathematical based search projects}{21}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}MIaS}{21}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}EgoMath}{22}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}DLMFSearch}{22}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}MathWebSearch}{22}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}LaTEXSearch}{22}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}Other related projects and initiatives}{23}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}arXMLiv}{23}{subsection.4.3.1}
+\contentsline {chapter}{\numberline {5}$5e^{x+y}$(CDS)}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Features Extraction}{25}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Notational Features}{25}{subsection.5.1.1}
+\contentsline {subsubsection}{Unicode Normalizing}{26}{section*.4}
+\contentsline {subsubsection}{Synonym Expansion}{30}{section*.5}
+\contentsline {subsubsection}{Numeric Approximation}{30}{section*.6}
+\contentsline {subsection}{\numberline {5.1.2}Structural Features}{31}{subsection.5.1.2}
+\contentsline {subsubsection}{Algebraic structures}{31}{section*.7}
+\contentsline {subsubsection}{Subscript/Superscript variations}{31}{section*.8}
+\contentsline {subsubsection}{Specific domain structures}{31}{section*.9}
+\contentsline {subsection}{\numberline {5.1.3}Development with Lucene/Solr}{32}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Integration with Mathematica}{33}{subsection.5.1.4}
+\contentsline {subsubsection}{Pattern Extraction}{33}{section*.10}
+\contentsline {subsubsection}{Recursive interpretation}{33}{section*.11}
+\contentsline {subsubsection}{Error handling}{33}{section*.12}
+\contentsline {subsubsection}{Timeout Handling}{34}{section*.13}
+\contentsline {subsection}{\numberline {5.1.5}Integration with CDS}{34}{subsection.5.1.5}
+\contentsline {chapter}{\numberline {6}Evaluation}{37}{chapter.6}
+\contentsline {section}{\numberline {6.1}Dataset}{37}{section.6.1}
+\contentsline {section}{\numberline {6.2}Setup}{37}{section.6.2}
+\contentsline {section}{\numberline {6.3}Results quality}{38}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Equations}{38}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}Comparison against other systems}{38}{section.6.4}
+\contentsline {section}{\numberline {6.5}Querying Performance}{38}{section.6.5}
+\contentsline {section}{\numberline {6.6}Indexing Performance}{38}{section.6.6}
+\contentsline {chapter}{Bibliographie}{41}{table.6.2}
+\contentsline {chapter}{\numberline {A}Configuration files}{43}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Schema}{43}{section.A.1}
+\contentsline {section}{\numberline {A.2}Solr configuration file}{44}{section.A.2}
+\contentsline {chapter}{\numberline {B}Test equations}{45}{appendix.B}
+\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{47}{appendix.C}
+\contentsline {section}{\numberline {C.1}Analyzers}{47}{section.C.1}
+\contentsline {section}{\numberline {C.2}Tokenizers}{47}{section.C.2}
+\contentsline {section}{\numberline {C.3}Filters}{47}{section.C.3}

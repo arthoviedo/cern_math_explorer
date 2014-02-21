@@ -1,4 +1,3 @@
-
 \chapter{$5e^{x+y}$(CDS)}
 \label{chapter-cern_math_explorer}
 In this chapter we present our solution called $5e^{x+y}$(CDS). We present the key points of our system, and how they are related to previous built systems.
@@ -11,9 +10,7 @@ Our main goal is to develop a system that compliments the already available sear
 Notational features correspond to the elements that relate to the actual naming of the variables, constants and numeric quantities found in an equation. Here we extract tokens that represent single leaf nodes (E.g. <mi>, <mn>, <mo> tags), and simple constructs like subscript and superscript elements, fractions, roots.
 We also extract bi-grams and tri-grams as analogue to that is done for text indexing in current systems.
 
-After examining a set of relevant documents from our dataset, we identified some heuristics that could be applied to improve the recall of our system:
-
-
+After examining a set of documents from our dataset, we identified some heuristics that could be applied to improve the recall of our system:
 
 \subsubsection{Unicode Normalizing} 
 The first issue we discovered is that because of the big wide of different characters to represent the possible mathematical symbols, there is need for an automatic way to match different possible variations of a single character. An example of this situation is specification of an natural number, sometimes denoted by the letter N. In this case, at least three different common representations were identified: $ N = 1 $ (Using character with unicode code point 0x004e), $\mathcal{N} = 1$ (0xd835 0xdc41 or in latex expressed as \lstinline|\mathcal{N}|) and $\mathbb{N} = 1$ (0x2115 or in latex expressed as \lstinline|\mathbb{N}|). \\
@@ -112,12 +109,12 @@ Some equations relate specific numeric quantities. While most of the previously 
 
 
 \subsection{Structural Features}
-
+The structure of a mathematical equations is one of the most important features that can be extracted. 
 
 \subsubsection{Algebraic structures}
 The first set of structures consist on purely algebraic relationships between the expressions.
 Inspired by predefined integral tables for different kinds of expressions, we decided to extract from a given equation, whether it has the occurrence of these kind of patterns.
-An example of this type of structures would be: $X\textunderscore*(X\textunderscore + A\textunderscore)$ where $X\textunderscore$ and $A\textunderscore$ can be any type of expression. Sample equations matching this pattern can be $C (C+1)$ or $\frac{(\sin{\theta}\cos{\theta})^2}{2a} (\frac{(\sin{\theta}\cos{\theta})^2}{2a} + \tan{\frac{\theta+\phi}{2}})$. This structural analysis of equations is more powerful than the unification of variables and constants proposed in previously discussed projects because these patterns, as shown in the second example, can match an arbitrary complex expression. The drawback of our solution is the need to manually select representative and useful patterns. This selection was done based on standard based tables of integrals similar to the ones that Computational Algebraic Systems employ to compute them.
+An example of this type of structures would be: $X\textunderscore*(X\textunderscore + A\textunderscore)$ where $X\textunderscore$ and $A\textunderscore$ can be any type of expression. Sample equations matching this pattern can be $C (C+1)$ or $\frac{(\sin{\theta}\cos{\theta})^2}{2a} (\frac{(\sin{\theta}\cos{\theta})^2}{2a} + \tan{\frac{\theta+\phi}{2}})$. This structural analysis of equations is more powerful than the unification of variables and constants proposed in previously discussed projects because these patterns, as shown in the second example, can match an arbitrary complex expression. The drawback of our solution is the need to manually select representative and useful patterns. This selection was done based on standard based tables of integrals similar to the ones that CASs employ to compute them.
 
 \subsubsection{Subscript/Superscript variations}
 This set of structures represent common operations that cat appear in a given expression, but its identification is based on notation factors. A simple example of this can be the matrix decomposition $A = VDV^{-1}$ where the actual name of the variables $A$ and $V$ is not meaningful but the real importance is the fact that a given variable appears alongside its inverse in a matrix multiplication form. We would like to assign a partial match to any other kind of this decomposition say $B = MRM^{-1}$. these types of structures live in-between the notational and structural categories but since we identify them using Mathematica, we encompass them as structural features. For this type of structures, we identify simple operations between an element and some possible variations of the same element with some subscript/superscript.
@@ -127,9 +124,33 @@ Additionally, we identified patterns that are relevant and frequent in specific 
 
 
 \subsection{Development with Lucene/Solr}
-This section explains how the described features were implemented in the {\codefont Apache Solr/Lucene} framework.
+This section explains how the described components were implemented in the {\codefont Apache Solr/Lucene} framework.
+One focus of our work was to develop a modular system that allowed easily to deploy new heuristics as they were identified. 
+
+Lucene framework defines some key concepts which ultimately are mapped into concrete classes. A {\codefont Document} is the minimum retrieval unit. For $5e^{x+y}$ we could either use a complete article as a document or a single equation. We choose the latter because it makes easier to focus on extracting features from a single equation. A document contains a set of {\codefont fields} which represent different types of information that it can store. Each field has different options such as whether it would be indexed and/or stored. A field can also indicate whether it will be a {\codefont Term Vector}. Our fields are as follow: 
+\begin{itemize}
+\item math\_notational\_field: This field stores the notational features as a Term Vector. 
+\item math\_structural\_field: This field stores the structural features as a Term Vector. 
+\item math\_normalized\_notational\_field: This field stores the notational features of the normalized expression as a Term Vector. 
+\item filename: This is an auxiliary field which stores the CDS record / article name where the equation was found.
+\item number\_occurrences: Another auxiliary field that is used to score final results.
+\end{itemize} 
+
+Each field is associated to a particular {\codefont Analyzer}. An analyzer is a specific class that handles an element from a field and groups all the operations that are to be performed. For this purpose we wrote {\codefont SolrNotationalAnalyzer}, {\codefont SolrStructuralAnalyzer} and {\codefont SolrNormalizedNotationalAnalyzer}. 
+The Solr prefix is added to make clear the fact that the class extends a {\codefont SolrAnalyzer} which extends a normal lucene {\codefont Analyzer}. 
+
+An analyzer consists of a sequence of {\codefont TokenStrem} elements. Normally an analyzer contains one {\codefont Tokenizer} element (which extends a {\codefont TokenStrem}) that is in charge of creating the Terms that will be stored in the field, and one or more {\codefont TokenFilter} elements which perform operations on the single tokens that were created previously. For the specific cases of SolrNotationalAnalyzer and SolrNormalizedNotationalAnalyzer we created the following classes: 
+
+\begin{itemize}
+\item {\codefont MultiplePatternTokenizer}: This class is in charge of applying a set of regular expressions over the given expression in order to extract the single elements that were presented. Lucene incorporates the class {\codefont PatternTokenizer} but it only accepts one regular expression.
+\item {\codefont UnicodeNormalizingFilter}: This class receives single tokens and verifies if the token is in Unicode NFKD. In negative case, it emits an additional token in the normalized form.
+\item {\codefont SynonymExpandingFilter}: This class verifies if the received token belongs to a predefined category of elements and emits an additional token with it.
+\item {\codefont NumericalRoundingFilter}: This class process {\codefont <mn>} tokens. When a number contains a decimal part, it applies the standard rounding mode iteratively and for each one, it emits a token for each step. 
+\end{itemize}
+
+{\codefont SolrStructuralAnalyzer } is simpler in its workflow: It consits of a {\codefont StructuralPatternsTokenizer} that tries to find occurrences of the predefined patterns in the expression. For each match, it emits a token with the pattern that was found. 
 \subsection{Integration with Mathematica}
-This section describes some aspects that should be had to be considered while implementing the integration with the Mathematica CAS. Our system uses the provided {\codefont JLink} library to create a connection with the underlying process {\codefont MathKernel}. The main class for communicating java code and {\codefont Mathematica} is {\codefont KernelLink} and the main used method was {\codefont evaluateToOutputForm(String expr, int pageWidth)} where {\codefont expr} is the expression to be evaluated and {\codefont pageWidth} affects the formatting of the result.
+This section describes some aspects that had to be considered while implementing the integration with Mathematica. Our system uses the {\codefont JLink} library to create a connection with the underlying process {\codefont MathKernel}. The main class for communicating java code and {\codefont Mathematica} is {\codefont KernelLink} and the main used method was {\codefont evaluateToOutputForm(String expr, int pageWidth)} where {\codefont expr} is the expression to be evaluated and {\codefont pageWidth} affects the formatting of the result.
 
 \subsubsection{Pattern Extraction}
 
@@ -171,3 +192,7 @@ In the ideal case we would be able to identify the malformed expressions and pas
 As a remedial situation, we used a fixed timeout to stop the processing of a given expression.
 
 \subsection{Integration with CDS}
+Currently the Invenio code-base is being under a deep refactoring and rewriting. CDS currently runs in the stable branch {\codefont master} while the new developments are preferred to be implemented in the new branch {\codefont pu}. 
+A demo interface over the new branch was developed to showcase the system, however to have a complete integration with CDS, a more deep work is required. 
+Our system is deployed as a standalone jar which should be incorporated into a Solr instance. Also, some extra configurations should be added. Details on this can be found in appendix \ref{appendix-conf_files.}
+The communication between Solr and Invenio was through the library {\codefont solrpy}. 
