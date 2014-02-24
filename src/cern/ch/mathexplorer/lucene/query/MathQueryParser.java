@@ -151,7 +151,12 @@ public class MathQueryParser extends QParser {
 
 	public static String texToMathML(String texText) throws IOException {
 		texText = texText.trim();
-		texText.replaceAll("\\$\\$", "$");
+		if (texText.startsWith("$$")){
+			texText.replace("$$", "$");
+		}
+		if (texText.endsWith("$$")){
+			texText.replace("$$", "$");
+		}
 		if (!texText.endsWith("$")) {
 			texText += "$";
 		}
@@ -168,8 +173,7 @@ public class MathQueryParser extends QParser {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String query = Regex
-				.cleanQuery(texToMathML("\\left(\\beta mc^2 + c(\\alpha_1 p_1 + \\alpha_2 p_2 + \\alpha_3 p_3)\\right) \\psi (x,t) = i \\hbar \\frac{\\partial\\psi(x,t) }{\\partial t}"));
+		String query = Regex.cleanQuery(texToMathML("$$ A+B $$"));
 		MathQueryParser mqp = new MathQueryParser(query, null, null, null);
 		mqp.parse();
 	}
