@@ -169,7 +169,7 @@ public class MathQueryParser extends QParser {
 
 	public static void main(String[] args) throws Exception {
 		String query = Regex
-				.cleanQuery(texToMathML("G_{\\mu\\nu}\\equiv R_{\\mu\\nu} - {\\textstyle 1 \\over 2}R\\,g_{\\mu\\nu} = {8 \\pi G \\over c^4} T_{\\mu\\nu}"));
+				.cleanQuery(texToMathML("\\left(\\beta mc^2 + c(\\alpha_1 p_1 + \\alpha_2 p_2 + \\alpha_3 p_3)\\right) \\psi (x,t) = i \\hbar \\frac{\\partial\\psi(x,t) }{\\partial t}"));
 		MathQueryParser mqp = new MathQueryParser(query, null, null, null);
 		mqp.parse();
 	}

@@ -98,6 +98,20 @@ Jozef Mi\v{s}utka and Leo Galambo\v{s}.
   Conference on Intelligent Computer Mathematics}, MKM'11, pages 307--309,
   Berlin, Heidelberg, 2011. Springer-Verlag.
 
+\bibitem{handbook}
+F.~W.~J. Olver, D.~W. Lozier, R.~F. Boisvert, and C.~W. Clark, editors.
+\newblock {\em {NIST Handbook of Mathematical Functions}}.
+\newblock Cambridge University Press, New York, NY, 2010.
+\newblock Print companion to \cite{NIST:DLMF}.
+
+\bibitem{dlmf2}
+BruceR. Miller.
+\newblock Three years of dlmf: Web, math and search.
+\newblock In Jacques Carette, David Aspinall, Christoph Lange, Petr Sojka, and
+  Wolfgang Windsteiger, editors, {\em Intelligent Computer Mathematics}, volume
+  7961 of {\em Lecture Notes in Computer Science}, pages 288--295. Springer
+  Berlin Heidelberg, 2013.
+
 \bibitem{mathwebsearch}
 Michael Kohlhase, BogdanA. Matican, and Corneliu-Claudiu Prodescu.
 \newblock Mathwebsearch 0.5: Scaling an open formula search engine.
@@ -118,5 +132,26 @@ Xah Lee.
 \newblock Unicode: Math symbols, 2010.
 \newblock
   \url{http://web.archive.org/web/20131223003502/http://xahlee.info/comp/unicode_math_operators.html}.
+
+\bibitem{tree_comparison}
+Shahab Kamali and Frank~Wm. Tompa.
+\newblock Retrieving documents with mathematical content.
+\newblock In {\em Proceedings of the 36th International ACM SIGIR Conference on
+  Research and Development in Information Retrieval}, SIGIR '13, pages
+  353--362, New York, NY, USA, 2013. ACM.
+
+\bibitem{tree_distance_python}
+Tree edit distance using the zhang shasha algorithm, 2013.
+\newblock \url{https://github.com/timtadh/zhang-shasha}.
+
+\bibitem{rted}
+Mateusz Pawlik and Nikolaus Augsten.
+\newblock Rted: A robust algorithm for the tree edit distance.
+\newblock {\em Proc. VLDB Endow.}, 5(4):334--345, December 2011.
+
+\bibitem{dmlf}
+{NIST Digital Library of Mathematical Functions}.
+\newblock http://dlmf.nist.gov/, Release 1.0.6 of 2013-05-06.
+\newblock Online companion to \cite{Olver:2010:NHMF}.
 
 \end{thebibliography}

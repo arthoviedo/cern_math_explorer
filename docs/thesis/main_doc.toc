@@ -58,11 +58,13 @@
 \contentsline {chapter}{\numberline {7}Conclusions}{43}{chapter.7}
 \contentsline {chapter}{\numberline {8}Future work}{45}{chapter.8}
 \contentsline {chapter}{Bibliographie}{46}{chapter.8}
-\contentsline {chapter}{\numberline {A}Configuration files}{49}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Schema}{49}{section.A.1}
-\contentsline {section}{\numberline {A.2}Solr configuration file}{50}{section.A.2}
-\contentsline {chapter}{\numberline {B}Test equations}{51}{appendix.B}
-\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{53}{appendix.C}
-\contentsline {section}{\numberline {C.1}Analyzers}{53}{section.C.1}
-\contentsline {section}{\numberline {C.2}Tokenizers}{53}{section.C.2}
-\contentsline {section}{\numberline {C.3}Filters}{53}{section.C.3}
+\contentsline {chapter}{\numberline {A}Configuration files}{51}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Schema}{51}{section.A.1}
+\contentsline {section}{\numberline {A.2}Solr configuration file}{52}{section.A.2}
+\contentsline {chapter}{\numberline {B}Test equations}{53}{appendix.B}
+\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{55}{appendix.C}
+\contentsline {section}{\numberline {C.1}Analyzers}{55}{section.C.1}
+\contentsline {section}{\numberline {C.2}Tokenizers}{55}{section.C.2}
+\contentsline {section}{\numberline {C.3}Filters}{55}{section.C.3}
+\contentsline {section}{\numberline {C.4}Query Parsers}{55}{section.C.4}
+\contentsline {section}{\numberline {C.5}Packages Relations}{55}{section.C.5}

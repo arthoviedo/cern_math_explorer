@@ -1,7 +1,7 @@
 \chapter{Detailed system architecture diagrams}
 
 \section{Analyzers}
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\includegraphics[height=4 cm]{visio_drawings/analyzers.png}
 	\caption{Overview of {\small{\codefont cern.ch.mathexplorer.lucene.analysis.analyzers}} package}
@@ -9,7 +9,7 @@
 \end{figure}
 
 \section{Tokenizers}
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\includegraphics[height=4 cm]{visio_drawings/tokenizers.png}
 	\caption{Overview of {\small{\codefont cern.ch.mathexplorer.lucene.analysis.tokenizers}} package}
@@ -17,9 +17,25 @@
 \end{figure}
 
 \section{Filters}
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\includegraphics[height=4 cm]{visio_drawings/filters.png}
 	\caption{Overview of {\small{\codefont cern.ch.mathexplorer.lucene.analysis.filters}} package}
+	\label{uml_filters}
+\end{figure}
+
+\section{Query Parsers}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[height=4 cm]{visio_drawings/query.png}
+	\caption{Overview of {\small{\codefont cern.ch.mathexplorer.lucene.query}} package}
+	\label{uml_filters}
+\end{figure}
+
+\section{Packages Relations}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[height=12 cm]{visio_drawings/main_packages.png}
+	\caption{Overview of the relations between the main packages}
 	\label{uml_filters}
 \end{figure}
