@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  21 FEB 2014 17:06
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  24 FEB 2014 14:08
 entering extended mode
 **main_doc.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
@@ -996,11 +996,8 @@ ux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.aux
-
-LaTeX Warning: Label `chapter-conclusions' multiply defined.
-
-) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
@@ -1954,20 +1951,41 @@ Underfull \hbox (badness 1552) in paragraph at lines 78--79
 Underfull \vbox (badness 10000) detected at line 90
  []
 
-) [40] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.tex
-Chapter 7.
-) [41
+
+LaTeX Warning: Citation `tree_comparison' on page 40 undefined on input line 95
+.
 
 
+LaTeX Warning: Citation `tree_distance_python' on page 40 undefined on input li
+ne 95.
 
-] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.tex
+[40]
+Overfull \hbox (34.75902pt too wide) in alignment at lines 99--115
+ [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 115
+ []
+
+
+LaTeX Warning: Citation `rted' on page 41 undefined on input line 117.
+
+) [41] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.tex
 [42
 
 
 
 ]
+Chapter 7.
+) [43] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.tex
+[44
+
+
+
+]
 Chapter 8.
-) [43] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl [44
+) [45] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl [46
 
 
 ]
@@ -1980,19 +1998,19 @@ Underfull \hbox (badness 2460) in paragraph at lines 48--50
 [] [] [][][][] [] [][][][] [] [][][] []
  []
 
-[45]
+[47]
 Underfull \hbox (badness 10000) in paragraph at lines 117--121
 [][][][][][][][][][][][][][] [] [][][][] [] [] [] [][][][][][] [] [][][][] [] [
 ][][][] [] [][][][][][][] [] [][][][] [] [][][][][][][][][] []
  []
 
-) [46]
+) [48]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.tex
 Appendix A.
-[47
+[49
 
 
-]) [48]
+]) [50]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.tex
 Appendix B.
 Missing character: There is no ℏ in font Courier Regular/ICU!
@@ -2023,11 +2041,11 @@ Overfull \hbox (85.36855pt too wide) in alignment at lines 7--35
 Underfull \vbox (badness 10000) detected at line 35
  []
 
-[49
+[51
 
 
 
-]) [50] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex
+]) [52] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex
 Appendix C.
 File: visio_drawings/analyzers.png Graphic file (type QTm)
 <use  "visio_drawings/analyzers.png" >
@@ -2050,11 +2068,11 @@ Overfull \hbox (22.94789pt too wide) in paragraph at lines 23--23
 athexplorer.lucene.analysis.filters
  []
 
-) [51
+) [53
 
 
 
-] [52]
+] [54]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
  (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.aux
@@ -2077,18 +2095,15 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 158.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 158.
  ) 
 Here is how much of TeX's memory you used:
- 24319 strings out of 429035
- 427695 string characters out of 3166907
- 549448 words of memory out of 3000000
- 27130 multiletter control sequences out of 15000+200000
+ 24325 strings out of 429035
+ 427791 string characters out of 3166907
+ 549653 words of memory out of 3000000
+ 27136 multiletter control sequences out of 15000+200000
  18355 words of font info for 107 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  46i,13n,47p,10405b,1182s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main_doc.pdf (54 pages).
+Output written on main_doc.pdf (56 pages).

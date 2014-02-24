@@ -54,14 +54,15 @@
 \contentsline {section}{\numberline {6.4}Comparison against other systems}{38}{section.6.4}
 \contentsline {section}{\numberline {6.5}Querying Performance}{38}{section.6.5}
 \contentsline {section}{\numberline {6.6}Indexing Performance}{38}{section.6.6}
-\contentsline {chapter}{\numberline {7}Conclusions}{41}{chapter.7}
-\contentsline {chapter}{\numberline {8}Conclusions}{43}{chapter.8}
-\contentsline {chapter}{Bibliographie}{44}{chapter.8}
-\contentsline {chapter}{\numberline {A}Configuration files}{47}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Schema}{47}{section.A.1}
-\contentsline {section}{\numberline {A.2}Solr configuration file}{48}{section.A.2}
-\contentsline {chapter}{\numberline {B}Test equations}{49}{appendix.B}
-\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{51}{appendix.C}
-\contentsline {section}{\numberline {C.1}Analyzers}{51}{section.C.1}
-\contentsline {section}{\numberline {C.2}Tokenizers}{51}{section.C.2}
-\contentsline {section}{\numberline {C.3}Filters}{51}{section.C.3}
+\contentsline {section}{\numberline {6.7}Alternative Metrics}{40}{section.6.7}
+\contentsline {chapter}{\numberline {7}Conclusions}{43}{chapter.7}
+\contentsline {chapter}{\numberline {8}Future work}{45}{chapter.8}
+\contentsline {chapter}{Bibliographie}{46}{chapter.8}
+\contentsline {chapter}{\numberline {A}Configuration files}{49}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Schema}{49}{section.A.1}
+\contentsline {section}{\numberline {A.2}Solr configuration file}{50}{section.A.2}
+\contentsline {chapter}{\numberline {B}Test equations}{51}{appendix.B}
+\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{53}{appendix.C}
+\contentsline {section}{\numberline {C.1}Analyzers}{53}{section.C.1}
+\contentsline {section}{\numberline {C.2}Tokenizers}{53}{section.C.2}
+\contentsline {section}{\numberline {C.3}Filters}{53}{section.C.3}

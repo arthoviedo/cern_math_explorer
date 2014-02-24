@@ -91,10 +91,30 @@ N+S+FN & 1377 & 25548 & 0.122 & 2.269 \\
 
 
 
+\section{Alternative Metrics}
+According to some experimental evaluations presented in \cite{tree_comparison}, Tree Edit Distance provides an interesting alternative metric to the standard vector space model using angular distance. In this work, authors present an improvement in the quality of retrieved results compared to the classic approach of indexing the single leaves of the tree and a subset of the possible sub-trees. For evaluating the feasibility of this approach we compared a set of equations using both metrics: Tree edit distance (Using Zheng and Shasha's algorithm implemented in python \cite{tree_distance_python}.) and a standard angular distance that was not heavily optimized. We compared elapsed times for expressions of different length.
 
 
 
+\begin{longtable}{|c|c|c|}
+\hline 
+Expression Length & Angular Distance Time (msec) & Tree Edit Distance Time(msec) \\ \hline 
+70 & 0.01195 & 2.65  \\ \hline
+145 & 0.0142 & 9.97  \\ \hline
+155 & 0.0129 & 9.165  \\ \hline
+185 & 0.0173 & 8.925  \\ \hline
+267 & 0.0194 & 15.15  \\ \hline
+405 & 0.0201 & 29.5  \\ \hline
+406 & 0.0245 & 27.75  \\ \hline
+442 & 0.0236 & 30.95  \\ \hline
+522 & 0.0264 & 32.4  \\ \hline
+719 & 0.02502 & 32.1 \\ \hline
 
+\caption{Distance computation using two different metrics}
+\label{comparison_tree_times}
+\end{longtable} 
+
+This result show that for shorter expressions, using tree edit distance represent an increase in time in more than 200x, and a factor of around 1200x for the longer expressions, making it impractical for implementing a system that needs to be responsive. Even though there are algorithms which provide a better asymptotic guarantees and better actual running times like RTED\cite{rted} with respect to Zheng ans Shasha's algorithm, the best improvements represent a decrease in processing time of 50\% to 80\% in trees with around 1000 nodes, while the standard tested equations which are representative of our dataset, contain less than 100 nodes.
 
 
 
