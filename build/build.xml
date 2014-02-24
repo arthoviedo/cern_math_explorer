@@ -1,0 +1,94 @@
+<project name="mathmlexplorer" basedir="." default="buildJar">
+	<property name="dist" value="../dist"/>
+	<property name ="src_home" value = "../src/cern/ch/mathexplorer"/>
+
+	<property file="build.properties"/>
+
+	<target name="clean">
+		<delete dir="${dist}"/>
+	</target>
+
+	<target name="clean_after">
+		<delete dir="${dist}/cern"/>
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${dist}"/>
+	</target>
+
+	<target name="compileUtils" depends="init">
+		<!-- Compile the java code -->
+		<javac srcdir="${src_home}/utils" destdir="${dist}">
+			<classpath>
+				<pathelement location="../lib/commons-lang3-3.1.jar"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="compileAnalyzerLibraries" depends="init, compileUtils, compileMathematicaLibraries">
+		<!-- Compile the java code -->
+		<javac srcdir="${src_home}/lucene/analysis" destdir="${dist}">
+			<classpath>
+				<pathelement location="../lib/commons-lang3-3.1.jar"/>
+				<pathelement location="../lib/lucene-core-4.6-SNAPSHOT.jar"/>
+				<pathelement location="../lib/lucene-analyzers-common-4.6-SNAPSHOT.jar"/>
+				<pathelement location="../lib/solr-core-4.6.0.jar"/>
+				<pathelement location="../lib/solr-solrj-4.6.0.jar"/>
+				<pathelement location="../lib/JLink.jar"/>
+
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="compileMathematicaLibraries" depends="init, compileUtils">
+		<!-- Compile the java code -->
+		<javac srcdir="${src_home}/mathematica" destdir="${dist}">
+			<classpath>
+				<pathelement location="../lib/JLink.jar"/>
+				<pathelement location="../lib/commons-lang3-3.1.jar"/>
+
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="solr_mathexplorerJar" depends="compileAnalyzerLibraries, compileQueryLibraries, copy_source_files">
+		<!-- Build the jar file -->
+		<!--jar basedir="${build}" destfile="${build}/solr_mathexplorer.jar"/-->
+		<jar destfile="${dist}/solr_mathexplorer.jar" >
+			<fileset dir="${dist}" includes="**/*.class"/>
+			<fileset dir="${dist}" includes="**/*.java"/>
+		</jar>
+	</target>
+
+	<target name="compileQueryLibraries" depends="init, compileUtils">
+		<!-- Compile the java code -->
+		<javac srcdir="${src_home}/lucene/query" destdir="${dist}">
+			<classpath>
+				<pathelement location="../lib/commons-lang3-3.1.jar"/>
+				<pathelement location="../lib/lucene-core-4.6-SNAPSHOT.jar"/>
+				<pathelement location="../lib/lucene-analyzers-common-4.6-SNAPSHOT.jar"/>
+				<pathelement location="../lib/solr-core-4.6.0.jar"/>
+				<pathelement location="../lib/solr-solrj-4.6.0.jar"/>
+				<pathelement location="../lib/JLink.jar"/>
+				<pathelement location="../lib/snuggletex-core-1.2.2.jar"/>
+			</classpath>
+		</javac>
+	</target>
+	<!--target name="solrQueryJar" depends="compileQueryLibraries">
+		< Build the jar file >
+		<jar basedir="${build}" destfile="${build}/solrquery.jar"/>
+	</target-->
+
+	<target name="copy_source_files">
+		<copy todir="${dist}/cern/ch/mathexplorer/mathematica">
+			<fileset dir="${src_home}/mathematica/"/>
+		</copy>
+		<copy todir="${dist}/cern/ch/mathexplorer/lucene">
+			<fileset dir="${src_home}/lucene/"/>
+		</copy>
+		<copy todir="${dist}/cern/ch/mathexplorer/utils">
+			<fileset dir="${src_home}/utils/"/>
+		</copy>
+	</target>
+	<target name="buildJar" depends="solr_mathexplorerJar, clean_after"/>
+</project>
