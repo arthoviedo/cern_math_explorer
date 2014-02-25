@@ -92,6 +92,7 @@ public final class Constants implements Serializable {
 	public final static String SAMPLE_HEP_PROCESS = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>H</mi><mo>→</mo><msup><mi>W</mi><mo>+</mo>"
 			+ "</msup><msup><mi>W</mi><mo>-</mo></msup></math>";
 	public final static String SAMPLE_NUMERIC_ADDITION = "<math><mn>9</mn><mo>+</mo><mn>8</mn></math>";
+	public final static String NUMERIC_EQUALITY = "<math><mi>ω</mi><mn>1</mn><mo>=</mo><mn>0.00245889878</mn></math>";
 	public final static String SAMPLE_EQ_TIMEOUT = "<math alttext=\"{}^{(b)}High\\ Energy\\ Accelerator\\ Research\\ Organization\\ (KEK),\\ Tsukuba,\\ %Ibaraki,"
 			+ "\\ Japan\"><mrow><mrow><mmultiscripts><mi>H</mi><mprescripts/><none/><mrow><mo>(</mo><mi>b</mi><mo>)</mo></mrow></mmultiscripts><mo>⁢</mo><mi>i</mi>"
 			+ "<mo>⁢</mo><mi>g</mi><mo>⁢</mo><mi>h</mi></mrow><mo></mo><mrow><mi>E</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>g</mi><mo>"
@@ -118,6 +119,8 @@ public final class Constants implements Serializable {
 	public final static String SAMPLE_LATEX_EQ_4 = "$ \\bigtriangledown\\cdot\\overrightarrow{J_n} = q~R_{net} + q~\\frac{\\partial n}{\\partial t}$";
 	
 	public final static String SAMPLE_LATEX_EQ_5 = "$ X\\tau_{n,p} = \\tau_{min} + \\frac{\\tau_{max} - \\tau_{min}}{1 + (\\frac{N_A + N_D}{N_{ref}})^{\\gamma}} $";
+	
+	
 	
 	public static void main(String[] args) {
 		for (String s: SAMPLE_MATHML_EQUATIONS) {
@@ -202,6 +205,14 @@ public final class Constants implements Serializable {
 				"==",
 				"≡"
 				))),
+		GREATER_THAN(new HashSet<>(Arrays.asList(
+				">",	
+				"&gt;"
+				))),
+		SMALLER_THAN(new HashSet<>(Arrays.asList(
+				"<",	
+				"&lt;"
+				))),		
 		MULTIPLICATION(new HashSet<>(Arrays.asList(
 				"\u2062",	//Invisible times
 				//"*",		Needs to be considered in context

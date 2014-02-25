@@ -99,13 +99,6 @@ public class MathQueryParser extends QParser {
 		aLogger.info("Query before: " + qstr);
 		qstr = Regex.cleanQuery(qstr);
 
-		if (qstr.contains("FORMAT(latex)")) {
-			qstr = fromLatexToMathML();
-		} else {
-			qstr = qstr.replace("FORMAT(mathml)", "");
-		}
-
-
 		// remove after testing:
 		boolean onlyNotational = qstr.contains("MODE(N)");
 		// remove after testing:
@@ -116,6 +109,15 @@ public class MathQueryParser extends QParser {
 		boolean withFullNorm = qstr.contains("MODE(N+S+FN)");
 
 		qstr = qstr.replaceAll("MODE\\(.*?\\)", "");
+		
+		if (qstr.contains("FORMAT(latex)")) {
+			qstr = fromLatexToMathML();
+		} else {
+			qstr = qstr.replace("FORMAT(mathml)", "");
+		}
+
+
+
 		aLogger.info("Query after: " + qstr);
 
 		BooleanQuery query = new BooleanQuery();
@@ -173,7 +175,7 @@ public class MathQueryParser extends QParser {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String query = Regex.cleanQuery(texToMathML("$$ A+B $$"));
+		String query = "FORMAT(latex)MODE(N+S+NN)$$ A+B $$";
 		MathQueryParser mqp = new MathQueryParser(query, null, null, null);
 		mqp.parse();
 	}
