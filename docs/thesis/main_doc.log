@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  25 FEB 2014 19:10
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  25 FEB 2014 22:30
 entering extended mode
 **main_doc.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
@@ -1368,12 +1368,12 @@ Overfull \hbox (33.41919pt too wide) detected at line 20
  []
 
 [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 59--66
+Underfull \hbox (badness 10000) in paragraph at lines 61--68
 
  []
 
 [12]
-Overfull \hbox (35.58633pt too wide) in paragraph at lines 84--84
+Overfull \hbox (35.58633pt too wide) in paragraph at lines 86--86
 [] 
  []
 
@@ -1426,15 +1426,12 @@ Overfull \hbox (5.30113pt too wide) in paragraph at lines 68--68
  []
 
 
-LaTeX Warning: Citation `snuggletex' on page 17 undefined on input line 72.
-
-
 Overfull \hbox (15.72876pt too wide) in paragraph at lines 72--72
  []|\EU1/lmr/m/n/12 L[]T[]X(Small 
  []
 
 
-Overfull \hbox (12.37222pt too wide) in paragraph at lines 74--74
+Overfull \hbox (18.25221pt too wide) in paragraph at lines 74--74
 []|\EU1/lmr/m/n/12 LaTeXmathML[[]]| 
  []
 
@@ -1805,101 +1802,101 @@ Requested font "[lmmono12-regular]" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmmono12-regular
 .otf
 
-Underfull \hbox (badness 4805) in paragraph at lines 172--189
+Underfull \hbox (badness 4805) in paragraph at lines 173--190
 \EU1/lmr/m/n/12 A human can easily identify that this corresponds to text and
  []
 
 
-Underfull \hbox (badness 7649) in paragraph at lines 172--189
+Underfull \hbox (badness 7649) in paragraph at lines 173--190
 \EU1/lmr/m/n/12 that should be inserted into a proper ”mbox” or ”text” 
 tag.
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 172--189
+Underfull \hbox (badness 4686) in paragraph at lines 173--190
 \EU1/lmr/m/n/12 In this case, the snippet produced the following MathML code:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 <math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo><
 /mo>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 <mi>r</mi><mo></mo><mi>e</mi></mrow><mo></mo><mrow><m
 i>s
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 </mi><mo></mo><mi>h</mi><mo></mo><mi>o</mi><mo></mo><
 mi>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 w</mi><mo></mo><mi>n</mi></mrow><mo>,</mo><mrow><mi>a
 </m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 i><mo></mo><mi>s</mi></mrow><mo></mo><mrow><mi>w</mi>
 <mo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 ></mo><mi>e</mi><mo></mo><mi>l</mi><mo></mo><mi>l</mi
 ></
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>s</mi></mr
 ow>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 <mo></mo><mrow><mi>t</mi><mo></mo><mi>h</mi><mo></mo>
 <mi
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 >e</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo><mi>e
 </m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 i><mo></mo><mi>i</mi><mo></mo><mi>g</mi><mo></mo><mi>
 h</
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 mi><mo></mo><mi>t</mi></mrow><mo></mo><mrow><mi>a</mi
 ><m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 o></mo><mi>n</mi><mo></mo><mi>d</mi></mrow><mo></mo><
 mro
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 w><mi>t</mi><mo></mo><mi>e</mi><mo></mo><mi>n</mi><mo
 ></
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--189
+Underfull \hbox (badness 10000) in paragraph at lines 173--190
 \EU1/Courier(0)/m/n/10.95 mo><mi>s</mi><mo></mo><mi>i</mi><mo></mo><mi>o</mi><m
 o><
  []
@@ -1911,17 +1908,17 @@ tf
 
 
 LaTeX Warning: Reference `appendix-conf_files' on page 35 undefined on input li
-ne 196.
+ne 197.
 
 File: figures/input_interface.png Graphic file (type QTm)
 <use  "figures/input_interface.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 201--204
+Underfull \hbox (badness 10000) in paragraph at lines 202--205
 [][]
  []
 
 File: figures/results_interface.png Graphic file (type QTm)
 <use  "figures/results_interface.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 207--210
+Underfull \hbox (badness 10000) in paragraph at lines 208--211
 [][]
  []
 
@@ -2012,25 +2009,24 @@ Requested font "[lmroman10-italic]:mapping=tex-text" at 10.95pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-italic
 .otf
 
-Underfull \hbox (badness 2460) in paragraph at lines 48--50
+Underfull \hbox (badness 2460) in paragraph at lines 54--56
 []\EU1/lmr/m/n/10.95 A brief description of latexmathml, 2007.  []$[][][][] [] 
 [] [] [][][][] [] [][][][] [] [][][] []
  []
 
 [47]
 
-LaTeX Warning: Citation `NIST:DLMF' on page 48 undefined on input line 105.
+LaTeX Warning: Citation `NIST:DLMF' on page 48 undefined on input line 111.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 131--135
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 137--141
 [][][][][][][][][][][][][][] [] [][][][] [] [] [] [][][][][][] [] [][][][] [] [
 ][][][] [] [][][][][][][] [] [][][][] [] [][][][][][][][][] []
  []
 
-[48]
 
-LaTeX Warning: Citation `Olver:2010:NHMF' on page 49 undefined on input line 15
-5.
+LaTeX Warning: Citation `Olver:2010:NHMF' on page 49 undefined on input line 16
+1.
 
 ) [49]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.tex
@@ -2055,32 +2051,48 @@ Missing character: There is no ν in font Courier Regular/ICU!
 Missing character: There is no ν in font Courier Regular/ICU!
 Missing character: There is no ν in font Courier Regular/ICU!
 Missing character: There is no ν in font Courier Regular/ICU!
+Requested font "[lmroman7-bold]:mapping=tex-text" at 7.0pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman7-bold.ot
+f
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 28.
+(amsmath)                 on input line 27.
 
+Missing character: There is no ω in font Courier Regular/ICU!
+Missing character: There is no ⋅ in font Courier Regular/ICU!
+Missing character: There is no ψ in font Courier Regular/ICU!
+Missing character: There is no ̄ in font Courier Regular/ICU!
+Missing character: There is no γ in font Courier Regular/ICU!
+Missing character: There is no ψ in font Courier Regular/ICU!
+Missing character: There is no ν in font Courier Regular/ICU!
+Missing character: There is no ν in font Courier Regular/ICU!
 
-Overfull \hbox (669.45572pt too wide) in paragraph at lines 30--31
- []|\EU1/Courier(0)/m/n/8 <math><mi>L</mi><mo>=</mo><mn>4</mn><mi>π</mi><msup>
-<mi>R</mi><mn>2</mn></msup><mi>σ</mi><msubsup><mi>T</mi><mrow><mi>e</mi><mi>f<
-/mi><mi>f</mi></mrow><mn>4</mn></msubsup></math>| 
+Overfull \hbox (2.84898pt too wide) in paragraph at lines 42--42
+[]|\EU1/lmr/m/n/10.95 Eq10| 
  []
 
+Missing character: There is no κ in font Courier Regular/ICU!
+Missing character: There is no ∫ in font Courier Regular/ICU!
 
-Overfull \hbox (85.36855pt too wide) in alignment at lines 7--36
+Overfull \hbox (85.36855pt too wide) in alignment at lines 7--48
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 36
+Underfull \vbox (badness 10000) detected at line 48
  []
 
 [53
 
 
 
-]) [54] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex
+] [54]) [55]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex [56
+
+
+
+]
 Appendix C.
 File: visio_drawings/analyzers.png Graphic file (type QTm)
 <use  "visio_drawings/analyzers.png" >
@@ -2123,11 +2135,7 @@ Overfull \hbox (55.26006pt too wide) in paragraph at lines 38--41
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [55
-
-
-
-] [56] [57]
+) [57] [58] [59]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 161.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 161.
  (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.aux (C:\Users\Artie
@@ -2156,12 +2164,12 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 161.
  ) 
 Here is how much of TeX's memory you used:
- 24389 strings out of 429035
- 428627 string characters out of 3166907
- 551473 words of memory out of 3000000
- 27193 multiletter control sequences out of 15000+200000
- 18355 words of font info for 107 fonts, out of 3000000 for 9000
+ 24392 strings out of 429035
+ 428705 string characters out of 3166907
+ 551597 words of memory out of 3000000
+ 27194 multiletter control sequences out of 15000+200000
+ 18363 words of font info for 108 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  46i,13n,47p,10405b,1182s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main_doc.pdf (59 pages).
+Output written on main_doc.pdf (61 pages).

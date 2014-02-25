@@ -44,6 +44,12 @@ Bruce Miller.
 Tex4ht: Latex and tex for hypertext.
 \newblock \url{https://www.tug.org/applications/tex4ht/mn.html}.
 
+\bibitem{snuggletex}
+The~University of~Edinburgh School~of Physics and Astronomy.
+\newblock Snuggletex (1.2.2).
+\newblock
+  \url{http://www2.ph.ed.ac.uk/snuggletex/documentation/overview-and-features.html}.
+
 \bibitem{latexmathml}
 A brief description of latexmathml, 2007.
 \newblock \url{http://math.etsu.edu/LaTeXMathML/}.
