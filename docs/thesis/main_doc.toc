@@ -33,7 +33,7 @@
 \contentsline {section}{\numberline {5.1}Features Extraction}{25}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Notational Features}{25}{subsection.5.1.1}
 \contentsline {subsubsection}{Unicode Normalizing}{26}{section*.4}
-\contentsline {subsubsection}{Synonym Expansion}{30}{section*.5}
+\contentsline {subsubsection}{Operator grouping}{30}{section*.5}
 \contentsline {subsubsection}{Numeric Approximation}{30}{section*.6}
 \contentsline {subsection}{\numberline {5.1.2}Structural Features}{31}{subsection.5.1.2}
 \contentsline {subsubsection}{Algebraic structures}{31}{section*.7}
@@ -41,11 +41,11 @@
 \contentsline {subsubsection}{Specific domain structures}{31}{section*.9}
 \contentsline {subsection}{\numberline {5.1.3}Development with Lucene/Solr}{32}{subsection.5.1.3}
 \contentsline {subsection}{\numberline {5.1.4}Integration with Mathematica}{33}{subsection.5.1.4}
-\contentsline {subsubsection}{Pattern Extraction}{33}{section*.10}
-\contentsline {subsubsection}{Recursive interpretation}{33}{section*.11}
-\contentsline {subsubsection}{Error handling}{33}{section*.12}
+\contentsline {subsubsection}{Pattern Extraction}{34}{section*.10}
+\contentsline {subsubsection}{Recursive interpretation}{34}{section*.11}
+\contentsline {subsubsection}{Error handling}{34}{section*.12}
 \contentsline {subsubsection}{Timeout Handling}{34}{section*.13}
-\contentsline {subsection}{\numberline {5.1.5}Integration with CDS}{34}{subsection.5.1.5}
+\contentsline {subsection}{\numberline {5.1.5}Integration with CDS}{35}{subsection.5.1.5}
 \contentsline {chapter}{\numberline {6}Evaluation}{37}{chapter.6}
 \contentsline {section}{\numberline {6.1}Dataset}{37}{section.6.1}
 \contentsline {section}{\numberline {6.2}Setup}{37}{section.6.2}
