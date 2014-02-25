@@ -95,8 +95,23 @@ N+S+FN & 1377 & 25548 & 0.122 & 2.269 \\
 According to some experimental evaluations presented in \cite{tree_comparison}, Tree Edit Distance provides an interesting alternative metric to the standard vector space model using angular distance. In this work, authors present an improvement in the quality of retrieved results compared to the classic approach of indexing the single leaves of the tree and a subset of the possible sub-trees. For evaluating the feasibility of this approach we compared a set of equations using both metrics: Tree edit distance (Using Zheng and Shasha's algorithm implemented in python \cite{tree_distance_python}.) and a standard angular distance that was not heavily optimized. We compared elapsed times for expressions of different length.
 
 
+%%
+%\begin{longtable}{|m{3.5cm}|>
+%{\centering\arraybackslash}m{3cm}|>
+%{\centering\arraybackslash}m{3cm}|>
+%{\centering\arraybackslash}m{5cm}|
+%}
+%\hline 
+%\textbf{\LaTeX} & 
+%\textbf{Presentation MathML} & 
+%\textbf{Content MathML + Presentation Markups} & 
+%\textbf{OpenMath}  \\ \hline
+%%%
 
-\begin{longtable}{|c|c|c|}
+\begin{longtable}{|>{\centering\arraybackslash}m{3.5cm}|>
+{\centering\arraybackslash}m{3cm}|>
+{\centering\arraybackslash}m{3cm}|
+}
 \hline 
 Expression Length (Number of leaf nodes)& Angular Distance Time (msec) & Tree Edit Distance Time(msec) \\ \hline 
 3 & 0.01195 & 2.65  \\ \hline

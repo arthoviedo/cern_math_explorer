@@ -99,8 +99,8 @@ WHITE DOWN-POINTING TRIANGLE	& {\unicodefont ▽} &	0x25bd	 &0x25bd &	0x25bd &	0
 Since our goal is to match as much as possible similar characters, our system employs the NFKD representation of a character. For a given token, we test whether if it is already equal to its NFKD. If not, for all the characters that are not combining nor control characters, we add the token into the same position as the original one.
 For example, given the token <mi>\r{A}</mi>, this will lead to the sequence <mi>\r{A}</mi><mi>A</mi> and the token <mi>{\unicodefontⅫ}</mi> will produce <mi>{\unicodefontⅫ}</mi><mi>X</mi><mi>I</mi><mi>I</mi>.
 
-\subsubsection{Synonym Expansion}
-Even though the Unicode normalization step work for a big part of the cases presented in table \ref{unicode_characters}, there are still some groups of characters which would not be matched (Even partially), such as some types of integrals. For addressing these groups, a precomputed table was created for some general groups of characters which have some similar meaning. For each token that belongs to some of this predefined groups, a second token is created identifying the group.
+\subsubsection{Operator grouping}
+Even though the Unicode normalization step work for a big part of the cases presented in table \ref{unicode_characters}, there are still some groups of characters which would not be matched (Even partially), such as some types of integrals. For addressing these groups, a precomputed table was created for some general groups of operators which have some similar meaning. For each token that belongs to some of this predefined groups, a second token is created identifying the group.
 For example the token <mo>{\unicodefont ∮}</mo> is expanded into <mo>{\unicodefont ∮}</mo><mo>INTEGRALS</mo>, similarly the token token <mo>{\unicodefont ∫}</mo> is expanded into <mo>{\unicodefont ∫}</mo><mo>INTEGRALS</mo> and then both will have a partial match in the INTEGRALS token. 
 Unicode specification does not define a strict rule to group similar characters based on their semantics. For general operators, we used the grouping provided by Xah Lee in his website\cite{math_groups}.
 
@@ -109,7 +109,7 @@ Some equations relate specific numeric quantities. While most of the previously 
 
 
 \subsection{Structural Features}
-The structure of a mathematical equations is one of the most important features that can be extracted. 
+The structure of a mathematical expression compliments the information that an be obtained over generic substructures where the naming of the variables is irrelevant.  
 
 \subsubsection{Algebraic structures}
 The first set of structures consist on purely algebraic relationships between the expressions.
@@ -120,7 +120,7 @@ An example of this type of structures would be: $X\textunderscore*(X\textundersc
 This set of structures represent common operations that cat appear in a given expression, but its identification is based on notation factors. A simple example of this can be the matrix decomposition $A = VDV^{-1}$ where the actual name of the variables $A$ and $V$ is not meaningful but the real importance is the fact that a given variable appears alongside its inverse in a matrix multiplication form. We would like to assign a partial match to any other kind of this decomposition say $B = MRM^{-1}$. these types of structures live in-between the notational and structural categories but since we identify them using Mathematica, we encompass them as structural features. For this type of structures, we identify simple operations between an element and some possible variations of the same element with some subscript/superscript.
 
 \subsubsection{Specific domain structures}
-Additionally, we identified patterns that are relevant and frequent in specific domains of the high energy physics. Some patterns can be as general as a derivative over time ($dx/dt$), or more specific ones like a particle decaying process ($originalParticle \rightarrow subparticle1, subparticle2, subparticle3$).
+Additionally, we identified patterns that are relevant and frequent in specific domains of the high energy physics. Some patterns can be as general as a derivative over time ($dx/dt$), or more specific ones like a particle decaying process ($originalParticle \rightarrow subparticle1, subparticle2, subparticle3$) and some in the middle like the general structure of a given action: $S = \int^{t2}_{t1} \mathcal{L} dt$. The main drawback of this approach is the need to manually detect, implement and maintain long lists of patterns. 
 
 
 \subsection{Development with Lucene/Solr}
@@ -193,6 +193,19 @@ As a remedial situation, we used a fixed timeout to stop the processing of a giv
 
 \subsection{Integration with CDS}
 Currently the Invenio code-base is being under a deep refactoring and rewriting. CDS currently runs in the stable branch {\codefont master} while the new developments are preferred to be implemented in the new branch {\codefont pu}. 
-A demo interface over the new branch was developed to showcase the system, however to have a complete integration with CDS, a more deep work is required. 
-Our system is deployed as a standalone jar which should be incorporated into a Solr instance. Also, some extra configurations should be added. Details on this can be found in appendix \ref{appendix-conf_files.}
+Our system is deployed as a standalone jar which should be incorporated into a Solr instance. Also, some extra configurations should be added. Details on this can be found in appendix \ref{appendix-conf_files}
 The communication between Solr and Invenio was through the library {\codefont solrpy}. 
+A demo interface over the new branch was developed to showcase the system, however to have a complete integration with CDS, a more deep work is required. 
+
+\begin{figure}
+\includegraphics[height=8 cm]{figures/input_interface.png}
+\label{comparison_sw_table}
+\caption{Web interface of $5e^{x+y}$: Query input screen}
+\end{figure}
+
+\begin{figure}
+\includegraphics[height=8 cm]{figures/results_interface.png}
+\label{comparison_sw_table}
+\caption{Web interface of $5e^{x+y}$: Results screen}
+\end{figure}
+
