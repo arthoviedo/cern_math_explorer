@@ -104,6 +104,22 @@ Even though the Unicode normalization step work for a big part of the cases pres
 For example the token <mo>{\unicodefont ∮}</mo> is expanded into <mo>{\unicodefont ∮}</mo><mo>INTEGRALS</mo>, similarly the token token <mo>{\unicodefont ∫}</mo> is expanded into <mo>{\unicodefont ∫}</mo><mo>INTEGRALS</mo> and then both will have a partial match in the INTEGRALS token. 
 Unicode specification does not define a strict rule to group similar characters based on their semantics. For general operators, we used the grouping provided by Xah Lee in his website\cite{math_groups}.
 
+Figures \ref{integrals} and \ref{less_greater} present lists related of characters for two different categories.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[height=2 cm]{figures/integrals.png}
+	\caption{List of different types of integral related characters in Unicode}
+	\label{integrals}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[height=2 cm]{figures/greater_less.png}
+	\caption{List of different types of grater/less than related characters in Unicode}
+	\label{less_greater}
+\end{figure}
+
 \subsubsection{Numeric Approximation} 
 Some equations relate specific numeric quantities. While most of the previously explorer systems, handled <mn> tags by only representing them as a constant identifier, this approach is not suitable. A lot of articles in CDS relate to specific experiments under certain conditions, and require a high level of precision in the measurements. However, different experiments of the same phenomenon, can result in different measurements and we wanted to include this variability in our system. To handle this, when a token with a certain numeric quantity is discovered, we apply iterative rounding and index all the different approximations in the same position as the original element. For example the token <mn>2.0135</mn> will produce the following sequence of tokens: <mn>2.0135</mn><mn>2.014</mn><mn>2.01</mn><mn>2.0</mn>. 
 
@@ -124,7 +140,7 @@ This set of structures represent common operations that cat appear in a given ex
 Additionally, there are common patterns to specific domains which can improve the quality of the retrieved results. Some specific patterns we identified include: $originalParticle \rightarrow subparticle1, subparticle2, subparticle3$ (For representing particle decaying processes) $S = \int^{t2}_{t1} \mathcal{L} dt$ (For an action in terms of its Lagrangian) and $SU(n)$ (For describing special unitary groups). The main drawback of this approach is the need to manually detect, implement and maintain long lists of patterns and for this reason we did not tried to do an exhaustive list of them. 
 
 
-\subsection{Development with Lucene/Solr}
+\section{Development with Lucene/Solr}
 This section explains how the described components were implemented in the {\codefont Apache Solr/Lucene} framework.
 One focus of our work was to develop a modular system that allowed easily to deploy new heuristics as they were identified. 
 
@@ -150,10 +166,31 @@ An analyzer consists of a sequence of {\codefont TokenStrem} elements. Normally 
 \end{itemize}
 
 {\codefont SolrStructuralAnalyzer } is simpler in its workflow: It consits of a {\codefont StructuralPatternsTokenizer} that tries to find occurrences of the predefined patterns in the expression. For each match, it emits a token with the pattern that was found. 
-\subsection{Integration with Mathematica}
+
+\section{Integration with Mathematica}
 This section describes some aspects that had to be considered while implementing the integration with Mathematica. Our system uses the {\codefont JLink} library to create a connection with the underlying process {\codefont MathKernel}. The main class for communicating java code and {\codefont Mathematica} is {\codefont KernelLink} and the main used method was {\codefont evaluateToOutputForm(String expr, int pageWidth)} where {\codefont expr} is the expression to be evaluated and {\codefont pageWidth} affects the formatting of the result.
 
 \subsubsection{Pattern Extraction}
+
+\subsubsection{Expression simplification}
+The second feature that we are interested in is automatic expression simplification.
+Mathematica includes different transformations of expressions. These include: {\codefont Simplify} which tries to transform a given equation in an equivalent one but in a reduced form, {\codefont FullSimplify} which is similar to the previous one but tries a higher number of heuristics to apply that can simplify expressions further at the expense of more processing time, {\codefont Factor} to factorize polynomials, {\codefont Refine} which simplifies expressions given certain assumptions about the variables, {\codefont TrigReduce} that tries to apply trigonometric identities to simplify the expression, {\codefont FunctionExpand} that tries to expand special functions in terms of sums and products of other elementary functions. 
+
+The two functions that are more relevant for our work are {\codefont Simplify} and {\codefont FullySimplify} since they apply most of the other combined methods and do not require additional information.
+
+Table \ref{table_simplifications} presents some sample equations found in some the documents in CDS and the different forms of simplification.
+
+\begin{tabular}{|>{\centering\arraybackslash}m{4cm}|>
+{\centering\arraybackslash}m{4cm}|>
+{\centering\arraybackslash}m{4cm}|}
+\hline
+Original Form & {\codefont Simplify} & {\codefont FullSimplify} \\
+\hline
+\scriptsize{\codefont <math> <mrow> <mrow> <mfrac> <msup> <mi>Φ</mi> <mo>′</mo> </msup> <mrow> <mn>2</mn> <mo>⁢</mo> <mrow> <mo>(</mo> <mrow> <mn>1</mn> <mo>+</mo> <mi>Φ</mi> </mrow> <mo>)</mo> </mrow> </mrow> </mfrac> <mo>+</mo> <mfrac> <mn>1</mn> <mi>r</mi> </mfrac> </mrow> <mo>=</mo> <mn>0</mn> </mrow> </math> }      & \scriptsize{\codefont <math> <mrow> <mrow> <mfrac> <mn>1</mn> <mi>r</mi> </mfrac> <mo>+</mo> <mfrac> <msup> <mi>Φ</mi> <mo>′</mo> </msup> <mrow> <mrow> <mn>2</mn> <mo>⁢</mo> <mi>Φ</mi> </mrow> <mo>+</mo> <mn>2</mn> </mrow> </mfrac> </mrow> <mo></mo> <mn>0</mn> </mrow> </math>}    & \scriptsize{\codefont <math> <mrow> <mrow> <mfrac> <mn>2</mn> <mi>r</mi> </mfrac> <mo>+</mo> <mfrac> <msup> <mi>Φ</mi> <mo>′</mo> </msup> <mrow> <mi>Φ</mi> <mo>+</mo> <mn>1</mn> </mrow> </mfrac> </mrow> <mo></mo> <mn>0</mn> </mrow> </math>}     \\
+$\frac{\Phi '}{2 (1+\Phi )}+\frac{1}{r}=0$          & $\frac{1}{r}+\frac{\Phi '}{2 \Phi +2}=0$ & $\frac{2}{r}+\frac{\Phi '}{\Phi +1}=0$       \\
+
+\hline
+\end{tabular}
 
 \subsubsection{Recursive interpretation}
 
@@ -192,11 +229,20 @@ Mathematica took around 10 minutes to interpret it.
 In the ideal case we would be able to identify the malformed expressions and pass to Mathematica only well-formed equations to be processed but as this simple example shows, that is a very challenging task and may require more work.
 As a remedial situation, we used a fixed timeout to stop the processing of a given expression.
 
-\subsection{Integration with CDS}
+\section{Integration with CDS}
 Currently the Invenio code-base is being under a deep refactoring and rewriting. CDS currently runs in the stable branch {\codefont master} while the new developments are preferred to be implemented in the new branch {\codefont pu}. 
-Our system is deployed as a standalone jar which should be incorporated into a Solr instance. Also, some extra configurations should be added. Details on this can be found in appendix \ref{appendix-conf_files}
+Our system is deployed as a standalone {\codefont jar} which is added to a Solr instance. Also, some extra configurations should be added. Details on this can be found in appendix \ref{appendix-conf_files}
 The communication between Solr and Invenio was through the library {\codefont solrpy}. 
-A demo interface over the new branch was developed to showcase the system, however to have a complete integration with CDS, a more deep work is required. 
+Figure \ref{system_arch} presents the main components of our deployment.
+
+\begin{figure}
+\includegraphics[height=4.2 cm]{visio_drawings/architecture.png}
+\label{comparison_sw_table}
+\caption{High level deployment architecture}
+\end{figure}
+
+
+A demo interface over the {\codefont pu} branch was developed to showcase the system, however to have a complete integration with CDS, a more deep work is required. The demo setup employs the same dataset as used for experimentation. 
 
 \begin{figure}
 \includegraphics[height=8 cm]{figures/input_interface.png}

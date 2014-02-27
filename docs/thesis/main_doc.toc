@@ -1,71 +1,75 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
-\contentsline {section}{\numberline {1.1}Context}{7}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Invenio}{7}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}CDS}{7}{subsection.1.1.2}
-\contentsline {section}{\numberline {1.2}Goals}{7}{section.1.2}
-\contentsline {chapter}{\numberline {2}Theoretical Background}{9}{chapter.2}
-\contentsline {section}{\numberline {2.1}Boolean Model}{9}{section.2.1}
-\contentsline {section}{\numberline {2.2}Vector Space Model}{10}{section.2.2}
-\contentsline {section}{\numberline {2.3}Probabilistic Relevance Model}{11}{section.2.3}
-\contentsline {section}{\numberline {2.4}Okapi BM25}{11}{section.2.4}
-\contentsline {section}{\numberline {2.5}Latent Semantic Indexing}{12}{section.2.5}
-\contentsline {section}{\numberline {2.6}Latent Dirichlet Allocation}{12}{section.2.6}
-\contentsline {section}{\numberline {2.7}Tree Edit Distance}{12}{section.2.7}
-\contentsline {chapter}{\numberline {3}Technical Considerations}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}Digital Representations of Mathematics}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Math Extraction Tools}{17}{section.3.2}
-\contentsline {section}{\numberline {3.3}Computer Algebra Systems}{18}{section.3.3}
-\contentsline {chapter}{\numberline {4}Related Work}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Status of MIR}{21}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}TREC}{21}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}TREC}{21}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}CLEF}{21}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}NTCIR}{21}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}Mathematical based search projects}{21}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}MIaS}{21}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}EgoMath}{22}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}DLMFSearch}{22}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}MathWebSearch}{23}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}LaTEXSearch}{23}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Other related projects and initiatives}{23}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}arXMLiv}{23}{subsection.4.3.1}
-\contentsline {chapter}{\numberline {5}$5e^{x+y}$(CDS)}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Features Extraction}{25}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Notational Features}{25}{subsection.5.1.1}
-\contentsline {subsubsection}{Unicode Normalizing}{26}{section*.4}
-\contentsline {subsubsection}{Operator grouping}{30}{section*.5}
-\contentsline {subsubsection}{Numeric Approximation}{30}{section*.6}
-\contentsline {subsection}{\numberline {5.1.2}Structural Features}{31}{subsection.5.1.2}
-\contentsline {subsubsection}{Algebraic structures}{31}{section*.7}
-\contentsline {subsubsection}{Subscript/Superscript variations}{31}{section*.8}
-\contentsline {subsubsection}{Specific domain structures}{31}{section*.9}
-\contentsline {subsection}{\numberline {5.1.3}Development with Lucene/Solr}{32}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Integration with Mathematica}{33}{subsection.5.1.4}
-\contentsline {subsubsection}{Pattern Extraction}{34}{section*.10}
-\contentsline {subsubsection}{Recursive interpretation}{34}{section*.11}
-\contentsline {subsubsection}{Error handling}{34}{section*.12}
-\contentsline {subsubsection}{Timeout Handling}{34}{section*.13}
-\contentsline {subsection}{\numberline {5.1.5}Integration with CDS}{35}{subsection.5.1.5}
-\contentsline {chapter}{\numberline {6}Evaluation}{37}{chapter.6}
-\contentsline {section}{\numberline {6.1}Dataset}{37}{section.6.1}
-\contentsline {section}{\numberline {6.2}Setup}{37}{section.6.2}
-\contentsline {section}{\numberline {6.3}Results quality}{38}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Equations}{38}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Comparison against other systems}{38}{section.6.4}
-\contentsline {section}{\numberline {6.5}Querying Performance}{38}{section.6.5}
-\contentsline {section}{\numberline {6.6}Indexing Performance}{38}{section.6.6}
-\contentsline {section}{\numberline {6.7}Alternative Metrics}{40}{section.6.7}
-\contentsline {chapter}{\numberline {7}Conclusions}{43}{chapter.7}
-\contentsline {chapter}{\numberline {8}Future work}{45}{chapter.8}
-\contentsline {chapter}{Bibliographie}{46}{chapter.8}
-\contentsline {chapter}{\numberline {A}Configuration files}{51}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Schema}{51}{section.A.1}
-\contentsline {section}{\numberline {A.2}Solr configuration file}{52}{section.A.2}
-\contentsline {chapter}{\numberline {B}Test equations}{53}{appendix.B}
-\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{57}{appendix.C}
-\contentsline {section}{\numberline {C.1}Analyzers}{57}{section.C.1}
-\contentsline {section}{\numberline {C.2}Tokenizers}{57}{section.C.2}
-\contentsline {section}{\numberline {C.3}Filters}{57}{section.C.3}
-\contentsline {section}{\numberline {C.4}Query Parsers}{57}{section.C.4}
-\contentsline {section}{\numberline {C.5}Packages Relations}{57}{section.C.5}
+\contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}
+\contentsline {section}{\numberline {1.1}Context}{9}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Invenio}{9}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}CDS}{9}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Goals}{9}{section.1.2}
+\contentsline {chapter}{\numberline {2}Theoretical Background}{11}{chapter.2}
+\contentsline {section}{\numberline {2.1}Boolean Model}{11}{section.2.1}
+\contentsline {section}{\numberline {2.2}Vector Space Model}{12}{section.2.2}
+\contentsline {section}{\numberline {2.3}Probabilistic Relevance Model}{13}{section.2.3}
+\contentsline {section}{\numberline {2.4}Okapi BM25}{13}{section.2.4}
+\contentsline {section}{\numberline {2.5}Latent Semantic Indexing}{14}{section.2.5}
+\contentsline {section}{\numberline {2.6}Latent Dirichlet Allocation}{14}{section.2.6}
+\contentsline {section}{\numberline {2.7}Tree Edit Distance}{14}{section.2.7}
+\contentsline {chapter}{\numberline {3}Technical Considerations}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}Digital Representations of Mathematics}{17}{section.3.1}
+\contentsline {section}{\numberline {3.2}Math Extraction Tools}{19}{section.3.2}
+\contentsline {section}{\numberline {3.3}Computer Algebra Systems}{20}{section.3.3}
+\contentsline {chapter}{\numberline {4}Related Work}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}Status of MIR}{23}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}TREC}{23}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}TREC}{23}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}CLEF}{23}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}NTCIR}{23}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Mathematical based search projects}{23}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}MIaS}{23}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}EgoMath}{24}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}DLMFSearch}{24}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}MathWebSearch}{25}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}LaTEXSearch}{25}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}Other related projects and initiatives}{25}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}arXMLiv}{25}{subsection.4.3.1}
+\contentsline {chapter}{\numberline {5}$5e^{x+y}$(CDS)}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Features Extraction}{27}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Notational Features}{27}{subsection.5.1.1}
+\contentsline {subsubsection}{Unicode Normalizing}{28}{section*.4}
+\contentsline {subsubsection}{Operator grouping}{32}{section*.5}
+\contentsline {subsubsection}{Numeric Approximation}{33}{section*.6}
+\contentsline {subsection}{\numberline {5.1.2}Structural Features}{33}{subsection.5.1.2}
+\contentsline {subsubsection}{Algebraic structures}{33}{section*.7}
+\contentsline {subsubsection}{Subscript/Superscript variations}{33}{section*.8}
+\contentsline {subsubsection}{Specific domain structures}{34}{section*.9}
+\contentsline {section}{\numberline {5.2}Development with Lucene/Solr}{34}{section.5.2}
+\contentsline {section}{\numberline {5.3}Integration with Mathematica}{36}{section.5.3}
+\contentsline {subsubsection}{Pattern Extraction}{36}{section*.10}
+\contentsline {subsubsection}{Expression simplification}{36}{section*.11}
+\contentsline {subsubsection}{Recursive interpretation}{37}{section*.12}
+\contentsline {subsubsection}{Error handling}{37}{section*.13}
+\contentsline {subsubsection}{Timeout Handling}{37}{section*.14}
+\contentsline {section}{\numberline {5.4}Integration with CDS}{38}{section.5.4}
+\contentsline {chapter}{\numberline {6}Advanced Techniques}{41}{chapter.6}
+\contentsline {section}{\numberline {6.1}Latent Semantic Indexing with Semantic Vectors}{41}{section.6.1}
+\contentsline {section}{\numberline {6.2}Latent Dirichlet Allocation with Apache Mahout}{41}{section.6.2}
+\contentsline {chapter}{\numberline {7}Evaluation}{43}{chapter.7}
+\contentsline {section}{\numberline {7.1}Dataset}{43}{section.7.1}
+\contentsline {section}{\numberline {7.2}Setup}{43}{section.7.2}
+\contentsline {section}{\numberline {7.3}Results quality}{44}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Equations}{44}{subsection.7.3.1}
+\contentsline {section}{\numberline {7.4}Comparison against other systems}{44}{section.7.4}
+\contentsline {section}{\numberline {7.5}Querying Performance}{44}{section.7.5}
+\contentsline {section}{\numberline {7.6}Indexing Performance}{44}{section.7.6}
+\contentsline {section}{\numberline {7.7}Alternative Metrics}{46}{section.7.7}
+\contentsline {chapter}{\numberline {8}Conclusions}{49}{chapter.8}
+\contentsline {chapter}{\numberline {9}Future work}{51}{chapter.9}
+\contentsline {chapter}{Bibliographie}{52}{chapter.9}
+\contentsline {chapter}{\numberline {A}Configuration files}{57}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Schema}{57}{section.A.1}
+\contentsline {section}{\numberline {A.2}Solr configuration file}{58}{section.A.2}
+\contentsline {chapter}{\numberline {B}Test equations}{59}{appendix.B}
+\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{63}{appendix.C}
+\contentsline {section}{\numberline {C.1}Analyzers}{63}{section.C.1}
+\contentsline {section}{\numberline {C.2}Tokenizers}{63}{section.C.2}
+\contentsline {section}{\numberline {C.3}Filters}{63}{section.C.3}
+\contentsline {section}{\numberline {C.4}Query Parsers}{63}{section.C.4}
+\contentsline {section}{\numberline {C.5}Packages Relations}{63}{section.C.5}

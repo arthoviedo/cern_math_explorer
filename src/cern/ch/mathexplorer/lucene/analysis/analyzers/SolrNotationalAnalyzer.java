@@ -7,7 +7,7 @@ import org.apache.lucene.util.Version;
 import org.apache.solr.analysis.SolrAnalyzer;
 
 import cern.ch.mathexplorer.lucene.analysis.filters.NumericalRoundingFilter;
-import cern.ch.mathexplorer.lucene.analysis.filters.SynonymExpandingFilter;
+import cern.ch.mathexplorer.lucene.analysis.filters.OperatorGroupingFilter;
 import cern.ch.mathexplorer.lucene.analysis.filters.UnicodeNormalizingFilter;
 import cern.ch.mathexplorer.lucene.analysis.tokenizers.MultiplePatternTokenizer;
 import cern.ch.mathexplorer.utils.Regex;
@@ -30,7 +30,7 @@ public final class SolrNotationalAnalyzer extends SolrAnalyzer {
 	  Tokenizer source2 = new MultiplePatternTokenizer(reader, Regex.PATTERNS, Regex.GROUP);
 	  TokenStream unicodeNormalizer = new UnicodeNormalizingFilter(source2);
 	  TokenStream numericRounder 	= new NumericalRoundingFilter(unicodeNormalizer);
-	  TokenStream relatedOperators 	= new SynonymExpandingFilter(numericRounder);
+	  TokenStream relatedOperators 	= new OperatorGroupingFilter(numericRounder);
 	  
 	  
 	  return new TokenStreamComponents(source2, relatedOperators);

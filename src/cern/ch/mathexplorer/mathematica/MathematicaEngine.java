@@ -163,9 +163,9 @@ public class MathematicaEngine {
 	 * If the method takes more than the defined timeout, the original string is returned 
 	 */
 	public String simplifyExpressionWithTimeout(String mathMLExpression, boolean full){
-		ExecutorService executor = Executors.newSingleThreadExecutor();
-        Future future = executor.submit(new MathematicaTask(mathMLExpression, TASK.SIMPLIFY_EXPRESSION, full));
         try {
+        	ExecutorService executor = Executors.newSingleThreadExecutor();
+        	Future future = executor.submit(new MathematicaTask(mathMLExpression, TASK.SIMPLIFY_EXPRESSION, full));
         	return (String) future.get(MathematicaConfig.TIMEOUT_TIME, MathematicaConfig.TIMEOUT_TIMEUNIT);
         } catch (TimeoutException te) {
         	ml.abortEvaluation();
@@ -352,9 +352,9 @@ public class MathematicaEngine {
 	}
 
 	public static void main(String[] args) throws Exception {
-		test();
+		testSimplifications();
 		
-		MathematicaEngine mi = getInstance("TESTING");
+		/**MathematicaEngine mi = getInstance("TESTING");
 		String expression = Constants.SAMPLE_EQ_5;
 		Console.print(expression);
 		List<StructuralPattern> features = mi.getPatterns(expression);
@@ -363,24 +363,31 @@ public class MathematicaEngine {
 		}
 		Console.print(mi.simplifyExpression(expression, false));
 		Console.print(mi.simplifyExpression(expression, true));
-
+		*/
+	}
+	
+	public static void testSimplifications() throws Exception {
+		File dataDir = new File("./data/arxiv_cds");
+		for (File f : dataDir.listFiles() ) {
+			BufferedReader br = new BufferedReader(new FileReader(f));
+			String line = "";
+			MathematicaEngine instance = getInstance("TESTING");
+			while ((line = br.readLine()) != null) {
+				String result1 = instance.simplifyExpressionWithTimeout(line, false);
+				String result2 = instance.simplifyExpressionWithTimeout(line, true);
+				if (!result1.equals(result2)) {
+					System.out.println(line);
+					System.out.println(result1);
+					System.out.println(result2);
+				}
+			}
+			System.out.println("checked file: " + f);
+			br.close();
+		}
 	}
 	
 	public static void test() throws Exception {
-		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"./data/arxiv_cds/arx1312.6708.eq")));
-		String line = "";
-		MathematicaEngine instance = getInstance("TESTING");
-		int count = 0;
-		while ((line = br.readLine()) != null) {
-			instance.simplifyExpressionWithTimeout(line);
-			instance.getPatternsWithTimeout(line);
-			//instance.getPatterns(line);
-			//instance.simplifyExpression(line, true);
-			
-			Console.print(count++);
-		}
-		br.close();
+		
 	}
 
 }

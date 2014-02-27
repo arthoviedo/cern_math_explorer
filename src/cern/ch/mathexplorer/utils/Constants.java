@@ -203,13 +203,21 @@ public final class Constants implements Serializable {
 		EQUALS(new HashSet<>(Arrays.asList(
 				"=",	
 				"==",
-				"≡"
+				"≡",
+				"≠",
+				"≢",
+				"≞",	//Measured
+				"≝"	//Definition
+				
 				))),
+				
 		GREATER_THAN(new HashSet<>(Arrays.asList(
+				"≥",
 				">",	
 				"&gt;"
 				))),
 		SMALLER_THAN(new HashSet<>(Arrays.asList(
+				"≤",
 				"<",	
 				"&lt;"
 				))),		
