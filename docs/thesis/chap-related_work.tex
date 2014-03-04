@@ -1,11 +1,14 @@
 \chapter{Related Work}
 \label{chap-related_work}
-\section{Status of MIR}
-\subsection{TREC}
-\subsection{TREC}
-\subsection{CLEF}
-\subsection{NTCIR}
+\section{Status of Mathematical Information Retrieval}
+Even though Information Retrieval has been a research field from around the 1950s where the first metrics for such systems were developed and in the 1960s where SMART (System for Mechanical Analysis and Retrieval of Text), the first computer based system was developed; only in the last couple years focus have been put into adapting the same techniques to mathematical content. 
+
+The Mathematics Information Retrieval Workshop\cite{mir_worksop} held in the context of the Conference of Intelligent Computer Mathematics in July 2012, was the first official event in the area of MIR. Here, a small competition was held to evaluate different systems and approaches.
+
+The NII\cite{nii} (National Institute of Informatics) is a Japanese research institute that hosts the project named NTCIR (NII Testbeds and Community for Information access Research) which aims to build evaluation frameworks for specific sub-fields of information retrieval. On 2013, in the context of the 10th NTCIR conference, it hosted the NTCIR-10 Math Task \cite{math_task} which was the first collaborative effort to evaluate different systems. The Math task was focused on two different subtasks: Math retrieval (Identifying relevant document based on given mathematical expressions and/or keywords) and Math understanding where the idea was to extract natural language information of a mathematical expression in a document. Currently submissions are open for the NTCIR-11 Math Task 2 which will be held on December 2014.
+
 \section{Mathematical based search projects}
+
 \subsection{MIaS}
 MIaS\cite{mias_1} (Math Indexer and Searcher), currently, is one of the flagship projects in the indexing and searching of mathematical content. As most of the other projects, it processes documents in MathML format. It allows the user to include in the queries mathematical expressions and textual content. During indexing time, equations are transformed following a set of heuristics that include:
 \begin{itemize}
@@ -15,20 +18,20 @@ MIaS\cite{mias_1} (Math Indexer and Searcher), currently, is one of the flagship
 \end{itemize}
 The extracted tokens from a given equation consist of all its valid sub-expressions. The original expression is given a weight value of 1, and following sub-expressions are given smaller weights depending on how general or specific they are.  
 The system, also as most of the current projects, is developed by using the Apache Lucene framework. The system adapts the default scoring equation such that the given weight is taken into account.  
+Publicly available instances of the system can be found at: \url{http://aura.fi.muni.cz:8085/webmias/ps?n=-1} running on the MREC\cite{mrec} dataset and  \url{ http://aura.fi.muni.cz:8085/webmias-ntcir/} (Running on the NTCIR dataset)
+
 \subsection{EgoMath}
 EgoMath\cite{egomath1} and its new version EgoMath$^2$\cite{egomath2}, is a system oriented to index the mathematical content from the Wikipedia.org database. The processing steps before indexing are similar to the ones in MIaS (Rearranging of symbols, unification of constants). The extraction process started from a complete dump of the Wikipedia database and filtering only the math articles, which are identified by the ”<math>" tag. This consists on around thirty thousand articles, from which 240.000 equations were identified. The processing step includes translating the equation from LaTeX into MathML format and then indexing both representation.
-Some additional effort is done into splitting large mathematical blocks like tables into single mathematical expressions.
+Some additional effort is done into splitting large mathematical blocks like tables into single mathematical expressions. At the start of this work, EgoMath was publicly available at \url{http://egomath.projekty.ms.mff.cuni.cz/}, however at this moment the system seems to be unavailable.
 
 \subsection{DLMFSearch}
-The Digital Library for Mathematical Funtions \cite{dlmf} is a project launched by the National Institute of Standards and Technology, in 2010, as an online version of the  Handbook of Mathematical Functions with Formulas, Graphs and Mathematical Tables\cite{handbook}. DLMF's main goal is to compile the mathematical knowledge in the form of equations, functions, tables and make this information useful for researchers and public in general. The system contains a search functionality that allows to input a combination of full text and \LaTeX snippets. The system tries to perform an exact match, and if no results are found, it relaxes the query. DLMF also perfoms some normalization of the equation and some cleaning of some characters, but no further details are provided. The content indexed by this project is highly curated, which differentiates it from the other projects. In the report published in 2013 \cite{dlmf2}, it is reported to have indexed around 38000 equations. 
+The Digital Library for Mathematical Funtions \cite{dlmf} is a project launched by the National Institute of Standards and Technology, in 2010, as an online version of the  Handbook of Mathematical Functions with Formulas, Graphs and Mathematical Tables\cite{handbook}. DLMF's main goal is to compile the mathematical knowledge in the form of equations, functions, tables and make this information useful for researchers and public in general. The system contains a search functionality that allows to input a combination of full text and \LaTeX snippets. The system tries to perform an exact match, and if no results are found, it relaxes the query. DLMF also perfoms some normalization of the equation and some cleaning of some characters, but no further details are provided. The content indexed by this project is highly curated, which differentiates it from the other projects. In the report published in 2013 \cite{dlmf2}, it is reported to have indexed around 38000 equations. This project is publicly available at \url{http://dlmf.nist.gov/}
 
 \subsection{MathWebSearch}
-MathWebSearch\cite{mathwebsearch} (Currently on its 0.5 version) is a open-source search engine for mathematical equations. While most of the documentation relates on the architecture of the system and how they address scalability; the indexing technique is also very interesting. The system implements and idea proposed by Peter Graf in \cite{substitution_tree_indexing} called substitution tree indexing. This idea can be viewed as a generalization of the variable and constant unification. It represents the equations as a tree an recursively generalizes each sub-expression.
+MathWebSearch\cite{mathwebsearch} (Currently on its 0.5 version) is a open-source search engine for mathematical equations. While most of the documentation relates on the architecture of the system and how they address scalability; the indexing technique is also very interesting. The system implements and idea proposed by Peter Graf in \cite{substitution_tree_indexing} called substitution tree indexing. This idea can be viewed as a generalization of the variable and constant unification. It represents the equations as a tree an recursively generalizes each sub-expression. A public available instance of the system is available at \url{http://search.mathweb.org/tema/} which runs on the Zentralblatt Math database\cite{zb}.
 
 
 \subsection{LaTEXSearch}
 LaTEXSearch \url{http://latexsearch.com/} is a system developed by the scientific publisher Springer that allows to search over a database of around eight million latex snippets extracted from their publications. The system, unfortunately, is proprietary and no details are provided about the internals of the system.
-	 
-\section{Other related projects and initiatives}
-\subsection{arXMLiv}
-\thispagestyle{empty}
+
+Other systems that provide similar search functionalities are \url{Uniquation} and \url{http://www.symbolab.com/}, however detailed information about the systems are not provided. Finally Wolfram Alpha\cite{wolframalpha} is a very powerful tool that allows to find information about lots of mathematical concepts and a wide variety of other objects (Even pokemons).

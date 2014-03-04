@@ -1,9 +1,11 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}
-\contentsline {section}{\numberline {1.1}Context}{9}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Invenio}{9}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}CDS}{9}{subsection.1.1.2}
-\contentsline {section}{\numberline {1.2}Goals}{9}{section.1.2}
+\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
+\contentsline {section}{\numberline {1.1}Context}{7}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}CERN}{7}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}CDS Invenio}{7}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Project overview}{8}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Motivation}{8}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Goals}{10}{subsection.1.2.2}
 \contentsline {chapter}{\numberline {2}Theoretical Background}{11}{chapter.2}
 \contentsline {section}{\numberline {2.1}Boolean Model}{11}{section.2.1}
 \contentsline {section}{\numberline {2.2}Vector Space Model}{12}{section.2.2}
@@ -17,19 +19,13 @@
 \contentsline {section}{\numberline {3.2}Math Extraction Tools}{19}{section.3.2}
 \contentsline {section}{\numberline {3.3}Computer Algebra Systems}{20}{section.3.3}
 \contentsline {chapter}{\numberline {4}Related Work}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}Status of MIR}{23}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}TREC}{23}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}TREC}{23}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}CLEF}{23}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}NTCIR}{23}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}Mathematical based search projects}{23}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}MIaS}{23}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.1}Status of Mathematical Information Retrieval}{23}{section.4.1}
+\contentsline {section}{\numberline {4.2}Mathematical based search projects}{24}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}MIaS}{24}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}EgoMath}{24}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}DLMFSearch}{24}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}DLMFSearch}{25}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}MathWebSearch}{25}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}LaTEXSearch}{25}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Other related projects and initiatives}{25}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}arXMLiv}{25}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.2.5}LaTEXSearch}{26}{subsection.4.2.5}
 \contentsline {chapter}{\numberline {5}$5e^{x+y}$(CDS)}{27}{chapter.5}
 \contentsline {section}{\numberline {5.1}Features Extraction}{27}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Notational Features}{27}{subsection.5.1.1}
@@ -44,10 +40,10 @@
 \contentsline {section}{\numberline {5.3}Integration with Mathematica}{36}{section.5.3}
 \contentsline {subsubsection}{Pattern Extraction}{36}{section*.10}
 \contentsline {subsubsection}{Expression simplification}{36}{section*.11}
-\contentsline {subsubsection}{Recursive interpretation}{37}{section*.12}
-\contentsline {subsubsection}{Error handling}{37}{section*.13}
-\contentsline {subsubsection}{Timeout Handling}{37}{section*.14}
-\contentsline {section}{\numberline {5.4}Integration with CDS}{38}{section.5.4}
+\contentsline {subsubsection}{Recursive interpretation}{38}{section*.12}
+\contentsline {subsubsection}{Error handling}{38}{section*.13}
+\contentsline {subsubsection}{Timeout Handling}{38}{section*.14}
+\contentsline {section}{\numberline {5.4}Integration with CDS}{39}{section.5.4}
 \contentsline {chapter}{\numberline {6}Advanced Techniques}{41}{chapter.6}
 \contentsline {section}{\numberline {6.1}Latent Semantic Indexing with Semantic Vectors}{41}{section.6.1}
 \contentsline {section}{\numberline {6.2}Latent Dirichlet Allocation with Apache Mahout}{41}{section.6.2}
@@ -57,9 +53,9 @@
 \contentsline {section}{\numberline {7.3}Results quality}{44}{section.7.3}
 \contentsline {subsection}{\numberline {7.3.1}Equations}{44}{subsection.7.3.1}
 \contentsline {section}{\numberline {7.4}Comparison against other systems}{44}{section.7.4}
-\contentsline {section}{\numberline {7.5}Querying Performance}{44}{section.7.5}
-\contentsline {section}{\numberline {7.6}Indexing Performance}{44}{section.7.6}
-\contentsline {section}{\numberline {7.7}Alternative Metrics}{46}{section.7.7}
+\contentsline {section}{\numberline {7.5}Querying Performance}{46}{section.7.5}
+\contentsline {section}{\numberline {7.6}Indexing Performance}{46}{section.7.6}
+\contentsline {section}{\numberline {7.7}Alternative Metrics}{47}{section.7.7}
 \contentsline {chapter}{\numberline {8}Conclusions}{49}{chapter.8}
 \contentsline {chapter}{\numberline {9}Future work}{51}{chapter.9}
 \contentsline {chapter}{Bibliographie}{52}{chapter.9}

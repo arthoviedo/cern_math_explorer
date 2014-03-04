@@ -1,4 +1,4 @@
-package cern.ch.mathexplorer.core;
+package cern.ch.mathexplorer.standalone;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -46,12 +46,12 @@ import org.apache.lucene.util.Version;
 import uk.ac.ed.ph.snuggletex.SnuggleEngine;
 import uk.ac.ed.ph.snuggletex.SnuggleInput;
 import uk.ac.ed.ph.snuggletex.SnuggleSession;
-import cern.ch.mathexplorer.core.EquationResult.EquationBuilder;
 import cern.ch.mathexplorer.lucene.analysis.VecTextField;
 import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrNotationalAnalyzer;
 import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrNormalizerNotationalAnalyzer;
 import cern.ch.mathexplorer.lucene.analysis.analyzers.SolrStructuralAnalyzer;
 import cern.ch.mathexplorer.lucene.query.MathQueryParser;
+import cern.ch.mathexplorer.standalone.EquationResult.EquationBuilder;
 import cern.ch.mathexplorer.utils.Console;
 import cern.ch.mathexplorer.utils.Constants;
 import cern.ch.mathexplorer.utils.Constants.MATH_FIELD;

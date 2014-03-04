@@ -1,4 +1,4 @@
-package cern.ch.mathexplorer.core;
+package cern.ch.mathexplorer.standalone;
 
 import java.io.Serializable;
 

@@ -1,5 +1,32 @@
 \begin{thebibliography}{10}
 
+\bibitem{CERN}
+About cern, 2014.
+\newblock \url{http://home.web.cern.ch/about}.
+
+\bibitem{web_proposal}
+The original proposal of the www, htmlized, 2014.
+\newblock \url{http://www.w3.org/History/1989/proposal.html}.
+
+\bibitem{CDS1}
+Cern document server, 2014.
+\newblock \url{http://cds.cern.ch/}.
+
+\bibitem{CDS2}
+Maja Gracco Jean Yves Le Meur Nicholas Robinson Tibor~Simko Alberto~Pepe,
+  Thomas~Baron and Martin Vesely.
+\newblock Cern document server software: the integrated digital library, 2005.
+\newblock
+  \url{http://cds.cern.ch/record/1198695/files/CERN-THESIS-2009-057.pdf}.
+
+\bibitem{invenio}
+Invenio, 2014.
+\newblock \url{http://invenio-software.org/}.
+
+\bibitem{arxiv}
+arxiv.org e-print archive, 2014.
+\newblock \url{http://arxiv.org}.
+
 \bibitem{vector_space_model}
 S.~K.~M. Wong and Vijay~V. Raghavan.
 \newblock Vector space model of information retrieval: A reevaluation.
@@ -83,6 +110,14 @@ Heinrich Stamerjohanns; Deyan Ginev; Catalin David; Dimitar Misev; Vladimir
 \newblock (mathml-aware article conversion from latex — a comparison study).
 \newblock 51:7--28, 2008.
 
+\bibitem{nii}
+National institute of informatics, 2014.
+\newblock \url{http://www.nii.ac.jp/en/}.
+
+\bibitem{math_task}
+Ntcir pilot task: Math task, 2013.
+\newblock \url{http://ntcir-math.nii.ac.jp/ntcir10-math/}.
+
 \bibitem{mias_1}
 Petr Sojka and Martin L\'{i}\v{s}ka.
 \newblock Indexing and searching mathematics in digital libraries.
@@ -90,6 +125,10 @@ Petr Sojka and Martin L\'{i}\v{s}ka.
   Rabe, editors, {\em Intelligent Computer Mathematics}, volume 6824 of {\em
   Lecture Notes in Computer Science}, pages 228--243. Springer Berlin
   Heidelberg, 2011.
+
+\bibitem{mrec}
+Mrec — mathematical retrieval collection, 2012.
+\newblock \url{https://mir.fi.muni.cz/MREC/index.html}.
 
 \bibitem{egomath1}
 Jozef Mi\v{s}utka and Leo Galambo\v{s}.
@@ -133,11 +172,14 @@ Peter Graf.
   volume 914 of {\em Lecture Notes in Computer Science}, pages 117--131.
   Springer Berlin Heidelberg, 1995.
 
+\bibitem{zb}
+zbmath - the first resource for mathematics, 2014.
+\newblock \url{http://zbmath.org/about/}.
+
 \bibitem{math_groups}
 Xah Lee.
 \newblock Unicode: Math symbols, 2010.
-\newblock
-  \url{http://web.archive.org/web/20131223003502/http://xahlee.info/comp/unicode_math_operators.html}.
+\newblock \url{http://web.archive.org/web/20131223003502/ }.
 
 \bibitem{tree_comparison}
 Shahab Kamali and Frank~Wm. Tompa.
@@ -159,5 +201,9 @@ Mateusz Pawlik and Nikolaus Augsten.
 {NIST Digital Library of Mathematical Functions}.
 \newblock http://dlmf.nist.gov/, Release 1.0.6 of 2013-05-06.
 \newblock Online companion to \cite{Olver:2010:NHMF}.
+
+\bibitem{mir_workshop}
+Mir 2012 workshop -- mathematics information retrieval, july 8th, 2012, 2012.
+\newblock \url{http://cicm-conference.org/2012/cicm.php?event=mir}.
 
 \end{thebibliography}

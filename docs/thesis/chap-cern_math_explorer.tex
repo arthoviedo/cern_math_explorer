@@ -176,13 +176,13 @@ This section describes some aspects that had to be considered while implementing
 The second feature that we are interested in is automatic expression simplification.
 Mathematica includes different transformations of expressions. These include: {\codefont Simplify} which tries to transform a given equation in an equivalent one but in a reduced form, {\codefont FullSimplify} which is similar to the previous one but tries a higher number of heuristics to apply that can simplify expressions further at the expense of more processing time, {\codefont Factor} to factorize polynomials, {\codefont Refine} which simplifies expressions given certain assumptions about the variables, {\codefont TrigReduce} that tries to apply trigonometric identities to simplify the expression, {\codefont FunctionExpand} that tries to expand special functions in terms of sums and products of other elementary functions. 
 
-The two functions that are more relevant for our work are {\codefont Simplify} and {\codefont FullySimplify} since they apply most of the other combined methods and do not require additional information.
+The two functions that are more relevant for our work are {\codefont Simplify} and {\codefont FullySimplify} since they apply a combination of the other methods and do not require additional information.
 
-Table \ref{table_simplifications} presents some sample equations found in some the documents in CDS and the different forms of simplification.
+Table \ref{comparison_simplification} presents some sample equations found in some the documents in CDS and the different forms of simplification.
 
-\begin{tabular}{|>{\centering\arraybackslash}m{4cm}|>
-{\centering\arraybackslash}m{4cm}|>
-{\centering\arraybackslash}m{4cm}|}
+\begin{tabular}{|>{\centering\arraybackslash}m{4.5cm}|>
+{\centering\arraybackslash}m{4.5cm}|>
+{\centering\arraybackslash}m{4.5cm}|}
 \hline
 Original Form & {\codefont Simplify} & {\codefont FullSimplify} \\
 \hline
@@ -190,6 +190,11 @@ Original Form & {\codefont Simplify} & {\codefont FullSimplify} \\
 $\frac{\Phi '}{2 (1+\Phi )}+\frac{1}{r}=0$          & $\frac{1}{r}+\frac{\Phi '}{2 \Phi +2}=0$ & $\frac{2}{r}+\frac{\Phi '}{\Phi +1}=0$       \\
 
 \hline
+
+\scriptsize{\codefont <math> <mrow> <mrow> <mfrac> <mn>1</mn> <mn>2</mn> </mfrac> <mo>⁢</mo> <msup> <mi>x</mi> <mn>2</mn> </msup> <mo>⁢</mo> <mrow> <mi>log</mi> <mo>⁡</mo> <mrow> <mo>(</mo> <mrow> <mn>1</mn> <mo>-</mo> <msup> <mi>e</mi> <mrow> <mo>-</mo> <mrow> <mn>2</mn> <mo>⁢</mo> <mi>x</mi> </mrow> </mrow> </msup> </mrow> <mo>)</mo> </mrow> </mrow> </mrow> <mo>-</mo> <mrow> <mfrac> <mn>1</mn> <mn>2</mn> </mfrac> <mo>⁢</mo> <mi>x</mi> <mo>⁢</mo> <mi>L</mi> <mo>⁢</mo> <msub> <mi>i</mi> <mn>2</mn> </msub> <mo>⁢</mo> <mrow> <mo>(</mo> <msup> <mi>e</mi> <mrow> <mo>-</mo> <mrow> <mn>2</mn> <mo>⁢</mo> <mi>x</mi> </mrow> </mrow> </msup> <mo>)</mo> </mrow> </mrow> <mo>-</mo> <mrow> <mfrac> <mn>1</mn> <mn>4</mn> </mfrac> <mo>⁢</mo> <mi>L</mi> <mo>⁢</mo> <msub> <mi>i</mi> <mn>3</mn> </msub> <mo>⁢</mo> <mrow> <mo>(</mo> <msup> <mi>e</mi> <mrow> <mo>-</mo> <mrow> <mn>2</mn> <mo>⁢</mo> <mi>x</mi> </mrow> </mrow> </msup> <mo>)</mo> </mrow> </mrow> </mrow> </math> }      & \scriptsize{\codefont <math> <mrow> <mfrac> <mn>1</mn> <mn>4</mn> </mfrac> <mo>⁢</mo> <msup> <mi>e</mi> <mrow> <mrow> <mo>-</mo> <mn>2</mn> </mrow> <mo>⁢</mo> <mi>x</mi> </mrow> </msup> <mo>⁢</mo> <mrow> <mo>(</mo> <mrow> <mrow> <mn>2</mn> <mo>⁢</mo> <msup> <mi>x</mi> <mn>2</mn> </msup> <mo>⁢</mo> <msup> <mi>e</mi> <mrow> <mn>2</mn> <mo>⁢</mo> <mi>x</mi> </mrow> </msup> <mo>⁢</mo> <mrow> <mi>log</mi> <mo>⁡</mo> <mo>(</mo> <mrow> <mn>1</mn> <mo>-</mo> <msup> <mi>e</mi> <mrow> <mrow> <mo>-</mo> <mn>2</mn> </mrow> <mo>⁢</mo> <mi>x</mi> </mrow> </msup> </mrow> <mo>)</mo> </mrow> </mrow> <mo>-</mo> <mrow> <mn>2</mn> <mo>⁢</mo> <msub> <mi>i</mi> <mn>2</mn> </msub> <mo>⁢</mo> <mi>L</mi> <mo>⁢</mo> <mi>x</mi> </mrow> <mo>-</mo> <mrow> <msub> <mi>i</mi> <mn>3</mn> </msub> <mo>⁢</mo> <mi>L</mi> </mrow> </mrow> <mo>)</mo> </mrow> </mrow> </math> }    & \scriptsize{\codefont <math> <mrow> <mrow> <mfrac> <mn>1</mn> <mn>2</mn> </mfrac> <mo>⁢</mo> <msup> <mi>x</mi> <mn>2</mn> </msup> <mo>⁢</mo> <mrow> <mi>log</mi> <mo>⁡</mo> <mo>(</mo> <mrow> <mn>1</mn> <mo>-</mo> <msup> <mi>e</mi> <mrow> <mrow> <mo>-</mo> <mn>2</mn> </mrow> <mo>⁢</mo> <mi>x</mi> </mrow> </msup> </mrow> <mo>)</mo> </mrow> </mrow> <mo>-</mo> <mrow> <mfrac> <mn>1</mn> <mn>4</mn> </mfrac> <mo>⁢</mo> <mi>L</mi> <mo>⁢</mo> <msup> <mi>e</mi> <mrow> <mrow> <mo>-</mo> <mn>2</mn> </mrow> <mo>⁢</mo> <mi>x</mi> </mrow> </msup> <mo>⁢</mo> <mrow> <mo>(</mo> <mrow> <mrow> <mn>2</mn> <mo>⁢</mo> <msub> <mi>i</mi> <mn>2</mn> </msub> <mo>⁢</mo> <mi>x</mi> </mrow> <mo>+</mo> <msub> <mi>i</mi> <mn>3</mn> </msub> </mrow> <mo>)</mo> </mrow> </mrow> </mrow> </math>}     \\ 
+\scriptsize{ $\frac{1}{2} x^2 \log \left(1-e^{-2 x}\right) - \frac{1}{2} x L i_ 2 \left(e^{-2 x}\right)-\frac{1}{4} L i_ 3 \left(e^{-2 x}\right)$ }          & \scriptsize { \begin{multline}  \frac{1}{4} e^{-2 x} (2 x^2 e^{2 x} \log (1-e^{-2 x})- \notag\\ 2 i_ 2 L x-i_ 3 L)  \end{multline} } & \scriptsize{ $\frac{1}{2} x^2 \log \left(1-e^{-2 x}\right)-\frac{1}{4} L e^{-2 x} \left(2 i_ 2 x+i_ 3\right)$ }      \\
+
+\label{comparison_simplification}
 \end{tabular}
 
 \subsubsection{Recursive interpretation}
@@ -237,7 +242,7 @@ Figure \ref{system_arch} presents the main components of our deployment.
 
 \begin{figure}
 \includegraphics[height=4.2 cm]{visio_drawings/architecture.png}
-\label{comparison_sw_table}
+\label{system_arch}
 \caption{High level deployment architecture}
 \end{figure}
 
@@ -246,13 +251,13 @@ A demo interface over the {\codefont pu} branch was developed to showcase the sy
 
 \begin{figure}
 \includegraphics[height=8 cm]{figures/input_interface.png}
-\label{comparison_sw_table}
+\label{input_interface}
 \caption{Web interface of $5e^{x+y}$: Query input screen}
 \end{figure}
 
 \begin{figure}
 \includegraphics[height=8 cm]{figures/results_interface.png}
-\label{comparison_sw_table}
+\label{results_interface}
 \caption{Web interface of $5e^{x+y}$: Results screen}
 \end{figure}
 

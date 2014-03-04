@@ -14,8 +14,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.servlet.ServletContext;
 
-import cern.ch.mathexplorer.core.EquationResult;
-import cern.ch.mathexplorer.core.MathExplorer;
+import cern.ch.mathexplorer.standalone.EquationResult;
+import cern.ch.mathexplorer.standalone.MathExplorer;
 import cern.ch.mathexplorer.utils.Constants;
 
 @ManagedBean(name="mathBean")

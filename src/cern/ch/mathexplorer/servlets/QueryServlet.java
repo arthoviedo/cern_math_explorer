@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cern.ch.mathexplorer.core.EquationResult;
-import cern.ch.mathexplorer.core.MathExplorer;
+import cern.ch.mathexplorer.standalone.EquationResult;
+import cern.ch.mathexplorer.standalone.MathExplorer;
 
 /**
  * Servlet implementation class QueryServlet
