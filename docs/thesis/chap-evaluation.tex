@@ -26,7 +26,7 @@ Python & 2.7.5+ \\ \hline
 \label{sw_used}
 \end{longtable}
 
-\section{Quality resukts}
+\section{Quality results}
 In this section we are interested in evaluating the quality of the results provided by our system.
 The type of queries that $5e^{x+y}$ was designed for, are typical equations that can be found in a physics scientific publication. 
 Out main user case is that a user of CDS is interested in finding documents inside the collection whose equations are related to the one that is provided.  
@@ -42,6 +42,8 @@ For each metric we compared three different scenarios:
 \item N+S : Notational and structural features over the original expression
 \item N+S+NN : Notational and structural features over the original expression and notational features over the normalized string using Mathematica's Simplify function
 \end{itemize}
+
+We also were interested in also using the Fully Simplify function in Mathematica but we found no difference between both forms and the results were the same.
 
 We present results for three metrics: Partial precision (Document either partially relevant or completely relevant) strict precision and discounted cumulative gain ($ \mathrm{DCG_{p}} = \sum_{i=1}^{p} \frac{ 2^{rel_{i}} - 1 }{ \log_{2}(i+1)} $).
 
@@ -121,20 +123,6 @@ N+S+FN & 1377 & 25548 & 0.122 & 2.269 \\
 
 \section{Alternative Metrics}
 According to some experimental evaluations presented in \cite{tree_comparison}, Tree Edit Distance provides an interesting alternative metric to the standard vector space model using angular distance. In this work, authors present an improvement in the quality of retrieved results compared to the classic approach of indexing the single leaves of the tree and a subset of the possible sub-trees. For evaluating the feasibility of this approach we compared a set of equations using both metrics: Tree edit distance (Using Zheng and Shasha's algorithm implemented in python \cite{tree_distance_python}.) and a standard angular distance that was not heavily optimized. We compared elapsed times for expressions of different length.
-
-
-%%
-%\begin{longtable}{|m{3.5cm}|>
-%{\centering\arraybackslash}m{3cm}|>
-%{\centering\arraybackslash}m{3cm}|>
-%{\centering\arraybackslash}m{5cm}|
-%}
-%\hline 
-%\textbf{\LaTeX} & 
-%\textbf{Presentation MathML} & 
-%\textbf{Content MathML + Presentation Markups} & 
-%\textbf{OpenMath}  \\ \hline
-%%%
 
 \begin{longtable}{|>{\centering\arraybackslash}m{3.5cm}|>
 {\centering\arraybackslash}m{3cm}|>
