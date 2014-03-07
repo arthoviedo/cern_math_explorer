@@ -25,5 +25,11 @@
 	<classpathentry kind="lib" path="lib/mahout-examples-0.9.jar"/>
 	<classpathentry kind="lib" path="lib/mahout-integration-0.9.jar"/>
 	<classpathentry kind="lib" path="lib/mahout-math-0.9.jar"/>
+	<classpathentry kind="lib" path="lib/hadoop-core-1.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-configuration-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.7.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
