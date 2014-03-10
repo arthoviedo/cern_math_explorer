@@ -17,7 +17,7 @@ import java.util.Set;
 
 import javax.servlet.ServletContext;
 
-import org.apache.log4j.Appender;
+//import org.apache.log4j.Appender;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
@@ -87,7 +87,7 @@ public class MathExplorer {
 	static java.util.logging.Logger aLogger = java.util.logging.Logger
 			.getLogger(MathExplorer.class.getName());
 
-	static Appender myAppender;
+	//static Appender myAppender;
 
 	public static final boolean INDEX_WHOLE_ARTICLE = false;
 	
