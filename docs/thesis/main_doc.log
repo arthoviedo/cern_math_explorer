@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  10 MAR 2014 19:50
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  10 MAR 2014 20:55
 entering extended mode
 **main_doc.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
@@ -2308,10 +2308,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 163.
  ) 
 Here is how much of TeX's memory you used:
- 24444 strings out of 429035
- 429625 string characters out of 3166907
- 554554 words of memory out of 3000000
- 27233 multiletter control sequences out of 15000+200000
+ 24443 strings out of 429035
+ 429613 string characters out of 3166907
+ 553272 words of memory out of 3000000
+ 27232 multiletter control sequences out of 15000+200000
  18371 words of font info for 109 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  46i,16n,47p,10405b,1190s stack positions out of 5000i,500n,10000p,200000b,50000s
