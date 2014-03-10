@@ -13,7 +13,7 @@ OpenMath is yet another markup language to represent mathematics and can be used
 Table \ref{math_languages} presents a comparison on how different languages can express the quadratic equation $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $
 
 
-\begin{longtable}{|m{3.5cm}|>
+\begin{longtable}{|>{\centering\arraybackslash}m{3.5cm}|>
 {\centering\arraybackslash}m{3cm}|>
 {\centering\arraybackslash}m{3cm}|>
 {\centering\arraybackslash}m{5cm}|
@@ -52,30 +52,29 @@ For extracting equations from PDF files, the process turns into an Optical Chara
 
 Table \ref{math_extraction_tools} presents the main features of the reviewed software. 
 
-\begin{longtable}{|
-m{2.8cm}|>{\centering\arraybackslash}
-m{2cm}|>{\centering\arraybackslash}
-m{1.65cm}|>{\centering\arraybackslash}
-m{1.65cm}|>{\centering\arraybackslash}
-m{1.65cm}|>{\centering\arraybackslash}
-m{1.95cm}|>{\centering\arraybackslash}
-m{1.65cm}|>{\centering\arraybackslash}
-m{1.65cm}|
+\begin{longtable}{|>{\centering\arraybackslash}
+m{2.93cm}|>{\centering\arraybackslash}
+m{1.8cm}|>{\centering\arraybackslash}
+m{1.6cm}|>{\centering\arraybackslash}
+m{1.9cm}|>{\centering\arraybackslash}
+m{1.6cm}|>{\centering\arraybackslash}
+m{1.8cm}|>{\centering\arraybackslash}
+m{1.4cm}|
 }
 \hline 
-\textbf{Software} & \textbf{Type} & \textbf{Tested version} & \textbf{Input Format(s)} & \textbf{Output Format(s)} & \textbf{Licence Type} & \textbf{Latest Update}  \\
+\small{\textbf{Software}} & \small{\textbf{Type}} & \small{\textbf{Tested version}} & \small{\textbf{Input Format(s)}} & \small{\textbf{Output Format(s)}} & \small{\textbf{Licence Type}} & \small{\textbf{Latest Update}}  \\
 \hline
-LaTeXML\cite{latexml} & Standalone Executable &0.7.9alpha & \LaTeX & XML + MathML & Open Source & 13 Feb 2014  \\
+\small{LaTeXML}\cite{latexml} & \small{Standalone Executable} & \small{0.7.9alpha} & \small{\LaTeX} & \small{XML + MathML} & \small{Open Source} & \small{13 Feb 2014}  \\
 \hline
-TeX4ht\cite{tex4ht2} & Standalone Executable & 2009-01-31-07 & \LaTeX & XML + MathML & Open Source & 11 Jun 2009  \\
+\small{TeX4ht}\cite{tex4ht2} & \small{Standalone Executable} & \small{ 2009-01-31-07} & \small{\LaTeX} & \small{XML + MathML} & \small{ Open Source} & \small{11 Jun 2009}  \\
 \hline
-SnuggleTex\cite{snuggletex} & Java Library & 1.2.2 & \LaTeX (Small fragments) & MathML & Open Source & 24 May 2010  \\
+\small{SnuggleTex}\cite{snuggletex} & \small{Java Library} & \small{1.2.2} & \small{\LaTeX (Small fragments)} & \small{MathML} & \small{Open Source} & \small{24 May 2010}  \\
 \hline
-LaTeXmathML\cite{latexmathml} & Javascript Library & 30-October-2007 & \LaTeX & XML + MathML & Open Source & 30 Oct 2007  \\
+\small{LaTeXmathML}\cite{latexmathml} & \small{Javascript Library} & \small{30-October-2007} & \small{\LaTeX} & \small{XML + MathML} & \small{Open Source} & \small{30 Oct 2007}  \\
 \hline
-Maxtract\cite{maxtract1}\cite{maxtract2} & Standalone Executable & v.1752 & PDF & \LaTeX / Annotated PDF & Free to download & 15 Nov 2012  \\
+\small{Maxtract}\cite{maxtract1}\cite{maxtract2} & \small{Standalone Executable} & \small{v.1752} & \small{PDF} & \small{\LaTeX / Annotated PDF} & \small{Free to download} & \small{15 Nov 2012}  \\
 \hline
-InftyReader\cite{infty1}\cite{infty2} & Standalone Executable (On Windows) & 2.9.6.2 & PDF, TIFF, BMP, GIF, PNG & \LaTeX, XML + MathML & Commercial & 22 Dec 2013  \\
+\small{InftyReader}\cite{infty1}\cite{infty2} & \small{Standalone Executable (On Windows)} & \small{2.9.6.2} & \small{PDF, TIFF, BMP, GIF, PNG} & \small{\LaTeX, XML + MathML} & \small{Commercial} & \small{22 Dec 2013}  \\
 
 \hline
 \caption{Comparison of available Mathematical extraction tools}
@@ -90,29 +89,28 @@ For extraction from \LaTeX  files we concluded that the best option is LaTeXML. 
 Computer Algebra Systems (CASs) are software packages that allow performing symbolic transformations on mathematical objects. They allow to manipulate, simplify and analyse mathematical equations and offer interesting functionalities for a mathematical based search engine. The most important functionalities that we are looking for in such system are simplification and normalization of mathematical expressions and pattern matching. As discussed previously, the language for representing expressions will be MathML, so we also require that such system is able to import this format. Finally, we are also interested in integrating these functionalities in a bigger system, so integration trough APIs was also considered.
 
 
-\begin{longtable}{|m{2cm}|>
+\begin{longtable}{|>
 {\centering\arraybackslash}m{2cm}|>
-{\centering\arraybackslash}m{1.65cm}|>
-{\centering\arraybackslash}m{1.65cm}|>
-{\centering\arraybackslash}m{1.65cm}|>
-{\centering\arraybackslash}m{1.95cm}|>
-{\centering\arraybackslash}m{1.65cm}|>
-{\centering\arraybackslash}m{1.65cm}|
+{\centering\arraybackslash}m{2.1cm}|>
+{\centering\arraybackslash}m{1.9cm}|>
+{\centering\arraybackslash}m{1.55cm}|>
+{\centering\arraybackslash}m{1.83cm}|>
+{\centering\arraybackslash}m{1.95cm}|
 }
 \hline 
-\textbf{CAS} & 
-\textbf{Imports MathML} & 
-\textbf{Expression normalization} & 
-\textbf{Pattern Matching}  &
-\textbf{License Type}  &
-\textbf{Supported APIs}
+\textbf{\small{CAS}} & 
+\textbf{\small{Imports MathML}} & 
+\textbf{\small{Expression normalization}} & 
+\textbf{\small{Pattern Matching}}  &
+\textbf{\small{License Type}}  &
+\textbf{\small{Supported APIs}}
 \\
 \hline
-Maple &  Yes & Yes & Yes & Commercial & C, Java, VB \\ \hline
-MatLab (Symbolic Math Toolbox) & Experimental & Yes & Yes & Commercial & C/C++, Fortran \\ \hline
-Mathematica &  Yes & Yes & Yes & Commercial & C, Java, .NET \\ \hline 
-Maxima &  Experimental & Yes & Yes & Open Source  & C++, Java (External Project) \\ \hline
-SymPy & No & Yes & Yes & Open Source & Python \\ \hline
+\small{Maple} &  \small{Yes} & \small{Yes} & \small{Yes} & \small{Commercial} & \small{C, Java, VB} \\ \hline
+\small{MatLab (Symbolic Math Toolbox)} & \small{Experimental} & \small{Yes} & \small{Yes} & \small{Commercial} & \small{C/C++, Fortran} \\ \hline
+\small{Mathematica} & \small{Yes} & \small{Yes} & \small{Yes} & \small{Commercial} & \small{C, Java, .NET} \\ \hline 
+\small{Maxima} &  \small{Experimental} & \small{Yes} & \small{Yes} & \small{Open Source} & \small{C++, Java (External Project)} \\ \hline
+\small{SymPy} & \small{No} & \small{Yes} & \small{Yes} & \small{Open Source} & \small{Python} \\ \hline
 
 \caption{Comparison of main CAS}
 \label{CAS_comparison}

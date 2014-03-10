@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  5 MAR 2014 14:50
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  10 MAR 2014 19:50
 entering extended mode
 **main_doc.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
@@ -1004,12 +1004,12 @@ ux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-technical_considerations
 .aux) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-advanced_techniques.aux)
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-advanced_techniques.aux
 
-LaTeX Warning: Label `loose_precision' multiply defined.
+LaTeX Warning: Label `cluster_measurements' multiply defined.
 
-) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.aux)
+) (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.aux)
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.aux)
@@ -1353,16 +1353,13 @@ tf
 [7]
 File: figures/cds_screenshot.png Graphic file (type QTm)
  <use  "figures/cds_screenshot.png" >
-
-LaTeX Warning: Citation `invenio_modules' on page 8 undefined on input line 24.
-
-
 File: figures/invenio.jpeg Graphic file (type QTm)
-<use  "figures/invenio.jpeg" >
+ <use  "figures/invenio.jpeg" >
 Requested font "[lmroman12-italic]:mapping=tex-text" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-italic
 .otf
- [8] [9]) [10]
+
+[8] [9]) [10]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-theoretical_background.t
 ex
 Chapter 2.
@@ -1407,16 +1404,6 @@ File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 Requested font "[lmmono10-regular]" at 10.95pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmmono10-regular
 .otf
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-[]|[][][][][][][][][][][][][][][][][][][][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-[][][][][][][][][][][][][][][][][][][][][][]
- []
-
 Requested font "Courier/ICU:" at 8.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
 Requested font "Arial Unicode MS/ICU:" at 8.0pt
@@ -1431,117 +1418,19 @@ Underfull \vbox (badness 10000) detected at line 42
  []
 
 [18]
-Overfull \hbox (5.30113pt too wide) in paragraph at lines 68--68
- []|\EU1/lmr/m/n/12 0.7.9alpha| 
+Requested font "[lmroman10-bold]:mapping=tex-text" at 10.95pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-bold.o
+tf
+
+Overfull \hbox (1.7282pt too wide) in paragraph at lines 67--67
+ []|\EU1/lmr/m/n/10.95 Standalone 
  []
 
 
-Overfull \hbox (15.72876pt too wide) in paragraph at lines 72--72
- []|\EU1/lmr/m/n/12 L[]T[]X(Small 
+Overfull \hbox (3.1591pt too wide) in paragraph at lines 67--67
+ []|\EU1/lmr/m/n/10.95 0.7.9alpha| 
  []
 
-
-Overfull \hbox (18.25221pt too wide) in paragraph at lines 74--74
-[]|\EU1/lmr/m/n/12 LaTeXmathML[[]]| 
- []
-
-
-Overfull \hbox (4.5722pt too wide) in paragraph at lines 76--76
-[]|\EU1/lmr/m/n/12 Maxtract[[]][[]]| 
- []
-
-
-Overfull \hbox (17.7842pt too wide) in paragraph at lines 78--78
-[]|\EU1/lmr/m/n/12 InftyReader[[]][[]]| 
- []
-
-
-Overfull \hbox (5.88522pt too wide) in paragraph at lines 78--78
- []|\EU1/lmr/m/n/12 Commercial| 
- []
-
-
-Overfull \hbox (77.0435pt too wide) in alignment at lines 64--83
- [] [] [] [] [] [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 83
- []
-
-[19] [20]
-Overfull \hbox (16.88113pt too wide) in paragraph at lines 105--105
- []|\EU1/lmr/bx/n/12 Expression 
- []
-
-
-Overfull \hbox (6.07724pt too wide) in paragraph at lines 108--110
- []|\EU1/lmr/bx/n/12 Supported 
- []
-
-
-Overfull \hbox (14.42113pt too wide) in paragraph at lines 111--111
- []|\EU1/lmr/m/n/12 Commercial| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-[]|\EU1/lmr/m/n/12 MatLab
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-\EU1/lmr/m/n/12 (Symbolic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-\EU1/lmr/m/n/12 Math
- []
-
-
-Overfull \hbox (12.1305pt too wide) in paragraph at lines 112--112
- []|\EU1/lmr/m/n/12 Experimental| 
- []
-
-
-Overfull \hbox (14.42113pt too wide) in paragraph at lines 112--112
- []|\EU1/lmr/m/n/12 Commercial| 
- []
-
-
-Overfull \hbox (10.6665pt too wide) in paragraph at lines 113--113
-[]|\EU1/lmr/m/n/12 Mathematica| 
- []
-
-
-Overfull \hbox (14.42113pt too wide) in paragraph at lines 113--113
- []|\EU1/lmr/m/n/12 Commercial| 
- []
-
-
-Overfull \hbox (12.1305pt too wide) in paragraph at lines 114--114
- []|\EU1/lmr/m/n/12 Experimental| 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 119
- []
-
-) [21] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.tex
-[22
-
-
-
-]
-Chapter 4.
-
-LaTeX Warning: Citation `mir_worksop' on page 23 undefined on input line 6.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23]
 Requested font "cmmi10" at 10.95pt
  -> cmmi10
 Requested font "cmsy10" at 10.95pt
@@ -1555,6 +1444,109 @@ Requested font "msbm10" at 10.95pt
 Requested font "cmr10" at 10.95pt
  -> cmr10
 
+Overfull \hbox (1.7282pt too wide) in paragraph at lines 69--69
+ []|\EU1/lmr/m/n/10.95 Standalone 
+ []
+
+
+Overfull \hbox (4.98077pt too wide) in paragraph at lines 71--71
+ []|\EU1/lmr/m/n/10.95 L[]T[]X(Small 
+ []
+
+
+Overfull \hbox (7.89091pt too wide) in paragraph at lines 73--73
+ []|\EU1/lmr/m/n/10.95 LaTeXmathML[[]]| 
+ []
+
+
+Overfull \hbox (1.7282pt too wide) in paragraph at lines 75--75
+ []|\EU1/lmr/m/n/10.95 Standalone 
+ []
+
+
+Overfull \hbox (7.47481pt too wide) in paragraph at lines 77--77
+ []|\EU1/lmr/m/n/10.95 InftyReader[[]][[]]| 
+ []
+
+
+Overfull \hbox (1.7282pt too wide) in paragraph at lines 77--77
+ []|\EU1/lmr/m/n/10.95 Standalone 
+ []
+
+
+Overfull \hbox (5.98775pt too wide) in paragraph at lines 77--77
+ []|\EU1/lmr/m/n/10.95 Commercial| 
+ []
+
+
+Overfull \hbox (67.9393pt too wide) in alignment at lines 63--82
+ [] [] [] [] [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 82
+ []
+
+[19] [20]
+Overfull \hbox (5.55173pt too wide) in paragraph at lines 103--103
+ []|\EU1/lmr/bx/n/10.95 Expression 
+ []
+
+
+Overfull \hbox (2.00471pt too wide) in paragraph at lines 106--108
+ []|\EU1/lmr/bx/n/10.95 Supported 
+ []
+
+
+Overfull \hbox (5.1342pt too wide) in paragraph at lines 109--109
+ []|\EU1/lmr/m/n/10.95 Commercial| 
+ []
+
+
+Overfull \hbox (4.62408pt too wide) in paragraph at lines 110--110
+ []|\EU1/lmr/m/n/10.95 Experimental| 
+ []
+
+
+Overfull \hbox (5.1342pt too wide) in paragraph at lines 110--110
+ []|\EU1/lmr/m/n/10.95 Commercial| 
+ []
+
+
+Overfull \hbox (6.05698pt too wide) in paragraph at lines 111--111
+ []|\EU1/lmr/m/n/10.95 Mathematica| 
+ []
+
+
+Overfull \hbox (5.1342pt too wide) in paragraph at lines 111--111
+ []|\EU1/lmr/m/n/10.95 Commercial| 
+ []
+
+
+Overfull \hbox (4.62408pt too wide) in paragraph at lines 112--112
+ []|\EU1/lmr/m/n/10.95 Experimental| 
+ []
+
+
+Overfull \hbox (7.16968pt too wide) in alignment at lines 99--117
+ [] [] [] [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 117
+ []
+
+) [21] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-related_work.tex
+[22
+
+
+
+]
+Chapter 4.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
 [24]
 
 LaTeX Warning: Citation `dlmf' on page 25 undefined on input line 28.
@@ -1562,11 +1554,8 @@ LaTeX Warning: Citation `dlmf' on page 25 undefined on input line 28.
 
 Underfull \vbox (badness 4846) has occurred while \output is active []
 
- [25]
-
-LaTeX Warning: Citation `wolframalpha' on page 26 undefined on input line 37.
-
-) [26]
+ [25])
+[26]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.tex
 Chapter 5.
 
@@ -1999,20 +1988,108 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--262
 ) [39] [40]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-advanced_techniques.tex
 Chapter 6.
-) [41
+
+Underfull \hbox (badness 7362) in paragraph at lines 17--18
+[]\EU1/Courier(0)/m/n/10.95 ./mahout canpoy -t1 0.15 -t2 0.1 -i ../re-
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+\EU1/Courier(0)/m/n/10.95 sults/vectors -o ../results/clustering/canopy -dm
+ []
 
-] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex
-[42
+
+Underfull \hbox (badness 5787) in paragraph at lines 21--22
+[]\EU1/Courier(0)/m/n/10.95 ./mahout kmeans -i ../results/vectors -o ../re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+\EU1/Courier(0)/m/n/10.95 sults/clustering_kmeans -xm sequential -c ../re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+\EU1/Courier(0)/m/n/10.95 sults/clustering/canopy -x 50 -cd 0.1 -cl -dm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+[]\EU1/lmr/m/n/10.95 To get the resulting points with their assigned cluster
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+\EU1/lmr/m/n/10.95 in a human readable format: \EU1/Courier(0)/m/n/10.95 ./maho
+ut seqdumper -i
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+\EU1/Courier(0)/m/n/10.95 ../results/clustering_kmeans/clusteredPoints/part-m-0
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+\EU1/Courier(0)/m/n/10.95 > ../results/clustering_kmeans/clusteredPoints/cluste
+r-
+ []
+
+[41
 
 
 
 ]
+Underfull \vbox (badness 10000) detected at line 44
+ []
+
+
+LaTeX Warning: Reference `' on page 42 undefined on input line 47.
+
+Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
+
+Overfull \hbox (8.47536pt too wide) in paragraph at lines 57--57
+ []|\EU1/lmr/m/n/10 <mo>ARROWS</mo>| 
+ []
+
+Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no ⁡ in font [lmroman10-regular]:mapping=tex-text
+!
+Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no φ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no ϕ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no ϕ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no ϕ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no ϕ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no φ in font [lmroman10-regular]:mapping=tex-text!
+
+Overfull \hbox (44.78928pt too wide) in alignment at lines 50--72
+ [] [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 72
+ []
+
+Missing character: There is no α in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no ∈ in font [lmroman10-regular]:mapping=tex-text
+!
+
+Overfull \hbox (44.78928pt too wide) in alignment at lines 72--78
+ [] [] [] [] 
+ []
+
+[42])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
+[44] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex
 Chapter 7.
-Requested font "[lmroman10-bold]:mapping=tex-text" at 10.95pt
- -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-bold.o
-tf
 
 Underfull \vbox (badness 10000) detected at line 27
  []
@@ -2020,52 +2097,53 @@ Underfull \vbox (badness 10000) detected at line 27
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43]
-Underfull \vbox (badness 10000) detected at line 61
+ [45
+
+
+
+]
+Underfull \vbox (badness 10000) detected at line 67
  []
 
 
-Underfull \vbox (badness 10000) detected at line 75
+Underfull \vbox (badness 10000) detected at line 84
+ []
+
+[46]
+Underfull \vbox (badness 10000) detected at line 100
+ []
+
+[47]
+Underfull \vbox (badness 10000) detected at line 134
  []
 
 
-Underfull \vbox (badness 10000) detected at line 89
- []
-
-[44]
-Underfull \hbox (badness 7326) in paragraph at lines 106--106
-[]|\EU1/lmr/m/n/10.95 Index Size
+Overfull \hbox (17.4858pt too wide) in alignment at lines 142--152
+ [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--106
-\EU1/lmr/m/n/10.95 per equa-
+Underfull \vbox (badness 10000) detected at line 152
+ []
+
+[48]
+Overfull \hbox (17.4858pt too wide) in alignment at lines 164--178
+ [] [] [] 
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 106--107
-[]|\EU1/lmr/m/n/10.95 Avg. size
+Underfull \vbox (badness 10000) detected at line 178
  []
 
+) [49] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.tex
+[50
 
-Underfull \vbox (badness 10000) detected at line 118
- []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [45]
-Underfull \vbox (badness 10000) detected at line 156
- []
-
-) [46] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.tex
+]
 Chapter 8.
-) [47
-
-
-
-] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.tex
-[48
+) [51] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.tex
+[52
 
 
 
@@ -2075,7 +2153,7 @@ Chapter 9.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 4.
 
-) [49] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl [50
+) [53] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl [54
 
 
 ]
@@ -2083,33 +2161,31 @@ Requested font "[lmroman10-italic]:mapping=tex-text" at 10.95pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-italic
 .otf
 
-[51]
-Underfull \hbox (badness 2460) in paragraph at lines 81--83
+[55]
+Underfull \hbox (badness 2460) in paragraph at lines 85--87
 []\EU1/lmr/m/n/10.95 A brief description of latexmathml, 2007.  []$[][][][] [] 
 [] [] [][][][] [] [][][][] [] [][][] []
  []
 
 
-Underfull \hbox (badness 1163) in paragraph at lines 118--120
+Underfull \hbox (badness 1163) in paragraph at lines 126--128
 []\EU1/lmr/m/n/10.95 Ntcir pilot task: Math task, 2013.  []$[][][][] [] [] [] [
 ][][][][][][][][][][] [] [][][] [] [][] [] [][] []
  []
 
-[52]
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
+[]\EU1/lmr/m/n/10.95 Wolfram|alpha: Computational knowledge, 2014.  []$[][][][]
+[] [] [] [] [][][] []
+ []
 
-LaTeX Warning: Citation `NIST:DLMF' on page 53 undefined on input line 150.
-
-
-LaTeX Warning: Citation `Olver:2010:NHMF' on page 53 undefined on input line 20
-3.
-
-[53]) [54]
+[57]) [58]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.tex
 Appendix A.
-[55
+[59
 
 
-]) [56]
+]) [60]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.tex
 Appendix B.
 Missing character: There is no ℏ in font Courier Regular/ICU!
@@ -2157,12 +2233,12 @@ Overfull \hbox (85.36855pt too wide) in alignment at lines 7--48
 Underfull \vbox (badness 10000) detected at line 48
  []
 
-[57
+[61
 
 
 
-] [58]) [59]
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex [60
+] [62]) [63]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex [64
 
 
 
@@ -2170,24 +2246,21 @@ Underfull \vbox (badness 10000) detected at line 48
 Appendix C.
 File: visio_drawings/analyzers.png Graphic file (type QTm)
 <use  "visio_drawings/analyzers.png" >
-Overfull \hbox (44.6519pt too wide) in paragraph at lines 7--7
+Overfull \hbox (44.6519pt too wide) in paragraph at lines 6--6
 []\EU1/lmr/bx/n/12 Figure C.1: \EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/
 10.95 cern.ch.mathexplorer.lucene.analysis.analyzers
  []
 
 File: visio_drawings/tokenizers.png Graphic file (type QTm)
 <use  "visio_drawings/tokenizers.png" >
-Overfull \hbox (51.22191pt too wide) in paragraph at lines 15--15
+Overfull \hbox (51.22191pt too wide) in paragraph at lines 13--13
 []\EU1/lmr/bx/n/12 Figure C.2: \EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/
 10.95 cern.ch.mathexplorer.lucene.analysis.tokenizers
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 File: visio_drawings/filters.png Graphic file (type QTm)
 <use  "visio_drawings/filters.png" >
-Overfull \hbox (31.51189pt too wide) in paragraph at lines 23--23
+Overfull \hbox (31.51189pt too wide) in paragraph at lines 20--20
 []\EU1/lmr/bx/n/12 Figure C.3: \EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/
 10.95 cern.ch.mathexplorer.lucene.analysis.filters
  []
@@ -2205,7 +2278,7 @@ File: visio_drawings/main_packages.png Graphic file (type QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [61] [62] [63]
+) [65] [66] [67]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 163.
  (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.aux (C:\Users\Artie
@@ -2235,12 +2308,12 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 163.
  ) 
 Here is how much of TeX's memory you used:
- 24440 strings out of 429035
- 429617 string characters out of 3166907
- 553210 words of memory out of 3000000
- 27229 multiletter control sequences out of 15000+200000
+ 24444 strings out of 429035
+ 429625 string characters out of 3166907
+ 554554 words of memory out of 3000000
+ 27233 multiletter control sequences out of 15000+200000
  18371 words of font info for 109 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 46i,16n,47p,10405b,1182s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,16n,47p,10405b,1190s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main_doc.pdf (65 pages).
+Output written on main_doc.pdf (69 pages).

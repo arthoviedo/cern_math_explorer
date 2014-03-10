@@ -23,6 +23,10 @@ Maja Gracco Jean Yves Le Meur Nicholas Robinson Tibor~Simko Alberto~Pepe,
 Invenio, 2014.
 \newblock \url{http://invenio-software.org/}.
 
+\bibitem{invenio_modules}
+Modules overview, 2014.
+\newblock \url{http://invenio-demo.cern.ch/help/hacking/modules-overview}.
+
 \bibitem{arxiv}
 arxiv.org e-print archive, 2014.
 \newblock \url{http://arxiv.org}.
@@ -110,6 +114,10 @@ Heinrich Stamerjohanns; Deyan Ginev; Catalin David; Dimitar Misev; Vladimir
 \newblock (mathml-aware article conversion from latex — a comparison study).
 \newblock 51:7--28, 2008.
 
+\bibitem{mir_workshop}
+Mir 2012 workshop -- mathematics information retrieval, july 8th, 2012, 2012.
+\newblock \url{http://cicm-conference.org/2012/cicm.php?event=mir}.
+
 \bibitem{nii}
 National institute of informatics, 2014.
 \newblock \url{http://www.nii.ac.jp/en/}.
@@ -147,7 +155,6 @@ Jozef Mi\v{s}utka and Leo Galambo\v{s}.
 F.~W.~J. Olver, D.~W. Lozier, R.~F. Boisvert, and C.~W. Clark, editors.
 \newblock {\em {NIST Handbook of Mathematical Functions}}.
 \newblock Cambridge University Press, New York, NY, 2010.
-\newblock Print companion to \cite{NIST:DLMF}.
 
 \bibitem{dlmf2}
 BruceR. Miller.
@@ -176,6 +183,10 @@ Peter Graf.
 zbmath - the first resource for mathematics, 2014.
 \newblock \url{http://zbmath.org/about/}.
 
+\bibitem{wolframalpha}
+Wolfram|alpha: Computational knowledge, 2014.
+\newblock \url{https://www.wolframalpha.com/}.
+
 \bibitem{math_groups}
 Xah Lee.
 \newblock Unicode: Math symbols, 2010.
@@ -200,10 +211,6 @@ Mateusz Pawlik and Nikolaus Augsten.
 \bibitem{dmlf}
 {NIST Digital Library of Mathematical Functions}.
 \newblock http://dlmf.nist.gov/, Release 1.0.6 of 2013-05-06.
-\newblock Online companion to \cite{Olver:2010:NHMF}.
-
-\bibitem{mir_workshop}
-Mir 2012 workshop -- mathematics information retrieval, july 8th, 2012, 2012.
-\newblock \url{http://cicm-conference.org/2012/cicm.php?event=mir}.
+\newblock Online companion to NIST Handbook of Mathematical Functions.
 
 \end{thebibliography}

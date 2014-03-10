@@ -44,29 +44,24 @@
 \contentsline {subsubsection}{Error handling}{38}{section*.13}
 \contentsline {subsubsection}{Timeout Handling}{38}{section*.14}
 \contentsline {section}{\numberline {5.4}Integration with CDS}{39}{section.5.4}
-\contentsline {chapter}{\numberline {6}Advanced Techniques}{41}{chapter.6}
-\contentsline {section}{\numberline {6.1}Latent Semantic Indexing with Semantic Vectors}{41}{section.6.1}
-\contentsline {section}{\numberline {6.2}Latent Dirichlet Allocation with Apache Mahout}{41}{section.6.2}
-\contentsline {chapter}{\numberline {7}Evaluation}{43}{chapter.7}
-\contentsline {section}{\numberline {7.1}Dataset}{43}{section.7.1}
-\contentsline {section}{\numberline {7.2}Setup}{43}{section.7.2}
-\contentsline {section}{\numberline {7.3}Quality resukts}{44}{section.7.3}
-\contentsline {section}{\numberline {7.4}Querying Performance}{45}{section.7.4}
-\contentsline {section}{\numberline {7.5}Indexing Performance}{45}{section.7.5}
-\contentsline {section}{\numberline {7.6}Alternative Metrics}{46}{section.7.6}
-\contentsline {chapter}{\numberline {8}Conclusions}{47}{chapter.8}
-\contentsline {chapter}{\numberline {9}Future work}{49}{chapter.9}
-\contentsline {subsection}{\numberline {9.0.1}Features extraction}{49}{subsection.9.0.1}
-\contentsline {subsection}{\numberline {9.0.2}Advanced Techniques}{49}{subsection.9.0.2}
-\contentsline {subsection}{\numberline {9.0.3}End to end system}{49}{subsection.9.0.3}
-\contentsline {chapter}{Bibliographie}{50}{subsection.9.0.3}
-\contentsline {chapter}{\numberline {A}Configuration files}{55}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Schema}{55}{section.A.1}
-\contentsline {section}{\numberline {A.2}Solr configuration file}{56}{section.A.2}
-\contentsline {chapter}{\numberline {B}Test equations}{57}{appendix.B}
-\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{61}{appendix.C}
-\contentsline {section}{\numberline {C.1}Analyzers}{61}{section.C.1}
-\contentsline {section}{\numberline {C.2}Tokenizers}{61}{section.C.2}
-\contentsline {section}{\numberline {C.3}Filters}{61}{section.C.3}
-\contentsline {section}{\numberline {C.4}Query Parsers}{61}{section.C.4}
-\contentsline {section}{\numberline {C.5}Packages Relations}{61}{section.C.5}
+\contentsline {chapter}{\numberline {6}Further Data Analysis}{41}{chapter.6}
+\contentsline {section}{\numberline {6.1}Clustering}{41}{section.6.1}
+\contentsline {section}{\numberline {6.2}Latent Dirichlet Allocation with Apache Mahout}{44}{section.6.2}
+\contentsline {chapter}{\numberline {7}Evaluation}{45}{chapter.7}
+\contentsline {section}{\numberline {7.1}Dataset}{45}{section.7.1}
+\contentsline {section}{\numberline {7.2}Setup}{45}{section.7.2}
+\contentsline {section}{\numberline {7.3}Quality results}{46}{section.7.3}
+\contentsline {section}{\numberline {7.4}Indexing Performance}{47}{section.7.4}
+\contentsline {section}{\numberline {7.5}Querying Performance}{48}{section.7.5}
+\contentsline {section}{\numberline {7.6}Alternative Metrics}{49}{section.7.6}
+\contentsline {chapter}{\numberline {8}Conclusions}{51}{chapter.8}
+\contentsline {chapter}{\numberline {9}Future work}{53}{chapter.9}
+\contentsline {subsection}{\numberline {9.0.1}Features extraction}{53}{subsection.9.0.1}
+\contentsline {subsection}{\numberline {9.0.2}Advanced Techniques}{53}{subsection.9.0.2}
+\contentsline {subsection}{\numberline {9.0.3}End to end system}{53}{subsection.9.0.3}
+\contentsline {chapter}{Bibliographie}{54}{subsection.9.0.3}
+\contentsline {chapter}{\numberline {A}Configuration files}{59}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Schema}{59}{section.A.1}
+\contentsline {section}{\numberline {A.2}Solr configuration file}{60}{section.A.2}
+\contentsline {chapter}{\numberline {B}Test equations}{61}{appendix.B}
+\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{65}{appendix.C}

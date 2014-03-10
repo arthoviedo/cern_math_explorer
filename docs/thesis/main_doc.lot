@@ -9,16 +9,19 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{Characters with similar glyphs and/or semantics}}{31}{table.5.1}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{Cluster measurements for different values of k}}{42}{table.6.1}
+\contentsline {table}{\numberline {6.2}{Top 20 terms for two different identified clusters }}{43}{table.6.2}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{Software used during evaluations}}{43}{table.7.1}
-\contentsline {table}{\numberline {7.2}{Loose Precision}}{44}{table.7.2}
-\contentsline {table}{\numberline {7.3}{Strict Precision}}{44}{table.7.3}
-\contentsline {table}{\numberline {7.4}{Discounted Cumulative Gain}}{45}{table.7.4}
-\contentsline {table}{\numberline {7.5}{Indexing performance}}{45}{table.7.5}
-\contentsline {table}{\numberline {7.6}{Distance computation using two different metrics}}{46}{table.7.6}
+\contentsline {table}{\numberline {7.1}{Software used during evaluations}}{45}{table.7.1}
+\contentsline {table}{\numberline {7.2}{Loose Precision}}{46}{table.7.2}
+\contentsline {table}{\numberline {7.3}{Strict Precision}}{47}{table.7.3}
+\contentsline {table}{\numberline {7.4}{Discounted Cumulative Gain}}{47}{table.7.4}
+\contentsline {table}{\numberline {7.5}{Indexing performance}}{48}{table.7.5}
+\contentsline {table}{\numberline {7.6}{Query performance in seconds}}{48}{table.7.6}
+\contentsline {table}{\numberline {7.7}{Distance computation using two different metrics}}{49}{table.7.7}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {B.1}{Sample equations used during testing}}{59}{table.B.1}
+\contentsline {table}{\numberline {B.1}{Sample equations used during testing}}{63}{table.B.1}
 \addvspace {10\p@ }
