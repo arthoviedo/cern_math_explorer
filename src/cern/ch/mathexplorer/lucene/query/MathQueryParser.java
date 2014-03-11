@@ -96,6 +96,7 @@ public class MathQueryParser extends QParser {
 
 	@Override
 	public Query parse() throws SyntaxError {
+		Long timeInit = System.currentTimeMillis(); 
 		aLogger.info("Query before: " + qstr);
 		qstr = Regex.cleanQuery(qstr);
 
@@ -139,7 +140,8 @@ public class MathQueryParser extends QParser {
 
 		}
 		query.setMinimumNumberShouldMatch(1);
-
+		Long timeEnd = System.currentTimeMillis();
+		System.out.println("Total processing time: " + (timeEnd - timeInit));
 		return returnQuery(query);
 	}
 
@@ -147,7 +149,7 @@ public class MathQueryParser extends QParser {
 		for (BooleanClause a : q.getClauses()) {
 			Console.print(a);
 		}
-
+		
 		return q;
 	}
 
