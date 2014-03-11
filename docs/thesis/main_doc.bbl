@@ -183,6 +183,12 @@ Peter Graf.
 zbmath - the first resource for mathematics, 2014.
 \newblock \url{http://zbmath.org/about/}.
 
+\bibitem{wikimirs}
+Xuan Hu, Liangcai Gao, Xiaoyan Lin, Zhi Tang, Xiaofan Lin, and Josef~B. Baker.
+\newblock Wikimirs: A mathematical information retrieval system for wikipedia.
+\newblock In {\em Proceedings of the 13th ACM/IEEE-CS Joint Conference on
+  Digital Libraries}, JCDL '13, pages 11--20, New York, NY, USA, 2013. ACM.
+
 \bibitem{wolframalpha}
 Wolfram|alpha: Computational knowledge, 2014.
 \newblock \url{https://www.wolframalpha.com/}.
@@ -208,9 +214,23 @@ Mateusz Pawlik and Nikolaus Augsten.
 \newblock Rted: A robust algorithm for the tree edit distance.
 \newblock {\em Proc. VLDB Endow.}, 5(4):334--345, December 2011.
 
+\bibitem{semantic_vectors}
+Package for creating and searching semantic vector indexes by wrapping apache
+  lucene., 2014.
+\newblock \url{https://code.google.com/p/semanticvectors/}.
+
+\bibitem{mallet}
+Andrew~Kachites. McCallum.
+\newblock Mallet: Machine learning for language toolkit, 2002.
+\newblock \url{http://mallet.cs.umass.edu/}.
+
 \bibitem{dmlf}
 {NIST Digital Library of Mathematical Functions}.
 \newblock http://dlmf.nist.gov/, Release 1.0.6 of 2013-05-06.
 \newblock Online companion to NIST Handbook of Mathematical Functions.
+
+\bibitem{latexeditor}
+Online latex editor - create, integrate and download, 2014.
+\newblock \url{http://www.codecogs.com/latex/eqneditor.php}.
 
 \end{thebibliography}

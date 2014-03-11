@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  10 MAR 2014 20:55
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  11 MAR 2014 16:22
 entering extended mode
-**main_doc.tex
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
+**C:/Users/Artie/git/mathmlexplorerweb/docs/thesis/main_doc.tex
+(C:/Users/Artie/git/mathmlexplorerweb/docs/thesis/main_doc.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -1766,8 +1766,8 @@ m/n/12 </mo><mo>INTEGRALS</mo>,
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 103--106
-\EU1/lmr/m/n/12 similarly the token token <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∫
-\EU1/lmr/m/n/12 </mo> is expanded into
+\EU1/lmr/m/n/12 similarly the token <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∫\EU1/l
+mr/m/n/12 </mo> is expanded into
  []
 
 
@@ -1809,7 +1809,7 @@ LaTeX Warning: Command \textunderscore invalid in math mode on input line 133.
 [33]
 Requested font "Courier/ICU:" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
- [34] [35]
+ [34] [35] [36]
 Missing character: There is no ′ in font Courier Regular/ICU!
 Missing character: There is no ⁢ in font Courier Regular/ICU!
 Missing character: There is no ′ in font Courier Regular/ICU!
@@ -1854,139 +1854,146 @@ Missing character: There is no ⁢ in font Courier Regular/ICU!
 Missing character: There is no ⁢ in font Courier Regular/ICU!
 Missing character: There is no ⁢ in font Courier Regular/ICU!
 
-Overfull \hbox (49.33699pt too wide) in paragraph at lines 183--199
-[][] 
+Overfull \hbox (31.71217pt too wide) in alignment at lines 190--206
+ [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [36]
-Overfull \vbox (70.7886pt too high) has occurred while \output is active []
-
+Underfull \vbox (badness 10000) detected at line 206
+ []
 
 [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
 Requested font "[lmmono12-regular]" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmmono12-regular
 .otf
 
-Underfull \hbox (badness 4805) in paragraph at lines 215--232
+Underfull \hbox (badness 4805) in paragraph at lines 223--240
 \EU1/lmr/m/n/12 A human can easily identify that this corresponds to text and
  []
 
 
-Underfull \hbox (badness 7649) in paragraph at lines 215--232
+Underfull \hbox (badness 7649) in paragraph at lines 223--240
 \EU1/lmr/m/n/12 that should be inserted into a proper ”mbox” or ”text” 
 tag.
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 215--232
+Underfull \hbox (badness 4686) in paragraph at lines 223--240
 \EU1/lmr/m/n/12 In this case, the snippet produced the following MathML code:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 <math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo><
 /mo>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 <mi>r</mi><mo></mo><mi>e</mi></mrow><mo></mo><mrow><m
 i>s
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 </mi><mo></mo><mi>h</mi><mo></mo><mi>o</mi><mo></mo><
 mi>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 w</mi><mo></mo><mi>n</mi></mrow><mo>,</mo><mrow><mi>a
 </m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 i><mo></mo><mi>s</mi></mrow><mo></mo><mrow><mi>w</mi>
 <mo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 ></mo><mi>e</mi><mo></mo><mi>l</mi><mo></mo><mi>l</mi
 ></
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>s</mi></mr
 ow>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 <mo></mo><mrow><mi>t</mi><mo></mo><mi>h</mi><mo></mo>
 <mi
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 >e</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo><mi>e
 </m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 i><mo></mo><mi>i</mi><mo></mo><mi>g</mi><mo></mo><mi>
 h</
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 mi><mo></mo><mi>t</mi></mrow><mo></mo><mrow><mi>a</mi
 ><m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 o></mo><mi>n</mi><mo></mo><mi>d</mi></mrow><mo></mo><
 mro
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 w><mi>t</mi><mo></mo><mi>e</mi><mo></mo><mi>n</mi><mo
 ></
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--232
+Underfull \hbox (badness 10000) in paragraph at lines 223--240
 \EU1/Courier(0)/m/n/10.95 mo><mi>s</mi><mo></mo><mi>i</mi><mo></mo><mi>o</mi><m
 o><
  []
 
-[38]
+[39]
 File: visio_drawings/architecture.png Graphic file (type QTm)
  <use  "visio_drawings/architecture.png" >
-File: figures/input_interface.png Graphic file (type QTm)
 
+LaTeX Warning: Citation `latex_editor' on page 40 undefined on input line 259.
+
+File: figures/input_interface.png Graphic file (type QTm)
 <use  "figures/input_interface.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 253--256
+Underfull \hbox (badness 10000) in paragraph at lines 262--265
 [][]
  []
 
 File: figures/results_interface.png Graphic file (type QTm)
 <use  "figures/results_interface.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 259--262
+Underfull \hbox (badness 10000) in paragraph at lines 268--271
 [][]
  []
 
-) [39] [40]
+) [40] [41]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-advanced_techniques.tex
+[42
+
+
+
+]
 Chapter 6.
 
 Underfull \hbox (badness 7362) in paragraph at lines 17--18
@@ -2036,37 +2043,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--25
 r-
  []
 
-[41
-
-
-
-]
+[43]
 Underfull \vbox (badness 10000) detected at line 44
  []
 
 
-LaTeX Warning: Reference `' on page 42 undefined on input line 47.
+LaTeX Warning: Reference `' on page 44 undefined on input line 47.
 
-Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
 
 Overfull \hbox (8.47536pt too wide) in paragraph at lines 57--57
  []|\EU1/lmr/m/n/10 <mo>ARROWS</mo>| 
  []
 
-Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
 Missing character: There is no ⁡ in font [lmroman10-regular]:mapping=tex-text
 !
 Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
 Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
 Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
-Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
-Missing character: There is no φ in font [lmroman10-regular]:mapping=tex-text!
-Missing character: There is no ϕ in font [lmroman10-regular]:mapping=tex-text!
-Missing character: There is no ϕ in font [lmroman10-regular]:mapping=tex-text!
-Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
-Missing character: There is no ϕ in font [lmroman10-regular]:mapping=tex-text!
-Missing character: There is no ϕ in font [lmroman10-regular]:mapping=tex-text!
-Missing character: There is no φ in font [lmroman10-regular]:mapping=tex-text!
 
 Overfull \hbox (44.78928pt too wide) in alignment at lines 50--72
  [] [] [] [] 
@@ -2076,19 +2069,16 @@ Overfull \hbox (44.78928pt too wide) in alignment at lines 50--72
 Underfull \vbox (badness 10000) detected at line 72
  []
 
-Missing character: There is no α in font [lmroman10-regular]:mapping=tex-text!
-Missing character: There is no ∈ in font [lmroman10-regular]:mapping=tex-text
-!
 
 Overfull \hbox (44.78928pt too wide) in alignment at lines 72--78
  [] [] [] [] 
  []
 
-[42])
+[44])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43]
-[44] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex
+ [45]
+[46] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex
 Chapter 7.
 
 Underfull \vbox (badness 10000) detected at line 27
@@ -2097,7 +2087,7 @@ Underfull \vbox (badness 10000) detected at line 27
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45
+ [47
 
 
 
@@ -2109,11 +2099,11 @@ Underfull \vbox (badness 10000) detected at line 67
 Underfull \vbox (badness 10000) detected at line 84
  []
 
-[46]
+[48]
 Underfull \vbox (badness 10000) detected at line 100
  []
 
-[47]
+[49]
 Underfull \vbox (badness 10000) detected at line 134
  []
 
@@ -2126,7 +2116,7 @@ Overfull \hbox (17.4858pt too wide) in alignment at lines 142--152
 Underfull \vbox (badness 10000) detected at line 152
  []
 
-[48]
+[50]
 Overfull \hbox (17.4858pt too wide) in alignment at lines 164--178
  [] [] [] 
  []
@@ -2135,33 +2125,29 @@ Overfull \hbox (17.4858pt too wide) in alignment at lines 164--178
 Underfull \vbox (badness 10000) detected at line 178
  []
 
-) [49] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.tex
-[50
-
-
-
-]
-Chapter 8.
-) [51] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.tex
+) [51] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.tex
 [52
 
 
 
 ]
+Chapter 8.
+[53]) [54]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.tex
 Chapter 9.
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 4.
-
-) [53] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl [54
+[55
 
 
-]
+
+]) [56] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl
 Requested font "[lmroman10-italic]:mapping=tex-text" at 10.95pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-italic
 .otf
 
-[55]
+[57
+
+
+]
 Underfull \hbox (badness 2460) in paragraph at lines 85--87
 []\EU1/lmr/m/n/10.95 A brief description of latexmathml, 2007.  []$[][][][] [] 
 [] [] [][][][] [] [][][][] [] [][][] []
@@ -2173,19 +2159,19 @@ Underfull \hbox (badness 1163) in paragraph at lines 126--128
 ][][][][][][][][][][] [] [][][] [] [][] [] [][] []
  []
 
-[56]
-Underfull \hbox (badness 10000) in paragraph at lines 187--189
+[58]
+Underfull \hbox (badness 10000) in paragraph at lines 193--195
 []\EU1/lmr/m/n/10.95 Wolfram|alpha: Computational knowledge, 2014.  []$[][][][]
 [] [] [] [] [][][] []
  []
 
-[57]) [58]
+[59]) [60]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.tex
 Appendix A.
-[59
+[61
 
 
-]) [60]
+]) [62]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.tex
 Appendix B.
 Missing character: There is no ℏ in font Courier Regular/ICU!
@@ -2233,12 +2219,12 @@ Overfull \hbox (85.36855pt too wide) in alignment at lines 7--48
 Underfull \vbox (badness 10000) detected at line 48
  []
 
-[61
+[63
 
 
 
-] [62]) [63]
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex [64
+] [64]) [65]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex [66
 
 
 
@@ -2278,7 +2264,7 @@ File: visio_drawings/main_packages.png Graphic file (type QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [65] [66] [67]
+) [67] [68] [69]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 163.
  (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.aux (C:\Users\Artie
@@ -2308,12 +2294,12 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 163.
  ) 
 Here is how much of TeX's memory you used:
- 24443 strings out of 429035
- 429613 string characters out of 3166907
- 553272 words of memory out of 3000000
- 27232 multiletter control sequences out of 15000+200000
+ 24451 strings out of 429035
+ 429788 string characters out of 3166907
+ 553608 words of memory out of 3000000
+ 27239 multiletter control sequences out of 15000+200000
  18371 words of font info for 109 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 46i,16n,47p,10405b,1190s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,13n,47p,10454b,1190s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main_doc.pdf (69 pages).
+Output written on main_doc.pdf (71 pages).

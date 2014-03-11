@@ -169,8 +169,13 @@ An analyzer consists of a sequence of {\codefont TokenStrem} elements. Normally 
 
 \section{Integration with Mathematica}
 This section describes some aspects that had to be considered while implementing the integration with Mathematica. Our system uses the {\codefont JLink} library to create a connection with the underlying process {\codefont MathKernel}. The main class for communicating java code and {\codefont Mathematica} is {\codefont KernelLink} and the main used method was {\codefont evaluateToOutputForm(String expr, int pageWidth)} where {\codefont expr} is the expression to be evaluated and {\codefont pageWidth} affects the formatting of the result.
+Once all the boilerplate has been written, the steps followed to define and find patterns in the expression are as follow: We import the string in MathML format through the command {\codefont ImportString["<mathmlExpression>", "MathML"]}. This creates the expression in the box form, but no further analysis is possible from this form. We then try to interpret this form into a fully Mathematica compatible expression by using {\codefont MakeExpression}
 
 \subsubsection{Pattern Extraction}
+Once the expression is created, finding a pattern is easy by using the command {\codefont Position[<variable holding the interpreted expression> , Pattern]}. A simple pattern for a quadratic expression is: {\codefont a\_.x\^{} 2 + b\_.x + c\_.}
+
+\subsection{Cleaning of variables}
+After each operation, all of the variables should be cleaned or it may lead to deadlocks, wrong results or other issues since the {\codefont MakeExpression} command also interprets the expression so if the expression is, for example {\codefont a = b + c} Mathematica remembers the assignment of the new value of {\codefont a} and uses it in further evaluations. The cleaning is done through the command {\codefont Remove["Global`*"]}
 
 \subsubsection{Expression simplification}
 The second feature that we are interested in is automatic expression simplification.
@@ -180,11 +185,11 @@ The two functions that are more relevant for our work are {\codefont Simplify} a
 
 Table \ref{comparison_simplification} presents some sample equations found in some the documents in CDS and the different forms of simplification.
 
-\begin{tabular}{|>{\centering\arraybackslash}m{4.5cm}|>
+\begin{longtable}{|>{\centering\arraybackslash}m{4.5cm}|>
 {\centering\arraybackslash}m{4.5cm}|>
 {\centering\arraybackslash}m{4.5cm}|}
 \hline
-Original Form & {\codefont Simplify} & {\codefont FullSimplify} \\
+\small{Original Form} & \small{{\codefont Simplify}} & \small{{\codefont FullSimplify}} \\
 \hline
 \scriptsize{\codefont <math> <mrow> <mrow> <mfrac> <msup> <mi>Φ</mi> <mo>′</mo> </msup> <mrow> <mn>2</mn> <mo>⁢</mo> <mrow> <mo>(</mo> <mrow> <mn>1</mn> <mo>+</mo> <mi>Φ</mi> </mrow> <mo>)</mo> </mrow> </mrow> </mfrac> <mo>+</mo> <mfrac> <mn>1</mn> <mi>r</mi> </mfrac> </mrow> <mo>=</mo> <mn>0</mn> </mrow> </math> }      & \scriptsize{\codefont <math> <mrow> <mrow> <mfrac> <mn>1</mn> <mi>r</mi> </mfrac> <mo>+</mo> <mfrac> <msup> <mi>Φ</mi> <mo>′</mo> </msup> <mrow> <mrow> <mn>2</mn> <mo>⁢</mo> <mi>Φ</mi> </mrow> <mo>+</mo> <mn>2</mn> </mrow> </mfrac> </mrow> <mo></mo> <mn>0</mn> </mrow> </math>}    & \scriptsize{\codefont <math> <mrow> <mrow> <mfrac> <mn>2</mn> <mi>r</mi> </mfrac> <mo>+</mo> <mfrac> <msup> <mi>Φ</mi> <mo>′</mo> </msup> <mrow> <mi>Φ</mi> <mo>+</mo> <mn>1</mn> </mrow> </mfrac> </mrow> <mo></mo> <mn>0</mn> </mrow> </math>}     \\
 $\frac{\Phi '}{2 (1+\Phi )}+\frac{1}{r}=0$          & $\frac{1}{r}+\frac{\Phi '}{2 \Phi +2}=0$ & $\frac{2}{r}+\frac{\Phi '}{\Phi +1}=0$       \\
@@ -193,11 +198,14 @@ $\frac{\Phi '}{2 (1+\Phi )}+\frac{1}{r}=0$          & $\frac{1}{r}+\frac{\Phi '}
 
 \scriptsize{\codefont <math> <mrow> <mrow> <mfrac> <mn>1</mn> <mn>2</mn> </mfrac> <mo>⁢</mo> <msup> <mi>x</mi> <mn>2</mn> </msup> <mo>⁢</mo> <mrow> <mi>log</mi> <mo>⁡</mo> <mrow> <mo>(</mo> <mrow> <mn>1</mn> <mo>-</mo> <msup> <mi>e</mi> <mrow> <mo>-</mo> <mrow> <mn>2</mn> <mo>⁢</mo> <mi>x</mi> </mrow> </mrow> </msup> </mrow> <mo>)</mo> </mrow> </mrow> </mrow> <mo>-</mo> <mrow> <mfrac> <mn>1</mn> <mn>2</mn> </mfrac> <mo>⁢</mo> <mi>x</mi> <mo>⁢</mo> <mi>L</mi> <mo>⁢</mo> <msub> <mi>i</mi> <mn>2</mn> </msub> <mo>⁢</mo> <mrow> <mo>(</mo> <msup> <mi>e</mi> <mrow> <mo>-</mo> <mrow> <mn>2</mn> <mo>⁢</mo> <mi>x</mi> </mrow> </mrow> </msup> <mo>)</mo> </mrow> </mrow> <mo>-</mo> <mrow> <mfrac> <mn>1</mn> <mn>4</mn> </mfrac> <mo>⁢</mo> <mi>L</mi> <mo>⁢</mo> <msub> <mi>i</mi> <mn>3</mn> </msub> <mo>⁢</mo> <mrow> <mo>(</mo> <msup> <mi>e</mi> <mrow> <mo>-</mo> <mrow> <mn>2</mn> <mo>⁢</mo> <mi>x</mi> </mrow> </mrow> </msup> <mo>)</mo> </mrow> </mrow> </mrow> </math> }      & \scriptsize{\codefont <math> <mrow> <mfrac> <mn>1</mn> <mn>4</mn> </mfrac> <mo>⁢</mo> <msup> <mi>e</mi> <mrow> <mrow> <mo>-</mo> <mn>2</mn> </mrow> <mo>⁢</mo> <mi>x</mi> </mrow> </msup> <mo>⁢</mo> <mrow> <mo>(</mo> <mrow> <mrow> <mn>2</mn> <mo>⁢</mo> <msup> <mi>x</mi> <mn>2</mn> </msup> <mo>⁢</mo> <msup> <mi>e</mi> <mrow> <mn>2</mn> <mo>⁢</mo> <mi>x</mi> </mrow> </msup> <mo>⁢</mo> <mrow> <mi>log</mi> <mo>⁡</mo> <mo>(</mo> <mrow> <mn>1</mn> <mo>-</mo> <msup> <mi>e</mi> <mrow> <mrow> <mo>-</mo> <mn>2</mn> </mrow> <mo>⁢</mo> <mi>x</mi> </mrow> </msup> </mrow> <mo>)</mo> </mrow> </mrow> <mo>-</mo> <mrow> <mn>2</mn> <mo>⁢</mo> <msub> <mi>i</mi> <mn>2</mn> </msub> <mo>⁢</mo> <mi>L</mi> <mo>⁢</mo> <mi>x</mi> </mrow> <mo>-</mo> <mrow> <msub> <mi>i</mi> <mn>3</mn> </msub> <mo>⁢</mo> <mi>L</mi> </mrow> </mrow> <mo>)</mo> </mrow> </mrow> </math> }    & \scriptsize{\codefont <math> <mrow> <mrow> <mfrac> <mn>1</mn> <mn>2</mn> </mfrac> <mo>⁢</mo> <msup> <mi>x</mi> <mn>2</mn> </msup> <mo>⁢</mo> <mrow> <mi>log</mi> <mo>⁡</mo> <mo>(</mo> <mrow> <mn>1</mn> <mo>-</mo> <msup> <mi>e</mi> <mrow> <mrow> <mo>-</mo> <mn>2</mn> </mrow> <mo>⁢</mo> <mi>x</mi> </mrow> </msup> </mrow> <mo>)</mo> </mrow> </mrow> <mo>-</mo> <mrow> <mfrac> <mn>1</mn> <mn>4</mn> </mfrac> <mo>⁢</mo> <mi>L</mi> <mo>⁢</mo> <msup> <mi>e</mi> <mrow> <mrow> <mo>-</mo> <mn>2</mn> </mrow> <mo>⁢</mo> <mi>x</mi> </mrow> </msup> <mo>⁢</mo> <mrow> <mo>(</mo> <mrow> <mrow> <mn>2</mn> <mo>⁢</mo> <msub> <mi>i</mi> <mn>2</mn> </msub> <mo>⁢</mo> <mi>x</mi> </mrow> <mo>+</mo> <msub> <mi>i</mi> <mn>3</mn> </msub> </mrow> <mo>)</mo> </mrow> </mrow> </mrow> </math>}     \\ 
 \scriptsize{ $\frac{1}{2} x^2 \log \left(1-e^{-2 x}\right) - \frac{1}{2} x L i_ 2 \left(e^{-2 x}\right)-\frac{1}{4} L i_ 3 \left(e^{-2 x}\right)$ }          & \scriptsize { \begin{multline}  \frac{1}{4} e^{-2 x} (2 x^2 e^{2 x} \log (1-e^{-2 x})- \notag\\ 2 i_ 2 L x-i_ 3 L)  \end{multline} } & \scriptsize{ $\frac{1}{2} x^2 \log \left(1-e^{-2 x}\right)-\frac{1}{4} L e^{-2 x} \left(2 i_ 2 x+i_ 3\right)$ }      \\
+\hline
+\caption{Comparison of different simplification modes}
 
 \label{comparison_simplification}
-\end{tabular}
 
+\end{longtable}
 \subsubsection{Recursive interpretation}
+
 
 \subsubsection{Error handling}
 Sometimes, after certain time, the connection between {\codefont KernelLink} and {\codefont Mathematica} would be lost launching an exception and all following invocations would fail as well.
@@ -247,7 +255,8 @@ Figure \ref{system_arch} presents the main components of our deployment.
 \end{figure}
 
 
-A demo interface over the {\codefont pu} branch was developed to showcase the system, however to have a complete integration with CDS, more work is required. The demo setup employs the same dataset as used for experimentation. 
+A demo interface over the {\codefont pu} branch was developed to showcase the system, however to have a complete integration with CDS, more work is required. The demo setup employs the same dataset as used for experimentation.
+We include an online \LaTeX editor\cite{latex_editor} that renders the input expression as the user types it. 
 
 \begin{figure}
 \includegraphics[height=8 cm]{figures/input_interface.png}

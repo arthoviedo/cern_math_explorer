@@ -1,8 +1,15 @@
 \chapter{Future work}
 \label{chap-future_work}
 
-\subsection{Features extraction}
+Several different work direction were identified during the development of this work. 
 
-\subsection{Advanced Techniques}
+\section{Features extraction}
+MathML specification include hundreds of different tags, which were not addressed in our work. They can affect drastically the semantic of an expression. A simple example is the fact that sometimes to stress that a variable represents a vector, it is standard to use a bold font. Also an arrow in top of a variable signifies the same. Dozens and even hundreds of this notations contain important information which is not taken into account by our system, since each of this requires some coding time and handling all of the cases is impractical. Also, there is the limitation of the extracting tools to handle complex constructs like matrices or embedded text.
 
-\subsection{End to end system}
+\section{Data Analysis}
+Different algorithms and techniques have been developed to overcome some of the shortcomings of the vector space model. Latent semantic indexing together with singular value decomposition, allow to automatically identify synonyms which can improve the recall of an IR system. During our work, we tested different projects such as Semantic Vectors\cite{semantic_vectors} and \cite{mallet} and Mahout. However, the tools are not yet ready for a big deployment and lots of time and effort was spent on trying to integrate the formats from the Lucene index to the input format of each tool, and debugging and fixing code of some tools to make them work. Several times we got errors because of the in-memory implementations of the algorithms. Work on integrating the results of this techniques to the workflow of the system, can provide better results. 
+
+In our work, we explored the clustering of the expressions and managed to find a reasonable parameter k. However more insight from this should be developed and the information gained with the clustering step should be integrated in the workflow to both improve the results and the querying time. 
+
+\section{End to end system}
+In our implementation, we explored and incorporated \LaTeX extraction to our system. For a full integration on CDS, PDF extraction becomes an important need since most of the records that do not come from ArXiV, do not include the source files.
