@@ -11,9 +11,8 @@
 \contentsline {section}{\numberline {2.2}Vector Space Model}{12}{section.2.2}
 \contentsline {section}{\numberline {2.3}Probabilistic Relevance Model}{13}{section.2.3}
 \contentsline {section}{\numberline {2.4}Okapi BM25}{13}{section.2.4}
-\contentsline {section}{\numberline {2.5}Latent Semantic Indexing}{14}{section.2.5}
-\contentsline {section}{\numberline {2.6}Latent Dirichlet Allocation}{14}{section.2.6}
-\contentsline {section}{\numberline {2.7}Tree Edit Distance}{14}{section.2.7}
+\contentsline {section}{\numberline {2.5}Latent Dirichlet Allocation}{14}{section.2.5}
+\contentsline {section}{\numberline {2.6}Tree Edit Distance}{14}{section.2.6}
 \contentsline {chapter}{\numberline {3}Technical Considerations}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Digital Representations of Mathematics}{17}{section.3.1}
 \contentsline {section}{\numberline {3.2}Math Extraction Tools}{19}{section.3.2}
