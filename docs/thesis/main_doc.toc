@@ -11,8 +11,7 @@
 \contentsline {section}{\numberline {2.2}Vector Space Model}{12}{section.2.2}
 \contentsline {section}{\numberline {2.3}Probabilistic Relevance Model}{13}{section.2.3}
 \contentsline {section}{\numberline {2.4}Okapi BM25}{13}{section.2.4}
-\contentsline {section}{\numberline {2.5}Latent Dirichlet Allocation}{14}{section.2.5}
-\contentsline {section}{\numberline {2.6}Tree Edit Distance}{14}{section.2.6}
+\contentsline {section}{\numberline {2.5}Tree Edit Distance}{14}{section.2.5}
 \contentsline {chapter}{\numberline {3}Technical Considerations}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Digital Representations of Mathematics}{17}{section.3.1}
 \contentsline {section}{\numberline {3.2}Math Extraction Tools}{19}{section.3.2}
@@ -45,24 +44,21 @@
 \contentsline {subsubsection}{Error handling}{39}{section*.13}
 \contentsline {subsubsection}{Timeout Handling}{39}{section*.14}
 \contentsline {section}{\numberline {5.4}Integration with CDS}{40}{section.5.4}
-\contentsline {chapter}{\numberline {6}Further Data Analysis}{43}{chapter.6}
-\contentsline {section}{\numberline {6.1}Clustering}{43}{section.6.1}
-\contentsline {section}{\numberline {6.2}Latent Dirichlet Allocation with Apache Mahout}{46}{section.6.2}
-\contentsline {chapter}{\numberline {7}Evaluation}{47}{chapter.7}
-\contentsline {section}{\numberline {7.1}Dataset}{47}{section.7.1}
-\contentsline {section}{\numberline {7.2}Setup}{47}{section.7.2}
-\contentsline {section}{\numberline {7.3}Quality results}{48}{section.7.3}
-\contentsline {section}{\numberline {7.4}Indexing Performance}{49}{section.7.4}
-\contentsline {section}{\numberline {7.5}Querying Performance}{50}{section.7.5}
-\contentsline {section}{\numberline {7.6}Alternative Metrics}{51}{section.7.6}
-\contentsline {chapter}{\numberline {8}Conclusions}{53}{chapter.8}
-\contentsline {chapter}{\numberline {9}Future work}{55}{chapter.9}
-\contentsline {section}{\numberline {9.1}Features extraction}{55}{section.9.1}
-\contentsline {section}{\numberline {9.2}Data Analysis}{55}{section.9.2}
-\contentsline {section}{\numberline {9.3}End to end system}{56}{section.9.3}
-\contentsline {chapter}{Bibliographie}{57}{section.9.3}
-\contentsline {chapter}{\numberline {A}Configuration files}{61}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Schema}{61}{section.A.1}
-\contentsline {section}{\numberline {A.2}Solr configuration file}{62}{section.A.2}
-\contentsline {chapter}{\numberline {B}Test equations}{63}{appendix.B}
-\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{67}{appendix.C}
+\contentsline {chapter}{\numberline {6}Evaluation}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Dataset}{43}{section.6.1}
+\contentsline {section}{\numberline {6.2}Setup}{43}{section.6.2}
+\contentsline {section}{\numberline {6.3}Quality results}{44}{section.6.3}
+\contentsline {section}{\numberline {6.4}Indexing Performance}{45}{section.6.4}
+\contentsline {section}{\numberline {6.5}Querying Performance}{46}{section.6.5}
+\contentsline {section}{\numberline {6.6}Alternative Metrics}{47}{section.6.6}
+\contentsline {chapter}{\numberline {7}Conclusions}{49}{chapter.7}
+\contentsline {chapter}{\numberline {8}Future work}{51}{chapter.8}
+\contentsline {section}{\numberline {8.1}Features extraction}{51}{section.8.1}
+\contentsline {section}{\numberline {8.2}Data Analysis}{51}{section.8.2}
+\contentsline {section}{\numberline {8.3}End to end system}{52}{section.8.3}
+\contentsline {chapter}{Bibliographie}{53}{section.8.3}
+\contentsline {chapter}{\numberline {A}Configuration files}{57}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Schema}{57}{section.A.1}
+\contentsline {section}{\numberline {A.2}Solr configuration file}{58}{section.A.2}
+\contentsline {chapter}{\numberline {B}Test equations}{59}{appendix.B}
+\contentsline {chapter}{\numberline {C}Detailed system architecture diagrams}{63}{appendix.C}

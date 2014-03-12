@@ -1,9 +1,9 @@
-\chapter{Further Data Analysis}
-\label{chap-data_analysis}
+\chapter{Clustering}
+\label{chap-clustering}
 
 In parallel to the development of $5e^{x+y}$ we perform some analysis over our datasets to have a better understanding of the data. Even though this series of analysis did were not directly introduced into the codebase of the system, they provide valuable insights and allowed us to identify future directions of work.
 
-\section{Clustering}
+\section{Technical details}
 
 We used Apache Mahout v0.9 for performing the clustering task. 
 The following set of commands were used to create and analyse our dataset:
@@ -22,6 +22,8 @@ To run k-means algorithm on the resulting canopies:
 
 To get the resulting points with their assigned cluster in a human readable format:
 \small{{\codefont ./mahout seqdumper -i ../results/clustering\_kmeans/clusteredPoints/part-m-0 > ../results/clustering\_kmeans/clusteredPoints/cluster-points.txt}}
+
+\section{Estimating number of clusters}
 
 Since the estimation of a good number of clusters k is a challenging task, we also tried to estimate it  by evaluating intra and inter cluster distances for different values of k. Table \ref{cluster_measurements} shows that around k=500 the inter-cluster distance begins to remain stable and by increasing k to 1024, its value is affected only by less than 1\% indicating that a good k number is around 500.
 
@@ -77,6 +79,3 @@ Table \ref{} shows the top terms in 2 different clusters that were identified. B
 \label{cluster_measurements}
 \end{longtable} 
 }
-
-\section{Latent Dirichlet Allocation with Apache Mahout}
-
