@@ -172,7 +172,7 @@ This section describes some aspects that had to be considered while implementing
 Once all the boilerplate has been written, the steps followed to define and find patterns in the expression are as follow: We import the string in MathML format through the command {\codefont ImportString["<mathmlExpression>", "MathML"]}. This creates the expression in the box form, but no further analysis is possible from this form. We then try to interpret this form into a fully Mathematica compatible expression by using {\codefont MakeExpression}
 
 \subsubsection{Pattern Extraction}
-Once the expression is created, finding a pattern is easy by using the command {\codefont Position[<variable holding the interpreted expression> , Pattern]}. A simple pattern for a quadratic expression is: {\codefont a\_.x\^{} 2 + b\_.x + c\_.}
+Once the expression is created, finding a pattern is easy by using the command {\codefont Position[<variable holding the interpreted expression> , Pattern]}. A simple pattern for a quadratic expression is: {\codefont a\_.x\^{} 2 + b\_.x + c\_.} 
 
 \subsection{Cleaning of variables}
 After each operation, all of the variables should be cleaned or it may lead to deadlocks, wrong results or other issues since the {\codefont MakeExpression} command also interprets the expression so if the expression is, for example {\codefont a = b + c} Mathematica remembers the assignment of the new value of {\codefont a} and uses it in further evaluations. The cleaning is done through the command {\codefont Remove["Global`*"]}
@@ -205,10 +205,10 @@ $\frac{\Phi '}{2 (1+\Phi )}+\frac{1}{r}=0$          & $\frac{1}{r}+\frac{\Phi '}
 
 \end{longtable}
 \subsubsection{Recursive interpretation}
-
+Unfortunately, Mathematica cannot always interpret correctly an input expression. In this case, it can, however interpret some sub-expressions from the original one. Our system takes advantage of this, and the first attempt is to try to interpret the original string. If this step is not successful (the result variable equals the string "{}"), we identify the occurrences of {\codefont RowBox} which identify all the subexpressions in the tree. For each of this elements we call the {\codefont MakeExpression} and if it was successful we search for structural pattern in it. A first thought would tell us that if sub-tree was interpreted successfully, there is no need to try to go further down in that sub-tree, however, even if a sub-expression is interpreted correctly, the result sometimes is not complete and processing further down, gives better results. For this reason, we do not discard any of the subexpressions and try to interpret all of them. For this same reason, we do not store the number of occurrences of a given pattern, but only whether it contains is or not.
 
 \subsubsection{Error handling}
-Sometimes, after certain time, the connection between {\codefont KernelLink} and {\codefont Mathematica} would be lost launching an exception and all following invocations would fail as well.
+Sometimes, after certain time, the connection between {\codefont KernelLink} and {\codefont Mathematica} is lost and it launches an exception and all following invocations fail as well.
 Also, re-instantiating a KernelLink would yield an Exception. For this scenario, killing the associated processes to Mathematica was necessary with {\codefont killall -s 9 Mathematica; killall -s 9 MathKernel
 } or {\codefont taskkill /im Mathematica.exe; taskkill /im MathKernel.exe} depending on the OS the system is running on.
 
@@ -246,9 +246,9 @@ As a remedial situation, we used a fixed timeout to stop the processing of such 
 Currently the Invenio code-base is being under a deep refactoring and rewriting. CDS currently runs in the stable branch {\codefont master} while the new developments are preferred to be implemented in the new branch {\codefont pu}. 
 Our system is deployed as a standalone {\codefont jar} which is added to a Solr instance. Also, some extra configurations should be added. Details on this can be found in appendix \ref{appendix-conf_files}
 The communication between Solr and Invenio was through the library {\codefont solrpy}. 
-Figure \ref{system_arch} presents the main components of our deployment.
+Figure 5.3 presents the main components of our deployment.
 
-\begin{figure}
+\begin{figure}[h!]
 \includegraphics[height=4.2 cm]{visio_drawings/architecture.png}
 \label{system_arch}
 \caption{High level deployment architecture}
@@ -259,13 +259,15 @@ A demo interface over the {\codefont pu} branch was developed to showcase the sy
 We include an online \LaTeX editor\cite{latex_editor} that renders the input expression as the user types it. 
 
 \begin{figure}
-\includegraphics[height=8 cm]{figures/input_interface.png}
+\center
+\includegraphics[height=6.2 cm]{figures/input_interface.png}
 \label{input_int}
 \caption{Web interface of $5e^{x+y}$: Query input screen}
 \end{figure}
 
 \begin{figure}
-\includegraphics[height=8 cm]{figures/results_interface.png}
+\center
+\includegraphics[height=6.2 cm]{figures/results_interface.png}
 \label{results_int}
 \caption{Web interface of $5e^{x+y}$: Results screen}
 \end{figure}

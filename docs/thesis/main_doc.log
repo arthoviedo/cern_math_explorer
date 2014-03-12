@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  12 MAR 2014 16:20
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  13 MAR 2014 00:32
 entering extended mode
 **main_doc.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
@@ -1992,18 +1992,10 @@ File: visio_drawings/architecture.png Graphic file (type QTm)
 LaTeX Warning: Citation `latex_editor' on page 40 undefined on input line 259.
 
 File: figures/input_interface.png Graphic file (type QTm)
-<use  "figures/input_interface.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 262--265
-[][]
- []
-
+<use  "figures/input_interface.png" > [40]
 File: figures/results_interface.png Graphic file (type QTm)
-<use  "figures/results_interface.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 268--271
-[][]
- []
 
-) [40] [41]
+<use  "figures/results_interface.png" >) [41]
 No file chap-clustering.tex.
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex [42
 
@@ -2135,7 +2127,7 @@ Requested font "msbm7" at 7.0pt
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 27.
+(amsmath)                 on input line 31.
 
 Missing character: There is no ω in font Courier Regular/ICU!
 Missing character: There is no ⋅ in font Courier Regular/ICU!
@@ -2146,19 +2138,19 @@ Missing character: There is no ψ in font Courier Regular/ICU!
 Missing character: There is no ν in font Courier Regular/ICU!
 Missing character: There is no ν in font Courier Regular/ICU!
 
-Overfull \hbox (2.84898pt too wide) in paragraph at lines 42--42
+Overfull \hbox (2.84898pt too wide) in paragraph at lines 46--46
 []|\EU1/lmr/m/n/10.95 Eq10| 
  []
 
 Missing character: There is no κ in font Courier Regular/ICU!
 Missing character: There is no ∫ in font Courier Regular/ICU!
 
-Overfull \hbox (85.36855pt too wide) in alignment at lines 7--48
+Overfull \hbox (85.36855pt too wide) in alignment at lines 9--52
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 48
+Underfull \vbox (badness 10000) detected at line 52
  []
 
 [59
