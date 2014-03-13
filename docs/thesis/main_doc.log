@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  13 MAR 2014 14:39
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  13 MAR 2014 15:02
 entering extended mode
-**C:/Users/Artie/git/mathmlexplorerweb/docs/thesis/main_doc.tex
-(C:/Users/Artie/git/mathmlexplorerweb/docs/thesis/main_doc.tex
+**main_doc.tex
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -2326,12 +2326,12 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
  ) 
 Here is how much of TeX's memory you used:
- 24502 strings out of 429035
- 430407 string characters out of 3166907
+ 24501 strings out of 429035
+ 430309 string characters out of 3166907
  554909 words of memory out of 3000000
  27284 multiletter control sequences out of 15000+200000
  19916 words of font info for 115 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 46i,14n,47p,10454b,1190s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,14n,47p,10405b,1190s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on main_doc.pdf (68 pages).
