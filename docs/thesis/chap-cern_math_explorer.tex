@@ -3,7 +3,7 @@
 In this chapter we present our solution called $5e^{x+y}$(CDS). We present the key points of our system, and how they are related to previous built systems.
 
 \section{Features Extraction}
-Our main goal is to develop a system that compliments the already available search capabilities in Invenio and in particular the CDS instance. Our system was developed on top of the  the Apache Solr/Lucene framework. CDS already uses Solr as a search engine layer, so developing $5e^{x+y}$(CDS) using this technology supposed a reasonable choice. One of the main steps while building an IR tool, is understanding the data and what kind of features can be extracted from it: If the system is based on text, then tasks such as stemming, handling of synonyms, misspelling and so on, should be taken into consideration; if the system being developed is based on images, then examples of features can be histograms of colors, geometrical features and so on. During the literature review, we discovered that most of the projects handled the notational aspects of the expressions, that is, the real naming of the terms in a given equation and each project developed its own set of heuristics to handle the structural component. 
+Our main goal is to develop a system that compliments the already available search capabilities in Invenio and in particular the CDS instance. Our system was developed on top of the  the Apache Lucene/Solr framework. CDS already uses Solr as a search engine layer, so developing $5e^{x+y}$(CDS) using this technology supposed a reasonable choice. One of the main steps while building an IR tool, is understanding the data and what kind of features can be extracted from it: If the system is based on text, then tasks such as stemming, handling of synonyms, misspelling and so on, should be taken into consideration; if the system being developed is based on images, then examples of features can be histograms of colors, geometrical features and so on. During the literature review, we discovered that most of the projects handled the notational aspects of the expressions, that is, the real naming of the terms in a given equation and each project developed its own set of heuristics to handle the structural component. 
 
 
 \subsection{Notational Features}
@@ -117,7 +117,7 @@ Figures \ref{integrals} and \ref{less_greater} present lists related of characte
 \begin{figure}[h!]
 	\centering
 	\includegraphics[height=2 cm]{figures/greater_less.png}
-	\caption{List of different types of grater/less than related characters in Unicode}
+	\caption{List of different types of greater/less than related characters in Unicode}
 	\label{less_greater}
 \end{figure}
 
@@ -142,7 +142,7 @@ Additionally, there are common patterns to specific domains which can improve th
 
 
 \section{Development with Lucene/Solr}
-This section explains how the described components were implemented in the {\codefont Apache Solr/Lucene} framework.
+This section explains how the described components were implemented in the {\codefont Apache Lucene/Solr} framework.
 One focus of our work was to develop a modular system that allowed easily to deploy new heuristics as they were identified. 
 
 The Lucene framework defines some key concepts which ultimately are mapped into concrete classes. A {\codefont Document} is the minimum retrieval unit. For $5e^{x+y}$ we could either use a complete article as a document or a single equation. We choose the latter because it makes it easier to focus on extracting features from a single equation. A document contains a set of {\codefont fields} which represent different types of information that it can store. Each field has different options such as whether it would be indexed and/or stored. A field can also indicate whether it will be a {\codefont Term Vector}. Our fields are as follow: 
