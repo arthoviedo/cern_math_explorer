@@ -14,8 +14,6 @@ A level-1 auxiliary file: appendix-conf_files.aux
 A level-1 auxiliary file: appendix-test_equations.aux
 A level-1 auxiliary file: appendix-uml.aux
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "dlmf"
-Warning--I didn't find a database entry for "latex_editor"
 Name 1 in "Alberto Pepe, Thomas Baron, Maja Gracco, Jean Yves Le Meur, Nicholas Robinson, Tibor Simko, and Martin Vesely" has a comma at the end for entry CDS2
 while executing---line 944 of file unsrt.bst
 Too many commas in name 1 of "Alberto Pepe, Thomas Baron, Maja Gracco, Jean Yves Le Meur, Nicholas Robinson, Tibor Simko, and Martin Vesely" for entry CDS2

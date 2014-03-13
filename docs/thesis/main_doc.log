@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  13 MAR 2014 11:01
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  13 MAR 2014 14:39
 entering extended mode
-**main_doc.tex
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
+**C:/Users/Artie/git/mathmlexplorerweb/docs/thesis/main_doc.tex
+(C:/Users/Artie/git/mathmlexplorerweb/docs/thesis/main_doc.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -1340,19 +1340,19 @@ r.otf
 Requested font "Courier/ICU:" at 10.95pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
 
-Overfull \hbox (51.09196pt too wide) in paragraph at lines 20--20
+Overfull \hbox (51.09196pt too wide) in paragraph at lines 21--21
  [][] [][]\EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.mathexp
 lorer.lucene.analysis.analyzers 
  []
 
 
-Overfull \hbox (57.66197pt too wide) in paragraph at lines 21--21
+Overfull \hbox (57.66197pt too wide) in paragraph at lines 22--22
  [][] [][]\EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.mathexp
 lorer.lucene.analysis.tokenizers 
  []
 
 
-Overfull \hbox (37.95195pt too wide) in paragraph at lines 22--22
+Overfull \hbox (37.95195pt too wide) in paragraph at lines 23--23
  [][] [][]\EU1/lmr/m/n/12 Overview of \EU1/Courier(0)/m/n/10.95 cern.ch.mathexp
 lorer.lucene.analysis.filters 
  []
@@ -1572,14 +1572,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23]
 [24]
-
-LaTeX Warning: Citation `dlmf' on page 25 undefined on input line 28.
-
-
 Underfull \vbox (badness 4846) has occurred while \output is active []
 
- [25])
-[26]
+ [25]
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+
+ []
+
+
+Underfull \hbox (badness 2990) in paragraph at lines 41--42
+\EU1/lmr/m/n/12 tion([]$[][][][] [] [] [] [][][][][][][][][][] [] [][][]$[]) an
+d Symbolab([]$[][][][] [] [] [] [][][] [] [][][][][][][][] [] [][][][]$[]),
+ []
+
+) [26]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-cern_math_explorer.tex
 Chapter 5.
 
@@ -1626,211 +1632,224 @@ Requested font "cmr17" at 17.28pt
 Requested font "Arial Unicode MS/ICU:" at 12.0pt
  -> C:/Windows/Fonts/ARIALUNI.TTF
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
+Underfull \hbox (badness 10000) in paragraph at lines 32--32
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--33
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 33--33
+Underfull \hbox (badness 5231) in paragraph at lines 34--34
 \EU1/lmr/m/n/12 LETTER A WITH
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 35--35
+Underfull \hbox (badness 5231) in paragraph at lines 36--36
 \EU1/lmr/m/n/12 LETTER A WITH
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--37
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
 []|\EU1/lmr/m/n/12 ANGSTROM SIGN
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--39
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--45
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
 []|\EU1/lmr/m/n/12 DOUBLE-STRUCK
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--47
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--49
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
 []|\EU1/lmr/m/n/12 MATHEMATICAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
+Underfull \hbox (badness 10000) in paragraph at lines 54--54
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 6300) in paragraph at lines 53--53
+Underfull \hbox (badness 6300) in paragraph at lines 54--54
 \EU1/lmr/m/n/12 CAPITAL LETTER
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []|\EU1/lmr/m/n/12 VULGAR FRAC-
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 55--55
+Underfull \hbox (badness 1694) in paragraph at lines 56--56
 \EU1/lmr/m/n/12 TION ONE QUAR-
  []
 
 
-Overfull \hbox (3.68114pt too wide) in paragraph at lines 55--55
+Overfull \hbox (3.68114pt too wide) in paragraph at lines 56--56
  \EU1/lmr/m/n/12 0x2044(/) 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--57
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
 []|\EU1/lmr/m/n/12 DIGIT ONE -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 []|\EU1/lmr/m/n/12 DIGIT ONE -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--61
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
 \EU1/lmr/m/n/12 TION SLASH -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--67
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
 []|\EU1/lmr/m/n/12 LATIN CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--71
+Underfull \hbox (badness 10000) in paragraph at lines 72--72
 []|\EU1/lmr/m/n/12 PLANCK CON-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--75
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 []|\EU1/lmr/m/n/12 PLANCK CON-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 []|\EU1/lmr/m/n/12 LATIN SMALL
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 77--77
+Underfull \hbox (badness 5231) in paragraph at lines 78--78
 \EU1/lmr/m/n/12 LETTER H WITH
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--79
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
 []|\EU1/lmr/m/n/12 GREEK CAPITAL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--85
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
 []|\EU1/lmr/m/n/12 DOUBLE INTE-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--87
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
 []|\EU1/lmr/m/n/12 CONTOUR INTE-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--91
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
 []|\EU1/lmr/m/n/12 WHITE DOWN-
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 91--91
+Underfull \hbox (badness 3000) in paragraph at lines 92--92
 \EU1/lmr/m/n/12 POINTING TRIAN-
  []
 
 
-Overfull \hbox (47.5717pt too wide) in alignment at lines 27--96
+Overfull \hbox (47.5717pt too wide) in alignment at lines 28--97
  [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 96
+Underfull \vbox (badness 10000) detected at line 97
  []
 
-[28] [29] [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 103--106
-\EU1/lmr/m/n/12 is expanded into <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∮\EU1/lmr/
-m/n/12 </mo><mo>INTEGRALS</mo>,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 103--106
-\EU1/lmr/m/n/12 similarly the token <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∫\EU1/l
-mr/m/n/12 </mo> is expanded into
+[28] [29] [30]
+Underfull \hbox (badness 1635) in paragraph at lines 104--107
+\EU1/lmr/m/n/12 acters which would not be matched (even partially), such as som
+e
  []
 
 
-Underfull \hbox (badness 1635) in paragraph at lines 103--106
-\EU1/lmr/m/n/12 <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∫\EU1/lmr/m/n/12 </mo><mo>I
-NTEGRALS</mo> and then both will have a
+Underfull \hbox (badness 1038) in paragraph at lines 104--107
+\EU1/lmr/m/n/12 created for some general groups of operators which have some si
+mi-
+ []
+
+
+Underfull \hbox (badness 1418) in paragraph at lines 104--107
+\EU1/lmr/m/n/12 lar meaning. For each token that belongs to some of this prede-
+
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 104--107
+\EU1/lmr/m/n/12 fined groups, a second token is created identifying the group. 
+For
+ []
+
+
+Underfull \hbox (badness 2469) in paragraph at lines 104--107
+\EU1/lmr/m/n/12 example the token <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∮\EU1/lmr
+/m/n/12 </mo> is expanded into <mo>\EU1/ArialUnicodeMS(0)/m/n/12 ∮\EU1/lmr/m/
+n/12 </mo>
  []
 
 File: figures/integrals.png Graphic file (type QTm)
 <use  "figures/integrals.png" >
 File: figures/greater_less.png Graphic file (type QTm)
  <use  "figures/greater_less.png" >
-Underfull \hbox (badness 1270) in paragraph at lines 124--125
+Underfull \hbox (badness 1270) in paragraph at lines 125--126
 \EU1/lmr/m/n/12 measurements and we wanted to include this variability in our s
 ys-
  []
 
 
-Overfull \hbox (9.02411pt too wide) in paragraph at lines 124--125
+Overfull \hbox (9.02411pt too wide) in paragraph at lines 125--126
 \EU1/lmr/m/n/12 <mn>2.0135</mn><mn>2.014</mn><mn>2.01</mn><mn>2.0</mn>. 
  []
 
+[31]
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 134.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 134.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 134.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 134.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 134.
+
 [32]
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 133.
-
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 133.
-
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 133.
-
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 133.
-
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 133.
-
-[33]
 Requested font "Courier/ICU:" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
- [34] [35] [36]
+ [33] [34] [35]
 Missing character: There is no ′ in font Courier Regular/ICU!
 Missing character: There is no ⁢ in font Courier Regular/ICU!
 Missing character: There is no ′ in font Courier Regular/ICU!
@@ -1875,142 +1894,227 @@ Missing character: There is no ⁢ in font Courier Regular/ICU!
 Missing character: There is no ⁢ in font Courier Regular/ICU!
 Missing character: There is no ⁢ in font Courier Regular/ICU!
 
-Overfull \hbox (31.71217pt too wide) in alignment at lines 192--208
+Overfull \hbox (31.71217pt too wide) in alignment at lines 193--209
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 208
+Underfull \vbox (badness 10000) detected at line 209
  []
 
-[37]
+[36]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
+ [37]
 Requested font "[lmmono12-regular]" at 12.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmmono12-regular
 .otf
 
-Underfull \hbox (badness 4805) in paragraph at lines 226--243
+Underfull \hbox (badness 4805) in paragraph at lines 227--244
 \EU1/lmr/m/n/12 A human can easily identify that this corresponds to text and
  []
 
 
-Underfull \hbox (badness 7649) in paragraph at lines 226--243
+Underfull \hbox (badness 7649) in paragraph at lines 227--244
 \EU1/lmr/m/n/12 that should be inserted into a proper ”mbox” or ”text” 
 tag.
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 226--243
+Underfull \hbox (badness 4686) in paragraph at lines 227--244
 \EU1/lmr/m/n/12 In this case, the snippet produced the following MathML code:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 <math><mrow><mi>φ</mi><mo></mo><mrow><mi>a</mi><mo><
 /mo>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 <mi>r</mi><mo></mo><mi>e</mi></mrow><mo></mo><mrow><m
 i>s
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 </mi><mo></mo><mi>h</mi><mo></mo><mi>o</mi><mo></mo><
 mi>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 w</mi><mo></mo><mi>n</mi></mrow><mo>,</mo><mrow><mi>a
 </m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 i><mo></mo><mi>s</mi></mrow><mo></mo><mrow><mi>w</mi>
 <mo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 ></mo><mi>e</mi><mo></mo><mi>l</mi><mo></mo><mi>l</mi
 ></
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 mrow><mo></mo><mrow><mi>a</mi><mo></mo><mi>s</mi></mr
 ow>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 <mo></mo><mrow><mi>t</mi><mo></mo><mi>h</mi><mo></mo>
 <mi
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 >e</mi></mrow><mo></mo><mrow><mi>w</mi><mo></mo><mi>e
 </m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 i><mo></mo><mi>i</mi><mo></mo><mi>g</mi><mo></mo><mi>
 h</
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 mi><mo></mo><mi>t</mi></mrow><mo></mo><mrow><mi>a</mi
 ><m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 o></mo><mi>n</mi><mo></mo><mi>d</mi></mrow><mo></mo><
 mro
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 w><mi>t</mi><mo></mo><mi>e</mi><mo></mo><mi>n</mi><mo
 ></
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--243
+Underfull \hbox (badness 10000) in paragraph at lines 227--244
 \EU1/Courier(0)/m/n/10.95 mo><mi>s</mi><mo></mo><mi>i</mi><mo></mo><mi>o</mi><m
 o><
  []
 
-[39]
+[38]
 File: visio_drawings/architecture.png Graphic file (type QTm)
- <use  "visio_drawings/architecture.png" >
-
-LaTeX Warning: Citation `latex_editor' on page 40 undefined on input line 262.
-
-[40]
+ <use  "visio_drawings/architecture.png" > [39]
 File: figures/input_interface.png Graphic file (type QTm)
- <use  "figures/input_interface.png" >
+
+<use  "figures/input_interface.png" >
 File: figures/results_interface.png Graphic file (type QTm)
+ <use  "figures/results_interface.png" >)
+[40] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-clustering.tex
+Chapter 6.
 
-<use  "figures/results_interface.png" >) [41]
-No file chap-clustering.tex.
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex [42
+Underfull \hbox (badness 7362) in paragraph at lines 17--18
+[]\EU1/Courier(0)/m/n/10.95 ./mahout canpoy -t1 0.15 -t2 0.1 -i ../re-
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+\EU1/Courier(0)/m/n/10.95 sults/vectors -o ../results/clustering/canopy -dm
+ []
+
+
+Underfull \hbox (badness 5787) in paragraph at lines 21--22
+[]\EU1/Courier(0)/m/n/10.95 ./mahout kmeans -i ../results/vectors -o ../re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+\EU1/Courier(0)/m/n/10.95 sults/clustering_kmeans -xm sequential -c ../re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+\EU1/Courier(0)/m/n/10.95 sults/clustering/canopy -x 50 -cd 0.1 -cl -dm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+[]\EU1/lmr/m/n/10.95 To get the resulting points with their assigned cluster
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+\EU1/lmr/m/n/10.95 in a human readable format: \EU1/Courier(0)/m/n/10.95 ./maho
+ut seqdumper -i
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+\EU1/Courier(0)/m/n/10.95 ../results/clustering_kmeans/clusteredPoints/part-m-0
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+\EU1/Courier(0)/m/n/10.95 > ../results/clustering_kmeans/clusteredPoints/cluste
+r-
+ []
+
+[41
 
 
 
 ]
-Chapter 6.
+Underfull \vbox (badness 10000) detected at line 46
+ []
+
+Requested font "[lmroman7-regular]:mapping=tex-text" at 7.0pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman7-regular
+.otf
+Requested font "cmex7" at 7.0pt
+ -> cmex7
+Requested font "msam10" at 10.0pt
+ -> msam10
+Requested font "msam7" at 7.0pt
+ -> msam7
+Requested font "msbm10" at 10.0pt
+ -> msbm10
+Requested font "msbm7" at 7.0pt
+ -> msbm7
+
+Overfull \hbox (8.47536pt too wide) in paragraph at lines 59--59
+ []|\EU1/lmr/m/n/10 <mo>ARROWS</mo>| 
+ []
+
+Missing character: There is no ⁡ in font [lmroman10-regular]:mapping=tex-text
+!
+Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
+Missing character: There is no θ in font [lmroman10-regular]:mapping=tex-text!
+
+Overfull \hbox (44.78928pt too wide) in alignment at lines 52--74
+ [] [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 74
+ []
+
+
+Overfull \hbox (44.78928pt too wide) in alignment at lines 74--80
+ [] [] [] [] 
+ []
+
+[42] [43]) [44]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-evaluation.tex
+Chapter 7.
 
 Underfull \vbox (badness 10000) detected at line 27
  []
@@ -2018,7 +2122,11 @@ Underfull \vbox (badness 10000) detected at line 27
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43]
+ [45
+
+
+
+]
 Underfull \vbox (badness 10000) detected at line 67
  []
 
@@ -2026,11 +2134,11 @@ Underfull \vbox (badness 10000) detected at line 67
 Underfull \vbox (badness 10000) detected at line 84
  []
 
-[44]
+[46]
 Underfull \vbox (badness 10000) detected at line 100
  []
 
-[45]
+[47]
 Underfull \vbox (badness 10000) detected at line 134
  []
 
@@ -2043,7 +2151,7 @@ Overfull \hbox (17.4858pt too wide) in alignment at lines 142--152
 Underfull \vbox (badness 10000) detected at line 152
  []
 
-[46]
+[48]
 Overfull \hbox (17.4858pt too wide) in alignment at lines 164--178
  [] [] [] 
  []
@@ -2052,26 +2160,26 @@ Overfull \hbox (17.4858pt too wide) in alignment at lines 164--178
 Underfull \vbox (badness 10000) detected at line 178
  []
 
-) [47] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.tex
-[48
+) [49] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-conclusions.tex
+[50
 
 
 
 ]
-Chapter 7.
-[49]) [50]
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.tex
 Chapter 8.
-[51
+[51]) [52]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\chap-future_work.tex
+Chapter 9.
+[53
 
 
 
-]) [52] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl
+]) [54] (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.bbl
 Requested font "[lmroman10-italic]:mapping=tex-text" at 10.95pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman10-italic
 .otf
 
-[53
+[55
 
 
 ]
@@ -2086,19 +2194,19 @@ Underfull \hbox (badness 1163) in paragraph at lines 126--128
 ][][][][][][][][][][] [] [][][] [] [][] [] [][] []
  []
 
-[54]
-Underfull \hbox (badness 10000) in paragraph at lines 193--195
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
 []\EU1/lmr/m/n/10.95 Wolfram|alpha: Computational knowledge, 2014.  []$[][][][]
 [] [] [] [] [][][] []
  []
 
-[55]) [56]
+[57]) [58]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-conf_files.tex
 Appendix A.
-[57
+[59
 
 
-]) [58]
+]) [60]
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-test_equations.tex
 Appendix B.
 Missing character: There is no ℏ in font Courier Regular/ICU!
@@ -2114,22 +2222,9 @@ Missing character: There is no ν in font Courier Regular/ICU!
 Missing character: There is no ν in font Courier Regular/ICU!
 Missing character: There is no ν in font Courier Regular/ICU!
 Missing character: There is no ν in font Courier Regular/ICU!
-Requested font "[lmroman7-regular]:mapping=tex-text" at 7.0pt
- -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman7-regular
-.otf
-Requested font "cmex7" at 7.0pt
- -> cmex7
 Requested font "[lmroman7-bold]:mapping=tex-text" at 7.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman7-bold.ot
 f
-Requested font "msam10" at 10.0pt
- -> msam10
-Requested font "msam7" at 7.0pt
- -> msam7
-Requested font "msbm10" at 10.0pt
- -> msbm10
-Requested font "msbm7" at 7.0pt
- -> msbm7
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
@@ -2159,12 +2254,12 @@ Overfull \hbox (85.36855pt too wide) in alignment at lines 7--50
 Underfull \vbox (badness 10000) detected at line 50
  []
 
-[59
+[61
 
 
 
-] [60]) [61]
-(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex [62
+] [62]) [63]
+(C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\appendix-uml.tex [64
 
 
 
@@ -2204,7 +2299,7 @@ File: visio_drawings/main_packages.png Graphic file (type QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [63] [64] [65]
+) [65] [66] [67]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
  (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.aux (C:\Users\Artie
@@ -2226,20 +2321,17 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 164.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 164.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
  ) 
 Here is how much of TeX's memory you used:
- 24494 strings out of 429035
- 430161 string characters out of 3166907
- 554338 words of memory out of 3000000
- 27279 multiletter control sequences out of 15000+200000
+ 24502 strings out of 429035
+ 430407 string characters out of 3166907
+ 554909 words of memory out of 3000000
+ 27284 multiletter control sequences out of 15000+200000
  19916 words of font info for 115 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 46i,14n,47p,10405b,1190s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,14n,47p,10454b,1190s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main_doc.pdf (66 pages).
+Output written on main_doc.pdf (68 pages).
