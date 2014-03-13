@@ -171,13 +171,15 @@ An analyzer consists of a sequence of {\codefont TokenStrem} elements. Normally 
 This section describes some aspects that had to be considered while implementing the integration with Mathematica. Our system uses the {\codefont JLink} library to create a connection with the underlying process {\codefont MathKernel}. The main class for communicating java code and {\codefont Mathematica} is {\codefont KernelLink} and the main used method was {\codefont evaluateToOutputForm(String expr, int pageWidth)} where {\codefont expr} is the expression to be evaluated and {\codefont pageWidth} affects the formatting of the result.
 Once all the boilerplate has been written, the steps followed to define and find patterns in the expression are as follow: We import the string in MathML format through the command {\codefont ImportString["<mathmlExpression>", "MathML"]}. This creates the expression in the box form, but no further analysis is possible from this form. We then try to interpret this form into a fully Mathematica compatible expression by using {\codefont MakeExpression}
 
-\subsubsection{Pattern Extraction}
+
+\subsection{Pattern Extraction}
 Once the expression is created, finding a pattern is easy by using the command {\codefont Position[<variable holding the interpreted expression> , Pattern]}. A simple pattern for a quadratic expression is: {\codefont a\_.x\^{} 2 + b\_.x + c\_.} 
 
 \subsection{Cleaning of variables}
 After each operation, all of the variables should be cleaned or it may lead to deadlocks, wrong results or other issues since the {\codefont MakeExpression} command also interprets the expression so if the expression is, for example {\codefont a = b + c} Mathematica remembers the assignment of the new value of {\codefont a} and uses it in further evaluations. The cleaning is done through the command {\codefont Remove["Global`*"]}
 
-\subsubsection{Expression simplification}
+
+\subsection{Expression simplification}
 The second feature that we are interested in is automatic expression simplification.
 Mathematica includes different transformations of expressions. These include: {\codefont Simplify} which tries to transform a given equation in an equivalent one but in a reduced form, {\codefont FullSimplify} which is similar to the previous one but tries a higher number of heuristics to apply that can simplify expressions further at the expense of more processing time, {\codefont Factor} to factorize polynomials, {\codefont Refine} which simplifies expressions given certain assumptions about the variables, {\codefont TrigReduce} that tries to apply trigonometric identities to simplify the expression, {\codefont FunctionExpand} that tries to expand special functions in terms of sums and products of other elementary functions. 
 
@@ -204,17 +206,18 @@ $\frac{\Phi '}{2 (1+\Phi )}+\frac{1}{r}=0$          & $\frac{1}{r}+\frac{\Phi '}
 \label{comparison_simplification}
 
 \end{longtable}
-\subsubsection{Recursive interpretation}
+\subsection{Recursive interpretation}
 Unfortunately, Mathematica cannot always interpret correctly an input expression. In this case, it can, however interpret some sub-expressions from the original one. Our system takes advantage of this, and the first attempt is to try to interpret the original string. If this step is not successful (the result variable equals the string "{}"), we identify the occurrences of {\codefont RowBox} which identify all the subexpressions in the tree. For each of this elements we call the {\codefont MakeExpression} and if it was successful we search for structural pattern in it. A first thought would tell us that if sub-tree was interpreted successfully, there is no need to try to go further down in that sub-tree, however, even if a sub-expression is interpreted correctly, the result sometimes is not complete and processing further down, gives better results. For this reason, we do not discard any of the subexpressions and try to interpret all of them. For this same reason, we do not store the number of occurrences of a given pattern, but only whether it contains is or not.
 
-\subsubsection{Error handling}
+\subsection{Error handling}
 Sometimes, after certain time, the connection between {\codefont KernelLink} and {\codefont Mathematica} is lost and it launches an exception and all following invocations fail as well.
 Also, re-instantiating a KernelLink would yield an Exception. For this scenario, killing the associated processes to Mathematica was necessary with {\codefont killall -s 9 Mathematica; killall -s 9 MathKernel
 } or {\codefont taskkill /im Mathematica.exe; taskkill /im MathKernel.exe} depending on the OS the system is running on.
 
 With this, the next creation of a new KernelLink works properly and the subsequent invocations work as expected.
 
-\subsubsection{Timeout Handling}
+
+\subsection{Timeout Handling}
 Unfortunately, checking the quality of a LaTeX document is a difficult job and users have a lot of freedom in the way they write their document since the only visible result is the rendered version. 
 One example we found during our work is the following TeX snippet:
 \begin{verbatim}

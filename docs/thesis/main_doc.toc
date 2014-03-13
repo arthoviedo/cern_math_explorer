@@ -37,12 +37,12 @@
 \contentsline {subsubsection}{Specific domain structures}{34}{section*.9}
 \contentsline {section}{\numberline {5.2}Development with Lucene/Solr}{34}{section.5.2}
 \contentsline {section}{\numberline {5.3}Integration with Mathematica}{36}{section.5.3}
-\contentsline {subsubsection}{Pattern Extraction}{36}{section*.10}
-\contentsline {subsection}{\numberline {5.3.1}Cleaning of variables}{36}{subsection.5.3.1}
-\contentsline {subsubsection}{Expression simplification}{36}{section*.11}
-\contentsline {subsubsection}{Recursive interpretation}{39}{section*.12}
-\contentsline {subsubsection}{Error handling}{39}{section*.13}
-\contentsline {subsubsection}{Timeout Handling}{39}{section*.14}
+\contentsline {subsection}{\numberline {5.3.1}Pattern Extraction}{36}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Cleaning of variables}{36}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Expression simplification}{36}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Recursive interpretation}{39}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Error handling}{39}{subsection.5.3.5}
+\contentsline {subsection}{\numberline {5.3.6}Timeout Handling}{39}{subsection.5.3.6}
 \contentsline {section}{\numberline {5.4}Integration with CDS}{40}{section.5.4}
 \contentsline {chapter}{\numberline {6}Evaluation}{43}{chapter.6}
 \contentsline {section}{\numberline {6.1}Dataset}{43}{section.6.1}
@@ -56,7 +56,7 @@
 \contentsline {section}{\numberline {8.1}Features extraction}{51}{section.8.1}
 \contentsline {section}{\numberline {8.2}Data Analysis}{51}{section.8.2}
 \contentsline {section}{\numberline {8.3}End to end system}{52}{section.8.3}
-\contentsline {chapter}{Bibliographie}{53}{section.8.3}
+\contentsline {chapter}{Bibliography}{53}{section.8.3}
 \contentsline {chapter}{\numberline {A}Configuration files}{57}{appendix.A}
 \contentsline {section}{\numberline {A.1}Solr Schema}{57}{section.A.1}
 \contentsline {section}{\numberline {A.2}Solr configuration file}{58}{section.A.2}
