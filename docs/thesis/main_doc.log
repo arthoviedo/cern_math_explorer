@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  13 MAR 2014 15:02
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  8 APR 2014 10:01
 entering extended mode
 **main_doc.tex
 (C:\Users\Artie\git\mathmlexplorerweb\docs\thesis\main_doc.tex
@@ -2021,7 +2021,7 @@ File: figures/results_interface.png Graphic file (type QTm)
 Chapter 6.
 
 Underfull \hbox (badness 7362) in paragraph at lines 17--18
-[]\EU1/Courier(0)/m/n/10.95 ./mahout canpoy -t1 0.15 -t2 0.1 -i ../re-
+[]\EU1/Courier(0)/m/n/10.95 ./mahout canopy -t1 0.15 -t2 0.1 -i ../re-
  []
 
 
@@ -2328,7 +2328,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
 Here is how much of TeX's memory you used:
  24501 strings out of 429035
  430309 string characters out of 3166907
- 554909 words of memory out of 3000000
+ 554918 words of memory out of 3000000
  27284 multiletter control sequences out of 15000+200000
  19916 words of font info for 115 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191

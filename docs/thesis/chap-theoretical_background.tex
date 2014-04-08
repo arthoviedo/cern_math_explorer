@@ -45,7 +45,7 @@ and $$IDF(q_i) = \log{\frac{N - df(q_i)+0.5}{df(q_i)+0.5}} $$
 
 where $frec(q_i, D)$ is the number of occurrences of keyword $q_i$ in $D$, $avgdl$ is the average length (In keywords) of a document, and $k_1$ and $b$ are free parameters. Usually $k_1 = 2$ and $b \in [0, 1]$ controls how important is the length normalization, being set normally to $0.75$. $N$ is the size of the collection, $df(q_i)$ is the number of documents that contain term $q_i$ 
 
-A further variation that takes into account structure in the form of a document containing different fields and each of them having its own length and importance (boost) can be formulated as follows, known as BM25F can be expressed as follows:
+A further variation that takes into account structure in the form of a document containing different fields and each of them having its own length and importance (boost), known as BM25F can be expressed as follows:
 
 
 $$score(d, q) = \sum_{i=1}^{n} \frac{weigth(q_i, d)}{k+ weigth(q_i, d)} * IDF(q_i)$$

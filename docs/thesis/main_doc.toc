@@ -2,7 +2,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
 \contentsline {section}{\numberline {1.1}Context}{7}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}CERN}{7}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}CDS Invenio}{7}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.2}CDS \& Invenio}{7}{subsection.1.1.2}
 \contentsline {section}{\numberline {1.2}Project overview}{8}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Motivation}{8}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Goals}{10}{subsection.1.2.2}
