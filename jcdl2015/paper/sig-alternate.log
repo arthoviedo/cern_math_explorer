@@ -1,0 +1,552 @@
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  13 OCT 2014 21:23
+entering extended mode
+**sig-alternate.tex
+(C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper1\sig-alternate.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper1\sig-alternate.cls
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: xetex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\xelatex\xetex-def\xetex.def"
+File: xetex.def 2013/04/29 v0.96 LaTeX color/graphics driver for XeTeX (RRM/JK)
+
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+\epsfxsize=\dimen104
+\epsfysize=\dimen105
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip41
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen106
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen107
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count80
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count81
+\leftroot@=\count82
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count83
+\DOTSCASE@=\count84
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count85
+\c@MaxMatrixCols=\count86
+\dotsspace@=\muskip10
+\c@parentequation=\count87
+\dspbrk@lvl=\count88
+\tag@help=\toks17
+\row@=\count89
+\column@=\count90
+\maxfields@=\count91
+\andhelp@=\toks18
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks19
+\multlinegap=\skip42
+\multlinetaggap=\skip43
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+Document Class 'sig-alternate' <23rd. May '12>. Modified by G.K.M. Tobin/Gerry 
+Murray
+Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
+shivers@cs.cmu.edu, 4/93 by theobald@cs.mcgill.ca
+Excerpts were taken from (Journal Style) 'esub2acm.cls'.
+****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.ac
+m.org ******
+Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
+
+\footheight=\dimen115
+\@maxsep=\dimen116
+\@dblmaxsep=\dimen117
+\aucount=\count92
+\originalaucount=\count93
+\auwidth=\dimen118
+\auskip=\dimen119
+\auskipcount=\count94
+\auskip=\dimen120
+\allauboxes=\dimen121
+\addauthors=\toks21
+\addauflag=\count95
+\subtitletext=\toks22
+Requested font "ptmb8t" at 12.0pt
+ -> ptmb8t
+Requested font "ptmbi8t" at 12.0pt
+ -> ptmbi8t
+Requested font "ptmri8t" at 11.0pt
+ -> ptmri8t
+Requested font "ptmbi8t" at 11.0pt
+ -> ptmbi8t
+Requested font "phvb8t" at 18.0pt
+ -> phvb8t
+Requested font "phvbo8t" at 18.0pt
+ -> phvbo8t
+Requested font "phvr8t" at 14.0pt
+ -> phvr8t
+Requested font "phvro8t" at 14.0pt
+ -> phvro8t
+Requested font "phvb8t" at 14.0pt
+ -> phvb8t
+Requested font "phvr8t" at 12.0pt
+ -> phvr8t
+Requested font "phvro8t" at 12.0pt
+ -> phvro8t
+Requested font "phvr8t" at 10.0pt
+ -> phvr8t
+Requested font "phvro8t" at 10.0pt
+ -> phvro8t
+Requested font "ptmr8t" at 9.0pt
+ -> ptmr8t
+Requested font "ptmri8t" at 8.0pt
+ -> ptmri8t
+Requested font "ptmr8t" at 8.0pt
+ -> ptmr8t
+\savesection=\count96
+\sectioncntr=\count97
+\c@figure=\count98
+\c@table=\count99
+\titleboxnotes=\toks23
+\titleboxnoteflag=\count100
+Document Class: sig-alternate 2012/05/23 - V2.5 - based on acmproc.cls V1.3 <No
+v. 30 '99>
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+Requested font "cmr9" at 9.0pt
+ -> cmr9
+\@acmtitlebox=\box28
+\titlenotecount=\count101
+\tntoks=\toks24
+\tntokstwo=\toks25
+\tntoksthree=\toks26
+\tntoksfour=\toks27
+\tntoksfive=\toks28
+\catcount=\count102
+\copyrightnotice=\toks29
+\conf=\toks30
+\confinfo=\toks31
+\c@part=\count103
+\c@section=\count104
+\c@subsection=\count105
+\c@subsubsection=\count106
+\c@paragraph=\count107
+
+Using 'Abbrev' bibliography style
+LaTeX Info: Redefining \cite on input line 1211.
+\bibindent=\dimen122
+\colcntr=\count108
+\saveb@x=\box29
+\copyrtyr=\toks32
+\acmcopyr=\toks33
+\boilerplate=\toks34
+\copyrightetc=\toks35
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)
+Requested font "aer9" at 9.0pt
+ -> aer9
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\xelatex\xetexurl\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2004/03/15  ver 3.1  Verb mode for urls, etc.
+)
+(C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper1\sig-alternate.aux
+(C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper1\section-introduction.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper1\section-related_work.aux)
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+Requested font "cmr6" at 6.0pt
+ -> cmr6
+Requested font "cmmi9" at 9.0pt
+ -> cmmi9
+Requested font "cmmi6" at 6.0pt
+ -> cmmi6
+Requested font "cmsy9" at 9.0pt
+ -> cmsy9
+Requested font "cmsy6" at 6.0pt
+ -> cmsy6
+Requested font "cmex9" at 9.0pt
+ -> cmex9
+Requested font "cmex7" at 6.0pt
+ -> cmex7
+Requested font "cmex7" at 5.0pt
+ -> cmex7
+LaTeX Font Info:    Try loading font information for U+msa on input line 117.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+Requested font "msam10" at 9.0pt
+ -> msam10
+Requested font "msam7" at 6.0pt
+ -> msam7
+Requested font "msam5" at 5.0pt
+ -> msam5
+LaTeX Font Info:    Try loading font information for U+msb on input line 117.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Requested font "msbm10" at 9.0pt
+ -> msbm10
+Requested font "msbm7" at 6.0pt
+ -> msbm7
+Requested font "msbm5" at 5.0pt
+ -> msbm5
+LaTeX Font Info:    Try loading font information for U+lasy on input line 117.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+Requested font "lasy9" at 9.0pt
+ -> lasy9
+Requested font "lasy6" at 6.0pt
+ -> lasy6
+Requested font "lasy5" at 5.0pt
+ -> lasy5
+Requested font "aer6" at 6.0pt
+ -> aer6
+Requested font "aeti9" at 9.0pt
+ -> aeti9
+Requested font "aeti7" at 6.0pt
+ -> aeti7
+
+Overfull \hbox (1.0793pt too wide) in paragraph at lines 119--128
+\T1/aer/m/it/9 Prepar-ing ACM SIG Pro-ceed-ings Us-ing L[]T[]X$\OT1/cmr/m/n/9 2
+[]$ \T1/aer/m/it/9 and BibT[]X\T1/aer/m/n/9 .
+ []
+
+Requested font "aebx9" at 9.0pt
+ -> aebx9
+
+Overfull \hbox (1.5446pt too wide) in paragraph at lines 146--147
+\T1/aer/m/n/9 X.X [\T1/aer/bx/n/9 Digital Li-braries\T1/aer/m/n/9 ]: Mis-cel-la
+-neous; Y.Y [\T1/aer/bx/n/9 Information
+ []
+
+[1
+
+
+
+]
+(C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper1\section-introduction.tex
+
+LaTeX Warning: Citation `CERN' on page \thepage  undefined on input line 6.
+
+
+LaTeX Warning: Citation `web_proposal' on page \thepage  undefined on input lin
+e 8.
+
+
+LaTeX Warning: Citation `CDS1' on page \thepage  undefined on input line 11.
+
+
+LaTeX Warning: Citation `CDS2' on page \thepage  undefined on input line 11.
+
+File: images/figures/cds_screenshot.png Graphic file (type QTm)
+<use  "images/figures/cds_screenshot.png" >
+
+LaTeX Warning: Citation `invenio' on page \thepage  undefined on input line 22.
+
+
+
+LaTeX Warning: Citation `invenio_modules' on page \thepage  undefined on input 
+line 23.
+
+File: images/figures/invenio.jpeg Graphic file (type QTm)
+<use  "images/figures/invenio.jpeg" >
+
+LaTeX Warning: Citation `arxiv' on page \thepage  undefined on input line 35.
+
+
+Overfull \hbox (5.67905pt too wide) in paragraph at lines 35--37
+\T1/aer/m/n/9 lished Ar-ti-cles, Preprint, Pho-tos, Books, Gen-eral Talks among
+
+ []
+
+) [2
+
+]
+(C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper1\section-related_work.tex
+
+LaTeX Warning: Citation `mir_workshop' on page \thepage  undefined on input lin
+e 5.
+
+
+LaTeX Warning: Citation `nii' on page \thepage  undefined on input line 7.
+
+
+LaTeX Warning: Citation `math_task' on page \thepage  undefined on input line 7
+.
+
+
+Overfull \hbox (3.67044pt too wide) in paragraph at lines 7--8
+[]\T1/aer/m/n/9 The NII[\T1/aer/bx/n/9 ?\T1/aer/m/n/9 ] (Na-tional In-sti-tute 
+of In-for-mat-ics) is a Japanese
+ []
+
+
+LaTeX Warning: Citation `mias_1' on page \thepage  undefined on input line 12.
+
+LaTeX Font Info:    Try loading font information for T1+aett on input line 20.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+Requested font "aett9" at 9.0pt
+ -> aett9
+
+
+LaTeX Warning: Citation `mrec' on page \thepage  undefined on input line 20.
+
+
+Overfull \hbox (1.28206pt too wide) in paragraph at lines 18--21
+\T1/aer/m/n/9 and $\T1/aett/m/n/9 http : / / aura . fi . muni . cz : 8085 / web
+mias-[]ntcir/$ \T1/aer/m/n/9 (Run-
+ []
+
+
+LaTeX Warning: Citation `egomath1' on page \thepage  undefined on input line 23
+.
+
+
+LaTeX Warning: Citation `egomath2' on page \thepage  undefined on input line 23
+.
+
+Missing character: There is no ” in font aer9!
+
+LaTeX Warning: Citation `dlmf' on page \thepage  undefined on input line 27.
+
+
+LaTeX Warning: Citation `handbook' on page \thepage  undefined on input line 27
+.
+
+
+LaTeX Warning: Citation `dlmf2' on page \thepage  undefined on input line 27.
+
+
+LaTeX Warning: Citation `mathwebsearch' on page \thepage  undefined on input li
+ne 30.
+
+
+LaTeX Warning: Citation `substitution_tree_indexing' on page \thepage  undefine
+d on input line 30.
+
+
+LaTeX Warning: Citation `zb' on page \thepage  undefined on input line 30.
+
+
+Overfull \hbox (2.91388pt too wide) in paragraph at lines 30--31
+\T1/aer/m/n/9 open-source search en-gine for math-e-mat-i-cal equa-tions. While
+
+ []
+
+[3
+
+
+]
+
+LaTeX Warning: Citation `wikimirs' on page \thepage  undefined on input line 37
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+
+LaTeX Warning: Citation `wolframalpha' on page \thepage  undefined on input lin
+e 40.
+
+
+Overfull \hbox (11.68962pt too wide) in paragraph at lines 40--41
+\T1/aer/m/n/9 are Uniquation($\T1/aett/m/n/9 http : / / uniquation . com$\T1/ae
+r/m/n/9 ) and Symbolab($\T1/aett/m/n/9 http :
+ []
+
+) [4
+
+]
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
+ne 205.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
+ne 220.
+
+
+LaTeX Warning: Citation `bowman:reasoning' on page \thepage  undefined on input
+ line 247.
+
+
+LaTeX Warning: Citation `clark:pct' on page \thepage  undefined on input line 2
+47.
+
+
+LaTeX Warning: Citation `braams:babel' on page \thepage  undefined on input lin
+e 247.
+
+
+LaTeX Warning: Citation `herlihy:methodology' on page \thepage  undefined on in
+put line 247.
+
+
+LaTeX Warning: Citation `clark:pct' on page \thepage  undefined on input line 2
+48.
+
+
+LaTeX Warning: Citation `salas:calculus' on page \thepage  undefined on input l
+ine 249.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
+ne 249.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
+ne 255.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
+ne 266.
+
+[5
+
+]
+File: fly.eps Graphic file (type eps)
+ <fly.eps>
+File: fly.eps Graphic file (type eps)
+ <fly.eps>
+
+LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
+(Font)              using `T1/aett/m/n' instead on input line 349.
+
+File: flies.eps Graphic file (type eps)
+<flies.eps>
+File: rosette.ps Graphic file (type eps)
+ <rosette.ps>
+\c@theorem=\count109
+Requested font "aecsc10" at 9.0pt
+ -> aecsc10
+\c@definition=\count110
+
+Overfull \hbox (15.60826pt too wide) detected at line 430
+\OML/cmm/m/it/9 l \OT1/cmr/m/n/9 = [] \OML/cmm/m/it/9 f\OT1/cmr/m/n/9 (\OML/cmm
+/m/it/9 x\OT1/cmr/m/n/9 ) = [] [] = [] \OML/cmm/m/it/9 g\OT1/cmr/m/n/9 (\OML/cm
+m/m/it/9 x\OT1/cmr/m/n/9 ) \OMS/cmsy/m/n/9 ^^A [] [] \OT1/cmr/m/n/9 = 0 \OMS/cm
+sy/m/n/9 ^^A \OML/cmm/m/it/9 L \OT1/cmr/m/n/9 = 0\OML/cmm/m/it/9 ;
+ []
+
+
+LaTeX Warning: Citation `salas:calculus' on page \thepage  undefined on input l
+ine 440.
+
+[6]
+No file sig-alternate.bbl.
+[7] (C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper1\sig-alternate.aux
+(C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper1\section-introduction.aux)
+(C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper1\section-related_work.aux)
+)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2014 strings out of 429035
+ 22023 string characters out of 3166907
+ 80836 words of memory out of 3000000
+ 5230 multiletter control sequences out of 15000+200000
+ 45086 words of font info for 55 fonts, out of 3000000 for 9000
+ 912 hyphenation exceptions out of 8191
+ 39i,10n,28p,1162b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on sig-alternate.pdf (7 pages).

@@ -1,0 +1,67 @@
+\section{Evaluation}
+When building an IR system there are two main aspects that should be considered. One is the quality of the presented results and the second one is the performance of the system since web users currently tolerate some milliseconds of latency for retrieving results. 
+
+\subsection{Dataset}
+Our dataset consists on 12234 latex documents fetched from ArXiV. This documents correspond to the latest records harvested for CDS. The documents were processed using LateXML as described in the extraction process. From the given dataset, the simpler equations were filtered out (The ones containing one or two elements). The total number of indexed equations is 1412297.
+
+\subsection{Setup}
+
+The machine used for experiments has a Intel Core i7 processor running at 3.4Ghz with 4 cores. The available RAM is 8Gb, and the Java Virtual Machine used for running Solr was run with the {\codefont -Xms2G -Xmx5G} parameters. The complete specifications of the used software is presented in table \ref{sw_used}
+
+
+
+\section{Quality results}
+In this section we are interested in evaluating the quality of the results provided by our system.
+The type of queries that $5e^{x+y}$ was designed for, are typical equations that can be found in a physics scientific publication. 
+Our main user case is that a user of CDS is interested in finding documents inside the collection whose equations are related to the one that is provided.  
+
+The evaluated queries were provided by physics experts working at CERN from their own research topics. The queries were provided in \LaTeX\ format as the users used them in their own publications.
+Table \ref{equations_table} presents the set of queries that were evaluated, and a simple explanation about each one. 
+Each of the users evaluated the results only for the equations he/she provided. For each of the presented result, the user ranked it as "Strictly Relevant", "Partially Relevant" and "Completely Irrelevant". As all evaluations including human interaction, this scoring is at some level subjective. 
+
+For each metric we compared three different scenarios:
+
+\begin{itemize}
+\item N : Only notational features over the original expression were used
+\item N+S : Notational and structural features over the original expression
+\item N+S+NN : Notational and structural features over the original expression and notational features over the normalized string using Mathematica's Simplify function
+\item N+S+NN (BM25): Same scenario as before but using BM25 similarity function instead of TF-IDF. This scoring function is implemented in Lucene through the class {\codefont BM25Similarity}
+\end{itemize}
+
+We also were interested in also using the Fully Simplify function in Mathematica but we found no difference between both forms and the results were the same.
+
+We present results for three metrics: Partial precision (Document either partially relevant or completely relevant) strict precision and discounted cumulative gain ($ \mathrm{DCG_{p}} = \sum_{i=1}^{p} \frac{ 2^{rel_{i}} - 1 }{ \log_{2}(i+1)} $) which measures, in addition, the order of the results..
+
+
+
+
+
+
+Results show that for the selected queries, the system performs reasonably well achieving a precision of 0.84 in the top 5 results in the best scenario and 0.65 in the top 20 results. 
+Even more important than the absolute values, it is more interesting to see how the addition of structural features and the addition of normalization to the expressions, allows the system to improve its performance reasonably. In the top 20 results there was an increase of 15\% from the N scenario to the N+S+NN one. Also we see that in the case of the top 5 results going from N+S to N+S+NN resulted in the same strict precision of 0.84, it still represented and increase in the DCG metric which means still results were improved. 
+A final remark is that there was not a significant difference between the two different similarity functions that were evaluated, and in at least one case, BM25 performed worse than standard tf-idf. 
+
+\subsection{Indexing Performance}
+For this set of evaluations, we were only interested in observing how the performance of the indexing stage is affected by the different types of features that are employed. We selected the first 100 records from our dataset and measured the total time it required to index all the elements in Solr using a python script and the solrpy library to do the communication. The default similarity in Solr was used. We also measured the index size at the end of each experiment.
+Our four scenarios were organized as follows:
+We tested the same three scenarios as for the quality results and we added a fourth one N+S+FN where we used the fully normalized form of the expressions as opposed to the standard simplified form in the N+S+NN scenario.
+
+Table \ref{indexing_performance} summarizes the results of this set of experiments. The first result is the significant increase in processing time when using Mathematica. Going from the N scenario to N+S represent an increase of almost 15x in the indexing time. Adding standard normalization increases the indexing time by a factor near to 1.44x and full normalization by a factor of 1.55x.
+
+With respect to storage size, we see a small footprint (Less than 5\%)in the total size by going from N to N+S. Adding normalization represents an increase by a factor of 1.78x and the size of the fully normalized index represents a smaller increase (1.76x)
+
+We can observe that there is a small trade-off between time and storage size depending on which normalization mode is employed.
+
+
+
+\subsection{Querying Performance}
+Similarly, we were also interested in evaluating how the query performance of the queries was affected with the different scenarios. For this set of queries we used the complete dataset, and evaluated the N and the N+S+NN scenarios for queries of different length.
+
+
+Table \ref{query_performance} shows that for smaller queries, the querying time increases from an average of 0.178 seconds to 0.327 which represents an increase of 83\%. For the largest evaluated set of queries, the querying time passed from 0.393 to 2.066 seconds which represents an increase of around 425\%. The absolute values, however, show that in the worst case the slower query took a little more than 2 seconds in average which is still acceptable for a specialized search engine.
+
+\subsection{Alternative Metrics}
+According to some experimental evaluations presented in \cite{tree_comparison}, Tree Edit Distance provides an interesting alternative metric to the standard vector space model using angular distance. In this work, authors present an improvement in the quality of retrieved results compared to the classic approach of indexing the single leaves of the tree and a subset of the possible sub-trees. For evaluating the feasibility of this approach we compared a set of equations using both metrics: Tree edit distance (Using Zheng and Shasha's algorithm implemented in python \cite{tree_distance_python}.) and a standard angular distance that was not heavily optimized. We compared elapsed times for expressions of different length.
+
+
+This result show that for shorter expressions, using tree edit distance represent an increase in time in more than 200x, and a factor of around 1200x for the longer expressions, making it impractical for implementing a system that needs to be responsive. Even though there are algorithms which provide a better asymptotic guarantees and better actual running times like RTED\cite{rted} with respect to Zheng ans Shasha's algorithm, the best improvements represent a decrease in processing time of 50\% to 80\% in trees with around 1000 nodes, while the standard tested equations which are representative of our dataset, contain less than 100 nodes.

@@ -1,0 +1,39 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+A level-1 auxiliary file: section-introduction.aux
+A level-1 auxiliary file: section-related_work.aux
+A level-1 auxiliary file: section-system_description.aux
+A level-1 auxiliary file: section-evaluation.aux
+A level-1 auxiliary file: section-conclusions.aux
+The style file: abbrv.bst
+Database file #1: bibliography.bib
+Warning--to sort, need author or key in CERN
+Warning--to sort, need author or key in web_proposal
+Warning--to sort, need author or key in CDS1
+Name 1 in "Alberto Pepe, Thomas Baron, Maja Gracco, Jean Yves Le Meur, Nicholas Robinson, Tibor Simko, and Martin Vesely" has a comma at the end for entry CDS2
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Alberto Pepe, Thomas Baron, Maja Gracco, Jean Yves Le Meur, Nicholas Robinson, Tibor Simko, and Martin Vesely" for entry CDS2
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Alberto Pepe, Thomas Baron, Maja Gracco, Jean Yves Le Meur, Nicholas Robinson, Tibor Simko, and Martin Vesely" for entry CDS2
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Alberto Pepe, Thomas Baron, Maja Gracco, Jean Yves Le Meur, Nicholas Robinson, Tibor Simko, and Martin Vesely" for entry CDS2
+while executing---line 1049 of file abbrv.bst
+Warning--to sort, need author or key in invenio
+Warning--to sort, need author or key in invenio_modules
+Warning--to sort, need author or key in arxiv
+Warning--to sort, need author or key in mir_workshop
+Warning--to sort, need author or key in nii
+Warning--to sort, need author or key in math_task
+Warning--to sort, need author or key in mrec
+Warning--to sort, need author or key in zb
+Warning--to sort, need author or key in wolframalpha
+Warning--to sort, need author or key in latex_editor
+Warning--to sort, need author or key in tree_distance_python
+Name 1 in "Alberto Pepe, Thomas Baron, Maja Gracco, Jean Yves Le Meur, Nicholas Robinson, Tibor Simko, and Martin Vesely" has a comma at the end for entry CDS2
+while executing---line 1090 of file abbrv.bst
+Too many commas in name 1 of "Alberto Pepe, Thomas Baron, Maja Gracco, Jean Yves Le Meur, Nicholas Robinson, Tibor Simko, and Martin Vesely" for entry CDS2
+while executing---line 1090 of file abbrv.bst
+Too many commas in name 1 of "Alberto Pepe, Thomas Baron, Maja Gracco, Jean Yves Le Meur, Nicholas Robinson, Tibor Simko, and Martin Vesely" for entry CDS2
+while executing---line 1090 of file abbrv.bst
+Too many commas in name 1 of "Alberto Pepe, Thomas Baron, Maja Gracco, Jean Yves Le Meur, Nicholas Robinson, Tibor Simko, and Martin Vesely" for entry CDS2
+while executing---line 1090 of file abbrv.bst
+(There were 8 error messages)
