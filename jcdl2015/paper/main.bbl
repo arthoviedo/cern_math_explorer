@@ -1,20 +1,4 @@
-\begin{thebibliography}{10}
-
-\bibitem{mir_workshop}
-Mir 2012 workshop -- mathematics information retrieval, july 8th, 2012, 2012.
-\newblock \url{http://cicm-conference.org/2012/cicm.php?event=mir}.
-
-\bibitem{mrec}
-Mrec — mathematical retrieval collection, 2012.
-\newblock \url{https://mir.fi.muni.cz/MREC/index.html}.
-
-\bibitem{math_task}
-Ntcir pilot task: Math task, 2013.
-\newblock \url{http://ntcir-math.nii.ac.jp/ntcir10-math/}.
-
-\bibitem{tree_distance_python}
-Tree edit distance using the zhang shasha algorithm, 2013.
-\newblock \url{https://github.com/timtadh/zhang-shasha}.
+\begin{thebibliography}{1}
 
 \bibitem{CERN}
 About cern, 2014.
@@ -32,109 +16,19 @@ Cern document server, 2014.
 Invenio, 2014.
 \newblock \url{http://invenio-software.org/}.
 
-\bibitem{invenio_modules}
-Modules overview, 2014.
-\newblock \url{http://invenio-demo.cern.ch/help/hacking/modules-overview}.
-
-\bibitem{nii}
-National institute of informatics, 2014.
-\newblock \url{http://www.nii.ac.jp/en/}.
-
 \bibitem{latex_editor}
 Online latex editor - create, integrate and download, 2014.
 \newblock \url{http://www.codecogs.com/latex/eqneditor.php}.
 
-\bibitem{web_proposal}
-The original proposal of the www, htmlized, 2014.
-\newblock \url{http://www.w3.org/History/1989/proposal.html}.
-
-\bibitem{wolframalpha}
-Wolfram|alpha: Computational knowledge, 2014.
-\newblock \url{https://www.wolframalpha.com/}.
-
-\bibitem{zb}
-zbmath - the first resource for mathematics, 2014.
-\newblock \url{http://zbmath.org/about/}.
-
-\bibitem{CDS2}
-M.~G. J. Y. L. M. N. R. T.~S. Alberto~Pepe, Thomas~Baron and M.~Vesely.
-\newblock Cern document server software: the integrated digital library, 2005.
+\bibitem{snuggletex}
+T.~U. of~Edinburgh School~of Physics and Astronomy.
+\newblock Snuggletex (1.2.2).
 \newblock
-  \url{http://cds.cern.ch/record/1198695/files/CERN-THESIS-2009-057.pdf}.
+  \url{http://www2.ph.ed.ac.uk/snuggletex/documentation/overview-and-features.html}.
 
-\bibitem{dlmf}
-{NIST Digital Library of Mathematical Functions}.
-\newblock http://dlmf.nist.gov/, Release 1.0.6 of 2013-05-06.
-\newblock Online companion to NIST Handbook of Mathematical Functions.
-
-\bibitem{substitution_tree_indexing}
-P.~Graf.
-\newblock Substitution tree indexing.
-\newblock In J.~Hsiang, editor, {\em Rewriting Techniques and Applications},
-  volume 914 of {\em Lecture Notes in Computer Science}, pages 117--131.
-  Springer Berlin Heidelberg, 1995.
-
-\bibitem{wikimirs}
-X.~Hu, L.~Gao, X.~Lin, Z.~Tang, X.~Lin, and J.~B. Baker.
-\newblock Wikimirs: A mathematical information retrieval system for wikipedia.
-\newblock In {\em Proceedings of the 13th ACM/IEEE-CS Joint Conference on
-  Digital Libraries}, JCDL '13, pages 11--20, New York, NY, USA, 2013. ACM.
-
-\bibitem{tree_comparison}
-S.~Kamali and F.~W. Tompa.
-\newblock Retrieving documents with mathematical content.
-\newblock In {\em Proceedings of the 36th International ACM SIGIR Conference on
-  Research and Development in Information Retrieval}, SIGIR '13, pages
-  353--362, New York, NY, USA, 2013. ACM.
-
-\bibitem{mathwebsearch}
-M.~Kohlhase, B.~Matican, and C.-C. Prodescu.
-\newblock Mathwebsearch 0.5: Scaling an open formula search engine.
-\newblock In J.~Jeuring, J.~Campbell, J.~Carette, G.~Reis, P.~Sojka, M.~Wenzel,
-  and V.~Sorge, editors, {\em Intelligent Computer Mathematics}, volume 7362 of
-  {\em Lecture Notes in Computer Science}, pages 342--357. Springer Berlin
-  Heidelberg, 2012.
-
-\bibitem{math_groups}
-X.~Lee.
-\newblock Unicode: Math symbols, 2010.
-\newblock \url{http://web.archive.org/web/20131223003502/ }.
-
-\bibitem{dlmf2}
-B.~Miller.
-\newblock Three years of dlmf: Web, math and search.
-\newblock In J.~Carette, D.~Aspinall, C.~Lange, P.~Sojka, and W.~Windsteiger,
-  editors, {\em Intelligent Computer Mathematics}, volume 7961 of {\em Lecture
-  Notes in Computer Science}, pages 288--295. Springer Berlin Heidelberg, 2013.
-
-\bibitem{egomath1}
-J.~Mi\v{s}utka and L.~Galambo\v{s}.
-\newblock Extending full text search engine for mathematical content.
-\newblock {\em Towards Digital Mathematics Library}, pages 55--67, 2008.
-
-\bibitem{egomath2}
-J.~Mi\v{s}utka and L.~Galambo\v{s}.
-\newblock System description: Egomath2 as a tool for mathematical searching on
-  wikipedia.org.
-\newblock In {\em Proceedings of the 18th Calculemus and 10th International
-  Conference on Intelligent Computer Mathematics}, MKM'11, pages 307--309,
-  Berlin, Heidelberg, 2011. Springer-Verlag.
-
-\bibitem{handbook}
-F.~W.~J. Olver, D.~W. Lozier, R.~F. Boisvert, and C.~W. Clark, editors.
-\newblock {\em {NIST Handbook of Mathematical Functions}}.
-\newblock Cambridge University Press, New York, NY, 2010.
-
-\bibitem{rted}
-M.~Pawlik and N.~Augsten.
-\newblock Rted: A robust algorithm for the tree edit distance.
-\newblock {\em Proc. VLDB Endow.}, 5(4):334--345, Dec. 2011.
-
-\bibitem{mias_1}
-P.~Sojka and M.~L\'{i}\v{s}ka.
-\newblock Indexing and searching mathematics in digital libraries.
-\newblock In J.~Davenport, W.~Farmer, J.~Urban, and F.~Rabe, editors, {\em
-  Intelligent Computer Mathematics}, volume 6824 of {\em Lecture Notes in
-  Computer Science}, pages 228--243. Springer Berlin Heidelberg, 2011.
+\bibitem{mathexplorerweb}
+A.~Oviedo, N.~Kaisoumis, and K.~Aberer.
+\newblock $5e^{x+y}$: A math-aware search engine for cds.
+\newblock CERN Document Sever.
 
 \end{thebibliography}
