@@ -99,12 +99,12 @@
 \begin{document}
 %
 % --- Author Metadata here ---
-\conferenceinfo{JCDL}{2015 Knoxville, USA}
+\conferenceinfo{Joint Conference on Digital Libraries}{2015 Knoxville, USA}
 %\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
 
-\title{  {\Huge $ \ttlfnt{5e^{x+y}}$}: Searching over mathematical content in digital libraries.}
+\title{  {\Huge $ \ttlfnt{5e^{x+y}}$}: Searching over mathematical content in digital libraries}
 
 %
 % You need the command \numberofauthors to handle the 'placement
@@ -160,21 +160,12 @@
 
 \maketitle
 \begin{abstract}
-This paper presents $5e^{x+y}$, a system that is able to extract, index and query mathematical content expressed as mathematical equations, complementing the CERN Document Server (CDS). We present the most important aspects of its design and provide a demonstration of its searching capabilities.
+This paper presents $5e^{x+y}$, a system that is able to extract, index and query mathematical content expressed as mathematical equations, complementing the CERN Document Server (CDS)\cite{CDS1}. We present the most important aspects of its design, our approach to model the relevant features of the mathematical content, and provide a demonstration of its searching capabilities.
 
 \end{abstract}
 
-% A category with the (minimum) three required fields
-\category{X.X}{Digital Libraries}{Miscellaneous}
-%A category including the fourth, optional field follows...
-\category{Y.Y}{Information Retrieval}{Metrics}
-
-\terms{Theory}
-
-\keywords{ACM proceedings, \LaTeX, text tagging}
-
 \section{Introduction}
-CDS\cite{CDS1} (CERN Document Server) is the institutional digital repository developed and used at CERN\cite{CERN}. It contains more than 1,000,000 records and stores more than 400,000 full text documents, organized in different collections among published articles, books and preprints. Invenio\cite{invenio} is the open-source digital library software platform behind CDS and it is developed in parallel to CDS at CERN. Besides CDS, Invenio supports around thirty scientific institutions worldwide including INSPIRE (a collaboration between Fermilab, CERN, DESY and SLAC) EPFL and ILO. 
+CDS (CERN Document Server) is the institutional digital repository developed and used at CERN\cite{CERN}. It contains more than 1,000,000 records and stores more than 400,000 full text documents, organized in different collections among published articles, books and preprints. Invenio\cite{invenio} is the open-source digital library software platform behind CDS and it is developed in parallel to CDS at CERN. Besides CDS, Invenio supports around thirty scientific institutions worldwide including INSPIRE (a collaboration between Fermilab, CERN, DESY and SLAC) EPFL and ILO. 
 A considerable amount of the full text documents on CDS contain mathematical content, represented in the form of equations. The Preprints collection alone contains more than 700,000 records, harvesting documents from services like ArXiV\cite{arxiv} where most of the documents are in the areas of physics, mathematics and statistics which are very rich in this type of content. Even though Invenio provides a powerful search engine that allows users to query records using different fields like author or keywords, it is not suitable for mathematical content. $5e^{x+y}$ is developed as a first attempt to address this limitation by allowing querying for records based on mathematical equations.
 
 \section{System Overview}
@@ -231,7 +222,8 @@ The system displays the 20 results with the highest score. Each result shows the
 \end{figure}
 
 \section{Conclusions}
-In this demonstration, we presented $5e^{x+y}$, which complements CDS by enabling searching over mathematical content. We gave an overview of the main design points of the system, including the two types of features used to characterize and index equations, the integration with the Mathematica CAS which provides powerful functionalities such as pattern matching and equation simplification, our approach to extended the Lucene/Solr framework and our integration with the existing Invenio software through the solarpy library.
+
+In this demonstration, we presented an important limitation of CDS, and how our system, $5e^{x+y}$, provides efficient and precise searching capabilities over mathematical to our system. We presented our approach to model mathematical equations in terms of two different types of features. How we extended the Lucene/Solr Framework to handle our specific type of content and how through the Mathematica CAS, we were able to include powerful functionalities such as pattern matching and equation simplificiation to our system, and use them to improve the quality of the results. Finally we presented our integration mechanism with the Invenio software through the solarpy library.
 
 \section{Availability}
 Both the Invenio software and the $5e^{x+y}$ module are open-source software available through GPL Licence. Invenio can be downloaded from \url{http://invenio-software.org/}. $5e^{x+y}$ can be downloaded from \\ \url{https://github.com/arthoviedo/cern_math_explorer}. 
