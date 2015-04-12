@@ -150,7 +150,7 @@
 \author{
 \alignauthor Arthur Oviedo\\
   \affaddr{EPFL, Switzerland.}\\%
-  \affaddr{arthur.oviedo@alumini.epfl.ch}%
+  \affaddr{arthur.oviedo@alumni.epfl.ch}%
 \alignauthor Nikos Kasioumis \\
   \affaddr{CERN, Switzerland.}\\%
   \affaddr{nikos.kasioumis@cern.ch}%
@@ -161,13 +161,13 @@
 
 \maketitle
 \begin{abstract}
-This paper presents $5e^{x+y}$, a system that is able to extract, index and query mathematical content expressed as mathematical equations, complementing the CERN Document Server (CDS)\cite{CDS1}. We present the most important aspects of its design, our approach to model the relevant features of the mathematical content, and provide a demonstration of its searching capabilities.
+This paper presents $5e^{x+y}$, a system that is able to extract, index and query mathematical content expressed as mathematical expressions, complementing the CERN Document Server (CDS)\cite{CDS1}. We present the most important aspects of its design, our approach to model the relevant features of the mathematical content, and provide a demonstration of its searching capabilities.
 
 \end{abstract}
 
 \section{Introduction}
 CDS (CERN Document Server) is the institutional digital repository developed and used at CERN\cite{CERN}. It contains more than 1,000,000 records and stores more than 400,000 full text documents, organized in different collections among published articles, books and preprints. Invenio\cite{invenio} is the open-source digital library software platform behind CDS and it is developed in parallel to CDS at CERN. Besides CDS, Invenio supports around thirty scientific institutions worldwide including INSPIRE (a collaboration between Fermilab, CERN, DESY and SLAC) EPFL and ILO. 
-A considerable amount of the full text documents on CDS contain mathematical content, represented in the form of equations. The Preprints collection alone contains more than 700,000 records, harvesting documents from services like ArXiV\cite{arxiv} where most of the documents are in the areas of physics, mathematics and statistics which are very rich in this type of content. Even though Invenio provides a powerful search engine that allows users to query records using different fields like author or keywords, it is not suitable for mathematical content. $5e^{x+y}$ is developed as a first attempt to address this limitation by allowing querying for records based on mathematical equations.
+A considerable amount of the full text documents on CDS contain mathematical content, represented in the form of equations. The Preprints collection alone contains more than 700,000 records, harvesting documents from services like ArXiV\cite{arxiv} where most of the documents are in the areas of physics, mathematics and statistics which are very rich in this type of content. Even though Invenio provides a powerful search engine that allows users to query records using different fields like author or keywords, it is not suitable for mathematical content. $5e^{x+y}$ is developed as a first attempt to address this limitation by allowing querying for records based on mathematical equations. Several system have been developed in the context of Mathematical Information Retrieval (MIR). Our system, however, improves on them by modelling mathematical expressions in 2 different set of features and relying on specialized tools to manipulate and analyse them.
 
 \section{System Overview}
 In this section we provide a general overview of the main design points of $5e^{x+y}$. A more detailed description of the system can be found in \cite{mathexplorerweb}.
@@ -178,7 +178,7 @@ Our initial focus in the project was to define a good set of features that we co
 We perform some processing of these tokens such as normalizing and decomposing of complex characters. This allows us to partially match characters with different unicode points but similar or equal visual rendering. For instance LATIN CAPITAL LETTER A WITH RING ABOVE with code 0xc5 and ANGSTROM SIGN with code 0x212b both are rendered as \r{A} and can both be used to refer to the Angstrom measurement unit. Following this example, we index both the original token <mi>\r{A}</mi> and the normalized form <mi>\r{A}</mi> <mi>A</mi>.For operators which are semantically related such as comparison, integrals and arithmetic, we apply another set of rules since their unicode characters do not provide an easy way to match them.
 For example the INTEGRAL character with code 0x222b generates the tokens <mo>{\unicodefont ∫}</mo> and INT\_OP and the CONTOUR INTEGRAL character with code 0x222e generates the tokens <mo>{\unicodefont ∮} </mo> and INT\_OP. In this way, both have a partial matching in the second token.
 
-The second set of features relate to the structure of the equation. Two different properties of mathematical equations impose additional challenges for a Mathematics Information Retrieval (MIR) system. First, variables can be used indistinguishably and any character set can be used to represent the same equation. For example, $f(t) = vt + c $ and $g(x) = ac + b$ can represent the same linear equation, however the context in which each variable is used follows certain conventions. To address this issue, we relied on pattern matching, a very powerful feature that current Computer Algebra Systems (CAS) provide. We integrated Mathematica\cite{mathematica} into our system, to perform pattern matching on the equations and identify occurrences within a predefined set of patterns. This allows us to detect if the equation contains certain types of common algebraic structures. For instance, the pattern {\codefont a\_.x\^{} 2 + b\_.x + c\_.} is used to identify a quadratic expression. This mechanism is very powerful since \_.x represents any type of expression, not only a single term. 
+The second set of features relate to the structure of the equation. Two different properties of mathematical equations impose additional challenges for a MIR system. First, variables can be used indistinguishably and any character set can be used to represent the same equation. For example, $f(t) = vt + c $ and $g(x) = ac + b$ can represent the same linear equation, however the context in which each variable is used follows certain conventions. To address this issue, we relied on pattern matching, a very powerful feature that current Computer Algebra Systems (CAS) provide. We integrated Mathematica\cite{mathematica} into our system, to perform pattern matching on the equations and identify occurrences within a predefined set of patterns. This allows us to detect if the equation contains certain types of common algebraic structures. For instance, the pattern {\codefont a\_.x\^{} 2 + b\_.x + c\_.} is used to identify a quadratic expression. This mechanism is very powerful since \_.x represents any type of expression, not only a single term. 
 
 An additional challenge mathematical equations pose is the fact that a given equality can be rewritten in multiple ways taking into account properties of the different operators like associativity, distributivity and commutativity among others. Our approach relies once more in the features provided by Mathematica: we perform the {\codefont Simplify} operation which applies a set of predefined rules on a given equation with the goal of providing a canonical representation.
 
@@ -191,8 +191,7 @@ To integrate $5e^{x+y}$ with Invenio, we used the {\codefont solrpy} library whi
 
 \section{Demonstration}
 As part of the demonstration of $5e^{x+y}$, we present a demo instance of the Invenio software with the mathematical equations search functionality.
-The user can access the mathematical search functionality through a link in the main page. Once there, the user is presented with a classic search functionality where they can input an equation. The equation can be expressed in either \LaTeX or MathML. To ease the writing of \LaTeX code, we include an online editor\cite{latex_editor} that renders the input as the user types it. \LaTeX code is usually more familiar to users, however, the internal representation is in MathML as previously explained. The translation from \LaTeX to MathML is done through the third party library SnuggleTex\cite{snuggletex} that has some shortcomings, so we allow users to input the query in MathML as well. When the query is ready, the user can click the submit button and the system then performs the search. Once the system has performed the lookup and produced the results, they are presented to the user.
-The system displays the 20 results with the highest score. Each result shows the matched equation snippet, the title of the record containing the given equation and the link to the record.
+The user can access the mathematical search functionality through a link in the main page. Once there, the user is presented with a classic search functionality where they can input an equation. The equation can be expressed in either \LaTeX  or MathML. To ease the writing of \LaTeX  code, we include an online editor\cite{latex_editor} that renders the input as the user types it. \LaTeX  code is usually more familiar to users, however, the internal representation is in MathML as previously explained. The translation from \LaTeX  to MathML is done through the third party library SnuggleTex\cite{snuggletex} that has some shortcomings, so we allow users to input the query in MathML as well. When the query is ready, the user can click the submit button and the system then performs the search. Once the system has performed the lookup and produced the results, they are presented to the user. The system displays the 20 results with the highest score. Each result shows the matched equation snippet, the title of the record containing the given equation and the link to the record as it can be observed in Figure \ref{fig:test2}.
 
 %\begin{figure}
 %\center
@@ -208,18 +207,18 @@ The system displays the 20 results with the highest score. Each result shows the
 %\caption{Web interface of $5e^{x+y}$: Results screen}
 %\end{figure}
 
-\begin{figure}
-\centering
-\begin{minipage}{.37\textwidth}
-  \includegraphics[width=0.95\linewidth]{images/figures/input_interface.png}
-  \captionof{figure}{Input interface.}
-  \label{fig:test1}
-\end{minipage}%
-\end{figure}
+%\begin{figure}
+%\centering
+%\begin{minipage}{.37\textwidth}
+% \includegraphics[width=0.95\linewidth]{images/figures/input_interface.png}
+%  \captionof{figure}{Input interface.}
+%  \label{fig:test1}
+%\end{minipage}%
+%\end{figure}
 
 \begin{figure}
 \centering
-\begin{minipage}{.37\textwidth}
+\begin{minipage}{.55\textwidth}
   \includegraphics[width=0.95\linewidth]{images/figures/results_interface.png}
   \captionof{figure}{Result page.}
   \label{fig:test2}
@@ -228,7 +227,7 @@ The system displays the 20 results with the highest score. Each result shows the
 
 \section{Conclusions}
 
-In this demonstration, we focused on a limitation of CDS, and how our system, $5e^{x+y}$, provides efficient and precise searching capabilities over mathematical content. We presented our approach to model mathematical equations in terms of two different types of features. We extended the Lucene/Solr framework to handle specific type of content and through the Mathematica CAS we were able to include powerful functionalities such as pattern matching and equation simplificiation to our system, improving the quality of the results. Finally we presented our integration mechanism with the Invenio software through the solarpy library.
+In this demonstration, we focused on a limitation of CDS, and how our system, $5e^{x+y}$, provides efficient and precise searching capabilities over mathematical content. We presented our approach to model mathematical equations in terms of two different types of features. We extended the Lucene/Solr framework to handle specific type of content and through the Mathematica CAS we were able to include powerful functionalities such as pattern matching and equation simplification to our system, improving the quality of the results. Finally we presented our integration mechanism with the Invenio software through the solarpy library.
 
 \section{Availability}
 Both the Invenio software and the $5e^{x+y}$ module are open-source software available through GPL Licence. Invenio can be downloaded from \url{http://invenio-software.org/}. $5e^{x+y}$ can be downloaded from \\ \url{https://github.com/arthoviedo/cern_math_explorer}. 
