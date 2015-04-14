@@ -100,9 +100,9 @@
 \begin{document}
 %
 % --- Author Metadata here ---
-\conferenceinfo{Joint Conference on Digital Libraries}{2015 Knoxville, USA}
-%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
-%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
+\conferenceinfo{Joint Conference on Digital Libraries, JCDL'15}{June 21-25, 2015, Knoxville, TN, USA}
+\CopyrightYear{2015} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
+\crdata{978-1-4503-3594-2/15/06 \\ http://dx.doi.org/10.1145/2756406.2756953}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
 
 \title{  {\Huge $ \ttlfnt{5e^{x+y}}$}: Searching over mathematical content in digital libraries}
@@ -166,8 +166,8 @@ This paper presents $5e^{x+y}$, a system that is able to extract, index and quer
 \end{abstract}
 
 \section{Introduction}
-CDS (CERN Document Server) is the institutional digital repository developed and used at CERN\cite{CERN}. It contains more than 1,000,000 records and stores more than 400,000 full text documents, organized in different collections among published articles, books and preprints. Invenio\cite{invenio} is the open-source digital library software platform behind CDS and it is developed in parallel to CDS at CERN. Besides CDS, Invenio supports around thirty scientific institutions worldwide including INSPIRE (a collaboration between Fermilab, CERN, DESY and SLAC) EPFL and ILO. 
-A considerable amount of the full text documents on CDS contain mathematical content, represented in the form of equations. The Preprints collection alone contains more than 700,000 records, harvesting documents from services like ArXiV\cite{arxiv} where most of the documents are in the areas of physics, mathematics and statistics which are very rich in this type of content. Even though Invenio provides a powerful search engine that allows users to query records using different fields like author or keywords, it is not suitable for mathematical content. $5e^{x+y}$ is developed as a first attempt to address this limitation by allowing querying for records based on mathematical equations. Several system have been developed in the context of Mathematical Information Retrieval (MIR). Our system, however, improves on them by modelling mathematical expressions in 2 different set of features and relying on specialized tools to manipulate and analyse them.
+CDS (CERN Document Server) is the institutional digital repository developed and used at CERN\cite{CERN}. It contains more than 1,000,000 records and stores more than 400,000 full text documents, organized in different collections among published articles, books and preprints. Invenio\cite{invenio} is the open-source digital library software platform behind CDS and it is developed in parallel to CDS at CERN. Besides CDS, Invenio supports around thirty scientific institutions worldwide including INSPIRE (a collaboration between Fermilab, CERN, DESY and SLAC), EPFL and ILO. 
+A considerable amount of the full text documents on CDS contains mathematical content. The Preprints collection alone contains more than 700,000 records, harvesting documents from services like ArXiV\cite{arxiv} where most of the documents are in the areas of physics, mathematics and statistics which are very rich in this type of content. Even though Invenio provides a powerful search engine that allows users to query records using different fields like author or keywords, it is not suitable for mathematical content. $5e^{x+y}$ is developed as a first attempt to address this limitation by allowing querying for records based on mathematical expressions. Several system have been developed in the context of Mathematical Information Retrieval (MIR). Our system, however, improves on them by modelling mathematical expressions in 2 different set of features and relying on specialized tools to manipulate and analyse them.
 
 \section{System Overview}
 In this section we provide a general overview of the main design points of $5e^{x+y}$. A more detailed description of the system can be found in \cite{mathexplorerweb}.
