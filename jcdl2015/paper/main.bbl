@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{CERN}
 About cern, 2014.
@@ -20,6 +20,20 @@ Invenio, 2014.
 Online latex editor - create, integrate and download, 2014.
 \newblock \url{http://www.codecogs.com/latex/eqneditor.php}.
 
+\bibitem{solr}
+Solr: The open source enterprise search platform built on apache lucene™.,
+  2014.
+\newblock \url{http://lucene.apache.org/solr}.
+
+\bibitem{mathematica}
+Wolfram mathematica, 2014.
+\newblock \url{http://www.wolfram.com/mathematica//}.
+
+\bibitem{math_groups}
+X.~Lee.
+\newblock Unicode: Math symbols, 2010.
+\newblock \url{http://xahlee.info/comp/unicode_math_operators.html }.
+
 \bibitem{snuggletex}
 T.~U. of~Edinburgh School~of Physics and Astronomy.
 \newblock Snuggletex (1.2.2).
@@ -29,6 +43,7 @@ T.~U. of~Edinburgh School~of Physics and Astronomy.
 \bibitem{mathexplorerweb}
 A.~Oviedo, N.~Kaisoumis, and K.~Aberer.
 \newblock $5e^{x+y}$: A math-aware search engine for cds.
-\newblock CERN Document Sever.
+\newblock CERN Document Server.
+\newblock \url{http://cds.cern.ch/record/1670010?ln=en}.
 
 \end{thebibliography}
