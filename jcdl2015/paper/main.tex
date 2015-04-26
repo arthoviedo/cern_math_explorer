@@ -165,6 +165,11 @@ This paper presents $5e^{x+y}$, a system that is able to extract, index and quer
 
 \end{abstract}
 
+% A category with the (minimum) three required fields
+\category{H.3.3}{Information Storage and Retrieval}{Information Search and Retrieval}
+%A category including the fourth, optional field follows...
+\keywords{Mathematical Information Retrieval}
+
 \section{Introduction}
 CDS (CERN Document Server) is the institutional digital repository developed and used at CERN\cite{CERN}. It contains more than 1,000,000 records and stores more than 400,000 full text documents, organized in different collections among published articles, books and preprints. Invenio\cite{invenio} is the open-source digital library software platform behind CDS and it is developed in parallel to CDS at CERN. Besides CDS, Invenio supports around thirty scientific institutions worldwide including INSPIRE (a collaboration between Fermilab, CERN, DESY and SLAC), EPFL and ILO. 
 A considerable amount of the full text documents on CDS contains mathematical content. The Preprints collection alone contains more than 700,000 records, harvesting documents from services like ArXiV\cite{arxiv} where most of the documents are in the areas of physics, mathematics and statistics which are very rich in this type of content. Even though Invenio provides a powerful search engine that allows users to query records using different fields like author or keywords, it is not suitable for mathematical content. $5e^{x+y}$ is developed as a first attempt to address this limitation by allowing querying for records based on mathematical expressions. Compared to existing systems in the context of Mathematical Information Retrieval (MIR), our system improves on them by modelling mathematical expressions using 2 distinct set of features and relying on specialized tools to manipulate and analyse them.

@@ -1,8 +1,17 @@
 \begin{thebibliography}{10}
 
+\bibitem{snuggletex}
+Snuggletex (1.2.2).
+\newblock
+  \url{http://www2.ph.ed.ac.uk/snuggletex/documentation/overview-and-features.html}.
+
 \bibitem{CERN}
 About cern, 2014.
 \newblock \url{http://home.web.cern.ch/about}.
+
+\bibitem{solr}
+Apache solr/lucene., 2014.
+\newblock \url{http://lucene.apache.org/solr}.
 
 \bibitem{arxiv}
 arxiv.org e-print archive, 2014.
@@ -17,13 +26,8 @@ Invenio, 2014.
 \newblock \url{http://invenio-software.org/}.
 
 \bibitem{latex_editor}
-Online latex editor - create, integrate and download, 2014.
+Online latex editor, 2014.
 \newblock \url{http://www.codecogs.com/latex/eqneditor.php}.
-
-\bibitem{solr}
-Solr: The open source enterprise search platform built on apache lucene™.,
-  2014.
-\newblock \url{http://lucene.apache.org/solr}.
 
 \bibitem{mathematica}
 Wolfram mathematica, 2014.
@@ -33,12 +37,6 @@ Wolfram mathematica, 2014.
 X.~Lee.
 \newblock Unicode: Math symbols, 2010.
 \newblock \url{http://xahlee.info/comp/unicode_math_operators.html }.
-
-\bibitem{snuggletex}
-T.~U. of~Edinburgh School~of Physics and Astronomy.
-\newblock Snuggletex (1.2.2).
-\newblock
-  \url{http://www2.ph.ed.ac.uk/snuggletex/documentation/overview-and-features.html}.
 
 \bibitem{mathexplorerweb}
 A.~Oviedo, N.~Kaisoumis, and K.~Aberer.
