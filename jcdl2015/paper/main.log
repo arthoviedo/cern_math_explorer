@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  15 APR 2015 08:49
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.1.21)  26 APR 2015 21:26
 entering extended mode
-**main.tex
-(C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper\main.tex
+**C:/Users/Artie/git/mathmlexplorerweb/jcdl2015/paper/main.tex
+(C:/Users/Artie/git/mathmlexplorerweb/jcdl2015/paper/main.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -1379,6 +1379,9 @@ Underfull \hbox (badness 1742) in paragraph at lines 163--163
 21-25, 2015,
  []
 
+Requested font "[lmroman9-bold]:mapping=tex-text" at 9.0pt
+ -> C:/Program Files (x86)/MiKTeX 2.9/fonts/opentype/public/lm/lmroman9-bold.ot
+f
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\se-ascii-print.def"
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
@@ -1388,30 +1391,28 @@ Requested font "Arial Unicode MS/ICU:" at 9.0pt
 Requested font "Courier/ICU:" at 9.0pt
  -> C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/courier/pcrr8a.pfb
 
-Underfull \vbox (badness 2050) has occurred while \output is active []
-
- [1
+[1
 
 
 ]
-Overfull \hbox (15.1456pt too wide) in paragraph at lines 186--187
+Overfull \hbox (15.1456pt too wide) in paragraph at lines 191--192
 \EU1/lmr/m/n/9 the most important ones being: the \EU1/Courier(0)/m/n/9 math_no
 tational_field
  []
 
 
-Overfull \hbox (2.63412pt too wide) in paragraph at lines 186--187
+Overfull \hbox (2.63412pt too wide) in paragraph at lines 191--192
 \EU1/lmr/m/n/9 the \EU1/Courier(0)/m/n/9 math_structural_field \EU1/lmr/m/n/9 w
 hich stores the occurrences
  []
 
-File: images/figures/results_interface.png Graphic file (type QTm)
-<use  "images/figures/results_interface.png" >
-Overfull \hbox (37.20154pt too wide) in paragraph at lines 221--226
+File: images/figures/results_interface_alt.png Graphic file (type QTm)
+<use  "images/figures/results_interface_alt.png" >
+Overfull \hbox (37.20154pt too wide) in paragraph at lines 226--231
  []$[]$ 
  []
 
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 233
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 238
 .
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\euenc\eu1lmtt.fd"
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1421,22 +1422,22 @@ Requested font "[lmmono9-regular]" at 9.0pt
 otf
 
 (C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper\main.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 251.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 256.
  [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 251.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 256.
 
 (C:\Users\Artie\git\mathmlexplorerweb\jcdl2015\paper\main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 251.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 251.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 251.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 256.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 256.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 256.
  ) 
 Here is how much of TeX's memory you used:
- 25063 strings out of 429035
- 440463 string characters out of 3166907
- 514402 words of memory out of 3000000
- 27977 multiletter control sequences out of 15000+200000
- 42003 words of font info for 92 fonts, out of 3000000 for 9000
+ 25067 strings out of 429035
+ 440653 string characters out of 3166907
+ 515402 words of memory out of 3000000
+ 27978 multiletter control sequences out of 15000+200000
+ 42011 words of font info for 93 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 39i,10n,46p,10401b,352s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,10n,46p,10453b,352s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on main.pdf (2 pages).
